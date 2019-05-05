@@ -1,0 +1,16 @@
+PODS:
+  - HWPanModal (0.1.0)
+
+DEPENDENCIES:
+  - HWPanModal (from `../`)
+
+EXTERNAL SOURCES:
+  HWPanModal:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HWPanModal: 86d508530ef6e314ee3529cf9c2f89f9cac880c3
+
+PODFILE CHECKSUM: 7ecc656ede5ac737ac2d97941b47241d6b948882
+
+COCOAPODS: 1.5.3

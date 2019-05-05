@@ -1,0 +1,23 @@
+//
+//  HWPanModalPresentationController.h
+//  HWPanModal
+//
+//  Created by heath wang on 2019/4/26.
+//
+
+#import <UIKit/UIKit.h>
+#import "HWPanModalPresentable.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HWPanModalPresentationController : UIPresentationController
+
+- (void)setNeedsLayoutUpdate;
+
+- (void)transitionToState:(PresentationState)state;
+
+- (void)setContentOffset:(CGPoint)offset;
+
+@end
+
+NS_ASSUME_NONNULL_END

@@ -1,0 +1,6 @@
+framework module Pods_HWPanModal_Tests {
+  umbrella header "Pods-HWPanModal_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

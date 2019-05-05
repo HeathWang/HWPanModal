@@ -1,0 +1,6 @@
+framework module HWPanModal {
+  umbrella header "HWPanModal-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'HWPanModal_Example' do
+  pod 'HWPanModal', :path => '../'
+
+  target 'HWPanModal_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
