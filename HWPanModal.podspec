@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-HWPanModal is used to present controller and drag to dismiss.
+HWPanModal is used to present controller and drag to dismiss. Inspire to PanModal.
                        DESC
 
   s.homepage         = 'https://github.com/HeathWang/HWPanModal'

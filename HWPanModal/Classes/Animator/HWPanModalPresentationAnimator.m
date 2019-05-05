@@ -13,7 +13,8 @@
 @interface HWPanModalPresentationAnimator ()
 
 @property (nonatomic, assign) TransitionStyle transitionStyle;
-@property (nullable, nonatomic, strong) UISelectionFeedbackGenerator *feedbackGenerator;
+
+@property (nullable, nonatomic, strong) UISelectionFeedbackGenerator *feedbackGenerator API_AVAILABLE(ios(10.0));
 
 @end
 
@@ -60,7 +61,11 @@
 	panView.frame = rect;
 
 	if ([presentable isHapticFeedbackEnabled]) {
-		[self.feedbackGenerator selectionChanged];
+        if (@available(iOS 10.0, *)) {
+            [self.feedbackGenerator selectionChanged];
+        } else {
+            // Fallback on earlier versions
+        }
 	}
 
 	[HWPanModalAnimator animate:^{
@@ -69,7 +74,11 @@
 		panView.frame = frame;
 	} config:presentable completion:^(BOOL completion) {
 		[context completeTransition:completion];
-		self.feedbackGenerator = nil;
+        if (@available(iOS 10.0, *)) {
+            self.feedbackGenerator = nil;
+        } else {
+            // Fallback on earlier versions
+        }
 	}];
 
 }
