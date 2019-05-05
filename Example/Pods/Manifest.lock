@@ -1,16 +1,23 @@
 PODS:
-  - HWPanModal (0.1.0)
+  - HWPanModal (0.1.1)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - HWPanModal (from `../`)
+  - Masonry
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
 
 EXTERNAL SOURCES:
   HWPanModal:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HWPanModal: 86d508530ef6e314ee3529cf9c2f89f9cac880c3
+  HWPanModal: 79e2af8bbd57f49b8cb28bfe917a82f6d117352a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 7ecc656ede5ac737ac2d97941b47241d6b948882
+PODFILE CHECKSUM: 8529ab6b72724aab087befdc04d830b0eea470b9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

@@ -19,7 +19,7 @@ pod 'HWPanModal', '~> 0.1.1'
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
 
 
-```
+```Objective-C
 @interface HWBaseViewController () <HWPanModalPresentable>
 
 @end
@@ -37,7 +37,7 @@ Your UIViewController need to conform `HWPanModalPresentable`. If you use defaul
 Then present this Controller.
 
 
-```
+```Objective-C
 [self presentPanModal:[HWBaseViewController new]];
 ```
 

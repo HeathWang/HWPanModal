@@ -1,9 +1,11 @@
 use_frameworks!
+inhibit_all_warnings!
 
 platform :ios, '8.0'
 
 target 'HWPanModal_Example' do
   pod 'HWPanModal', :path => '../'
+  pod 'Masonry'
 
   target 'HWPanModal_Tests' do
     inherit! :search_paths

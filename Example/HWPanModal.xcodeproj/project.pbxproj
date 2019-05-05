@@ -356,18 +356,20 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWPanModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7F36A4AB4F162D1A6012B4C /* [CP] Check Pods Manifest.lock */ = {
