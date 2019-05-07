@@ -11,10 +11,12 @@
 #import "HWPanContainerView.h"
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanModalAnimator.h"
+#import <KVOController/KVOController.h>
 
 #define kDragIndicatorSize  CGSizeMake(36, 5)
 static CGFloat const kIndicatorYOffset = 5;
 static CGFloat const kSnapMovementSensitivity = 0.7;
+static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @interface UIScrollView (Helper)
 
@@ -153,8 +155,8 @@ static CGFloat const kSnapMovementSensitivity = 0.7;
 		return;
 
 	UIScrollView *scrollView = [self.presentable panScrollable];
+	[self.KVOController unobserve:scrollView];
 
-	[scrollView removeObserver:self forKeyPath:@"contentOffset"];
 	[scrollView setContentOffset:offset animated:YES];
 	[self trackScrolling:scrollView];
 
@@ -334,18 +336,13 @@ static CGFloat const kSnapMovementSensitivity = 0.7;
 #pragma mark - UIScrollView Observer
 
 - (void)observe:(UIScrollView *)scrollView {
-	if (!scrollView)
-		return;
 
-	[scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld context:nil];
-}
-
-- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context {
-
-	// In case we have a situation where we have two containerViews in the same presentation
-    if ([keyPath isEqualToString:@"contentOffset"] && [object isKindOfClass:UIScrollView.class] && self.containerView != nil) {
-        [self didPanOnScrollView:object change:change];
-    }
+	__weak typeof(self) wkSelf = self;
+	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
+		if (wkSelf.containerView != nil) {
+			[wkSelf didPanOnScrollView:object change:change];
+		}
+	}];
 }
 
 /**
@@ -413,7 +410,6 @@ static CGFloat const kSnapMovementSensitivity = 0.7;
 	NSValue *value = change[NSKeyValueChangeOldKey];
 	if (value) {
 		CGPoint offset = [value CGPointValue];
-//		NSLog(@"offset:%@", NSStringFromCGPoint(offset));
 		CGFloat yOffset = scrollView.contentOffset.y;
 		CGSize presentedSize = self.containerView.frame.size;
 
@@ -462,7 +458,6 @@ static CGFloat const kSnapMovementSensitivity = 0.7;
 				 * 2.向上拖拽永远不会dismiss，回弹至相应的状态
 				 */
 				CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
-//                NSLog(@"velocity: %f", velocity.y);
 				if ([self isVelocityWithinSensitivityRange:velocity.y]) {
 					if (velocity.y < 0) {
 						[self transitionToState:PresentationStateLong];
@@ -633,10 +628,7 @@ static CGFloat const kSnapMovementSensitivity = 0.7;
 }
 
 - (void)dealloc {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-    if ([self.presentable panScrollable]) {
-        [[self.presentable panScrollable] removeObserver:self forKeyPath:@"contentOffset" context:nil];
-    }
+//	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end

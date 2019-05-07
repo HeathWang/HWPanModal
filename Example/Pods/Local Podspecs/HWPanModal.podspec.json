@@ -19,5 +19,10 @@
     "ios": "8.0"
   },
   "source_files": "HWPanModal/Classes/**/*",
-  "public_header_files": "HWPanModal/Classes/**/*.h"
+  "public_header_files": "HWPanModal/Classes/**/*.h",
+  "dependencies": {
+    "KVOController": [
+
+    ]
+  }
 }

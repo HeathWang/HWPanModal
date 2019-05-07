@@ -3,17 +3,16 @@
 //  HWPanModal_Example
 //
 //  Created by heath wang on 2019/4/30.
-//  Copyright © 2019 wangcongling. All rights reserved.
+//  Copyright © 2019 HeathWang. All rights reserved.
 //
 
 #import "HWGroupViewController.h"
 #import "HWColorCell.h"
 #import <HWPanModal/HWPanModal.h>
 
-@interface HWGroupViewController () <HWPanModalPresentable, UITableViewDataSource, UITableViewDelegate>
+@interface HWGroupViewController () <HWPanModalPresentable>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray<UIColor *> *colors;
 
 @end
 
@@ -21,8 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.tableView registerClass:HWColorCell.class forCellReuseIdentifier:NSStringFromClass(HWColorCell.class)];
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
@@ -36,12 +33,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.colors.count * 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HWColorCell *colorCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(HWColorCell.class) forIndexPath:indexPath];
-    colorCell.contentView.backgroundColor = [self randomColor];
+    colorCell.contentView.backgroundColor = [self colorWithIndex:indexPath.row];
     return colorCell;
 }
 
@@ -66,7 +63,7 @@
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)longFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 100);
+    return PanModalHeightMake(PanModalHeightTypeMax, 100);
 }
 
 - (PanModalHeight)shortFormHeight {
@@ -89,6 +86,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         [_tableView registerClass:HWColorCell.class forCellReuseIdentifier:NSStringFromClass(HWColorCell.class)];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -109,10 +109,8 @@
     return _colors;
 }
 
-- (UIColor *)randomColor {
-    NSInteger index = arc4random() % self.colors.count;
-    return self.colors[index];
+- (UIColor *)colorWithIndex:(NSInteger)index {
+    return self.colors[index % self.colors.count];
 }
-
 
 @end

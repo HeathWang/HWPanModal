@@ -30,11 +30,12 @@ HWPanModal is used to present controller and drag to dismiss. Inspire to PanModa
 
   s.source_files = 'HWPanModal/Classes/**/*'
   s.public_header_files = 'HWPanModal/Classes/**/*.h'
+  s.dependency 'KVOController'
   
   # s.resource_bundles = {
   #   'HWPanModal' => ['HWPanModal/Assets/*.png']
   # }
 
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
 end

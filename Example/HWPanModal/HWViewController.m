@@ -2,15 +2,19 @@
 //  HWViewController.m
 //  HWPanModal
 //
-//  Created by wangcongling on 05/05/2019.
-//  Copyright (c) 2019 wangcongling. All rights reserved.
+//  Created by HeathWang on 05/05/2019.
+//  Copyright (c) 2019 HeathWang. All rights reserved.
 //
 
 #import "HWViewController.h"
-#import "HWGroupViewController.h"
+#import "HWDemoTypeModel.h"
 #import <HWPanModal/HWPanModal.h>
+#import <Masonry/Masonry.h>
 
-@interface HWViewController ()
+@interface HWViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSArray<HWDemoTypeModel *> *demoList;
 
 @end
 
@@ -20,22 +24,58 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"基本测试" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(didTapToTest) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [self.view addSubview:button];
-    [button setFrame:CGRectMake(15, 84, 80, 40)];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
 }
 
-- (void)didTapToTest {
-    [self presentPanModal:[HWGroupViewController new]];
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.demoList.count;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
+
+    HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
+    cell.textLabel.text = demoTypeModel.title;
+    return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	cell.textLabel.font = [UIFont systemFontOfSize:16];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
+	[self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
+}
+
+#pragma mark - Getter
+
+- (NSArray *)demoList {
+	if (!_demoList) {
+		_demoList = [HWDemoTypeModel demoTypeList];
+	}
+	return _demoList;
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
+        _tableView.rowHeight = 80;
+
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
+}
+
 
 @end

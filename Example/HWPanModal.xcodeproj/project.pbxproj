@@ -22,6 +22,14 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7E63BBC0394068D5944AA619 /* Pods_HWPanModal_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */; };
+		7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A1227FD62400F12F8C /* HWDemoTypeModel.m */; };
+		7E7A62A6228007BE00F12F8C /* HWAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A5228007BE00F12F8C /* HWAlertViewController.m */; };
+		7E7A62A92280080800F12F8C /* HWTransientAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A82280080800F12F8C /* HWTransientAlertViewController.m */; };
+		7E7A62AC2280089500F12F8C /* HWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62AB2280089500F12F8C /* HWAlertView.m */; };
+		7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62AF22803DBB00F12F8C /* HWStackedGroupViewController.m */; };
+		7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B222804C2D00F12F8C /* HWColorDetailViewController.m */; };
+		7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */; };
+		7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B92280505B00F12F8C /* HWNavViewController.m */; };
 		7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */; };
 		7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D549227ECAA70093F1B3 /* HWColorCell.m */; };
 		7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */; };
@@ -64,6 +72,22 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6FF2112F2DB6E7E18F8EE103 /* Pods-HWPanModal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Tests/Pods-HWPanModal_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E7A62A0227FD62400F12F8C /* HWDemoTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDemoTypeModel.h; sourceTree = "<group>"; };
+		7E7A62A1227FD62400F12F8C /* HWDemoTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWDemoTypeModel.m; sourceTree = "<group>"; };
+		7E7A62A4228007BE00F12F8C /* HWAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAlertViewController.h; sourceTree = "<group>"; };
+		7E7A62A5228007BE00F12F8C /* HWAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAlertViewController.m; sourceTree = "<group>"; };
+		7E7A62A72280080800F12F8C /* HWTransientAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTransientAlertViewController.h; sourceTree = "<group>"; };
+		7E7A62A82280080800F12F8C /* HWTransientAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTransientAlertViewController.m; sourceTree = "<group>"; };
+		7E7A62AA2280089500F12F8C /* HWAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAlertView.h; sourceTree = "<group>"; };
+		7E7A62AB2280089500F12F8C /* HWAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAlertView.m; sourceTree = "<group>"; };
+		7E7A62AE22803DBB00F12F8C /* HWStackedGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWStackedGroupViewController.h; sourceTree = "<group>"; };
+		7E7A62AF22803DBB00F12F8C /* HWStackedGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWStackedGroupViewController.m; sourceTree = "<group>"; };
+		7E7A62B122804C2D00F12F8C /* HWColorDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWColorDetailViewController.h; sourceTree = "<group>"; };
+		7E7A62B222804C2D00F12F8C /* HWColorDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWColorDetailViewController.m; sourceTree = "<group>"; };
+		7E7A62B52280503A00F12F8C /* HWUserGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWUserGroupViewController.h; sourceTree = "<group>"; };
+		7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWUserGroupViewController.m; sourceTree = "<group>"; };
+		7E7A62B82280505B00F12F8C /* HWNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWNavViewController.h; sourceTree = "<group>"; };
+		7E7A62B92280505B00F12F8C /* HWNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWNavViewController.m; sourceTree = "<group>"; };
 		7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseViewController.m; sourceTree = "<group>"; };
 		7EF8D547227ECAA70093F1B3 /* HWGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWGroupViewController.h; sourceTree = "<group>"; };
 		7EF8D549227ECAA70093F1B3 /* HWColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorCell.m; sourceTree = "<group>"; };
@@ -141,6 +165,7 @@
 		6003F593195388D20070C39A /* Example for HWPanModal */ = {
 			isa = PBXGroup;
 			children = (
+				7E7A629F227FD5DC00F12F8C /* Model */,
 				7EF8D545227ECAA70093F1B3 /* PanController */,
 				6003F59C195388D20070C39A /* HWAppDelegate.h */,
 				6003F59D195388D20070C39A /* HWAppDelegate.m */,
@@ -195,9 +220,56 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		7E7A629F227FD5DC00F12F8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E7A62A0227FD62400F12F8C /* HWDemoTypeModel.h */,
+				7E7A62A1227FD62400F12F8C /* HWDemoTypeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E7A62A3228007AA00F12F8C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7E7A62A4228007BE00F12F8C /* HWAlertViewController.h */,
+				7E7A62A5228007BE00F12F8C /* HWAlertViewController.m */,
+				7E7A62A72280080800F12F8C /* HWTransientAlertViewController.h */,
+				7E7A62A82280080800F12F8C /* HWTransientAlertViewController.m */,
+				7E7A62AA2280089500F12F8C /* HWAlertView.h */,
+				7E7A62AB2280089500F12F8C /* HWAlertView.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		7E7A62AD22803D6A00F12F8C /* Stacked */ = {
+			isa = PBXGroup;
+			children = (
+				7E7A62AE22803DBB00F12F8C /* HWStackedGroupViewController.h */,
+				7E7A62AF22803DBB00F12F8C /* HWStackedGroupViewController.m */,
+				7E7A62B122804C2D00F12F8C /* HWColorDetailViewController.h */,
+				7E7A62B222804C2D00F12F8C /* HWColorDetailViewController.m */,
+			);
+			path = Stacked;
+			sourceTree = "<group>";
+		};
+		7E7A62B422804DDB00F12F8C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7E7A62B52280503A00F12F8C /* HWUserGroupViewController.h */,
+				7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */,
+				7E7A62B82280505B00F12F8C /* HWNavViewController.h */,
+				7E7A62B92280505B00F12F8C /* HWNavViewController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7E7A62B422804DDB00F12F8C /* Navigation */,
+				7E7A62AD22803D6A00F12F8C /* Stacked */,
+				7E7A62A3228007AA00F12F8C /* Alert */,
 				7EF8D54B227ECAA70093F1B3 /* HWBaseViewController.h */,
 				7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */,
 				7EF8D547227ECAA70093F1B3 /* HWGroupViewController.h */,
@@ -210,8 +282,8 @@
 		7EF8D548227ECAA70093F1B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7EF8D549227ECAA70093F1B3 /* HWColorCell.m */,
 				7EF8D54A227ECAA70093F1B3 /* HWColorCell.h */,
+				7EF8D549227ECAA70093F1B3 /* HWColorCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +430,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -365,6 +438,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWPanModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,10 +475,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7A62A6228007BE00F12F8C /* HWAlertViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
+				7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */,
+				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
 				7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
+				7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */,
+				7E7A62AC2280089500F12F8C /* HWAlertView.m in Sources */,
+				7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */,
 				7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */,
+				7E7A62A92280080800F12F8C /* HWTransientAlertViewController.m in Sources */,
+				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

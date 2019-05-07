@@ -64,7 +64,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
- * 默认为YES
+ * 默认为YES,即当已经拖拽到long的情况下不能再继续拖动
  */
 - (BOOL)anchorModalToLongForm;
 

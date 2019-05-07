@@ -2,8 +2,8 @@
 //  HWAppDelegate.m
 //  HWPanModal
 //
-//  Created by wangcongling on 05/05/2019.
-//  Copyright (c) 2019 wangcongling. All rights reserved.
+//  Created by HeathWang on 05/05/2019.
+//  Copyright (c) 2019 HeathWang. All rights reserved.
 //
 
 #import "HWAppDelegate.h"
@@ -13,6 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+#if DEBUG
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+#endif
     return YES;
 }
 

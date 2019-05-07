@@ -2,8 +2,8 @@
 //  HWPanModalTests.m
 //  HWPanModalTests
 //
-//  Created by wangcongling on 05/05/2019.
-//  Copyright (c) 2019 wangcongling. All rights reserved.
+//  Created by HeathWang on 05/05/2019.
+//  Copyright (c) 2019 HeathWang. All rights reserved.
 //
 
 @import XCTest;
