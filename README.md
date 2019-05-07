@@ -7,11 +7,16 @@ Inspired by [PanModal](https://github.com/slackhq/PanModal), thanks.
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
 
+### Dependency
+
+[KVOController - facebook](https://github.com/facebook/KVOController)
+Because Objective-C KVO is hard to use, so I use KVOController = =
+
 ## Installation
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.1.1'
+pod 'HWPanModal', '~> 0.1.2'
 ```
 
 ## How to use
@@ -20,6 +25,7 @@ Your UIViewController need to conform `HWPanModalPresentable`. If you use defaul
 
 
 ```Objective-C
+#import <HWPanModal/HWPanModal.h>
 @interface HWBaseViewController () <HWPanModalPresentable>
 
 @end
@@ -34,19 +40,21 @@ Your UIViewController need to conform `HWPanModalPresentable`. If you use defaul
 @end
 ```
 
-Then present this Controller.
-
+Where you need to present this Controller.
 
 ```Objective-C
+#import <HWPanModal/HWPanModal.h>
 [self presentPanModal:[HWBaseViewController new]];
 ```
 
 yeah! Easy.
 
-## More tips
+## Example
 
-to be done.
-
+1. Clone this git.
+2. open the terminal， go to the `Example` Folder.
+3. `pod install --verbose`
+4. Double click HWPanModal.xcworkspace, and run.
 
 ## License
 
