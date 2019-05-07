@@ -1,6 +1,8 @@
 # HWPanModal
 HWPanModal is used to present controller and drag to dismiss.
+
 Inspired by [PanModal](https://github.com/slackhq/PanModal), thanks.
+
 *I just use Objective-C to implement it, only a practice.*
 
 
@@ -10,6 +12,7 @@ Inspired by [PanModal](https://github.com/slackhq/PanModal), thanks.
 ### Dependency
 
 [KVOController - facebook](https://github.com/facebook/KVOController)
+
 Because Objective-C KVO is hard to use, so I use KVOController = =
 
 ## Installation
