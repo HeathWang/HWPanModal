@@ -23,8 +23,12 @@
 		viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = YES;
 		viewControllerToPresent.transitioningDelegate = [HWPanModalPresentationDelegate sharedInstance];
 	}
+    
+    // fix for iOS 8 issue: the present action will delay.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:viewControllerToPresent animated:YES completion:nil];
+    });
 
-	[self presentViewController:viewControllerToPresent animated:YES completion:nil];
 }
 
 - (void)presentPanModal:(UIViewController <HWPanModalPresentable> *)viewControllerToPresent {
