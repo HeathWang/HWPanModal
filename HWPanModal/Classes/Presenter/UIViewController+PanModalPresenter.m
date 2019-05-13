@@ -16,7 +16,10 @@
 
 - (void)presentPanModal:(UIViewController <HWPanModalPresentable> *)viewControllerToPresent sourceView:(nullable UIView *)sourceView sourceRect:(CGRect)rect {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		// TODO: 稍后处理ipad
+		viewControllerToPresent.modalPresentationStyle = UIModalPresentationPopover;
+		viewControllerToPresent.popoverPresentationController.sourceRect = rect;
+		viewControllerToPresent.popoverPresentationController.sourceView = sourceView;
+		viewControllerToPresent.popoverPresentationController.delegate = [HWPanModalPresentationDelegate sharedInstance];
 	} else {
 
 		viewControllerToPresent.modalPresentationStyle = UIModalPresentationCustom;
