@@ -53,9 +53,20 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (CGFloat)springDamping;
 
 /**
- * 背景透明度，默认为0.7
+ * 背景透明度，默认为0.8
  */
 - (CGFloat)backgroundAlpha;
+
+/**
+ * 转场动画时间，默认为0.5s
+ */
+- (NSTimeInterval)transitionDuration;
+
+/**
+ * 转场动画options
+ * 默认为 UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+ */
+- (UIViewAnimationOptions)transitionAnimationOptions;
 
 /**
  * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
@@ -115,11 +126,18 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 #pragma mark - delegate & dataSource
 
 /**
+ * 询问delegate是否需要response pan recognizer 在 pan Modal上
+ * 若返回NO，则禁用拖拽在pan modal上，但依然可以拖拽presented View
+ * 默认为YES
+ */
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+
+/**
  * 当pan recognizer状态为begin/changed时，通知delegate回调。
  * 例如scroll view准备滑动
  * 默认实现为空
  */
-- (void)willRespondToPanRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  Asks the delegate if the pan modal gesture recognizer should be prioritized.
@@ -132,7 +150,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
  Default return value is false.
  */
-- (BOOL)shouldPrioritizePanRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * 是否变更panModal状态

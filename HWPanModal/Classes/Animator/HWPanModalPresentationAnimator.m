@@ -43,15 +43,17 @@
 - (void)animatePresentation:(id<UIViewControllerContextTransitioning>)context {
 
 	UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
-	if (!toVC)
+	UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
+	if (!toVC && !fromVC)
 		return;
 
-    UIViewController<HWPanModalPresentable> *presentable = nil;
+	// If you are implementing a custom container controller, use this method to tell the child that its views are about to appear or disappear.
     
-    if ([toVC conformsToProtocol:@protocol(HWPanModalPresentable)]) {
-        presentable = (UIViewController <HWPanModalPresentable> *) toVC;
-    }
-    
+	[fromVC beginAppearanceTransition:NO animated:YES];
+	[toVC beginAppearanceTransition:YES animated:YES];
+
+	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
+
 	CGFloat yPos = presentable.shortFormYPos;
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
@@ -73,6 +75,8 @@
         frame.origin.y = yPos;
 		panView.frame = frame;
 	} config:presentable completion:^(BOOL completion) {
+		[fromVC endAppearanceTransition];
+		[toVC endAppearanceTransition];
 		[context completeTransition:completion];
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
@@ -88,15 +92,15 @@
  */
 - (void)animateDismissal:(id<UIViewControllerContextTransitioning>)context {
 	UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
-	if (!fromVC)
+	UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
+	if (!fromVC && !toVC)
 		return;
 
-	UIViewController<HWPanModalPresentable> *presentable = nil;
-    
-    if ([fromVC conformsToProtocol:@protocol(HWPanModalPresentable)]) {
-        presentable = (UIViewController <HWPanModalPresentable> *) fromVC;
-    }
-    
+	[fromVC beginAppearanceTransition:NO animated:YES];
+	[toVC beginAppearanceTransition:YES animated:YES];
+
+	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
+
 	UIView *panView = context.containerView.panContainerView ?: fromVC.view;
 
 	[HWPanModalAnimator animate:^{
@@ -105,8 +109,33 @@
 		panView.frame = frame;
 	} config:presentable completion:^(BOOL completion) {
 		[fromVC.view removeFromSuperview];
+		[toVC endAppearanceTransition];
+		[fromVC endAppearanceTransition];
 		[context completeTransition:completion];
 	}];
+}
+
+- (UIViewController<HWPanModalPresentable> *)panModalViewController:(id<UIViewControllerContextTransitioning>)context {
+	switch (self.transitionStyle) {
+		case TransitionStylePresentation:
+		{
+			UIViewController *controller = [context viewControllerForKey:UITransitionContextToViewControllerKey];
+			if ([controller conformsToProtocol:@protocol(HWPanModalPresentable)]) {
+				return (UIViewController <HWPanModalPresentable> *) controller;
+			} else {
+				return nil;
+			}
+		}
+		case TransitionStyleDismissal:
+		{
+			UIViewController *controller = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
+			if ([controller conformsToProtocol:@protocol(HWPanModalPresentable)]) {
+				return (UIViewController <HWPanModalPresentable> *) controller;
+			} else {
+				return nil;
+			}
+		}
+	}
 }
 
 #pragma mark - UIViewControllerAnimatedTransitioning
@@ -126,6 +155,10 @@
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
+	if (transitionContext && [self panModalViewController:transitionContext]) {
+		UIViewController<HWPanModalPresentable> *controller = [self panModalViewController:transitionContext];
+		return [controller transitionDuration];
+	}
 	return kTransitionDuration;
 }
 

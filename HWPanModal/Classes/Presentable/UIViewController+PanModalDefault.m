@@ -35,6 +35,14 @@
 	return 0.8;
 }
 
+- (NSTimeInterval)transitionDuration {
+	return 0.5;
+}
+
+- (UIViewAnimationOptions)transitionAnimationOptions {
+	return UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState;
+}
+
 - (CGFloat)backgroundAlpha {
 	return 0.7;
 }
@@ -85,11 +93,15 @@
 	return [self shouldRoundTopCorners];
 }
 
-- (void)willRespondToPanRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+	return YES;
+}
+
+- (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 
 }
 
-- (BOOL)shouldPrioritizePanRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+- (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 	return NO;
 }
 

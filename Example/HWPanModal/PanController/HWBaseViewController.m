@@ -27,11 +27,15 @@
 
 
 - (PanModalHeight)shortFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 400);
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
 }
 
 - (BOOL)anchorModalToLongForm {
     return NO;
+}
+
+- (UIViewAnimationOptions)transitionAnimationOptions {
+    return UIViewAnimationOptionCurveEaseOut;
 }
 
 

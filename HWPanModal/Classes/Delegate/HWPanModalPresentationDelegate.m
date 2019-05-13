@@ -38,7 +38,6 @@
 #pragma mark - UIAdaptivePresentationControllerDelegate
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
-	[controller.presentedViewController dismissViewControllerAnimated:NO completion:NULL];
 	return UIModalPresentationNone;
 }
 
