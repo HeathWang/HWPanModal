@@ -13,6 +13,7 @@
 #import "HWTransientAlertViewController.h"
 #import "HWStackedGroupViewController.h"
 #import "HWNavViewController.h"
+#import "HWFullScreenNavController.h"
 
 @implementation HWDemoTypeModel
 
@@ -39,8 +40,9 @@
 	HWDemoTypeModel *autoAlertDemo = [HWDemoTypeModel modelWithTitle:@"Transient Alert" targetClass:HWTransientAlertViewController.class];
 	HWDemoTypeModel *stackGroupDemo = [HWDemoTypeModel modelWithTitle:@"Group - Stacked" targetClass:HWStackedGroupViewController.class];
 	HWDemoTypeModel *navDemo = [HWDemoTypeModel modelWithTitle:@"Group - Nav" targetClass:HWNavViewController.class];
+	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
 
-	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, groupDemo, stackGroupDemo, navDemo]];
+	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, groupDemo, stackGroupDemo, navDemo, fullScreenDemo]];
 
 	return [array copy];
 }

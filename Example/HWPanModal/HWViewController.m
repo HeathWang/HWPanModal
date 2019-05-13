@@ -53,7 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
-	[self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
+    [self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
 }
 
 #pragma mark - Getter
