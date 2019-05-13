@@ -19,7 +19,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.1.2'
+pod 'HWPanModal', '~> 0.1.3'
 ```
 
 ## How to use
