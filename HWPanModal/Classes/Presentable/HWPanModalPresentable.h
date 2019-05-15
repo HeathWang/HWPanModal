@@ -100,6 +100,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)isUserInteractionEnabled;
 
 /**
+ * 是否允许屏幕边缘侧滑手势
+ * 默认为NO，不允许
+ */
+- (BOOL)allowScreenEdgeInteractive;
+
+/**
  * 是否允许触觉反馈
  * 默认为YES
  */

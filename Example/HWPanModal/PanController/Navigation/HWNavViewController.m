@@ -53,5 +53,9 @@
     return [self longFormHeight];
 }
 
+- (BOOL)allowScreenEdgeInteractive {
+    return YES;
+}
+
 
 @end

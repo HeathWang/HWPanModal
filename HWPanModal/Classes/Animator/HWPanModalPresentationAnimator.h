@@ -16,9 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HWPanModalPresentationAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
-- (instancetype)init NS_UNAVAILABLE;
-
 - (instancetype)initWithTransitionStyle:(TransitionStyle)transitionStyle NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)new NS_UNAVAILABLE;
 
 @end
 

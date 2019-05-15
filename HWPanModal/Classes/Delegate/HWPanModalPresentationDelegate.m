@@ -8,25 +8,32 @@
 #import "HWPanModalPresentationDelegate.h"
 #import "HWPanModalPresentationAnimator.h"
 #import "HWPanModalPresentationController.h"
+#import "HWPanModalInteractiveAnimator.h"
+
+@interface HWPanModalPresentationDelegate ()
+
+@property (nonatomic, strong) HWPanModalPresentationAnimator *presentationAnimator;
+@property (nonatomic, strong) HWPanModalPresentationAnimator *dismissalAnimator;
+@property (nonatomic, strong) HWPanModalInteractiveAnimator *interactiveDismissalAnimator;
+
+@end
 
 @implementation HWPanModalPresentationDelegate
 
-+ (instancetype)sharedInstance
-{
-    static HWPanModalPresentationDelegate *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
-}
-
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-	return [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStylePresentation];
+	return self.presentationAnimator;
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-	return [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStyleDismissal];
+	return self.dismissalAnimator;
+}
+
+- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
+	if (self.interactive) {
+		return self.interactiveDismissalAnimator;
+	}
+
+	return nil;
 }
 
 - (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(nullable UIViewController *)presenting sourceViewController:(UIViewController *)source {
@@ -39,6 +46,29 @@
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
 	return UIModalPresentationNone;
+}
+
+#pragma mark - Getter
+
+- (HWPanModalPresentationAnimator *)presentationAnimator {
+	if (!_presentationAnimator) {
+		_presentationAnimator = [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStylePresentation];
+	}
+	return _presentationAnimator;
+}
+
+- (HWPanModalPresentationAnimator *)dismissalAnimator {
+	if (!_dismissalAnimator) {
+		_dismissalAnimator = [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStyleDismissal];
+	}
+	return _dismissalAnimator;
+}
+
+- (HWPanModalInteractiveAnimator *)interactiveDismissalAnimator {
+	if (!_interactiveDismissalAnimator) {
+		_interactiveDismissalAnimator = [[HWPanModalInteractiveAnimator alloc] init];
+	}
+	return _interactiveDismissalAnimator;
 }
 
 

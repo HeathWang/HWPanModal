@@ -91,6 +91,7 @@
  * 使弹出controller消失动画
  */
 - (void)animateDismissal:(id<UIViewControllerContextTransitioning>)context {
+
 	UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
 	UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
 	if (!fromVC && !toVC)
@@ -103,16 +104,35 @@
 
 	UIView *panView = context.containerView.panContainerView ?: fromVC.view;
 
-	[HWPanModalAnimator animate:^{
-		CGRect frame = panView.frame;
-		frame.origin.y = context.containerView.frame.size.height;
-		panView.frame = frame;
-	} config:presentable completion:^(BOOL completion) {
-		[fromVC.view removeFromSuperview];
-		[toVC endAppearanceTransition];
-		[fromVC endAppearanceTransition];
-		[context completeTransition:completion];
-	}];
+	if ([context isInteractive]) {
+		[HWPanModalAnimator smoothAnimate:^{
+			CGRect frame = panView.frame;
+			frame.origin.x = CGRectGetWidth(frame);
+			panView.frame = frame;
+		} completion:^(BOOL completion) {
+			/**
+			 * 因为会有手势交互，所以需要判断是否cancel
+			 */
+			BOOL finished = ![context transitionWasCancelled];
+			if (finished) {
+				[fromVC.view removeFromSuperview];
+				[toVC endAppearanceTransition];
+				[fromVC endAppearanceTransition];
+			}
+			[context completeTransition:finished];
+		}];
+	} else {
+		[HWPanModalAnimator animate:^{
+			CGRect frame = panView.frame;
+			frame.origin.y = context.containerView.frame.size.height;
+			panView.frame = frame;
+		} config:presentable completion:^(BOOL completion) {
+			[fromVC.view removeFromSuperview];
+			[toVC endAppearanceTransition];
+			[fromVC endAppearanceTransition];
+			[context completeTransition:completion];
+		}];
+	}
 }
 
 - (UIViewController<HWPanModalPresentable> *)panModalViewController:(id<UIViewControllerContextTransitioning>)context {

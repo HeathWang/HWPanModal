@@ -12,6 +12,9 @@
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanModalAnimator.h"
 #import <KVOController/KVOController.h>
+#import "HWPanModalInteractiveAnimator.h"
+#import "HWPanModalPresentationDelegate.h"
+#import "UIViewController+PanModalPresenter.h"
 
 #define kDragIndicatorSize  CGSizeMake(36, 5)
 static CGFloat const kIndicatorYOffset = 5;
@@ -48,6 +51,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 @property (nonatomic, strong) UIView *dragIndicatorView;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *screenGestureRecognizer;
 
 @end
 
@@ -197,9 +201,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	CGSize size = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame) - self.anchoredYPosition);
 
 	CGRect panContainerFrame = self.panContainerView.frame;
-	panContainerFrame.size = size;
+	panContainerFrame.size = frame.size;
 	self.panContainerView.frame = panContainerFrame;
-	self.presentedViewController.view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+	self.presentedViewController.view.frame = CGRectMake(0, 0, size.width, size.height);
 }
 
 - (void)configureScrollViewInsets {
@@ -251,6 +255,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	[containerView addSubview:self.presentedView];
 	[containerView addGestureRecognizer:self.panGestureRecognizer];
+
+	if ([self.presentable allowScreenEdgeInteractive]) {
+		[containerView addGestureRecognizer:self.screenGestureRecognizer];
+	}
 
 	if ([self.presentable showDragIndicator]) {
 		[self addDragIndicatorViewToView:self.presentedView];
@@ -589,19 +597,61 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	[self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - Screen Gesture enevt
+
+- (void)screenEdgeInteractiveAction:(UIScreenEdgePanGestureRecognizer *)recognizer {
+	CGPoint translation = [recognizer translationInView:recognizer.view];
+	CGFloat percent = translation.x / CGRectGetWidth(recognizer.view.bounds);
+
+	switch (recognizer.state) {
+		case UIGestureRecognizerStateBegan:
+		{
+			self.presentedViewController.presentationDelegate.interactive = YES;
+            [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
+		}
+			break;
+		case UIGestureRecognizerStateCancelled:
+		case UIGestureRecognizerStateEnded:
+		{
+            if (percent > 0.5) {
+                [[self interactiveAnimator] finishInteractiveTransition];
+            } else {
+                [[self interactiveAnimator] cancelInteractiveTransition];
+            }
+
+			self.presentedViewController.presentationDelegate.interactive = NO;
+		}
+			break;
+		case UIGestureRecognizerStateChanged:
+		{
+
+			[[self interactiveAnimator] updateInteractiveTransition:percent];
+		}
+			break;
+		default:
+			break;
+	}
+}
+
 #pragma mark - UIGestureRecognizerDelegate
 
 /**
  * 只有当其他的UIGestureRecognizer为pan recognizer时才能同时存在
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-	return [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class];
+	if ([gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
+		return [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class];
+	}
+	return NO;
 }
 
 /**
- * 不需要其他GestureRecognizer去fail pan recognizer
+ * 当当前手势为screenGestureRecognizer时，其他pan recognizer都应该fail
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+	if (gestureRecognizer == self.screenGestureRecognizer && [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
+		return YES;
+	}
 	return NO;
 }
 
@@ -617,6 +667,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         return (id <HWPanModalPresentable>) self.presentedViewController;
 	}
     return nil;
+}
+
+- (HWPanModalInteractiveAnimator *)interactiveAnimator {
+	HWPanModalPresentationDelegate *presentationDelegate = self.presentedViewController.presentationDelegate;
+	return presentationDelegate.interactiveDismissalAnimator;
 }
 
 - (HWDimmedView *)backgroundView {
@@ -663,9 +718,21 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	return _panGestureRecognizer;
 }
 
-- (void)dealloc {
-//	NSLog(@"%s", __PRETTY_FUNCTION__);
+- (UIScreenEdgePanGestureRecognizer *)screenGestureRecognizer {
+	if (!_screenGestureRecognizer) {
+		_screenGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(screenEdgeInteractiveAction:)];
+		_screenGestureRecognizer.minimumNumberOfTouches = 1;
+		_screenGestureRecognizer.maximumNumberOfTouches = 1;
+		_screenGestureRecognizer.delegate = self;
+		_screenGestureRecognizer.edges = UIRectEdgeLeft;
+	}
+
+	return _screenGestureRecognizer;
 }
+
+//- (void)dealloc {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
 
 @end
 

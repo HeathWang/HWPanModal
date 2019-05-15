@@ -17,4 +17,8 @@
 	[UIView animateWithDuration:duration delay:0 usingSpringWithDamping:springDamping initialSpringVelocity:0 options:options animations:animations completion:completion];
 }
 
++ (void)smoothAnimate:(AnimationBlockType)animations completion:(AnimationCompletionType)completion {
+	[UIView animateWithDuration:kTransitionDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:animations completion:completion];
+}
+
 @end

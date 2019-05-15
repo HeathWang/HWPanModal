@@ -35,8 +35,7 @@
 }
 
 - (UIViewAnimationOptions)transitionAnimationOptions {
-    return UIViewAnimationOptionCurveEaseOut;
+    return UIViewAnimationOptionCurveLinear;
 }
-
 
 @end

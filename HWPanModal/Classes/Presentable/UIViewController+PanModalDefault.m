@@ -69,6 +69,10 @@
 	return YES;
 }
 
+- (BOOL)allowScreenEdgeInteractive {
+	return NO;
+}
+
 - (BOOL)isPanScrollEnabled {
 	return YES;
 }
