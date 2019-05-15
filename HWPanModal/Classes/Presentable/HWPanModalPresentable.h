@@ -19,16 +19,16 @@ typedef NS_ENUM(NSInteger, PresentationState) {
 typedef void(^AnimationBlockType)(void);
 typedef void(^AnimationCompletionType)(BOOL completion);
 
-@protocol HWPanModalPresentable <NSObject>
-
 /**
  *
  * 因为oc的特性问题，以下可以被定义为属性的，被定义成方法。
  * 我们通过category来默认实现以下所有方法。这样就不用通过继承来实现protocol
  */
 
+@protocol HWPanModalPresentable <NSObject>
+
 // 支持pan的scrollView
-- (UIScrollView *)panScrollable;
+- (nullable UIScrollView *)panScrollable;
 
 /**
  * offset：屏幕顶部距离pan Container View

@@ -69,7 +69,7 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
-        _tableView.rowHeight = 80;
+        _tableView.rowHeight = 60;
 
         _tableView.delegate = self;
         _tableView.dataSource = self;

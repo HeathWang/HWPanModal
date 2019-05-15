@@ -28,8 +28,4 @@
     [self.presentedVC setNeedsLayoutUpdate];
 }
 
-- (void)hw_panModalAnimate:(AnimationBlockType)block completion:(AnimationCompletionType)completion {
-    [HWPanModalAnimator animate:block config:(id <HWPanModalPresentable>) self completion:completion];
-}
-
 @end

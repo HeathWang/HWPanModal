@@ -152,6 +152,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)setNeedsLayoutUpdate {
 	[self configureViewLayout];
 	[self adjustPresentedViewFrame];
+	[self checkEdgeInteractive];
 	[self observe:[self.presentable panScrollable]];
 	[self configureScrollViewInsets];
 }
@@ -374,7 +375,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 #pragma mark - UIScrollView Observer
 
 - (void)observe:(UIScrollView *)scrollView {
-
+    
+    if (!scrollView) {
+        return;
+    }
+    
 	__weak typeof(self) wkSelf = self;
 	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
 		if (wkSelf.containerView != nil) {
@@ -637,6 +642,19 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			break;
 		default:
 			break;
+	}
+}
+
+- (void)checkEdgeInteractive {
+	if ([self.presentedViewController isKindOfClass:UINavigationController.class]) {
+		UINavigationController *navigationController = (UINavigationController *) self.presentedViewController;
+		if ((navigationController.topViewController != navigationController.viewControllers.firstObject) &&
+			[[self presentable] allowScreenEdgeInteractive] &&
+			navigationController.viewControllers.count > 0) {
+			self.screenGestureRecognizer.enabled = NO;
+		} else if ([[self presentable] allowScreenEdgeInteractive]) {
+			self.screenGestureRecognizer.enabled = YES;
+		}
 	}
 }
 

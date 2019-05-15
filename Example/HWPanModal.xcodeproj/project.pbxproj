@@ -259,10 +259,10 @@
 		7E7A62B422804DDB00F12F8C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				7E7A62B52280503A00F12F8C /* HWUserGroupViewController.h */,
-				7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */,
 				7E7A62B82280505B00F12F8C /* HWNavViewController.h */,
 				7E7A62B92280505B00F12F8C /* HWNavViewController.m */,
+				7E7A62B52280503A00F12F8C /* HWUserGroupViewController.h */,
+				7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";

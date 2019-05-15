@@ -14,9 +14,9 @@ static NSTimeInterval kTransitionDuration = 0.5;
 
 @interface HWPanModalAnimator : NSObject
 
-+ (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config completion:(AnimationCompletionType)completion;
++ (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config completion:(nullable AnimationCompletionType)completion;
 
-+ (void)smoothAnimate:(AnimationBlockType)animations completion:(AnimationCompletionType)completion;
++ (void)smoothAnimate:(AnimationBlockType)animations completion:(nullable AnimationCompletionType)completion;
 @end
 
 NS_ASSUME_NONNULL_END

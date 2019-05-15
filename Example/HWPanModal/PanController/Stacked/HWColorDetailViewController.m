@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Detail";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     UIView *view = [UIView new];
@@ -36,6 +37,10 @@
 
 - (CGFloat)backgroundAlpha {
     return 0.5;
+}
+
+- (BOOL)anchorModalToLongForm {
+    return NO;
 }
 
 @end

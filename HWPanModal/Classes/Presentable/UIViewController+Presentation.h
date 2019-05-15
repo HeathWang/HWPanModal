@@ -10,15 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * 被presented的Controller可以通过该类对UIPresentationController 容器进行update
+ */
 @interface UIViewController (Presentation)
 
 - (void)hw_panModalTransitionTo:(PresentationState)state;
 
 - (void)hw_panModalSetContentOffset:(CGPoint)offset;
 
+/**
+ * note：if we present a NavigationController, and we want to pan screen edge to dismiss.
+ * We MUST call this method when we PUSH/POP viewController.
+ *
+ */
 - (void)hw_panModalSetNeedsLayoutUpdate;
-
-- (void)hw_panModalAnimate:(AnimationBlockType)block completion:(AnimationCompletionType)completion;
 
 @end
 

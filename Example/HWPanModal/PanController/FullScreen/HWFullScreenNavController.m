@@ -8,6 +8,7 @@
 
 #import "HWFullScreenNavController.h"
 #import <HWPanModal/HWPanModal.h>
+#import <Masonry/View+MASAdditions.h>
 
 @interface HWFullScreenViewController : UIViewController
 
@@ -53,6 +54,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.title = @"Full Screen";
+
+    UILabel *label = [UILabel new];
+    label.text = @"Drag to Dismiss!";
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(CGPointZero);
+    }];
 }
 
 
