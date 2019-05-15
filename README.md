@@ -79,6 +79,10 @@ yeah! Easy.
     ```
 * 0.2.1
     Fix when rotate presented controller, the UI is not correct.
+* 0.2.2
+    Screen edge pan interactive bug fix.
+* 0.2.3
+    iOS8+ rotate bug fix.    
 
 ## License
 
