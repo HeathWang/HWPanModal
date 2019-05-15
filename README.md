@@ -1,7 +1,12 @@
+
 # HWPanModal
 HWPanModal is used to present controller and drag to dismiss.
 
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
+
+<div  align="center">    
+<img src="./HWPanModal_example.gif" width = "375" height = "689" alt="example" align=center/>
+</div>
 
 ## Features
 1. Supports any type of `UIViewController`

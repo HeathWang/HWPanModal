@@ -26,6 +26,19 @@
     [self pushViewController:[HWFullScreenViewController new] animated:NO];
 }
 
+#pragma mark - overriden
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	[super pushViewController:viewController animated:animated];
+	[self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
+	UIViewController *controller = [super popViewControllerAnimated:animated];
+	[self hw_panModalSetNeedsLayoutUpdate];
+	return controller;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (CGFloat)topOffset {
@@ -42,6 +55,10 @@
 
 - (BOOL)showDragIndicator {
     return NO;
+}
+
+- (BOOL)allowScreenEdgeInteractive {
+    return YES;
 }
 
 @end
@@ -61,6 +78,14 @@
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(CGPointZero);
     }];
+
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"NEXT" style:UIBarButtonItemStylePlain target:self action:@selector(nextPage)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+
+- (void)nextPage {
+	HWFullScreenViewController *pageOneViewController = [HWFullScreenViewController new];
+	[self.navigationController pushViewController:pageOneViewController animated:YES];
 }
 
 
