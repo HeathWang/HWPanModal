@@ -44,6 +44,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, assign) CGFloat anchoredYPosition;
 
+@property (nonatomic, assign) PresentationState currentPresentationState;
+
 @property (nonatomic, strong) id<HWPanModalPresentable> presentable;
 
 @property (nonatomic, strong) HWDimmedView *backgroundView;
@@ -141,6 +143,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	}];
 }
 
+- (void)containerViewDidLayoutSubviews {
+	[self transitionToState:self.currentPresentationState];
+}
+
 #pragma mark - public method
 
 - (void)setNeedsLayoutUpdate {
@@ -168,6 +174,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		default:
 			break;
 	}
+	self.currentPresentationState = state;
 }
 
 - (void)setContentOffset:(CGPoint)offset {
@@ -200,9 +207,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	CGRect frame = self.containerView.frame;
 	CGSize size = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame) - self.anchoredYPosition);
 
-	CGRect panContainerFrame = self.panContainerView.frame;
-	panContainerFrame.size = frame.size;
-	self.panContainerView.frame = panContainerFrame;
+    CGRect panContainerFrame = self.presentedView.frame;
+    panContainerFrame.size = frame.size;
+    self.presentedView.frame = panContainerFrame;
 	self.presentedViewController.view.frame = CGRectMake(0, 0, size.width, size.height);
 }
 

@@ -1,10 +1,14 @@
 # HWPanModal
 HWPanModal is used to present controller and drag to dismiss.
 
-Inspired by [PanModal](https://github.com/slackhq/PanModal), thanks.
+Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
-*I just use Objective-C to implement it, only a practice.*
-
+## Features
+1. Supports any type of `UIViewController`
+2. Seamless transition between modal and content
+3. Support two kinds of GestureRecognizer
+    1. UIPanGestureRecognizer, direction is UP & Down.
+    2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
@@ -19,7 +23,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.1.3'
+pod 'HWPanModal', '~> 0.2.0'
 ```
 
 ## How to use
@@ -58,6 +62,9 @@ yeah! Easy.
 2. open the terminal， go to the `Example` Folder.
 3. `pod install --verbose`
 4. Double click HWPanModal.xcworkspace, and run.
+
+## Change Log
+
 
 ## License
 
