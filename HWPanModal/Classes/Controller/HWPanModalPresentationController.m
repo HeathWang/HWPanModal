@@ -139,12 +139,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			}
 		}
 	} completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
-
+		[self transitionToState:self.currentPresentationState];
 	}];
-}
-
-- (void)containerViewDidLayoutSubviews {
-	[self transitionToState:self.currentPresentationState];
 }
 
 #pragma mark - public method
@@ -542,7 +538,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 		return ![self shouldFailPanGestureRecognizer:panGestureRecognizer];
 	} else {
-		panGestureRecognizer.enabled = NO;
+        panGestureRecognizer.enabled = NO;
 		panGestureRecognizer.enabled = YES;
 		return NO;
 	}
@@ -551,7 +547,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (BOOL)shouldFailPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 
 	if ([self.presentable shouldPrioritizePanModalGestureRecognizer:panGestureRecognizer]) {
-		[self.presentable panScrollable].panGestureRecognizer.enabled = NO;
+        [self.presentable panScrollable].panGestureRecognizer.enabled = NO;
 		[self.presentable panScrollable].panGestureRecognizer.enabled = YES;
 		return NO;
 	}
@@ -573,8 +569,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	if (self.presentedView.frame.origin.y < self.longFormYPosition) {
 		yDisplacement = yDisplacement / 2;
 	}
+
 	[self adjustToYPos:self.presentedView.frame.origin.y + yDisplacement];
-	[panGestureRecognizer setTranslation:CGPointZero inView:self.presentedView];
+    [panGestureRecognizer setTranslation:CGPointZero inView:self.presentedView];
 }
 
 - (BOOL)isVelocityWithinSensitivityRange:(CGFloat)velocity {

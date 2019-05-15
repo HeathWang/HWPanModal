@@ -67,7 +67,7 @@
 }
 
 - (PanModalHeight)shortFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 300);
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
 }
 
 - (UIScrollView *)panScrollable {
