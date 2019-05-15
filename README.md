@@ -64,7 +64,16 @@ yeah! Easy.
 4. Double click HWPanModal.xcworkspace, and run.
 
 ## Change Log
-
+* 1.2.0
+    Add screen edge interactive gesture. Default this function is closed, implement `- (BOOL)allowScreenEdgeInteractive;` to config it.
+    
+    ```Objective-C
+    - (BOOL)allowScreenEdgeInteractive {
+        return YES;
+    }
+    ```
+* 1.2.1
+    Fix when rotate presented controller, the UI is not correct.
 
 ## License
 
