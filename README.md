@@ -5,7 +5,7 @@ HWPanModal is used to present controller and drag to dismiss.
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 <div  align="center">    
-<img src="./HWPanModal_example.gif" width = "375" height = "689" alt="example" align=center/>
+<img src="./HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
 </div>
 
 ## Features
@@ -28,7 +28,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.0'
+pod 'HWPanModal', '~> 0.2.1'
 ```
 
 ## How to use
