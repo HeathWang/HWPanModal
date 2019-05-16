@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HWGroupViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface HWGroupViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray<UIColor *> *colors;
 
