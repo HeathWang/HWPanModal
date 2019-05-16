@@ -14,8 +14,9 @@
 #import "HWPanModalInteractiveAnimator.h"
 #import "HWPanModalPresentationDelegate.h"
 #import "UIViewController+PanModalPresenter.h"
+#import "HWPanIndicatorView.h"
 
-#define kDragIndicatorSize  CGSizeMake(36, 5)
+#define kDragIndicatorSize  CGSizeMake(36, 13)
 static CGFloat const kIndicatorYOffset = 5;
 static CGFloat const kSnapMovementSensitivity = 0.7;
 static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
@@ -49,7 +50,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, strong) HWDimmedView *backgroundView;
 @property (nonatomic, strong) HWPanContainerView *panContainerView;
-@property (nonatomic, strong) UIView *dragIndicatorView;
+@property (nonatomic, strong) HWPanIndicatorView *dragIndicatorView;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *screenGestureRecognizer;
@@ -134,7 +135,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			[self adjustPresentedViewFrame];
 
 			if ([self.presentable shouldRoundTopCorners]) {
-				[self addRoundedCornersToView:self.presentedView];
+				[self addRoundedCornersToView:self.panContainerView.contentView];
 			}
 		}
 	} completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
@@ -153,6 +154,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (void)transitionToState:(PresentationState)state {
+
+	self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
 	if (![self.presentable shouldTransitionToState:state])
 		return;
 
@@ -206,7 +209,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     CGRect panContainerFrame = self.presentedView.frame;
     panContainerFrame.size = frame.size;
     self.presentedView.frame = panContainerFrame;
-	self.presentedViewController.view.frame = CGRectMake(0, 0, size.width, size.height);
+	self.panContainerView.contentView.frame = CGRectMake(0, 0, size.width, size.height);
+	self.presentedViewController.view.frame = self.panContainerView.contentView.bounds;
 }
 
 - (void)configureScrollViewInsets {
@@ -263,12 +267,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		[containerView addGestureRecognizer:self.screenGestureRecognizer];
 	}
 
-	if ([self.presentable showDragIndicator]) {
-		[self addDragIndicatorViewToView:self.presentedView];
+	if ([self.presentable shouldRoundTopCorners]) {
+		[self addRoundedCornersToView:self.panContainerView.contentView];
 	}
 
-	if ([self.presentable shouldRoundTopCorners]) {
-		[self addRoundedCornersToView:self.presentedView];
+	if ([self.presentable showDragIndicator]) {
+		[self addDragIndicatorViewToView:self.panContainerView];
 	}
 
 	[self setNeedsLayoutUpdate];
@@ -276,40 +280,36 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (void)adjustPanContainerBackgroundColor {
-	self.panContainerView.backgroundColor = self.presentedViewController.view.backgroundColor ? : [self.presentable panScrollable].backgroundColor;
-
+	self.panContainerView.contentView.backgroundColor = self.presentedViewController.view.backgroundColor ? : [self.presentable panScrollable].backgroundColor;
 }
 
 - (void)addDragIndicatorViewToView:(UIView *)view {
 	[view addSubview:self.dragIndicatorView];
 	self.dragIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
     if (@available(iOS 9.0, *)) {
-        [self.dragIndicatorView.bottomAnchor constraintEqualToAnchor:view.topAnchor constant:-kIndicatorYOffset].active = YES;
-        [self.dragIndicatorView.centerXAnchor constraintEqualToAnchor:view.centerXAnchor].active = YES;
+        [self.dragIndicatorView.bottomAnchor constraintEqualToAnchor:self.presentedView.topAnchor constant:-kIndicatorYOffset].active = YES;
+        [self.dragIndicatorView.centerXAnchor constraintEqualToAnchor:self.presentedView.centerXAnchor].active = YES;
         [self.dragIndicatorView.widthAnchor constraintEqualToConstant:kDragIndicatorSize.width].active = YES;
         [self.dragIndicatorView.heightAnchor constraintEqualToConstant:kDragIndicatorSize.height].active = YES;
     } else {
 
-    	NSLayoutConstraint *bottomCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTop multiplier:1 constant:-kIndicatorYOffset];
-    	NSLayoutConstraint *centerXCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    	NSLayoutConstraint *bottomCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.presentedView attribute:NSLayoutAttributeTop multiplier:1 constant:-kIndicatorYOffset];
+    	NSLayoutConstraint *centerXCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.presentedView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     	NSLayoutConstraint *widthCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:kDragIndicatorSize.width];
     	NSLayoutConstraint *heightCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:kDragIndicatorSize.height];
 
 		[view addConstraints:@[bottomCons, centerXCons, widthCons, heightCons]];
 	}
-	
+
+	[self.dragIndicatorView sizeToFit];
+    self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
 }
 
 - (void)addRoundedCornersToView:(UIView *)view {
 	CGFloat radius = [self.presentable cornerRadius];
 
 	UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerTopLeft cornerRadii:CGSizeMake(radius, radius)];
-
-	if ([self.presentable showDragIndicator]) {
-		CGFloat indicatorLeftEdgeXPos = view.bounds.size.width / 2 - kDragIndicatorSize.width / 2;
-		[self drawAroundDragIndicator:bezierPath indicatorLeftEdgeXPos:indicatorLeftEdgeXPos];
-	}
-
+	
 	CAShapeLayer *mask = [CAShapeLayer new];
 	mask.path = bezierPath.CGPath;
 	view.layer.mask = mask;
@@ -317,14 +317,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	// 提高性能
 	view.layer.shouldRasterize = YES;
 	view.layer.rasterizationScale = [UIScreen mainScreen].scale;
-}
-
-- (void)drawAroundDragIndicator:(UIBezierPath *)path indicatorLeftEdgeXPos:(CGFloat)edgeXPos {
-	CGFloat totalIndicatorOffset = kIndicatorYOffset + kDragIndicatorSize.height;
-	[path addLineToPoint:CGPointMake(edgeXPos, path.currentPoint.y)];
-	[path addLineToPoint:CGPointMake(path.currentPoint.x, path.currentPoint.y - totalIndicatorOffset)];
-	[path addLineToPoint:CGPointMake(path.currentPoint.x + kDragIndicatorSize.width, path.currentPoint.y)];
-	[path addLineToPoint:CGPointMake(path.currentPoint.x, path.currentPoint.y + totalIndicatorOffset)];
 }
 
 - (void)snapToYPos:(CGFloat)yPos {
@@ -476,6 +468,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] &&
 			self.containerView) {
 
+		CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
+
 		switch (panGestureRecognizer.state) {
 
 			case UIGestureRecognizerStateBegan:
@@ -486,11 +480,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				if (self.presentedView.frame.origin.y == self.anchoredYPosition && self.extendsPanScrolling) {
 					[self.presentable willTransitionToState:PresentationStateLong];
 				}
+
+				if (velocity.y > 0 && panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+					self.dragIndicatorView.style = PanIndicatorViewStyleLine;
+				}
+
 			}
 				break;
 			default:
 			{
-
 				/**
 				 * pan recognizer结束
 				 * 根据velocity(速度)，当velocity.y < 0，说明用户在向上拖拽view；当velocity.y > 0，向下拖拽
@@ -498,7 +496,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				 * 1.超过拖拽速度阈值时并且向下拖拽，dismiss controller
 				 * 2.向上拖拽永远不会dismiss，回弹至相应的状态
 				 */
-				CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
+				
 				if ([self isVelocityWithinSensitivityRange:velocity.y]) {
 					if (velocity.y < 0) {
 						[self transitionToState:PresentationStateLong];
@@ -726,11 +724,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	return _panContainerView;
 }
 
-- (UIView *)dragIndicatorView {
+- (HWPanIndicatorView *)dragIndicatorView {
 	if (!_dragIndicatorView) {
-		_dragIndicatorView = [UIView new];
-		_dragIndicatorView.backgroundColor = [UIColor lightGrayColor];
-		_dragIndicatorView.layer.cornerRadius = kDragIndicatorSize.height / 2;
+		_dragIndicatorView = [HWPanIndicatorView new];
 	}
 	return _dragIndicatorView;
 }

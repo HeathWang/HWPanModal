@@ -47,6 +47,8 @@
 		7BC93DBA455719D9360B1464B6E5F9C9 /* UIViewController+PanModalPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D3BBCD799CF39CDD6560ED6BC7C08E3 /* UIViewController+PanModalPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EDE0B60228AC8F8001E7580 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B5E228AC8F8001E7580 /* HWPanModalInteractiveAnimator.m */; };
 		7EDE0B61228AC8F8001E7580 /* HWPanModalInteractiveAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDE0B5F228AC8F8001E7580 /* HWPanModalInteractiveAnimator.h */; };
+		7EDE0B6C228D3FDA001E7580 /* HWPanIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDE0B6A228D3FDA001E7580 /* HWPanIndicatorView.h */; };
+		7EDE0B6D228D3FDA001E7580 /* HWPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B6B228D3FDA001E7580 /* HWPanIndicatorView.m */; };
 		884CBDB53DF314B0106A986D45F2B8FF /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49341E7408EE91CD1F651C4929F7AF07 /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CDE084D5087462724D2E2517393A591 /* Pods-HWPanModal_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 786BA414B91F95E547148DA996B2E531 /* Pods-HWPanModal_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ED9DF983CE4CF784F6D995186B8F502 /* Pods-HWPanModal_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB8D25E1787B6EE219D67B3B27A2D7 /* Pods-HWPanModal_Example-dummy.m */; };
@@ -173,6 +175,8 @@
 		7C869B58A4192417FFD9C15FBC5EF648 /* UIViewController+PanModalDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalDefault.h"; sourceTree = "<group>"; };
 		7EDE0B5E228AC8F8001E7580 /* HWPanModalInteractiveAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalInteractiveAnimator.m; sourceTree = "<group>"; };
 		7EDE0B5F228AC8F8001E7580 /* HWPanModalInteractiveAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalInteractiveAnimator.h; sourceTree = "<group>"; };
+		7EDE0B6A228D3FDA001E7580 /* HWPanIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPanIndicatorView.h; sourceTree = "<group>"; };
+		7EDE0B6B228D3FDA001E7580 /* HWPanIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPanIndicatorView.m; sourceTree = "<group>"; };
 		7F28108D495EADF26E863AFDB6E7A374 /* HWPanModalPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationController.m; sourceTree = "<group>"; };
 		802D254DE68FD9A16DDA1C97F7DAE9A5 /* Pods-HWPanModal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8111457DAEF6DA69438219E26C48FF6F /* HWDimmedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWDimmedView.h; sourceTree = "<group>"; };
@@ -481,6 +485,8 @@
 				4B69FE8B857ECCC2D0A8B2A7A327C87A /* HWDimmedView.m */,
 				67035F8EE0EC19064B1BA2A15746FF75 /* HWPanContainerView.h */,
 				66F569EAC639724EEFEC5AB964BC0058 /* HWPanContainerView.m */,
+				7EDE0B6A228D3FDA001E7580 /* HWPanIndicatorView.h */,
+				7EDE0B6B228D3FDA001E7580 /* HWPanIndicatorView.m */,
 			);
 			name = View;
 			path = HWPanModal/Classes/View;
@@ -595,6 +601,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDE0B6C228D3FDA001E7580 /* HWPanIndicatorView.h in Headers */,
 				57D824970F79E34B02825511A5D6F103 /* HWDimmedView.h in Headers */,
 				ECB0EBC9EE04118BAF3B1829165E6BDB /* HWPanContainerView.h in Headers */,
 				36940110E943C4B8297319E6717F7A8E /* HWPanModal-umbrella.h in Headers */,
@@ -841,6 +848,7 @@
 				3E002531DA158A8D328ED6A5628BEB69 /* HWPanModalAnimator.m in Sources */,
 				781EB74E4797F2529AD4574185BB8904 /* HWPanModalPresentationAnimator.m in Sources */,
 				3F4481C1872076105F5CB874355FFADD /* HWPanModalPresentationController.m in Sources */,
+				7EDE0B6D228D3FDA001E7580 /* HWPanIndicatorView.m in Sources */,
 				62F72F7F2794C5CEBE94B86D298D3ECB /* HWPanModalPresentationDelegate.m in Sources */,
 				C560DD67FB3CE859D5DE9F04B2260063 /* UIViewController+LayoutHelper.m in Sources */,
 				1CC32DAE03909098C3B599058692438F /* UIViewController+PanModalDefault.m in Sources */,

@@ -7,12 +7,21 @@
 
 #import "HWPanContainerView.h"
 
+@interface HWPanContainerView ()
+
+@property (nonatomic, strong) UIView *contentView;
+@end
+
 @implementation HWPanContainerView
 
 - (instancetype)initWithPresentedView:(UIView *)presentedView frame:(CGRect)frame {
 	self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:presentedView];
+    	_contentView = [UIView new];
+    	_contentView.frame = self.bounds;
+		[self addSubview:_contentView];
+
+		[_contentView addSubview:presentedView];
     }
 	
     return self;

@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HWPanContainerView : UIView
 
+/// the presented view should add to the content view.
+@property (nonatomic, strong, readonly) UIView *contentView;
+
 - (instancetype)initWithPresentedView:(UIView *)presentedView frame:(CGRect)frame;
 @end
 
