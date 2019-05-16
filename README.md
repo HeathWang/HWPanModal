@@ -28,7 +28,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.3'
+pod 'HWPanModal', '~> 0.2.4'
 ```
 
 ## How to use
@@ -78,11 +78,14 @@ yeah! Easy.
     }
     ```
 * 0.2.1
-    Fix when rotate presented controller, the UI is not correct.
+    * Fix when rotate presented controller, the UI is not correct.
 * 0.2.2
-    Screen edge pan interactive bug fix.
+    * Screen edge pan interactive bug fix.
 * 0.2.3
-    iOS8+ rotate bug fix.    
+    * iOS8+ rotate bug fix.    
+* 0.2.4
+    * UI bug fix.
+    * Improve drag indicator animate.    
 
 ## License
 
