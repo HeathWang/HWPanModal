@@ -14,6 +14,7 @@
 #import "HWStackedGroupViewController.h"
 #import "HWNavViewController.h"
 #import "HWFullScreenNavController.h"
+#import "HWPickerViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -41,8 +42,9 @@
 	HWDemoTypeModel *stackGroupDemo = [HWDemoTypeModel modelWithTitle:@"Group - Stacked" targetClass:HWStackedGroupViewController.class];
 	HWDemoTypeModel *navDemo = [HWDemoTypeModel modelWithTitle:@"Group - Nav" targetClass:HWNavViewController.class];
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
+	HWDemoTypeModel *pickerDemo = [HWDemoTypeModel modelWithTitle:@"Picker" targetClass:HWPickerViewController.class];
 
-	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, groupDemo, stackGroupDemo, navDemo, fullScreenDemo]];
+	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, pickerDemo, groupDemo, stackGroupDemo, navDemo, fullScreenDemo]];
 
 	return [array copy];
 }

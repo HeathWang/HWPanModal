@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * 该category为实现了HWPanModalPresentable的Controller使用
+ */
 @interface UIViewController (LayoutHelper)
 
 @property (nonatomic, assign, readonly) CGFloat topLayoutOffset;

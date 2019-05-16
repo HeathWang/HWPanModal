@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hw_panModalSetContentOffset:(CGPoint)offset;
 
 /**
- * note：if we present a NavigationController, and we want to pan screen edge to dismiss.
+ * Note：if we present a NavigationController, and we want to pan screen edge to dismiss.
  * We MUST call this method when we PUSH/POP viewController.
  *
  */

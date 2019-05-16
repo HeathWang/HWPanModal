@@ -31,6 +31,7 @@
 		7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */; };
 		7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B92280505B00F12F8C /* HWNavViewController.m */; };
 		7EDE0B5922894244001E7580 /* HWFullScreenNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B5822894243001E7580 /* HWFullScreenNavController.m */; };
+		7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B68228D2F9C001E7580 /* HWPickerViewController.m */; };
 		7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */; };
 		7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D549227ECAA70093F1B3 /* HWColorCell.m */; };
 		7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */; };
@@ -91,6 +92,8 @@
 		7E7A62B92280505B00F12F8C /* HWNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWNavViewController.m; sourceTree = "<group>"; };
 		7EDE0B5722894243001E7580 /* HWFullScreenNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWFullScreenNavController.h; sourceTree = "<group>"; };
 		7EDE0B5822894243001E7580 /* HWFullScreenNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWFullScreenNavController.m; sourceTree = "<group>"; };
+		7EDE0B67228D2F9C001E7580 /* HWPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPickerViewController.h; sourceTree = "<group>"; };
+		7EDE0B68228D2F9C001E7580 /* HWPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPickerViewController.m; sourceTree = "<group>"; };
 		7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseViewController.m; sourceTree = "<group>"; };
 		7EF8D547227ECAA70093F1B3 /* HWGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWGroupViewController.h; sourceTree = "<group>"; };
 		7EF8D549227ECAA70093F1B3 /* HWColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorCell.m; sourceTree = "<group>"; };
@@ -276,9 +279,19 @@
 			path = FullScreen;
 			sourceTree = "<group>";
 		};
+		7EDE0B66228D2F7A001E7580 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				7EDE0B67228D2F9C001E7580 /* HWPickerViewController.h */,
+				7EDE0B68228D2F9C001E7580 /* HWPickerViewController.m */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7EDE0B66228D2F7A001E7580 /* Picker */,
 				7EDE0B5622894211001E7580 /* FullScreen */,
 				7E7A62B422804DDB00F12F8C /* Navigation */,
 				7E7A62AD22803D6A00F12F8C /* Stacked */,
@@ -503,6 +516,7 @@
 				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

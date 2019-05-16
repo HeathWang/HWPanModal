@@ -6,7 +6,6 @@
 //
 
 #import "HWPanModalPresentationController.h"
-#import "HWPanModalPresentable.h"
 #import "HWDimmedView.h"
 #import "HWPanContainerView.h"
 #import "UIViewController+LayoutHelper.h"
@@ -546,7 +545,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (BOOL)shouldFailPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 
-	if ([self.presentable shouldPrioritizePanModalGestureRecognizer:panGestureRecognizer]) {
+	if ([self shouldPrioritizePanGestureRecognizer:panGestureRecognizer]) {
         [self.presentable panScrollable].panGestureRecognizer.enabled = NO;
 		[self.presentable panScrollable].panGestureRecognizer.enabled = YES;
 		return NO;
@@ -559,6 +558,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	} else {
 		return NO;
 	}
+}
+
+- (BOOL)shouldPrioritizePanGestureRecognizer:(UIPanGestureRecognizer *)recognizer {
+	return recognizer.state == UIGestureRecognizerStateBegan && [[self presentable] shouldPrioritizePanModalGestureRecognizer:recognizer];
 }
 
 - (void)respondToPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
@@ -705,8 +708,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		}
 
 		__weak typeof(self) wkSelf = self;
-		_backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer){
-			[wkSelf dismissPresentedViewController];
+		_backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
+			if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
+				[wkSelf dismissPresentedViewController];
+			}
 		};
 	}
     

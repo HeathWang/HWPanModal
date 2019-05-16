@@ -70,7 +70,7 @@
 		{
 			[self.view layoutIfNeeded];
 
-            CGSize targetSize = CGSizeMake(self.presentedVC.containerView ? self.presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.width);
+            CGSize targetSize = CGSizeMake(self.presentedVC.containerView ? self.presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
             CGFloat intrinsicHeight = [self.view systemLayoutSizeFittingSize:targetSize].height;
 			return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);
 		}

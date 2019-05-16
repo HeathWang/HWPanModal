@@ -6,7 +6,6 @@
 //
 
 #import "UIViewController+Presentation.h"
-#import "HWPanModalAnimator.h"
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanModalPresentationController.h"
 

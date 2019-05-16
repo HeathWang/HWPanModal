@@ -20,14 +20,17 @@ typedef void(^AnimationBlockType)(void);
 typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
- *
- * 因为oc的特性问题，以下可以被定义为属性的，被定义成方法。
+ * HWPanModalPresentable为present配置协议
+ * 默认情况下无需实现，只需Controller conform 该协议
+ * 因为oc的特性问题，以下可以被定义为只读属性的，被定义成方法。
  * 我们通过category来默认实现以下所有方法。这样就不用通过继承来实现protocol
  */
 
 @protocol HWPanModalPresentable <NSObject>
 
-// 支持pan的scrollView
+/**
+ * 支持同步拖拽的scrollView
+ */
 - (nullable UIScrollView *)panScrollable;
 
 /**
@@ -82,10 +85,16 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)allowsExtendedPanScrolling;
 
 /**
- * 是否允许drag 去dismiss
+ * 是否允许drag操作dismiss presented Controller
  * 默认为YES
  */
 - (BOOL)allowsDragToDismiss;
+
+/**
+ * 是否允许点击背景处dismiss presented Controller
+ * 默认为YES
+ */
+- (BOOL)allowsTapBackgroundToDismiss;
 
 /**
  * 是否允许pan scroll view
@@ -125,7 +134,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 是否显示drag指示view
- * 默认为YES
+ * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
  */
 - (BOOL)showDragIndicator;
 
@@ -133,7 +142,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 询问delegate是否需要response pan recognizer 在 pan Modal上
- * 若返回NO，则禁用拖拽在pan modal上，但依然可以拖拽presented View
+ * 若返回NO，则禁用拖拽在presented view上，但pan gesture recognizer依然生效
  * 默认为YES
  */
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
@@ -151,8 +160,8 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  For example, you can use this to define a region
  where you would like to restrict where the pan gesture can start.
 
- If false, then we rely on the internal conditions of when a pan gesture
- should succeed or fail, such as, if we're actively scrolling on the scrollView
+ If false, then we rely solely on the internal conditions of when a pan gesture
+ should succeed or fail, such as, if we're actively scrolling on the scrollView.
 
  Default return value is false.
  */

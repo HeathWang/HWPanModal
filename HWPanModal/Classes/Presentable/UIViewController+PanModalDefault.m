@@ -69,6 +69,10 @@
 	return YES;
 }
 
+- (BOOL)allowsTapBackgroundToDismiss {
+	return YES;
+}
+
 - (BOOL)allowScreenEdgeInteractive {
 	return NO;
 }

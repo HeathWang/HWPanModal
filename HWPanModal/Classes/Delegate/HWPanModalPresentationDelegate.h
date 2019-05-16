@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * if user do Screen Pan recognizer, interactive = YES
- *
  */
 @property (nonatomic, assign) BOOL interactive;
 @property (nonatomic, strong, readonly) HWPanModalInteractiveAnimator *interactiveDismissalAnimator;
