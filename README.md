@@ -85,7 +85,8 @@ yeah! Easy.
     * iOS8+ rotate bug fix.    
 * 0.2.4
     * UI bug fix.
-    * Improve drag indicator animate.    
+    * Improve drag indicator animate.  
+    * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss.  
 
 ## License
 
