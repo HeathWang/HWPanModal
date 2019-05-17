@@ -1,9 +1,26 @@
 
 # HWPanModal 👍
-[![CI Status](https://img.shields.io/travis/quickbirdstudios/HWPanModal.svg?style=flat)](https://travis-ci.org/quickbirdstudios/HWPanModal)
-[![Version](https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
-[![License](https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
-[![Platform](https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
+<p style="align: left">
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat">
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat">
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/badge/support-ios%208%2B-orange.svg">
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/badge/language-objective--c-blue.svg">
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat">
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic">
+    </a>
+</p>
+
 
 HWPanModal is used to present controller and drag to dismiss.
 
