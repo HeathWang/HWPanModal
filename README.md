@@ -1,8 +1,15 @@
 
-# HWPanModal
+# HWPanModal 👍
+[![CI Status](https://img.shields.io/travis/quickbirdstudios/HWPanModal.svg?style=flat)](https://travis-ci.org/quickbirdstudios/HWPanModal)
+[![Version](https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
+[![License](https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
+[![Platform](https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat)](https://cocoapods.org/pods/HWPanModal)
+
 HWPanModal is used to present controller and drag to dismiss.
 
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
+
+## Snapshoot
 
 <div  align="center">    
 <img src="./HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
