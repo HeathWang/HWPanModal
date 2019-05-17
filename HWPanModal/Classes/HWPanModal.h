@@ -6,7 +6,7 @@
 //
 
 #import "HWPanModalPresentable.h"
-#import "HWPanmodalHeight.h"
+#import "HWPanModalHeight.h"
 
 #import "UIViewController+PanModalDefault.h"
 #import "UIViewController+Presentation.h"

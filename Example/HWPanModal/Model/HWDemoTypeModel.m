@@ -15,6 +15,7 @@
 #import "HWNavViewController.h"
 #import "HWFullScreenNavController.h"
 #import "HWPickerViewController.h"
+#import "HWDynamicHeightViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -43,8 +44,9 @@
 	HWDemoTypeModel *navDemo = [HWDemoTypeModel modelWithTitle:@"Group - Nav" targetClass:HWNavViewController.class];
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
 	HWDemoTypeModel *pickerDemo = [HWDemoTypeModel modelWithTitle:@"Picker" targetClass:HWPickerViewController.class];
+	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
 
-	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, pickerDemo, groupDemo, stackGroupDemo, navDemo, fullScreenDemo]];
+	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, pickerDemo, dynamicDemo, groupDemo, stackGroupDemo, navDemo, fullScreenDemo]];
 
 	return [array copy];
 }

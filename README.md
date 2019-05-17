@@ -28,7 +28,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.4'
+pod 'HWPanModal', '~> 0.2.5'
 ```
 
 ## How to use
@@ -86,7 +86,9 @@ yeah! Easy.
 * 0.2.4
     * UI bug fix.
     * Improve drag indicator animate.  
-    * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss.  
+    * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss. 
+* 0.2.5
+    * file name update. 
 
 ## License
 

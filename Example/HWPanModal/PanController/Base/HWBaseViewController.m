@@ -21,9 +21,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.000 green:0.989 blue:0.935 alpha:1.00];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
 
 - (PanModalHeight)shortFormHeight {
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);

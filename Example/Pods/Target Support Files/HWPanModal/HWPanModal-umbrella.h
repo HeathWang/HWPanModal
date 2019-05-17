@@ -11,11 +11,12 @@
 #endif
 
 #import "HWPanModalAnimator.h"
+#import "HWPanModalInteractiveAnimator.h"
 #import "HWPanModalPresentationAnimator.h"
 #import "HWPanModalPresentationController.h"
 #import "HWPanModalPresentationDelegate.h"
 #import "HWPanModal.h"
-#import "HWPanmodalHeight.h"
+#import "HWPanModalHeight.h"
 #import "HWPanModalPresentable.h"
 #import "UIViewController+LayoutHelper.h"
 #import "UIViewController+PanModalDefault.h"
@@ -24,6 +25,7 @@
 #import "UIViewController+PanModalPresenter.h"
 #import "HWDimmedView.h"
 #import "HWPanContainerView.h"
+#import "HWPanIndicatorView.h"
 
 FOUNDATION_EXPORT double HWPanModalVersionNumber;
 FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];

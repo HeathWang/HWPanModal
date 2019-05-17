@@ -1,5 +1,5 @@
 //
-//  HWPanmodalHeight.h
+//  HWPanModalHeight.h
 //  Pods
 //
 //  Created by heath wang on 2019/4/26.

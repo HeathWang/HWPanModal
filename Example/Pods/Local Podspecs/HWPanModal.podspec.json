@@ -1,6 +1,6 @@
 {
   "name": "HWPanModal",
-  "version": "0.1.1",
+  "version": "0.2.4",
   "summary": "HWPanModal is used to present controller and drag to dismiss.",
   "description": "HWPanModal is used to present controller and drag to dismiss. Inspire to PanModal.",
   "homepage": "https://github.com/HeathWang/HWPanModal",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/HeathWang/HWPanModal.git",
-    "tag": "0.1.1"
+    "tag": "0.2.4"
   },
   "platforms": {
     "ios": "8.0"
