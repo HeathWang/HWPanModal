@@ -29,7 +29,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 ## Snapshoot
 
 <div  align="center">    
-<img src="./HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
+<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
 </div>
 
 ## Features
