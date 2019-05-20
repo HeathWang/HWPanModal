@@ -9,6 +9,7 @@
 #import "HWPanModalAnimator.h"
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanContainerView.h"
+#import "UIView+HW_Frame.h"
 
 @interface HWPanModalPresentationAnimator ()
 
@@ -58,33 +59,24 @@
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
 	panView.frame = [context finalFrameForViewController:toVC];
-	CGRect rect = panView.frame;
-	rect.origin.y = context.containerView.frame.size.height;
-	panView.frame = rect;
+	panView.hw_top = context.containerView.frame.size.height;
 
 	if ([presentable isHapticFeedbackEnabled]) {
         if (@available(iOS 10.0, *)) {
             [self.feedbackGenerator selectionChanged];
-        } else {
-            // Fallback on earlier versions
         }
 	}
 
 	[HWPanModalAnimator animate:^{
-        CGRect frame = panView.frame;
-        frame.origin.y = yPos;
-		panView.frame = frame;
+		panView.hw_top = yPos;
 	} config:presentable completion:^(BOOL completion) {
 		[fromVC endAppearanceTransition];
 		[toVC endAppearanceTransition];
 		[context completeTransition:completion];
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
-        } else {
-            // Fallback on earlier versions
         }
 	}];
-
 }
 
 /**
@@ -106,9 +98,7 @@
 
 	if ([context isInteractive]) {
 		[HWPanModalAnimator smoothAnimate:^{
-			CGRect frame = panView.frame;
-			frame.origin.x = CGRectGetWidth(frame);
-			panView.frame = frame;
+			panView.hw_left = panView.hw_width;
 		} completion:^(BOOL completion) {
 			/**
 			 * 因为会有手势交互，所以需要判断是否cancel
@@ -123,9 +113,7 @@
 		}];
 	} else {
 		[HWPanModalAnimator animate:^{
-			CGRect frame = panView.frame;
-			frame.origin.y = context.containerView.frame.size.height;
-			panView.frame = frame;
+			panView.hw_top = context.containerView.frame.size.height;
 		} config:presentable completion:^(BOOL completion) {
 			[fromVC.view removeFromSuperview];
 			[toVC endAppearanceTransition];

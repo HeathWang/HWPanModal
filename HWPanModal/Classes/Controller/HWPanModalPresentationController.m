@@ -15,6 +15,7 @@
 #import "HWPanModalPresentationDelegate.h"
 #import "UIViewController+PanModalPresenter.h"
 #import "HWPanIndicatorView.h"
+#import "UIView+HW_Frame.h"
 
 #define kDragIndicatorSize  CGSizeMake(36, 13)
 static CGFloat const kIndicatorYOffset = 5;
@@ -206,9 +207,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	CGRect frame = self.containerView.frame;
 	CGSize size = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame) - self.anchoredYPosition);
 
-    CGRect panContainerFrame = self.presentedView.frame;
-    panContainerFrame.size = frame.size;
-    self.presentedView.frame = panContainerFrame;
+	self.presentedView.hw_size = frame.size;
 	self.panContainerView.contentView.frame = CGRectMake(0, 0, size.width, size.height);
 	self.presentedViewController.view.frame = self.panContainerView.contentView.bounds;
 }
@@ -329,9 +328,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (void)adjustToYPos:(CGFloat)yPos {
-	CGRect rect = self.presentedView.frame;
-	rect.origin.y = MAX(yPos, self.anchoredYPosition);
-	self.presentedView.frame = rect;
+	self.presentedView.hw_top = MAX(yPos, self.anchoredYPosition);
 
 	if (self.presentedView.frame.origin.y > self.shortFormYPosition) {
 		CGFloat yDisplacementFromShortForm = self.presentedView.frame.origin.y - self.shortFormYPosition;
@@ -443,14 +440,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		CGFloat yOffset = scrollView.contentOffset.y;
 		CGSize presentedSize = self.containerView.frame.size;
 
-		CGRect rect = self.presentedView.bounds;
-		rect.size = CGSizeMake(presentedSize.width, presentedSize.height + yOffset);
-		self.presentedView.bounds = rect;
+		self.presentedView.hw_size = CGSizeMake(presentedSize.width, presentedSize.height + yOffset);
 
 		if (offset.y > yOffset) {
-			CGRect rect1 = self.presentedView.frame;
-			rect1.origin.y = self.longFormYPosition - yOffset;
-			self.presentedView.frame = rect1;
+			self.presentedView.hw_top = self.longFormYPosition - yOffset;
 		} else {
 			self.scrollViewYOffset = 0;
 			[self snapToYPos:self.longFormYPosition];

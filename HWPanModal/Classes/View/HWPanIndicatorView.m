@@ -6,6 +6,7 @@
 //
 
 #import "HWPanIndicatorView.h"
+#import "UIView+HW_Frame.h"
 
 @interface HWPanIndicatorView ()
 
@@ -36,16 +37,12 @@
 	CGFloat correction = height / 2;
 
 	self.leftView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame) / 2 + correction, height);
-	CGPoint leftCenter = self.leftView.center;
-	leftCenter.y = self.frame.size.height / 2;
-	self.leftView.center = leftCenter;
-	self.leftView.layer.cornerRadius = MIN(CGRectGetWidth(self.leftView.frame), CGRectGetHeight(self.leftView.frame)) / 2;
+	self.leftView.hw_centerY = self.hw_height / 2;
+	self.leftView.layer.cornerRadius = MIN(self.leftView.hw_width, self.leftView.hw_height) / 2;
 
 	self.rightView.frame = CGRectMake(CGRectGetWidth(self.frame) / 2 - correction, 0, CGRectGetWidth(self.frame) / 2 + correction, height);
-	CGPoint rightCenter = self.rightView.center;
-	rightCenter.y = self.frame.size.height / 2;
-	self.rightView.center = rightCenter;
-	self.rightView.layer.cornerRadius = MIN(CGRectGetWidth(self.rightView.frame), CGRectGetHeight(self.rightView.frame)) / 2;
+	self.rightView.hw_centerY = self.hw_height / 2;
+	self.rightView.layer.cornerRadius = MIN(self.rightView.hw_width, self.rightView.hw_height) / 2;
 }
 
 - (void)animate:(void (^)(void))animations {
