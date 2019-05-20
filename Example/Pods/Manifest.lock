@@ -1,5 +1,5 @@
 PODS:
-  - HWPanModal (0.2.4):
+  - HWPanModal (0.2.5.2):
     - KVOController
   - KVOController (1.2.0)
   - Masonry (1.1.0)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HWPanModal: 7ea390f84f1fabcbc1628222721a23f867923506
+  HWPanModal: 1c25de5b31e30443176a5900d4e8929acf807ab0
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 

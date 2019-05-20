@@ -16,6 +16,7 @@
 #import "HWPanModalPresentationController.h"
 #import "HWPanModalPresentationDelegate.h"
 #import "HWPanModal.h"
+#import "UIView+HW_Frame.h"
 #import "HWPanModalHeight.h"
 #import "HWPanModalPresentable.h"
 #import "UIViewController+LayoutHelper.h"
