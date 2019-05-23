@@ -26,6 +26,8 @@ HWPanModal is used to present controller and drag to dismiss.
 
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
+[_中文文档说明_](https://github.com/HeathWang/HWPanModal/blob/master/README-CN.md)
+
 ## Snapshoot
 
 <div  align="center">    
