@@ -24,6 +24,8 @@
 
 HWPanModal 用于从底部弹出控制器（UIViewController），并用拖拽手势来关闭控制器。提供了自定义视图大小和位置，高度自定义弹出视图的各个属性。
 
+APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音的评论查看、弹出分享等，可以通过该框架快速实现，只需专注于相应的视图编写。
+
 参考 [**PanModal**](https://github.com/slackhq/PanModal), 感谢.
 
 ## 截图
