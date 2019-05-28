@@ -27,7 +27,20 @@
 //}
 
 - (PanModalHeight)shortFormHeight {
+    if ([self isLandScape]) {
+        return [self longFormHeight];
+    }
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
+}
+
+
+// 当转屏且为横屏时，为全凭模式。
+- (CGFloat)topOffset {
+    if ([self isLandScape]) {
+        return 0;
+    } else {
+        return 40;
+    }
 }
 
 - (BOOL)anchorModalToLongForm {
@@ -36,6 +49,14 @@
 
 - (UIViewAnimationOptions)transitionAnimationOptions {
     return UIViewAnimationOptionCurveLinear;
+}
+
+- (BOOL)isLandScape {
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight ||
+        [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft) {
+        return YES;
+    }
+    return NO;
 }
 
 

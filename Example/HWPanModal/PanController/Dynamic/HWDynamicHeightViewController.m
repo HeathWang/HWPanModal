@@ -83,10 +83,6 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 	return self.longHeight;
 }
 
-- (CGFloat)backgroundAlpha {
-    return (arc4random() % 100)/100.0f;
-}
-
 #pragma mark - private method
 
 - (UIButton *)buttonWithTitle:(NSString *)title {

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "HWPanModalHeight.h"
+#import <HWPanModal/HWPanModalHeight.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

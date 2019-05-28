@@ -5,9 +5,10 @@
 //  Created by heath wang on 2019/4/30.
 //
 
-#import "HWPanModalPresentable.h"
-#import "HWPanModalHeight.h"
+#import <HWPanModal/HWPanModalPresentable.h>
+#import <HWPanModal/HWPanModalHeight.h>
 
-#import "UIViewController+PanModalDefault.h"
-#import "UIViewController+Presentation.h"
-#import "UIViewController+PanModalPresenter.h"
+#import <HWPanModal/UIViewController+PanModalDefault.h>
+#import <HWPanModal/UIViewController+Presentation.h>
+#import <HWPanModal/UIViewController+PanModalPresenter.h>
+#import <HWPanModal/UIViewController+LayoutHelper.h>

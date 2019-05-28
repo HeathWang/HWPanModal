@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "HWPanModalPresentable.h"
+#import <HWPanModal/HWPanModalPresentable.h>
 @class HWPanModalPresentationDelegate;
 
 NS_ASSUME_NONNULL_BEGIN

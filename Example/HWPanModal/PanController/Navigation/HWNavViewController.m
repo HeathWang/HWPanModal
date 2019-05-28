@@ -57,5 +57,9 @@
     return YES;
 }
 
+- (BOOL)showDragIndicator {
+    return NO;
+}
+
 
 @end
