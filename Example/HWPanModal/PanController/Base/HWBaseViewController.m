@@ -30,11 +30,11 @@
     if ([self isLandScape]) {
         return [self longFormHeight];
     }
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
+    return PanModalHeightMake(PanModalHeightTypeContent, 200);
 }
 
 
-// 当转屏且为横屏时，为全凭模式。
+// 当转屏且为横屏时，为全屏幕模式。
 - (CGFloat)topOffset {
     if ([self isLandScape]) {
         return 0;

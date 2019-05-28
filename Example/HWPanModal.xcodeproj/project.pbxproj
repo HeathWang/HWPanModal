@@ -23,6 +23,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7E63BBC0394068D5944AA619 /* Pods_HWPanModal_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */; };
 		7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F88229CE85D000D7011 /* HWShareViewController.m */; };
+		7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F8C229D33B9000D7011 /* HWAppListViewController.m */; };
+		7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F90229D36D1000D7011 /* HWShoppingCartViewController.m */; };
 		7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A1227FD62400F12F8C /* HWDemoTypeModel.m */; };
 		7E7A62A6228007BE00F12F8C /* HWAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A5228007BE00F12F8C /* HWAlertViewController.m */; };
 		7E7A62A92280080800F12F8C /* HWTransientAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62A82280080800F12F8C /* HWTransientAlertViewController.m */; };
@@ -78,6 +80,10 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E689F87229CE85D000D7011 /* HWShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWShareViewController.h; sourceTree = "<group>"; };
 		7E689F88229CE85D000D7011 /* HWShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
+		7E689F8B229D33B9000D7011 /* HWAppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppListViewController.h; sourceTree = "<group>"; };
+		7E689F8C229D33B9000D7011 /* HWAppListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAppListViewController.m; sourceTree = "<group>"; };
+		7E689F8F229D36D1000D7011 /* HWShoppingCartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWShoppingCartViewController.h; sourceTree = "<group>"; };
+		7E689F90229D36D1000D7011 /* HWShoppingCartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWShoppingCartViewController.m; sourceTree = "<group>"; };
 		7E7A62A0227FD62400F12F8C /* HWDemoTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDemoTypeModel.h; sourceTree = "<group>"; };
 		7E7A62A1227FD62400F12F8C /* HWDemoTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWDemoTypeModel.m; sourceTree = "<group>"; };
 		7E7A62A4228007BE00F12F8C /* HWAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAlertViewController.h; sourceTree = "<group>"; };
@@ -241,6 +247,24 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		7E689F8A229D3358000D7011 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7E689F8B229D33B9000D7011 /* HWAppListViewController.h */,
+				7E689F8C229D33B9000D7011 /* HWAppListViewController.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7E689F8E229D3687000D7011 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				7E689F8F229D36D1000D7011 /* HWShoppingCartViewController.h */,
+				7E689F90229D36D1000D7011 /* HWShoppingCartViewController.m */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
 		7E7A629F227FD5DC00F12F8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +350,8 @@
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7E689F8E229D3687000D7011 /* ShoppingCart */,
+				7E689F8A229D3358000D7011 /* App */,
 				7E689F86229CE84B000D7011 /* Share */,
 				7EDE0B72228E5404001E7580 /* Dynamic */,
 				7EDE0B71228E52B1001E7580 /* Base */,
@@ -538,7 +564,9 @@
 				7E7A62A6228007BE00F12F8C /* HWAlertViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */,
+				7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */,
 				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
+				7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */,
 				7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */,

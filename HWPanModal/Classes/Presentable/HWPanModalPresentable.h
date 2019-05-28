@@ -115,6 +115,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)allowScreenEdgeInteractive;
 
 /**
+ * 是否对presentingViewController做动画效果，该效果类似淘宝/京东购物车凹陷效果
+ * 默认为NO
+ */
+- (BOOL)shouldAnimatePresentingVC;
+
+/**
  * 是否允许触觉反馈
  * 默认为YES
  */

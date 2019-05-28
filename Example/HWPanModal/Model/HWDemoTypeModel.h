@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (NSArray<HWDemoTypeModel *> *)demoTypeList;
++ (NSArray<HWDemoTypeModel *> *)appDemoTypeList;
+
 @end
 
 NS_ASSUME_NONNULL_END

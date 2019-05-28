@@ -30,9 +30,13 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 ## Snapshoot
 
-<div  align="center">    
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
-</div>
+<div style="text-align: center"><table><tr>
+<td style="text-align: center">
+<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="225" />
+</td>
+<td style="text-align: center">
+<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="225"/>
+</tr></table></div>
 
 ## Features
 1. Supports any type of `UIViewController`
@@ -115,6 +119,8 @@ yeah! Easy.
     * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss. 
 * 0.2.5
     * file name update. 
+* 0.2.6
+    * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
 
 ## License
 

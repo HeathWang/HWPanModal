@@ -7,7 +7,10 @@
 //
 
 @import UIKit;
+@class HWDemoTypeModel;
 
 @interface HWViewController : UIViewController
+
+@property (nonatomic, copy) NSArray<HWDemoTypeModel *> *demoList;
 
 @end

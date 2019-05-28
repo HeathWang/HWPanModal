@@ -77,6 +77,10 @@
 	return NO;
 }
 
+- (BOOL)shouldAnimatePresentingVC {
+    return NO;
+}
+
 - (BOOL)isPanScrollEnabled {
 	return YES;
 }

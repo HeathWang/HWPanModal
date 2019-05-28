@@ -10,11 +10,11 @@
 #import "HWDemoTypeModel.h"
 #import <HWPanModal/HWPanModal.h>
 #import <Masonry/Masonry.h>
+#import "HWAppListViewController.h"
 
 @interface HWViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, copy) NSArray<HWDemoTypeModel *> *demoList;
 
 @end
 
@@ -24,6 +24,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"Example";
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -41,6 +42,9 @@
 
     HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
     cell.textLabel.text = demoTypeModel.title;
+    if ([NSStringFromClass(demoTypeModel.targetClass) isEqualToString:NSStringFromClass(HWAppListViewController.class)]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     return cell;
 }
 
@@ -53,7 +57,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
-    [self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
+    if ([NSStringFromClass(demoTypeModel.targetClass) isEqualToString:NSStringFromClass(HWAppListViewController.class)]) {
+        [self.navigationController pushViewController:[HWAppListViewController new] animated:YES];
+    } else {
+        [self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
+    }
+    
 }
 
 #pragma mark - Getter

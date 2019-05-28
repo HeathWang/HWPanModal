@@ -17,6 +17,8 @@
 #import "HWPickerViewController.h"
 #import "HWDynamicHeightViewController.h"
 #import "HWShareViewController.h"
+#import "HWAppListViewController.h"
+#import "HWShoppingCartViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -42,16 +44,21 @@
 	HWDemoTypeModel *alertDemo = [HWDemoTypeModel modelWithTitle:@"Alert" targetClass:HWAlertViewController.class];
 	HWDemoTypeModel *autoAlertDemo = [HWDemoTypeModel modelWithTitle:@"Transient Alert" targetClass:HWTransientAlertViewController.class];
 	HWDemoTypeModel *stackGroupDemo = [HWDemoTypeModel modelWithTitle:@"Group - Stacked" targetClass:HWStackedGroupViewController.class];
-	HWDemoTypeModel *navDemo = [HWDemoTypeModel modelWithTitle:@"Group - Nav - 知乎评论" targetClass:HWNavViewController.class];
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
-	HWDemoTypeModel *pickerDemo = [HWDemoTypeModel modelWithTitle:@"Picker" targetClass:HWPickerViewController.class];
 	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
-	HWDemoTypeModel *shareDemo = [HWDemoTypeModel modelWithTitle:@"Share - 网易云音乐" targetClass:HWShareViewController.class];
+    HWDemoTypeModel *appDemo = [HWDemoTypeModel modelWithTitle:@"App Demo" targetClass:HWAppListViewController.class];
 
-	[array addObjectsFromArray:@[baseDemo, alertDemo, autoAlertDemo, pickerDemo, shareDemo, dynamicDemo, groupDemo, stackGroupDemo, navDemo,
-			fullScreenDemo]];
+	[array addObjectsFromArray:@[appDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo]];
 
 	return [array copy];
+}
+
++ (NSArray<HWDemoTypeModel *> *)appDemoTypeList {
+    HWDemoTypeModel *navDemo = [HWDemoTypeModel modelWithTitle:@"Group - Nav - 知乎评论" targetClass:HWNavViewController.class];
+    HWDemoTypeModel *pickerDemo = [HWDemoTypeModel modelWithTitle:@"Picker" targetClass:HWPickerViewController.class];
+    HWDemoTypeModel *shareDemo = [HWDemoTypeModel modelWithTitle:@"Share - 网易云音乐" targetClass:HWShareViewController.class];
+    HWDemoTypeModel *shoppingDemo = [HWDemoTypeModel modelWithTitle:@"Shopping - JD" targetClass:HWShoppingCartViewController.class];
+    return @[navDemo, pickerDemo, shareDemo, shoppingDemo];
 }
 
 @end

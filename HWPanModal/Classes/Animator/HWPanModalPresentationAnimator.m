@@ -56,6 +56,7 @@
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
 	CGFloat yPos = presentable.shortFormYPos;
+    NSTimeInterval duration = [presentable transitionDuration];
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
 	panView.frame = [context finalFrameForViewController:toVC];
@@ -77,6 +78,23 @@
             self.feedbackGenerator = nil;
         }
 	}];
+    
+    if ([presentable shouldAnimatePresentingVC]) {
+        [UIView animateWithDuration:duration * 0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            CATransform3D tran = CATransform3DIdentity;
+            tran.m34 = -1 / 1000.0f;
+            tran = CATransform3DRotate(tran, M_PI / 16, 1, 0, 0);
+            tran = CATransform3DTranslate(tran, 0, 0, -100);
+            fromVC.view.layer.transform = tran;
+        } completion:^(BOOL finished) {
+            
+            [UIView animateWithDuration:duration * 0.6 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                fromVC.view.layer.transform = CATransform3DMakeScale(0.93, 0.93, 1);
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+    }
 }
 
 /**
@@ -121,6 +139,12 @@
 			[context completeTransition:completion];
 		}];
 	}
+    
+    [UIView animateWithDuration:[presentable transitionDuration] * 0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        toVC.view.layer.transform = CATransform3DIdentity;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (UIViewController<HWPanModalPresentable> *)panModalViewController:(id<UIViewControllerContextTransitioning>)context {
