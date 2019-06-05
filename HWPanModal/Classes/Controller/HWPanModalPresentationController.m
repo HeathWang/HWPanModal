@@ -363,7 +363,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     if (!scrollView) {
         return;
     }
-    
+
+    self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
+
 	__weak typeof(self) wkSelf = self;
 	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
 		if (wkSelf.containerView != nil) {
@@ -420,6 +422,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			[self trackScrolling:scrollView];
 		}
 
+    } else {
+		/**
+		 * 当present Controller，而且动画没有结束的时候，用户可能会对scrollView设置contentOffset
+		 * 首次用户滑动scrollView时，会因为scrollViewYOffset = 0而出现错位
+		 */
+		[self setContentOffset:scrollView.contentOffset];
 	}
 }
 
@@ -441,6 +449,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		CGSize presentedSize = self.containerView.frame.size;
 
 		self.presentedView.hw_size = CGSizeMake(presentedSize.width, presentedSize.height + yOffset);
+		self.panContainerView.contentView.hw_size = self.panContainerView.hw_size;
 
 		if (offset.y > yOffset) {
 			self.presentedView.hw_top = self.longFormYPosition - yOffset;

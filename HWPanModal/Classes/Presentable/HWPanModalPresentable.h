@@ -30,12 +30,13 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 支持同步拖拽的scrollView
+ * 如果ViewController中包含scrollView并且你想scrollView滑动和拖拽手势同事存在，请返回此scrollView
  */
 - (nullable UIScrollView *)panScrollable;
 
 /**
- * offset：屏幕顶部距离pan Container View
- * topLayoutGuide.length + 21.0.
+ * offset：屏幕顶部距离
+ * 默认为topLayoutGuide.length + 21.0.
  */
 - (CGFloat)topOffset;
 
@@ -72,6 +73,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (UIViewAnimationOptions)transitionAnimationOptions;
 
 /**
+ * scrollView指示器insets
  * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
  */
 - (UIEdgeInsets)scrollIndicatorInsets;
@@ -161,20 +163,16 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
- Asks the delegate if the pan modal gesture recognizer should be prioritized.
-
- For example, you can use this to define a region
- where you would like to restrict where the pan gesture can start.
-
- If false, then we rely solely on the internal conditions of when a pan gesture
- should succeed or fail, such as, if we're actively scrolling on the scrollView.
-
- Default return value is false.
+ * 是否优先dismiss拖拽手势，当存在scrollView的情况下，如果此方法返回YES，则
+ * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，
+ * 而scrollView没法拖动了
+ *
+ * 默认为NO
  */
 - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
- * 是否变更panModal状态
+ * 是否应该变更panModal状态
  */
 - (BOOL)shouldTransitionToState:(PresentationState)state;
 
