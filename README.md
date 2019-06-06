@@ -98,6 +98,10 @@ yeah! Easy.
 3. `pod install --verbose`
 4. Double click HWPanModal.xcworkspace, and run.
 
+## Contact Me
+
+yishu.jay@gmail.com
+
 ## Change Log
 * 0.2.0
     Add screen edge interactive gesture. Default this function is closed, implement `- (BOOL)allowScreenEdgeInteractive;` to config it.
@@ -121,6 +125,8 @@ yeah! Easy.
     * file name update. 
 * 0.2.6
     * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
+* 0.2.6.1
+    * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
 
 ## License
 

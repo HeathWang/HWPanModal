@@ -26,13 +26,16 @@ HWPanModal 用于从底部弹出控制器（UIViewController），并用拖拽�
 
 APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音的评论查看、弹出分享等，可以通过该框架快速实现，只需专注于相应的视图编写。
 
-参考 [**PanModal**](https://github.com/slackhq/PanModal), 感谢.
 
 ## 截图
 
-<div  align="center">    
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width = "225" height = "413.4" alt="example" align=center/>
-</div>
+<div style="text-align: center"><table><tr>
+<td style="text-align: center">
+<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="225" />
+</td>
+<td style="text-align: center">
+<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="225"/>
+</tr></table></div>
 
 ## 功能
 1. 支持任意类型的 `UIViewController`
@@ -53,12 +56,14 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.5'
+pod 'HWPanModal', '~> 0.2.6.1'
 ```
 
 ## 如何使用
 
 只需要视图控制器适配 `HWPanModalPresentable` 协议即可. 默认情况下，不用重写适配的各个方法，如果需要自定义，请实现协议方法。
+
+更多的自定义UI配置，请参见`HWPanModalPresentable`协议中每个方法的说明。
 
 ```Objective-C
 #import <HWPanModal/HWPanModal.h>
@@ -83,7 +88,7 @@ pod 'HWPanModal', '~> 0.2.5'
 [self presentPanModal:[HWBaseViewController new]];
 ```
 
-就是这么简单
+就是这么简单。
 
 ## 例子
 
@@ -113,6 +118,10 @@ pod 'HWPanModal', '~> 0.2.5'
     * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss. 
 * 0.2.5
     * file name update. 
+* 0.2.6
+    * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
+* 0.2.6.1
+    * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
 
 ## License
 
