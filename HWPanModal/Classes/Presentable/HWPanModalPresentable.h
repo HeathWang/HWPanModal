@@ -84,6 +84,10 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)anchorModalToLongForm;
 
+/**
+ * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
+ * 其余情况返回NO
+ */
 - (BOOL)allowsExtendedPanScrolling;
 
 /**

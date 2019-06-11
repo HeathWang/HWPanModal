@@ -30,3 +30,7 @@ CG_INLINE PanModalHeight PanModalHeightMake(PanModalHeightType heightType, CGFlo
     return modalHeight;
 }
 
+static inline BOOL HW_FLOAT_IS_ZERO(CGFloat value) {
+    return (value > -FLT_EPSILON) && (value < FLT_EPSILON);
+}
+

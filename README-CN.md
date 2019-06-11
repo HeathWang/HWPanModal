@@ -56,7 +56,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.6.1'
+pod 'HWPanModal', '~> 0.2.6.2'
 ```
 
 ## 如何使用
@@ -96,6 +96,10 @@ pod 'HWPanModal', '~> 0.2.6.1'
 2. open the terminal， go to the `Example` Folder.
 3. `pod install --verbose`
 4. Double click HWPanModal.xcworkspace, and run.
+
+## 联系我
+
+yishu.jay@gmail.com
 
 ## Change Log
 * 0.2.0

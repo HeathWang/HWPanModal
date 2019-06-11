@@ -223,9 +223,17 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		scrollView.scrollIndicatorInsets = [self.presentable scrollIndicatorInsets];
 
 		UIEdgeInsets insets1 = scrollView.contentInset;
-		insets1.bottom = self.presentedViewController.bottomLayoutGuide.length;
-		scrollView.contentInset = insets1;
-
+        /*
+         * If scrollView has been set contentInset, and bottom is NOT zero, we won't change it.
+         * If contentInset.bottom is zero, set bottom = bottomLayoutOffset
+         * If scrollView has been set contentInset, BUT the bottom < bottomLayoutOffset, set bottom = bottomLayoutOffset
+         */
+        if (HW_FLOAT_IS_ZERO(insets1.bottom) || insets1.bottom < self.presentedViewController.bottomLayoutOffset) {
+            
+            insets1.bottom = self.presentedViewController.bottomLayoutOffset;
+            scrollView.contentInset = insets1;
+        }
+		
         if (@available(iOS 11.0, *)) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
@@ -446,10 +454,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	if (value) {
 		CGPoint offset = [value CGPointValue];
 		CGFloat yOffset = scrollView.contentOffset.y;
+        
 		CGSize presentedSize = self.containerView.frame.size;
-
 		self.presentedView.hw_size = CGSizeMake(presentedSize.width, presentedSize.height + yOffset);
-		self.panContainerView.contentView.hw_size = self.panContainerView.hw_size;
+		self.panContainerView.contentView.hw_size = CGSizeMake(self.presentedView.hw_width, self.presentedView.hw_height - self.anchoredYPosition);
+        self.presentedViewController.view.frame = self.panContainerView.contentView.bounds;
 
 		if (offset.y > yOffset) {
 			self.presentedView.hw_top = self.longFormYPosition - yOffset;
@@ -482,11 +491,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				if (self.presentedView.frame.origin.y == self.anchoredYPosition && self.extendsPanScrolling) {
 					[self.presentable willTransitionToState:PresentationStateLong];
 				}
-
-				if (velocity.y > 0 && panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-					self.dragIndicatorView.style = PanIndicatorViewStyleLine;
-				}
-
+                
+                if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+                    if (velocity.y > 0) {
+                        self.dragIndicatorView.style = PanIndicatorViewStyleLine;
+                    } else if (velocity.y < 0 && self.presentedView.frame.origin.y <= self.anchoredYPosition && !self.extendsPanScrolling) {
+                        self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
+                    }
+                }
+                
 			}
 				break;
 			default:
@@ -498,7 +511,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				 * 1.超过拖拽速度阈值时并且向下拖拽，dismiss controller
 				 * 2.向上拖拽永远不会dismiss，回弹至相应的状态
 				 */
-				
+                
 				if ([self isVelocityWithinSensitivityRange:velocity.y]) {
 					if (velocity.y < 0) {
 						[self transitionToState:PresentationStateLong];
@@ -526,6 +539,17 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				break;
 		}
 	} else {
+        switch (panGestureRecognizer.state) {
+            case UIGestureRecognizerStateEnded:
+            case UIGestureRecognizerStateCancelled:
+            case UIGestureRecognizerStateFailed:
+            {
+                self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
+            }
+                break;
+            default:
+                break;
+        }
 		[panGestureRecognizer setTranslation:CGPointZero inView:panGestureRecognizer.view];
 	}
 
@@ -554,7 +578,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	if (self.isPresentedViewAnchored && [self.presentable panScrollable] && [self.presentable panScrollable].contentOffset.y > 0) {
         UIScrollView *scrollView = [self.presentable panScrollable];
 		CGPoint location = [panGestureRecognizer locationInView:self.presentedView];
-        return CGRectContainsPoint(scrollView.frame, location) || scrollView.isScrolling;
+        BOOL flag = CGRectContainsPoint(scrollView.frame, location) || scrollView.isScrolling;
+        if (flag) {
+            self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
+        }
+        return flag;
 	} else {
 		return NO;
 	}

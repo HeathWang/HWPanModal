@@ -77,6 +77,10 @@
 }
 
 - (void)setStyle:(PanIndicatorViewStyle)style {
+    // style not changed, just return
+    if (style == _style) {
+        return;
+    }
 	_style = style;
 
 	switch (style) {

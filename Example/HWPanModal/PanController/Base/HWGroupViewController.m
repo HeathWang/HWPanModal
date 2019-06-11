@@ -25,7 +25,8 @@
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     
-    self.tableView.contentOffset = CGPointMake(0, 200);
+    self.tableView.contentOffset = CGPointMake(0, 100);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
 }
 
 - (void)viewDidLayoutSubviews {
