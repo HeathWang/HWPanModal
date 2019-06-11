@@ -64,6 +64,7 @@ pod 'HWPanModal', '~> 0.2.6.2'
 ## How to use
 
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
+More custom config animation & UI, pls check `HWPanModalPresentable.h` file.
 
 
 ```Objective-C
