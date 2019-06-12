@@ -132,7 +132,6 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 注意要使自定义效果生效，shouldAnimatePresentingVC 必须返回YES
  * 默认转场效果为凹陷动画效果，如果该方法返回不为空，则使用自定义动画效果
  * 默认为nil
- * @return
  */
 - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 
