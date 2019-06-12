@@ -56,7 +56,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.6.2'
+pod 'HWPanModal', '~> 0.2.7'
 ```
 
 ## 如何使用
@@ -78,6 +78,10 @@ pod 'HWPanModal', '~> 0.2.6.2'
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - HWPanModalPresentable
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 44);
+}
 @end
 ```
 
@@ -99,33 +103,17 @@ pod 'HWPanModal', '~> 0.2.6.2'
 
 ## 联系我
 
+Heath Wang
 yishu.jay@gmail.com
 
-## Change Log
-* 0.2.0
-    Add screen edge interactive gesture. Default this function is closed, implement `- (BOOL)allowScreenEdgeInteractive;` to config it.
-    
-    ```Objective-C
-    - (BOOL)allowScreenEdgeInteractive {
-        return YES;
-    }
-    ```
-* 0.2.1
-    * Fix when rotate presented controller, the UI is not correct.
-* 0.2.2
-    * Screen edge pan interactive bug fix.
-* 0.2.3
-    * iOS8+ rotate bug fix.    
-* 0.2.4
-    * UI bug fix.
-    * Improve drag indicator animate.  
-    * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss. 
-* 0.2.5
-    * file name update. 
+## Recent Change Log
 * 0.2.6
     * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
 * 0.2.6.1
     * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
+* 0.2.7
+    * Now you can write your own custom presenting VC animation.
+    * Refine comments and docs.
 
 ## License
 

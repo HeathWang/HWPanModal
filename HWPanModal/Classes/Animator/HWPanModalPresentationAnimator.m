@@ -11,11 +11,24 @@
 #import "HWPanContainerView.h"
 #import "UIView+HW_Frame.h"
 
+@interface HWPresentingVCTransitionContext : NSObject <HWPresentingViewControllerContextTransitioning>
+
+@property (nonatomic, weak) UIViewController *fromVC;
+@property (nonatomic, weak) UIViewController *toVC;
+@property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic, strong) UIView *containerView;
+
+- (instancetype)initWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC duration:(NSTimeInterval)duration containerView:(UIView *)containerView;
+
+
+@end
+
 @interface HWPanModalPresentationAnimator ()
 
 @property (nonatomic, assign) TransitionStyle transitionStyle;
 
 @property (nullable, nonatomic, strong) UISelectionFeedbackGenerator *feedbackGenerator API_AVAILABLE(ios(10.0));
+@property (nonatomic, strong) HWPresentingVCTransitionContext *presentingVCTransitionContext;
 
 @end
 
@@ -80,20 +93,27 @@
 	}];
     
     if ([presentable shouldAnimatePresentingVC]) {
-        [UIView animateWithDuration:duration * 0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            CATransform3D tran = CATransform3DIdentity;
-            tran.m34 = -1 / 1000.0f;
-            tran = CATransform3DRotate(tran, M_PI / 16, 1, 0, 0);
-            tran = CATransform3DTranslate(tran, 0, 0, -100);
-            fromVC.view.layer.transform = tran;
-        } completion:^(BOOL finished) {
-            
-            [UIView animateWithDuration:duration * 0.6 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-                fromVC.view.layer.transform = CATransform3DMakeScale(0.93, 0.93, 1);
-            } completion:^(BOOL finished) {
-                
-            }];
-        }];
+    	// use custom animation
+    	if ([presentable customPresentingVCAnimation]) {
+    		self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC
+    				duration:[presentable transitionDuration] containerView:context.containerView];
+			[[presentable customPresentingVCAnimation] presentAnimateTransition:self.presentingVCTransitionContext];
+		} else {
+			[UIView animateWithDuration:duration * 0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+				CATransform3D tran = CATransform3DIdentity;
+				tran.m34 = -1 / 1000.0f;
+				tran = CATransform3DRotate(tran, M_PI / 16, 1, 0, 0);
+				tran = CATransform3DTranslate(tran, 0, 0, -100);
+				fromVC.view.layer.transform = tran;
+			} completion:^(BOOL finished) {
+
+				[UIView animateWithDuration:duration * 0.6 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+					fromVC.view.layer.transform = CATransform3DMakeScale(0.93, 0.93, 1);
+				} completion:^(BOOL finished) {
+
+				}];
+			}];
+    	}
     }
 }
 
@@ -139,12 +159,20 @@
 			[context completeTransition:completion];
 		}];
 	}
-    
-    [UIView animateWithDuration:[presentable transitionDuration] * 0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        toVC.view.layer.transform = CATransform3DIdentity;
-    } completion:^(BOOL finished) {
-        
-    }];
+
+	if ([presentable shouldAnimatePresentingVC]) {
+
+		if ([presentable customPresentingVCAnimation]) {
+			self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
+			[[presentable customPresentingVCAnimation] dismissAnimateTransition:self.presentingVCTransitionContext];
+		} else {
+			[UIView animateWithDuration:[presentable transitionDuration] * 0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+				toVC.view.layer.transform = CATransform3DIdentity;
+			} completion:^(BOOL finished) {
+
+			}];
+		}
+	}
 }
 
 - (UIViewController<HWPanModalPresentable> *)panModalViewController:(id<UIViewControllerContextTransitioning>)context {
@@ -192,6 +220,36 @@
 		return [controller transitionDuration];
 	}
 	return kTransitionDuration;
+}
+
+@end
+
+@implementation HWPresentingVCTransitionContext
+
+- (instancetype)initWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC duration:(NSTimeInterval)duration containerView:(UIView *)containerView {
+	self = [super init];
+	if (self) {
+		_fromVC = fromVC;
+		_toVC = toVC;
+		_duration = duration;
+		_containerView = containerView;
+	}
+
+	return self;
+}
+
+
+- (__kindof UIViewController *)viewControllerForKey:(UITransitionContextViewControllerKey)key {
+    if ([key isEqualToString:UITransitionContextFromViewControllerKey]) {
+        return self.fromVC;
+    } else if ([key isEqualToString:UITransitionContextToViewControllerKey]) {
+        return self.toVC;
+    }
+	return nil;
+}
+
+- (NSTimeInterval)mainTransitionDuration {
+	return self.duration;
 }
 
 @end

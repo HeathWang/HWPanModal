@@ -11,4 +11,5 @@
 #import <HWPanModal/UIViewController+PanModalDefault.h>
 #import <HWPanModal/UIViewController+Presentation.h>
 #import <HWPanModal/UIViewController+PanModalPresenter.h>
-#import <HWPanModal/UIViewController+LayoutHelper.h>
+
+#import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>

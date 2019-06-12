@@ -11,12 +11,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * 被presented的Controller可以通过该类对UIPresentationController 容器进行update
+ * The presented Controller can use the category to update UIPresentationController container.
  */
 @interface UIViewController (Presentation)
 
+/**
+ * force update pan modal State, short/long
+ */
 - (void)hw_panModalTransitionTo:(PresentationState)state;
 
+/**
+ * When presented ViewController has a UIScrollView,
+ * Use This method to update UIScrollView contentOffset
+ */
 - (void)hw_panModalSetContentOffset:(CGPoint)offset;
 
 /**

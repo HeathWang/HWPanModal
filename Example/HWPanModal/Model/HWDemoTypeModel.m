@@ -19,6 +19,7 @@
 #import "HWShareViewController.h"
 #import "HWAppListViewController.h"
 #import "HWShoppingCartViewController.h"
+#import "HWMyCustomAnimationViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -46,9 +47,11 @@
 	HWDemoTypeModel *stackGroupDemo = [HWDemoTypeModel modelWithTitle:@"Group - Stacked" targetClass:HWStackedGroupViewController.class];
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
 	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
+    HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
+    
     HWDemoTypeModel *appDemo = [HWDemoTypeModel modelWithTitle:@"App Demo" targetClass:HWAppListViewController.class];
 
-	[array addObjectsFromArray:@[appDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo]];
+	[array addObjectsFromArray:@[appDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

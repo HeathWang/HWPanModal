@@ -81,6 +81,10 @@
     return NO;
 }
 
+- (id <HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {
+	return nil;
+}
+
 - (BOOL)isPanScrollEnabled {
 	return YES;
 }

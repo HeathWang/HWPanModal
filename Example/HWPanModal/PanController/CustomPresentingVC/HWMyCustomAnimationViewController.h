@@ -1,8 +1,8 @@
 //
-//  HWShareViewController.h
+//  HWMyCustomAnimationViewController.h
 //  HWPanModal_Example
 //
-//  Created by heath wang on 2019/5/28.
+//  Created by heath wang on 2019/6/12.
 //  Copyright © 2019 heath wang. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HWShareViewController : UIViewController
+@interface HWMyCustomAnimationViewController : UIViewController
 
 @end
 

@@ -58,13 +58,13 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.6.2'
+pod 'HWPanModal', '~> 0.2.7'
 ```
 
 ## How to use
 
+### How to present from bottom
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
-
 
 ```Objective-C
 #import <HWPanModal/HWPanModal.h>
@@ -79,6 +79,10 @@ Your UIViewController need to conform `HWPanModalPresentable`. If you use defaul
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - HWPanModalPresentable
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 44);
+}
 @end
 ```
 
@@ -91,6 +95,69 @@ Where you need to present this Controller.
 
 yeah! Easy.
 
+### Change state, scrollView contentOffset, reload layout
+
+When You present you Controller, you can change the UI.
+Refer to `UIViewController+Presentation.h`.
+* Change the state between short and long form. call `- (void)hw_panModalTransitionTo:(PresentationState)state;`
+* Change ScrollView ContentOffset. call `- (void)hw_panModalSetContentOffset:(CGPoint)offset;`
+* Reload layout. call `- (void)hw_panModalSetNeedsLayoutUpdate;`
+
+### Custom Presenting VC Animation
+
+Some guys want to animate Presenting VC when present/dismiss.
+1. Create object conforms `HWPresentingViewControllerAnimatedTransitioning` .
+
+    ```Objective-C
+    
+    @interface HWMyCustomAnimation : NSObject <HWPresentingViewControllerAnimatedTransitioning>
+    
+    @end
+    
+    @implementation HWMyCustomAnimation
+    
+    
+    - (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
+        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        // replace it.
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+    - (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
+        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        // replace it.
+        [UIView animateWithDuration:duration animations:^{
+            toVC.view.transform = CGAffineTransformIdentity;
+        }];
+    }
+    
+    @end
+    ```
+1. Overwrite below two method.
+
+    ```Objective-C
+    - (BOOL)shouldAnimatePresentingVC {
+        return YES;
+    }
+    
+    - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {
+        return self.customAnimation;
+    }
+    
+    - (HWMyCustomAnimation *)customAnimation {
+        if (!_customAnimation) {
+            _customAnimation = [HWMyCustomAnimation new];
+        }
+        return _customAnimation;
+    }
+    ```
+
 ## Example
 
 1. Clone this git.
@@ -100,33 +167,17 @@ yeah! Easy.
 
 ## Contact Me
 
+Heath Wang
 yishu.jay@gmail.com
 
-## Change Log
-* 0.2.0
-    Add screen edge interactive gesture. Default this function is closed, implement `- (BOOL)allowScreenEdgeInteractive;` to config it.
-    
-    ```Objective-C
-    - (BOOL)allowScreenEdgeInteractive {
-        return YES;
-    }
-    ```
-* 0.2.1
-    * Fix when rotate presented controller, the UI is not correct.
-* 0.2.2
-    * Screen edge pan interactive bug fix.
-* 0.2.3
-    * iOS8+ rotate bug fix.    
-* 0.2.4
-    * UI bug fix.
-    * Improve drag indicator animate.  
-    * Add `- (BOOL)allowsTapBackgroundToDismiss;` to control whether can tap background to dismiss. 
-* 0.2.5
-    * file name update. 
+## Recent Change Log
 * 0.2.6
     * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
 * 0.2.6.1
     * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
+* 0.2.7
+    * Now you can write your own custom presenting VC animation.
+    * Refine comments and docs.
 
 ## License
 

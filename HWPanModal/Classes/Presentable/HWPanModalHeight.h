@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, PanModalHeightType) {
-    PanModalHeightTypeMax,  // 距离顶部最大
-    PanModalHeightTypeMaxTopInset, // 距离顶部offset
-    PanModalHeightTypeContent,
+    PanModalHeightTypeMax,          // from top max
+    PanModalHeightTypeMaxTopInset,  // from top offset
+    PanModalHeightTypeContent,      // from bottom
     PanModalHeightTypeContentIgnoringSafeArea,
     PanModalHeightTypeIntrinsic,
 };
@@ -23,6 +23,9 @@ struct PanModalHeight {
 
 typedef struct PanModalHeight PanModalHeight;
 
+/**
+ * When heightType is PanModalHeightTypeMax, PanModalHeightTypeIntrinsic, the height value will be ignored.
+ */
 CG_INLINE PanModalHeight PanModalHeightMake(PanModalHeightType heightType, CGFloat height) {
     PanModalHeight modalHeight;
     modalHeight.heightType = heightType;

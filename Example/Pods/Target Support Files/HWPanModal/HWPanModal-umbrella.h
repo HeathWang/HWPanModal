@@ -13,6 +13,7 @@
 #import "HWPanModalAnimator.h"
 #import "HWPanModalInteractiveAnimator.h"
 #import "HWPanModalPresentationAnimator.h"
+#import "HWPresentingVCAnimatedTransitioning.h"
 #import "HWPanModalPresentationController.h"
 #import "HWPanModalPresentationDelegate.h"
 #import "HWPanModal.h"

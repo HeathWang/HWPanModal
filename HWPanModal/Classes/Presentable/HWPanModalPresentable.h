@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalHeight.h>
+#import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,12 +22,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * HWPanModalPresentable为present配置协议
- * 默认情况下无需实现，只需Controller conform 该协议
- * 因为oc的特性问题，以下可以被定义为只读属性的，被定义成方法。
- * 我们通过category来默认实现以下所有方法。这样就不用通过继承来实现protocol
+ * 默认情况下无需实现，只需Controller conforms 该协议
+ * 通过category来默认实现以下所有方法。这样就不用通过继承来实现protocol
  */
-
 @protocol HWPanModalPresentable <NSObject>
+
+#pragma mark - get config
 
 /**
  * 支持同步拖拽的scrollView
@@ -121,10 +122,19 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)allowScreenEdgeInteractive;
 
 /**
- * 是否对presentingViewController做动画效果，该效果类似淘宝/京东购物车凹陷效果
+ * 是否对presentingViewController做动画效果，默认该效果类似淘宝/京东购物车凹陷效果
  * 默认为NO
  */
 - (BOOL)shouldAnimatePresentingVC;
+
+/**
+ * 自定义presenting ViewController转场动画
+ * 注意要使自定义效果生效，shouldAnimatePresentingVC 必须返回YES
+ * 默认转场效果为凹陷动画效果，如果该方法返回不为空，则使用自定义动画效果
+ * 默认为nil
+ * @return
+ */
+- (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 
 /**
  * 是否允许触觉反馈
@@ -150,7 +160,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)showDragIndicator;
 
-#pragma mark - delegate & dataSource
+#pragma mark - delegate
 
 /**
  * 询问delegate是否需要response pan recognizer 在 pan Modal上

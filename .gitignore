@@ -17,6 +17,7 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 *.idea
+.idea/
 
 ## Other
 *.moved-aside
@@ -36,6 +37,7 @@ xcuserdata/
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 Pods/
+__pods/
 
 # Carthage
 #
