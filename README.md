@@ -65,6 +65,7 @@ pod 'HWPanModal', '~> 0.2.7'
 
 ### How to present from bottom
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
+More custom config animation & UI, pls check `HWPanModalPresentable.h` file.
 
 ```Objective-C
 #import <HWPanModal/HWPanModal.h>
