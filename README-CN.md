@@ -43,6 +43,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 3. 支持2种类型的手势操作
     1. UIPanGestureRecognizer, 上下拖拽视图
     2. UIScreenEdgePanGestureRecognizer, 侧滑关闭视图。
+4. 支持为presenting VC编写自定义动画。
     
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
@@ -56,11 +57,12 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.7'
+pod 'HWPanModal', '~> 0.2.7.1'
 ```
 
 ## 如何使用
 
+### 如何从底部弹出控制器
 只需要视图控制器适配 `HWPanModalPresentable` 协议即可. 默认情况下，不用重写适配的各个方法，如果需要自定义，请实现协议方法。
 
 更多的自定义UI配置，请参见`HWPanModalPresentable`协议中每个方法的说明。
@@ -85,7 +87,7 @@ pod 'HWPanModal', '~> 0.2.7'
 @end
 ```
 
-如何弹出控制器？
+弹出控制器：
 
 ```Objective-C
 #import <HWPanModal/HWPanModal.h>
@@ -93,6 +95,66 @@ pod 'HWPanModal', '~> 0.2.7'
 ```
 
 就是这么简单。
+
+### 如何主动更新控制器UI。
+请查阅 `UIViewController+Presentation.h`，里面有详细说明。
+* Change the state between short and long form. call `- (void)hw_panModalTransitionTo:(PresentationState)state;`
+* Change ScrollView ContentOffset. call `- (void)hw_panModalSetContentOffset:(CGPoint)offset;`
+* Reload layout. call `- (void)hw_panModalSetNeedsLayoutUpdate;`
+
+### 自定义presenting VC动画编写
+
+1. Create object conforms `HWPresentingViewControllerAnimatedTransitioning` .
+
+    ```Objective-C
+    
+    @interface HWMyCustomAnimation : NSObject <HWPresentingViewControllerAnimatedTransitioning>
+    
+    @end
+    
+    @implementation HWMyCustomAnimation
+    
+    
+    - (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
+        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        // replace it.
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+    - (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
+        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        // replace it.
+        [UIView animateWithDuration:duration animations:^{
+            toVC.view.transform = CGAffineTransformIdentity;
+        }];
+    }
+    
+    @end
+    ```
+1. Overwrite below two method.
+
+    ```Objective-C
+    - (BOOL)shouldAnimatePresentingVC {
+        return YES;
+    }
+    
+    - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {
+        return self.customAnimation;
+    }
+    
+    - (HWMyCustomAnimation *)customAnimation {
+        if (!_customAnimation) {
+            _customAnimation = [HWMyCustomAnimation new];
+        }
+        return _customAnimation;
+    }
+    ```
 
 ## 例子
 

@@ -44,6 +44,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 3. Support two kinds of GestureRecognizer
     1. UIPanGestureRecognizer, direction is UP & Down.
     2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
+4. Support write your own animation for presenting VC.
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
@@ -58,14 +59,13 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.7'
+pod 'HWPanModal', '~> 0.2.7.1'
 ```
 
 ## How to use
 
 ### How to present from bottom
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
-More custom config animation & UI, pls check `HWPanModalPresentable.h` file.
 
 ```Objective-C
 #import <HWPanModal/HWPanModal.h>
