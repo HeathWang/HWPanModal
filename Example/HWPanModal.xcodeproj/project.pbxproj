@@ -40,6 +40,9 @@
 		7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */; };
 		7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D549227ECAA70093F1B3 /* HWColorCell.m */; };
 		7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */; };
+		7EF9E38122B347AC00B94AAD /* HWColorBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9E38022B347AC00B94AAD /* HWColorBlocksViewController.m */; };
+		7EF9E38422B34A2900B94AAD /* HWColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9E38322B34A2900B94AAD /* HWColorCollectionViewCell.m */; };
+		7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9E38622B3682400B94AAD /* HWBlurViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		99F12257D88E310EED39DB32 /* Pods_HWPanModal_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44203A5E0B1E07D70F8BE38D /* Pods_HWPanModal_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +118,12 @@
 		7EF8D54A227ECAA70093F1B3 /* HWColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorCell.h; sourceTree = "<group>"; };
 		7EF8D54B227ECAA70093F1B3 /* HWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseViewController.h; sourceTree = "<group>"; };
 		7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWGroupViewController.m; sourceTree = "<group>"; };
+		7EF9E37F22B347AC00B94AAD /* HWColorBlocksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWColorBlocksViewController.h; sourceTree = "<group>"; };
+		7EF9E38022B347AC00B94AAD /* HWColorBlocksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWColorBlocksViewController.m; sourceTree = "<group>"; };
+		7EF9E38222B34A2900B94AAD /* HWColorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWColorCollectionViewCell.h; sourceTree = "<group>"; };
+		7EF9E38322B34A2900B94AAD /* HWColorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWColorCollectionViewCell.m; sourceTree = "<group>"; };
+		7EF9E38522B3682400B94AAD /* HWBlurViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWBlurViewController.h; sourceTree = "<group>"; };
+		7EF9E38622B3682400B94AAD /* HWBlurViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWBlurViewController.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BBA4C9C5928AB1AC2CBF965 /* Pods-HWPanModal_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModal_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,6 +371,7 @@
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7EF9E37E22B3477100B94AAD /* Blur */,
 				7E8E843F22B12367009DA8BD /* CustomPresentingVC */,
 				7E689F8E229D3687000D7011 /* ShoppingCart */,
 				7E689F8A229D3358000D7011 /* App */,
@@ -385,6 +395,19 @@
 				7EF8D549227ECAA70093F1B3 /* HWColorCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7EF9E37E22B3477100B94AAD /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				7EF9E37F22B347AC00B94AAD /* HWColorBlocksViewController.h */,
+				7EF9E38022B347AC00B94AAD /* HWColorBlocksViewController.m */,
+				7EF9E38222B34A2900B94AAD /* HWColorCollectionViewCell.h */,
+				7EF9E38322B34A2900B94AAD /* HWColorCollectionViewCell.m */,
+				7EF9E38522B3682400B94AAD /* HWBlurViewController.h */,
+				7EF9E38622B3682400B94AAD /* HWBlurViewController.m */,
+			);
+			path = Blur;
 			sourceTree = "<group>";
 		};
 		84614D1ED9BCFAEE5532E6DF /* Pods */ = {
@@ -580,17 +603,20 @@
 				7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */,
 				7E8E844222B123A5009DA8BD /* HWMyCustomAnimationViewController.m in Sources */,
 				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
+				7EF9E38422B34A2900B94AAD /* HWColorCollectionViewCell.m in Sources */,
 				7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */,
 				7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */,
 				7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */,
+				7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */,
 				7EDE0B75228E5428001E7580 /* HWDynamicHeightViewController.m in Sources */,
 				7EDE0B5922894244001E7580 /* HWFullScreenNavController.m in Sources */,
 				7E7A62AC2280089500F12F8C /* HWAlertView.m in Sources */,
 				7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */,
 				7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */,
 				7E7A62A92280080800F12F8C /* HWTransientAlertViewController.m in Sources */,
+				7EF9E38122B347AC00B94AAD /* HWColorBlocksViewController.m in Sources */,
 				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

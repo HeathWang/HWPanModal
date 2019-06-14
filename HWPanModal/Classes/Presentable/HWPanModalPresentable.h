@@ -53,14 +53,15 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (PanModalHeight)longFormHeight;
 
 /**
+ * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
+ * 默认为YES,即当已经拖拽到long的情况下不能再继续拖动
+ */
+- (BOOL)anchorModalToLongForm;
+
+/**
  * spring弹性动画数值，默认未0.9
  */
 - (CGFloat)springDamping;
-
-/**
- * 背景透明度，默认为0.8
- */
-- (CGFloat)backgroundAlpha;
 
 /**
  * 转场动画时间，默认为0.5s
@@ -74,16 +75,24 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (UIViewAnimationOptions)transitionAnimationOptions;
 
 /**
+ * 背景透明度，默认为0.7
+ */
+- (CGFloat)backgroundAlpha;
+
+/**
+ * Blur background
+ * This function can NOT coexist with backgroundAlpha
+ * Default use backgroundAlpha, Once you set backgroundBlurRadius > 0, blur will work.
+ * I recommend set the value 10 ~ 20.
+ * @return blur radius
+ */
+- (CGFloat)backgroundBlurRadius;
+
+/**
  * scrollView指示器insets
  * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
  */
 - (UIEdgeInsets)scrollIndicatorInsets;
-
-/**
- * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
- * 默认为YES,即当已经拖拽到long的情况下不能再继续拖动
- */
-- (BOOL)anchorModalToLongForm;
 
 /**
  * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
@@ -162,15 +171,15 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 #pragma mark - delegate
 
 /**
- * 询问delegate是否需要response pan recognizer 在 pan Modal上
- * 若返回NO，则禁用拖拽在presented view上，但pan gesture recognizer依然生效
+ * 询问delegate是否需要使拖拽手势生效
+ * 若返回NO，则禁用拖拽在presented view上
  * 默认为YES
  */
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * 当pan recognizer状态为begin/changed时，通知delegate回调。
- * 例如scroll view准备滑动
+ * 当拖动presented View时，该方法会持续的回调
  * 默认实现为空
  */
 - (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
@@ -193,6 +202,13 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 通知回调即将变更状态
  */
 - (void)willTransitionToState:(PresentationState)state;
+
+/**
+ * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
+ * this delegate method will be called.
+ * @param percent 0 ~ 1, 1 means has dismissed
+ */
+- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
 
 /**
  * 通知回调即将dismiss

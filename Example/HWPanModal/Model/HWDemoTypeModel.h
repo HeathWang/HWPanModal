@@ -10,10 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, HWActionType) {
+    HWActionTypePresent, // default present controller
+    HWActionTypePush,    // push into navigation
+};
+
 @interface HWDemoTypeModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) Class targetClass;
+@property (nonatomic, assign) HWActionType action;
 
 - (instancetype)initWithTitle:(NSString *)title targetClass:(Class)targetClass;
 

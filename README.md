@@ -30,13 +30,21 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 ## Snapshoot
 
-<div style="text-align: center"><table><tr>
-<td style="text-align: center">
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="225" />
-</td>
-<td style="text-align: center">
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="225"/>
-</tr></table></div>
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="200" />
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
+            </td>
+        </tr>
+    </table>
+</div>
 
 ## Features
 1. Supports any type of `UIViewController`
@@ -45,6 +53,11 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
     1. UIPanGestureRecognizer, direction is UP & Down.
     2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
 4. Support write your own animation for presenting VC.
+5. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
+6. Support config background alpha or `blur` background.
+7. Show / hide corner, indicator.
+
+More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
@@ -59,7 +72,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.7.1'
+pod 'HWPanModal', '~> 0.2.8'
 ```
 
 ## How to use
@@ -170,15 +183,6 @@ Some guys want to animate Presenting VC when present/dismiss.
 
 Heath Wang
 yishu.jay@gmail.com
-
-## Recent Change Log
-* 0.2.6
-    * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
-* 0.2.6.1
-    * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
-* 0.2.7
-    * Now you can write your own custom presenting VC animation.
-    * Refine comments and docs.
 
 ## License
 

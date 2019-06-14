@@ -28,6 +28,7 @@
 #import "HWDimmedView.h"
 #import "HWPanContainerView.h"
 #import "HWPanIndicatorView.h"
+#import "HWVisualEffectView.h"
 
 FOUNDATION_EXPORT double HWPanModalVersionNumber;
 FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];

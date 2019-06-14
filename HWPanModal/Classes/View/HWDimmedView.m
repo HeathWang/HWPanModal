@@ -6,21 +6,30 @@
 //
 
 #import "HWDimmedView.h"
+#import "HWVisualEffectView.h"
 
 @interface HWDimmedView ()
 
-@property (nonatomic, assign) CGFloat dimAlpha;
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) HWVisualEffectView *blurView;
+
+@property (nonatomic, assign) CGFloat maxDimAlpha;
+@property (nonatomic, assign) CGFloat maxBlurRadius;
+@property (nonatomic, assign) CGFloat maxBlurTintAlpha;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, assign) BOOL isBlurMode;
 
 @end
 
 @implementation HWDimmedView
 
-- (instancetype)initWithDimAlpha:(CGFloat)dimAlpha {
-	self = [[HWDimmedView alloc] initWithFrame:CGRectZero];
+- (instancetype)initWithDimAlpha:(CGFloat)dimAlpha blurRadius:(CGFloat)blurRadius {
+	self = [super initWithFrame:CGRectZero];
 	if (self) {
-		_dimAlpha = dimAlpha;
-	}
+		_maxBlurRadius = blurRadius;
+		_maxDimAlpha = dimAlpha;
+        [self commonInit];
+    }
 
 	return self;
 }
@@ -28,16 +37,39 @@
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
 	if (self) {
-		_dimAlpha = 0.7;
-		_dimState = DimStateOff;
-		self.backgroundColor = [UIColor blackColor];
-		self.alpha = 0;
-
-		_tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView)];
-		[self addGestureRecognizer:_tapGestureRecognizer];
-	}
+		_maxDimAlpha = 0.7;
+        [self commonInit];
+    }
 
 	return self;
+}
+
+- (void)commonInit {
+    _dimState = DimStateOff;
+    _maxBlurTintAlpha = 0.5;
+    _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView)];
+    [self addGestureRecognizer:_tapGestureRecognizer];
+
+    [self setupView];
+}
+
+- (void)setupView {
+	self.isBlurMode = self.maxBlurRadius > 0;
+	if (self.isBlurMode) {
+		[self addSubview:self.blurView];
+	} else {
+		[self addSubview:self.backgroundView];
+	}
+}
+
+#pragma mark - layout
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+
+	// not call getter.
+	_blurView.frame = self.bounds;
+	_backgroundView.frame = self.bounds;
 }
 
 #pragma mark - touch action
@@ -49,21 +81,32 @@
 #pragma mark - private method
 
 - (void)updateAlpha {
+	CGFloat alpha = 0;
+	CGFloat blurRadius = 0;
+	CGFloat blurTintAlpha = 0;
+
 	switch (self.dimState) {
 		case DimStateMax:{
-			self.alpha = self.dimAlpha;
-		}
-			break;
-		case DimStateOff:{
-			self.alpha = 0;
+			alpha = self.maxDimAlpha;
+			blurRadius = self.maxBlurRadius;
+            blurTintAlpha = self.maxBlurTintAlpha;
 		}
 			break;
 		case DimStatePercent: {
-			CGFloat value = MAX(0, MIN(1.0f, self.percent));
-			self.alpha = self.dimAlpha * value;
+			CGFloat percent = MAX(0, MIN(1.0f, self.percent));
+			alpha = self.maxDimAlpha * percent;
+			blurRadius = self.maxBlurRadius * percent;
+            blurTintAlpha = self.maxBlurTintAlpha * percent;
 		}
 		default:
 			break;
+	}
+
+	if (self.isBlurMode) {
+		self.blurView.blurRadius = blurRadius;
+		self.blurView.colorTintAlpha = blurTintAlpha;
+	} else {
+		self.backgroundView.alpha = alpha;
 	}
 }
 
@@ -78,5 +121,28 @@
 	_percent = percent;
 	[self updateAlpha];
 }
+
+#pragma mark - Getter
+
+- (UIView *)backgroundView {
+	if (!_backgroundView) {
+		_backgroundView = [UIView new];
+		_backgroundView.userInteractionEnabled = NO;
+		_backgroundView.alpha = 0;
+		_backgroundView.backgroundColor = [UIColor blackColor];
+	}
+	return _backgroundView;
+}
+
+- (HWVisualEffectView *)blurView {
+	if (!_blurView) {
+		_blurView = [HWVisualEffectView new];
+        _blurView.colorTint = [UIColor whiteColor];
+        _blurView.colorTintAlpha = self.maxBlurTintAlpha;
+		_blurView.userInteractionEnabled = NO;
+	}
+	return _blurView;
+}
+
 
 @end

@@ -23,7 +23,10 @@ typedef void(^didTap)(UITapGestureRecognizer *recognizer);
 @property (nonatomic, assign) CGFloat percent;
 @property (nullable, nonatomic, copy) didTap tapBlock;
 
-- (instancetype)initWithDimAlpha:(CGFloat)dimAlpha;
+/**
+ * init with the max dim alpha & max blur radius.
+ */
+- (instancetype)initWithDimAlpha:(CGFloat)dimAlpha blurRadius:(CGFloat)blurRadius;
 
 @end
 

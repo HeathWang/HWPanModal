@@ -47,6 +47,10 @@
 	return 0.7;
 }
 
+- (CGFloat)backgroundBlurRadius {
+	return 0;
+}
+
 - (UIEdgeInsets)scrollIndicatorInsets {
 	CGFloat top = [self shouldRoundTopCorners] ? [self cornerRadius] : 0;
 	return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);
@@ -126,6 +130,10 @@
 }
 
 - (void)willTransitionToState:(PresentationState)state {
+
+}
+
+- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent {
 
 }
 

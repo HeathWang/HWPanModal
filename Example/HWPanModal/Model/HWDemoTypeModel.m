@@ -20,6 +20,7 @@
 #import "HWAppListViewController.h"
 #import "HWShoppingCartViewController.h"
 #import "HWMyCustomAnimationViewController.h"
+#import "HWColorBlocksViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -50,8 +51,11 @@
     HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
     
     HWDemoTypeModel *appDemo = [HWDemoTypeModel modelWithTitle:@"App Demo" targetClass:HWAppListViewController.class];
+    appDemo.action = HWActionTypePush;
+    HWDemoTypeModel *blurDemo = [HWDemoTypeModel modelWithTitle:@"Blur Background" targetClass:HWColorBlocksViewController.class];
+    blurDemo.action = HWActionTypePush;
 
-	[array addObjectsFromArray:@[appDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
+	[array addObjectsFromArray:@[appDemo, blurDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

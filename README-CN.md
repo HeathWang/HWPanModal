@@ -29,13 +29,21 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 
 ## 截图
 
-<div style="text-align: center"><table><tr>
-<td style="text-align: center">
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="225" />
-</td>
-<td style="text-align: center">
-<img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="225"/>
-</tr></table></div>
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="200" />
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
+            </td>
+        </tr>
+    </table>
+</div>
 
 ## 功能
 1. 支持任意类型的 `UIViewController`
@@ -44,6 +52,11 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
     1. UIPanGestureRecognizer, 上下拖拽视图
     2. UIScreenEdgePanGestureRecognizer, 侧滑关闭视图。
 4. 支持为presenting VC编写自定义动画。
+5. 支持配置动画时间，动画options，弹性spring值
+6. 支持配置背景alpha，或者高斯模糊背景
+7. 支持显示隐藏指示器，修改圆角
+
+更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) 声明。
     
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
@@ -57,7 +70,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.7.1'
+pod 'HWPanModal', '~> 0.2.8'
 ```
 
 ## 如何使用
@@ -167,15 +180,6 @@ pod 'HWPanModal', '~> 0.2.7.1'
 
 Heath Wang
 yishu.jay@gmail.com
-
-## Recent Change Log
-* 0.2.6
-    * Add `- (BOOL)shouldAnimatePresentingVC;` to config transition for PresentingVC.
-* 0.2.6.1
-    * fix when set UIScrollView contentOffset in `- (void)viewDidLoad;` cause first pan UI issue.
-* 0.2.7
-    * Now you can write your own custom presenting VC animation.
-    * Refine comments and docs.
 
 ## License
 

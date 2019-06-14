@@ -338,10 +338,16 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)adjustToYPos:(CGFloat)yPos {
 	self.presentedView.hw_top = MAX(yPos, self.anchoredYPosition);
 
-	if (self.presentedView.frame.origin.y > self.shortFormYPosition) {
-		CGFloat yDisplacementFromShortForm = self.presentedView.frame.origin.y - self.shortFormYPosition;
+    // change dim background starting from shortFormYPosition.
+	if (self.presentedView.frame.origin.y >= self.shortFormYPosition) {
+        
+        CGFloat yDistanceFromShortForm = self.presentedView.frame.origin.y - self.shortFormYPosition;
+        CGFloat bottomHeight = self.containerView.hw_height - self.shortFormYPosition;
+        CGFloat percent = yDistanceFromShortForm / bottomHeight;
 		self.backgroundView.dimState = DimStatePercent;
-		self.backgroundView.percent = 1 - yDisplacementFromShortForm / self.presentedView.frame.size.height;
+		self.backgroundView.percent = 1 - percent;
+
+		[self.presentable panModalGestureRecognizer:self.panGestureRecognizer dismissPercent:MIN(percent, 1)];
 	} else {
 		self.backgroundView.dimState = DimStateMax;
 	}
@@ -476,8 +482,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)didPanOnView:(UIPanGestureRecognizer *)panGestureRecognizer {
 
 
-	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] &&
-			self.containerView) {
+	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] && self.containerView) {
 
 		CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
 
@@ -570,6 +575,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (BOOL)shouldFailPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 
 	if ([self shouldPrioritizePanGestureRecognizer:panGestureRecognizer]) {
+		// high priority than scroll view gesture, disable scrollView gesture.
         [self.presentable panScrollable].panGestureRecognizer.enabled = NO;
 		[self.presentable panScrollable].panGestureRecognizer.enabled = YES;
 		return NO;
@@ -730,7 +736,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (HWDimmedView *)backgroundView {
 	if (!_backgroundView) {
 		if (self.presentable) {
-			_backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha]];
+			_backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha] blurRadius:[self.presentable backgroundBlurRadius]];
 		} else {
 			_backgroundView = [[HWDimmedView alloc] init];
 		}
@@ -782,10 +788,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	return _screenGestureRecognizer;
 }
-
-//- (void)dealloc {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//}
 
 @end
 

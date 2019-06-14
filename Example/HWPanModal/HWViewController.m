@@ -10,7 +10,6 @@
 #import "HWDemoTypeModel.h"
 #import <HWPanModal/HWPanModal.h>
 #import <Masonry/Masonry.h>
-#import "HWAppListViewController.h"
 
 @interface HWViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -42,9 +41,7 @@
 
     HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
     cell.textLabel.text = demoTypeModel.title;
-    if ([NSStringFromClass(demoTypeModel.targetClass) isEqualToString:NSStringFromClass(HWAppListViewController.class)]) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    cell.accessoryType = demoTypeModel.action == HWActionTypePush ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
     return cell;
 }
 
@@ -57,12 +54,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	HWDemoTypeModel *demoTypeModel = self.demoList[indexPath.row];
-    if ([NSStringFromClass(demoTypeModel.targetClass) isEqualToString:NSStringFromClass(HWAppListViewController.class)]) {
-        [self.navigationController pushViewController:[HWAppListViewController new] animated:YES];
+    
+    if (demoTypeModel.action == HWActionTypePush) {
+        [self.navigationController pushViewController:[demoTypeModel.targetClass new] animated:YES];
     } else {
         [self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
     }
-    
+        
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 #pragma mark - Getter
@@ -79,6 +85,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
         _tableView.rowHeight = 60;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
 
         _tableView.delegate = self;
         _tableView.dataSource = self;

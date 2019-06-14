@@ -54,10 +54,6 @@
     return _customAnimation;
 }
 
-- (void)dealloc {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
 @end
 
 @implementation HWMyCustomAnimation
