@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HWPanModal'
-  s.version          = '0.2.8'
+  s.version          = '0.2.8.1'
   s.summary          = 'HWPanModal is used to present controller and drag to dismiss.'
 
 # This description is used to generate tags and improve search results.
@@ -18,19 +18,24 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-HWPanModal is used to present controller and drag to dismiss. Inspire to PanModal.
+HWPanModal presents controller from bottom and drag to dismiss, high customize.
                        DESC
 
   s.homepage         = 'https://github.com/HeathWang/HWPanModal'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT'}
   s.author           = { 'heathwang' => 'yishu.jay@gmail.com' }
   s.source           = { :git => 'https://github.com/HeathWang/HWPanModal.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'HWPanModal/Classes/**/*'
-  s.public_header_files = 'HWPanModal/Classes/**/*.h'
+  s.source_files = ['HWPanModal/Classes/Layout/**/*', 'HWPanModal/Classes/Animator/**/*', 'HWPanModal/Classes/Controller/**/*',
+                    'HWPanModal/Classes/Delegate/**/*', 'HWPanModal/Classes/Presentable/**/*', 'HWPanModal/Classes/Presenter/**/*',
+                    'HWPanModal/Classes/View/**/*', 'HWPanModal/Classes/HWPanModal.h']
+  s.public_header_files = ['HWPanModal/Classes/HWPanModal.h', 'HWPanModal/Classes/Presentable/HWPanModalPresentable.h', 'HWPanModal/Classes/Presentable/HWPanModalHeight.h',
+                           'HWPanModal/Classes/Presentable/UIViewController+PanModalDefault.h', 'HWPanModal/Classes/Presenter/UIViewController+PanModalPresenter.h', 'HWPanModal/Classes/Presenter/HWPanModalPresenterProtocol.h',
+                           'HWPanModal/Classes/Presentable/UIViewController+Presentation.h', 'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h']
   s.dependency 'KVOController'
+  
   
   # s.resource_bundles = {
   #   'HWPanModal' => ['HWPanModal/Assets/*.png']
