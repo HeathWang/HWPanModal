@@ -58,6 +58,7 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 
 ## TODO
 
+* Handle keyboard show&dismiss.
 * Touch event can response to presenting VC.
 
 ## Compatibility
