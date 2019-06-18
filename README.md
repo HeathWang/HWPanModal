@@ -59,6 +59,10 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
 
+## TODO
+
+* Touch event can response to presenting VC.
+
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
 
