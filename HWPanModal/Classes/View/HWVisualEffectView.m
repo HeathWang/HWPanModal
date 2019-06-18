@@ -7,6 +7,7 @@
 
 #import "HWVisualEffectView.h"
 
+NSString * const kInternalCustomBlurEffect = @"_UICustomBlurEffect";
 NSString * const kHWBlurEffectColorTintKey = @"colorTint";
 NSString * const kHWBlurEffectColorTintAlphaKey = @"colorTintAlpha";
 NSString * const kHWBlurEffectBlurRadiusKey = @"blurRadius";
@@ -38,10 +39,17 @@ NSString * const kHWBlurEffectScaleKey = @"scale";
 #pragma mark - private method
 
 - (nullable id)__valueForKey:(NSString *)key {
+    if (![NSStringFromClass(self.blurEffect.class) isEqualToString:kInternalCustomBlurEffect]) {
+        return @(0);
+    }
     return [self.blurEffect valueForKey:key];
 }
 
 - (void)__setValue:(id)value forKey:(NSString *)key {
+    if (![NSStringFromClass(self.blurEffect.class) isEqualToString:kInternalCustomBlurEffect]) {
+        self.effect = self.blurEffect;
+        return;
+    }
     [self.blurEffect setValue:value forKey:key];
     self.effect = self.blurEffect;
 }
@@ -50,7 +58,11 @@ NSString * const kHWBlurEffectScaleKey = @"scale";
 
 - (UIBlurEffect *)blurEffect {
     if (!_blurEffect) {
-        _blurEffect = (UIBlurEffect *)[NSClassFromString(@"_UICustomBlurEffect") new];
+        if (NSClassFromString(kInternalCustomBlurEffect)) {
+            _blurEffect = (UIBlurEffect *)[NSClassFromString(@"_UICustomBlurEffect") new];
+        } else {
+            _blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        }
     }
     
     return _blurEffect;
