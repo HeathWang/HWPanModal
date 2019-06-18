@@ -54,7 +54,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
     2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
 4. Support write your own animation for presenting VC.
 5. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
-6. Support config background alpha or `blur` background.
+6. Support config background alpha or `blur` background. Note: Dynamic chenge blur effect ONLY works on iOS9.0+.
 7. Show / hide corner, indicator.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
