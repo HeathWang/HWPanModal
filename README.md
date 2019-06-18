@@ -16,9 +16,6 @@
     <a href="https://cocoapods.org/pods/HWPanModal">
        <img src="https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat">
     </a>
-    <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/badge/cocoapods-supported-4BC51D.svg?style=plastic">
-    </a>
 </p>
 
 
