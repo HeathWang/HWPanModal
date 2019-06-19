@@ -32,14 +32,23 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <div style="text-align: center">
     <table>
         <tr>
+            <th>Basic</th>
+            <th>Blur background</th>
+            <th>Keyboard handle</th>
+            <th>App demo</th>          
+        </tr>
+        <tr>
             <td style="text-align: center">
             <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="200" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="200"/>
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
             </td>
         </tr>
     </table>
@@ -53,8 +62,9 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
     2. UIScreenEdgePanGestureRecognizer, 侧滑关闭视图。
 4. 支持为presenting VC编写自定义动画。
 5. 支持配置动画时间，动画options，弹性spring值
-6. 支持配置背景alpha，或者高斯模糊背景
+6. 支持配置背景alpha，或者高斯模糊背景。注意：动态调整模糊效果仅工作于iOS9.0+。
 7. 支持显示隐藏指示器，修改圆角
+8. 自动处理键盘弹出消失事件。
 
 更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) 声明。
     
@@ -70,7 +80,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.8'
+pod 'HWPanModal', '~> 0.2.9'
 ```
 
 ## 如何使用

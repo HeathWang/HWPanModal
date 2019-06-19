@@ -47,6 +47,8 @@
 - (void)commonInit {
     _dimState = DimStateOff;
     _maxBlurTintAlpha = 0.5;
+    // default, max alpha.
+    _percent = 1;
     _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView)];
     [self addGestureRecognizer:_tapGestureRecognizer];
 

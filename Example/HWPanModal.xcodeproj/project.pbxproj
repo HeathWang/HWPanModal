@@ -34,6 +34,8 @@
 		7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B62280503A00F12F8C /* HWUserGroupViewController.m */; };
 		7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A62B92280505B00F12F8C /* HWNavViewController.m */; };
 		7E8E844222B123A5009DA8BD /* HWMyCustomAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E844122B123A5009DA8BD /* HWMyCustomAnimationViewController.m */; };
+		7EA965CF22B9F45A00BA5ED9 /* HWTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA965CE22B9F45A00BA5ED9 /* HWTextInputViewController.m */; };
+		7EA965D222B9F52000BA5ED9 /* HWInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA965D122B9F52000BA5ED9 /* HWInputTableViewCell.m */; };
 		7EDE0B5922894244001E7580 /* HWFullScreenNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B5822894243001E7580 /* HWFullScreenNavController.m */; };
 		7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B68228D2F9C001E7580 /* HWPickerViewController.m */; };
 		7EDE0B75228E5428001E7580 /* HWDynamicHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0B74228E5428001E7580 /* HWDynamicHeightViewController.m */; };
@@ -106,6 +108,10 @@
 		7E7A62B92280505B00F12F8C /* HWNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWNavViewController.m; sourceTree = "<group>"; };
 		7E8E844022B123A5009DA8BD /* HWMyCustomAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMyCustomAnimationViewController.h; sourceTree = "<group>"; };
 		7E8E844122B123A5009DA8BD /* HWMyCustomAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWMyCustomAnimationViewController.m; sourceTree = "<group>"; };
+		7EA965CD22B9F45A00BA5ED9 /* HWTextInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTextInputViewController.h; sourceTree = "<group>"; };
+		7EA965CE22B9F45A00BA5ED9 /* HWTextInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTextInputViewController.m; sourceTree = "<group>"; };
+		7EA965D022B9F52000BA5ED9 /* HWInputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWInputTableViewCell.h; sourceTree = "<group>"; };
+		7EA965D122B9F52000BA5ED9 /* HWInputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWInputTableViewCell.m; sourceTree = "<group>"; };
 		7EDE0B5722894243001E7580 /* HWFullScreenNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWFullScreenNavController.h; sourceTree = "<group>"; };
 		7EDE0B5822894243001E7580 /* HWFullScreenNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWFullScreenNavController.m; sourceTree = "<group>"; };
 		7EDE0B67228D2F9C001E7580 /* HWPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPickerViewController.h; sourceTree = "<group>"; };
@@ -330,6 +336,17 @@
 			path = CustomPresentingVC;
 			sourceTree = "<group>";
 		};
+		7EA965CC22B9F43900BA5ED9 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				7EA965CD22B9F45A00BA5ED9 /* HWTextInputViewController.h */,
+				7EA965CE22B9F45A00BA5ED9 /* HWTextInputViewController.m */,
+				7EA965D022B9F52000BA5ED9 /* HWInputTableViewCell.h */,
+				7EA965D122B9F52000BA5ED9 /* HWInputTableViewCell.m */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
 		7EDE0B5622894211001E7580 /* FullScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +388,7 @@
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7EA965CC22B9F43900BA5ED9 /* TextInput */,
 				7EF9E37E22B3477100B94AAD /* Blur */,
 				7E8E843F22B12367009DA8BD /* CustomPresentingVC */,
 				7E689F8E229D3687000D7011 /* ShoppingCart */,
@@ -547,8 +565,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework",
@@ -556,8 +572,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWPanModal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
@@ -602,6 +616,7 @@
 				7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */,
 				7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */,
 				7E8E844222B123A5009DA8BD /* HWMyCustomAnimationViewController.m in Sources */,
+				7EA965CF22B9F45A00BA5ED9 /* HWTextInputViewController.m in Sources */,
 				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
 				7EF9E38422B34A2900B94AAD /* HWColorCollectionViewCell.m in Sources */,
 				7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */,
@@ -617,6 +632,7 @@
 				7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */,
 				7E7A62A92280080800F12F8C /* HWTransientAlertViewController.m in Sources */,
 				7EF9E38122B347AC00B94AAD /* HWColorBlocksViewController.m in Sources */,
+				7EA965D222B9F52000BA5ED9 /* HWInputTableViewCell.m in Sources */,
 				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

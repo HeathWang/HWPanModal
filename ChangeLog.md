@@ -32,14 +32,22 @@
     * Now you can blur background.
         * overwrite `- (CGFloat)backgroundBlurRadius;`, return a value > 0.
     * Add a new delegate callback.
-        
-        ```Objective-C
+    
+    ```Objective-C
         /**
          * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
          * this delegate method will be called.
          * @param percent 0 ~ 1, 1 means has dismissed
          */
         - (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
-        ```
+    ```
+        
+* 0.2.8.1
+    * Fix blur effect not working on iOS8.0.
+* 0.2.9
+    * UI issue fix.
+    * Add auto handle keyboard show/hide.
+        
+        
 
 

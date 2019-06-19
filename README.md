@@ -30,18 +30,28 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 <div style="text-align: center">
     <table>
         <tr>
+            <th>Basic</th>
+            <th>Blur background</th>
+            <th>Keyboard handle</th>
+            <th>App demo</th>          
+        </tr>
+        <tr>
             <td style="text-align: center">
             <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="200" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="200"/>
+            </td>
+            <td style="text-align: center">
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
             </td>
         </tr>
     </table>
 </div>
+
 
 ## Features
 1. Supports any type of `UIViewController`
@@ -51,8 +61,9 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
     2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
 4. Support write your own animation for presenting VC.
 5. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
-6. Support config background alpha or `blur` background. Note: Dynamic chenge blur effect ONLY works on iOS9.0+.
+6. Support config background alpha or `blur` background. Note: Dynamic change blur effect ONLY works on iOS9.0+.
 7. Show / hide corner, indicator.
+8. Auto handle UIKeyboard show/hide.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
 
@@ -74,7 +85,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.8'
+pod 'HWPanModal', '~> 0.2.9'
 ```
 
 ## How to use

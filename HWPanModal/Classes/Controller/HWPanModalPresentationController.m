@@ -33,6 +33,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 // 判断弹出的view是否在做动画
 @property (nonatomic, assign) BOOL isPresentedViewAnimating;
 
+// HWPanModalPresentable config
 @property (nonatomic, assign) BOOL extendsPanScrolling;
 
 @property (nonatomic, assign) BOOL anchorModalToLongForm;
@@ -49,12 +50,17 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, strong) id<HWPanModalPresentable> presentable;
 
+// view
 @property (nonatomic, strong) HWDimmedView *backgroundView;
 @property (nonatomic, strong) HWPanContainerView *panContainerView;
 @property (nonatomic, strong) HWPanIndicatorView *dragIndicatorView;
 
+// gesture
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *screenGestureRecognizer;
+
+// keyboard handle
+@property (nonatomic, copy) NSDictionary *keyboardInfo;
 
 @end
 
@@ -66,6 +72,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		// make props as default
 		_extendsPanScrolling = YES;
 		_anchorModalToLongForm = YES;
+        [self addKeyboardObserver];
 	}
 
 	return self;
@@ -109,6 +116,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		return;
 
 	[self.backgroundView removeFromSuperview];
+    [self.panContainerView endEditing:YES];
 }
 
 - (void)dismissalTransitionWillBegin {
@@ -482,7 +490,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)didPanOnView:(UIPanGestureRecognizer *)panGestureRecognizer {
 
 
-	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] && self.containerView) {
+	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] && self.containerView && !self.keyboardInfo) {
 
 		CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
 
@@ -714,6 +722,93 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	return NO;
 }
 
+#pragma mark - UIKeyboard Handle
+
+- (void)addKeyboardObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)removeKeyboardObserver {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    UIView<UIKeyInput> *currentInput = [self findCurrentTextInputInView:self.panContainerView];
+
+    if (!currentInput)
+		return;
+
+    self.keyboardInfo = notification.userInfo;
+	[self updatePanContainerFrameForKeyboard];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.keyboardInfo = nil;
+    
+    NSTimeInterval duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = (UIViewAnimationCurve) [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationCurve:curve];
+    [UIView setAnimationDuration:duration];
+
+    self.panContainerView.transform = CGAffineTransformIdentity;
+
+    [UIView commitAnimations];
+}
+
+- (void)updatePanContainerFrameForKeyboard {
+	if (!self.keyboardInfo)
+		return;
+
+	UIView<UIKeyInput> *textInput = [self findCurrentTextInputInView:self.panContainerView];
+	if (!textInput)
+		return;
+    
+    CGAffineTransform lastTransform = self.panContainerView.transform;
+    self.panContainerView.transform = CGAffineTransformIdentity;
+    
+	CGFloat textViewBottomY = [textInput convertRect:textInput.bounds toView:self.panContainerView].origin.y + textInput.hw_height;
+	CGFloat keyboardHeight = [self.keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+
+	CGFloat offsetY = 0;
+	CGFloat top = 5;
+	offsetY = self.panContainerView.hw_height - (keyboardHeight + top + textViewBottomY + self.panContainerView.hw_top);
+
+	NSTimeInterval duration = [self.keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	UIViewAnimationCurve curve = (UIViewAnimationCurve) [self.keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
+
+    self.panContainerView.transform = lastTransform;
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+	[UIView setAnimationCurve:curve];
+	[UIView setAnimationDuration:duration];
+
+	self.panContainerView.transform = CGAffineTransformMakeTranslation(0, offsetY);
+
+	[UIView commitAnimations];
+}
+
+- (UIView <UIKeyInput> *)findCurrentTextInputInView:(UIView *)view {
+	if ([view conformsToProtocol:@protocol(UIKeyInput)] && view.isFirstResponder) {
+		// Quick fix for web view issue
+		if ([view isKindOfClass:NSClassFromString(@"UIWebBrowserView")] || [view isKindOfClass:NSClassFromString(@"WKContentView")]) {
+			return nil;
+		}
+		return (UIView <UIKeyInput> *) view;
+	}
+
+	for (UIView *subview in view.subviews) {
+		UIView <UIKeyInput> *inputInView = [self findCurrentTextInputInView:subview];
+		if (inputInView) {
+			return inputInView;
+		}
+	}
+	return nil;
+}
+
 #pragma mark - Getter
 
 - (CGFloat)anchoredYPosition {
@@ -787,6 +882,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	}
 
 	return _screenGestureRecognizer;
+}
+
+#pragma mark - dealloc
+
+- (void)dealloc {
+	[self removeKeyboardObserver];
 }
 
 @end
