@@ -85,7 +85,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.9.1'
+pod 'HWPanModal', '~> 0.2.9.2'
 ```
 
 ## How to use
