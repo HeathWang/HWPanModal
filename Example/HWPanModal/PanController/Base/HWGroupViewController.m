@@ -24,6 +24,7 @@
     self.tableView.estimatedRowHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.showsVerticalScrollIndicator = NO;
     
     self.tableView.contentOffset = CGPointMake(0, 100);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
