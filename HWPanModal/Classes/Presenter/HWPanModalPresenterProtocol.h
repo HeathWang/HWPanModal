@@ -21,8 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
 
+/**
+ * Note: This method ONLY for iPad, like UIPopoverPresentationController.
+ */
 - (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent sourceView:(nullable UIView *)sourceView sourceRect:(CGRect)rect;
 
+/**
+ * Present the Controller from bottom.
+ */
 - (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent;
 
 @end

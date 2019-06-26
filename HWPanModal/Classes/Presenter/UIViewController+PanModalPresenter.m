@@ -19,17 +19,18 @@
 	HWPanModalPresentationDelegate *delegate = [HWPanModalPresentationDelegate new];
 	viewControllerToPresent.presentationDelegate = delegate;
 
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		viewControllerToPresent.modalPresentationStyle = UIModalPresentationPopover;
-		viewControllerToPresent.popoverPresentationController.sourceRect = rect;
-		viewControllerToPresent.popoverPresentationController.sourceView = sourceView;
-		viewControllerToPresent.popoverPresentationController.delegate = delegate;
-	} else {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad &&
+        (sourceView && !CGRectEqualToRect(rect, CGRectZero))) {
+        viewControllerToPresent.modalPresentationStyle = UIModalPresentationPopover;
+        viewControllerToPresent.popoverPresentationController.sourceRect = rect;
+        viewControllerToPresent.popoverPresentationController.sourceView = sourceView;
+        viewControllerToPresent.popoverPresentationController.delegate = delegate;
+    } else {
 
-		viewControllerToPresent.modalPresentationStyle = UIModalPresentationCustom;
-		viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = YES;
-		viewControllerToPresent.transitioningDelegate = delegate;
-	}
+        viewControllerToPresent.modalPresentationStyle = UIModalPresentationCustom;
+        viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = YES;
+        viewControllerToPresent.transitioningDelegate = delegate;
+    }
     
     // fix for iOS 8 issue: the present action will delay.
     dispatch_async(dispatch_get_main_queue(), ^{
