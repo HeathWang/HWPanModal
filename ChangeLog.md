@@ -47,6 +47,8 @@
 * 0.2.9
     * UI issue fix.
     * Add auto handle keyboard show/hide.
+* 0.2.9.1
+    * Fix set scrollable showsVerticalScrollIndicator = NO, but doesn't work.
         
         
 

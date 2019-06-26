@@ -69,8 +69,8 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 
 ## TODO
 
-* Handle keyboard show&dismiss.
-* Touch event can response to presenting VC.
+* [x] Handle keyboard show&dismiss.
+* ~~Touch event can response to presenting VC.~~
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
@@ -85,7 +85,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.9'
+pod 'HWPanModal', '~> 0.2.9.1'
 ```
 
 ## How to use
