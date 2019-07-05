@@ -168,6 +168,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)showDragIndicator;
 
+/**
+ * When there is text input view exists and becomeFirstResponder, will auto handle keyboard height.
+ * Default is YES. You can disable it, handle it by yourself.
+ */
+- (BOOL)isAutoHandleKeyboardEnabled;
+
 #pragma mark - delegate
 
 /**

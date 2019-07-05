@@ -49,6 +49,16 @@
     * Add auto handle keyboard show/hide.
 * 0.2.9.1
     * Fix set scrollable showsVerticalScrollIndicator = NO, but doesn't work.
+* 0.2.9.3
+    * Add new config method.
+        
+        ```
+        /**
+         * When there is text input view exists and becomeFirstResponder, will auto handle keyboard height.
+         * Default is YES. You can disable it, handle it by yourself.
+         */
+        - (BOOL)isAutoHandleKeyboardEnabled;
+        ```
         
         
 

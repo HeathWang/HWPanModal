@@ -729,8 +729,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 #pragma mark - UIKeyboard Handle
 
 - (void)addKeyboardObserver {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    if ([self.presentable isAutoHandleKeyboardEnabled]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    }
 }
 
 - (void)removeKeyboardObserver {

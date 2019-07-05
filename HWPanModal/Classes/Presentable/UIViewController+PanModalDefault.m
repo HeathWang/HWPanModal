@@ -113,6 +113,10 @@
 	return [self shouldRoundTopCorners];
 }
 
+- (BOOL)isAutoHandleKeyboardEnabled {
+	return YES;
+}
+
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 	return YES;
 }
