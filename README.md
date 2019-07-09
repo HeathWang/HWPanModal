@@ -23,6 +23,7 @@ HWPanModal is used to present controller and drag to dismiss.
 
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
+**My another project for pop controller:**[**HWPopController**](https://github.com/HeathWang/HWPopController)
 [_中文文档说明_](https://github.com/HeathWang/HWPanModal/blob/master/README-CN.md)
 
 ## Snapshoot
@@ -196,6 +197,10 @@ Some guys want to animate Presenting VC when present/dismiss.
 
 Heath Wang
 yishu.jay@gmail.com
+
+## Change Log
+
+[Click Me](https://github.com/HeathWang/HWPanModal/blob/master/ChangeLog.md)
 
 ## License
 
