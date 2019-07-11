@@ -52,13 +52,25 @@
 * 0.2.9.3
     * Add new config method.
         
-        ```
+        ```Objective-C
         /**
          * When there is text input view exists and becomeFirstResponder, will auto handle keyboard height.
          * Default is YES. You can disable it, handle it by yourself.
          */
         - (BOOL)isAutoHandleKeyboardEnabled;
         ```
+* 0.2.9.4
+    * Add config for keyboard offset from inputView bottom.
+    
+        ```Objective-C
+        /**
+         The offset that keyboard show from input view's bottom. It works when
+         `isAutoHandleKeyboardEnabled` return YES.
+        
+         @return offset, default is 5.
+         */
+        - (CGFloat)keyboardOffsetFromInputView;
+        ```    
         
         
 

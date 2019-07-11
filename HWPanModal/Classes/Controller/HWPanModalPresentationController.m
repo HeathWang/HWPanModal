@@ -780,7 +780,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	CGFloat keyboardHeight = [self.keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
 
 	CGFloat offsetY = 0;
-	CGFloat top = 5;
+	CGFloat top = [self.presentable keyboardOffsetFromInputView];
 	offsetY = self.panContainerView.hw_height - (keyboardHeight + top + textViewBottomY + self.panContainerView.hw_top);
 
 	NSTimeInterval duration = [self.keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];

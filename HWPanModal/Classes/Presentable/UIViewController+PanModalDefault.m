@@ -117,6 +117,10 @@
 	return YES;
 }
 
+- (CGFloat)keyboardOffsetFromInputView {
+    return 5;
+}
+
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 	return YES;
 }

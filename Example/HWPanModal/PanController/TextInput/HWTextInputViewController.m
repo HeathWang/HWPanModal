@@ -42,6 +42,10 @@
     return self.tableView;
 }
 
+- (CGFloat)keyboardOffsetFromInputView {
+    return 10;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

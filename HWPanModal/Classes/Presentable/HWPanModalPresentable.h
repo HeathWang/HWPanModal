@@ -174,6 +174,15 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)isAutoHandleKeyboardEnabled;
 
+
+/**
+ The offset that keyboard show from input view's bottom. It works when
+ `isAutoHandleKeyboardEnabled` return YES.
+
+ @return offset, default is 5.
+ */
+- (CGFloat)keyboardOffsetFromInputView;
+
 #pragma mark - delegate
 
 /**
