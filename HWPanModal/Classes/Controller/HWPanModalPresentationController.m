@@ -158,6 +158,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (void)setNeedsLayoutUpdate {
 	[self configureViewLayout];
+    [self updateBackgroundColor];
 	[self adjustPresentedViewFrame];
 	[self checkEdgeInteractive];
 	[self observe:[self.presentable panScrollable]];
@@ -257,6 +258,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  */
 - (void)layoutBackgroundView:(UIView *)containerView {
 	[containerView addSubview:self.backgroundView];
+    [self updateBackgroundColor];
 	self.backgroundView.translatesAutoresizingMaskIntoConstraints = NO;
     
     if (@available(iOS 9.0, *)) {
@@ -271,6 +273,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         [NSLayoutConstraint activateConstraints:hCons];
 		[NSLayoutConstraint activateConstraints:vCons];
 	}
+}
+
+- (void)updateBackgroundColor {
+    self.backgroundView.blurTintColor = [self.presentable backgroundBlurColor];
 }
 
 - (void)layoutPresentedView:(UIView *)containerView {

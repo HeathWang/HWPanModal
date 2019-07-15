@@ -27,13 +27,33 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 @protocol HWPanModalPresentable <NSObject>
 
-#pragma mark - get config
+#pragma mark - ScrollView Config
 
 /**
  * 支持同步拖拽的scrollView
  * 如果ViewController中包含scrollView并且你想scrollView滑动和拖拽手势同事存在，请返回此scrollView
  */
 - (nullable UIScrollView *)panScrollable;
+
+/**
+ * 是否允许pan scroll view
+ * 默认为YES
+ */
+- (BOOL)isPanScrollEnabled;
+
+/**
+ * scrollView指示器insets
+ * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
+ */
+- (UIEdgeInsets)scrollIndicatorInsets;
+
+/**
+ * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
+ * 其余情况返回NO
+ */
+- (BOOL)allowsExtendedPanScrolling;
+
+#pragma mark - Offset/position
 
 /**
  * offset：屏幕顶部距离
@@ -52,11 +72,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (PanModalHeight)longFormHeight;
 
-/**
- * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
- * 默认为YES,即当已经拖拽到long的情况下不能再继续拖动
- */
-- (BOOL)anchorModalToLongForm;
+#pragma mark - Animation config
 
 /**
  * spring弹性动画数值，默认未0.9
@@ -74,6 +90,8 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (UIViewAnimationOptions)transitionAnimationOptions;
 
+#pragma mark - Background config
+
 /**
  * 背景透明度，默认为0.7
  */
@@ -89,22 +107,18 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (CGFloat)backgroundBlurRadius;
 
 /**
- * scrollView指示器insets
- * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
+ * blur background color
+ * @return color, default is White Color.
  */
-- (UIEdgeInsets)scrollIndicatorInsets;
+- (nonnull UIColor *)backgroundBlurColor;
+
+#pragma mark - User operation
 
 /**
- * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
- * 其余情况返回NO
+ * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
+ * 默认为YES,即当已经拖拽到long的情况下不能再继续拖动
  */
-- (BOOL)allowsExtendedPanScrolling;
-
-/**
- * 是否允许drag操作dismiss presented Controller
- * 默认为YES
- */
-- (BOOL)allowsDragToDismiss;
+- (BOOL)anchorModalToLongForm;
 
 /**
  * 是否允许点击背景处dismiss presented Controller
@@ -112,11 +126,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)allowsTapBackgroundToDismiss;
 
+
 /**
- * 是否允许pan scroll view
+ * 是否允许drag操作dismiss presented Controller
  * 默认为YES
  */
-- (BOOL)isPanScrollEnabled;
+- (BOOL)allowsDragToDismiss;
 
 /**
  * 是否允许用户操作
@@ -129,6 +144,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 默认为NO，不允许
  */
 - (BOOL)allowScreenEdgeInteractive;
+
+/**
+ * 是否允许触觉反馈
+ * 默认为YES
+ */
+- (BOOL)isHapticFeedbackEnabled;
+
+#pragma mark - Custom presentingViewController animation
 
 /**
  * 是否对presentingViewController做动画效果，默认该效果类似淘宝/京东购物车凹陷效果
@@ -144,11 +167,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 
-/**
- * 是否允许触觉反馈
- * 默认为YES
- */
-- (BOOL)isHapticFeedbackEnabled;
+#pragma mark - Content UI config
 
 /**
  * 是否顶部圆角
@@ -167,6 +186,8 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
  */
 - (BOOL)showDragIndicator;
+
+#pragma mark - Keyboard handle
 
 /**
  * When there is text input view exists and becomeFirstResponder, will auto handle keyboard height.

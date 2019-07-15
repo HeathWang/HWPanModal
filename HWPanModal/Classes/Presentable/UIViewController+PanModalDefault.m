@@ -51,6 +51,11 @@
 	return 0;
 }
 
+- (nonnull UIColor *)backgroundBlurColor {
+    return [UIColor whiteColor];
+}
+
+
 - (UIEdgeInsets)scrollIndicatorInsets {
 	CGFloat top = [self shouldRoundTopCorners] ? [self cornerRadius] : 0;
 	return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);

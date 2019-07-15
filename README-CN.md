@@ -80,7 +80,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.9.4'
+pod 'HWPanModal', '~> 0.2.9.5'
 ```
 
 ## 如何使用

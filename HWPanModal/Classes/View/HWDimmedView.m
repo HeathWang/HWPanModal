@@ -146,5 +146,12 @@
 	return _blurView;
 }
 
+#pragma mark - Setter
+
+- (void)setBlurTintColor:(UIColor *)blurTintColor {
+    _blurTintColor = blurTintColor;
+    _blurView.colorTint = _blurTintColor;
+}
+
 
 @end

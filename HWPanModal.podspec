@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HWPanModal'
-  s.version          = '0.2.9.4'
+  s.version          = '0.2.9.5'
   s.summary          = 'HWPanModal is used to present controller and drag to dismiss.'
 
 # This description is used to generate tags and improve search results.

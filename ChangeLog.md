@@ -70,7 +70,17 @@
          @return offset, default is 5.
          */
         - (CGFloat)keyboardOffsetFromInputView;
-        ```    
+        ```   
+* 0.2.9.5
+    *  Add config for blur color
+        
+        ```Objective-C
+        /**
+         * blur background color
+         * @return color, default is White Color.
+         */
+        - (nonnull UIColor *)backgroundBlurColor;
+        ```
         
         
 
