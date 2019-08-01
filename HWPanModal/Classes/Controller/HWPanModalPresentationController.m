@@ -196,9 +196,13 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	[self.KVOController unobserve:scrollView];
 
 	[scrollView setContentOffset:offset animated:YES];
-	[self trackScrolling:scrollView];
-
-	[self observe:scrollView];
+    // wait for animation finished.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self trackScrolling:scrollView];
+        
+        [self observe:scrollView];
+    });
+	
 }
 
 #pragma mark - layout
@@ -394,9 +398,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     if (!scrollView) {
         return;
     }
+    
+    if (scrollView.contentInset.top > 0) {
+        self.scrollViewYOffset = scrollView.contentOffset.y;
+    } else {
+        self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
+    }
 
-    self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
-
+    
 	__weak typeof(self) wkSelf = self;
 	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
 		if (wkSelf.containerView != nil) {
@@ -410,7 +419,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  This helps halt scrolling when we want to hold the scroll view in place.
 */
 - (void)trackScrolling:(UIScrollView *)scrollView {
-	self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
+    if (scrollView.contentInset.top > 0) {
+        self.scrollViewYOffset = scrollView.contentOffset.y;
+    } else {
+        self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
+    }
+	
     scrollView.showsVerticalScrollIndicator = self.originalScrollableShowsVerticalScrollIndicator ? YES : NO;
 }
 
@@ -443,13 +457,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				 */
 				[self haltScrolling:scrollView];
 			}
-		} else if ([self.presentedViewController.view isKindOfClass:UIScrollView.class] && !self.isPresentedViewAnimating && scrollView.contentOffset.y <= 0) {
-			/**
-			 * In the case where we drag down quickly on the scroll view and let go,
-             `handleScrollViewTopBounce` adds a nice elegant touch.
-			 */
-			[self handleScrollViewTopBounce:scrollView change:change];
-		} else {
+		}
+//        else if ([self.presentedViewController.view isKindOfClass:UIScrollView.class] && !self.isPresentedViewAnimating && scrollView.contentOffset.y <= 0) {
+//            /**
+//             * In the case where we drag down quickly on the scroll view and let go,
+//             `handleScrollViewTopBounce` adds a nice elegant touch.
+//             */
+//            [self handleScrollViewTopBounce:scrollView change:change];
+//        }
+        else {
 			[self trackScrolling:scrollView];
 		}
 
