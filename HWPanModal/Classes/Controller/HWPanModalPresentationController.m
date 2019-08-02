@@ -607,23 +607,23 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (BOOL)shouldFailPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
-
-	if ([self shouldPrioritizePanGestureRecognizer:panGestureRecognizer]) {
-		// high priority than scroll view gesture, disable scrollView gesture.
-        [self.presentable panScrollable].panGestureRecognizer.enabled = NO;
-		[self.presentable panScrollable].panGestureRecognizer.enabled = YES;
-		return NO;
-	}
     
+    if ([self shouldPrioritizePanGestureRecognizer:panGestureRecognizer]) {
+        // high priority than scroll view gesture, disable scrollView gesture.
+        [self.presentable panScrollable].panGestureRecognizer.enabled = NO;
+        [self.presentable panScrollable].panGestureRecognizer.enabled = YES;
+        return NO;
+    }
+
     BOOL shouldFail = NO;
     UIScrollView *scrollView = [self.presentable panScrollable];
     if (scrollView) {
         if (scrollView.contentInset.top > 0) {
-            shouldFail = scrollView.contentOffset.y >= - scrollView.contentInset.top;
+            shouldFail = scrollView.contentOffset.y > - scrollView.contentInset.top;
         } else {
             shouldFail = scrollView.contentOffset.y > 0;
         }
-        
+
         if (self.isPresentedViewAnchored && shouldFail) {
             CGPoint location = [panGestureRecognizer locationInView:self.presentedView];
             BOOL flag = CGRectContainsPoint(scrollView.frame, location) || scrollView.isScrolling;
@@ -631,8 +631,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
                 self.dragIndicatorView.style = PanIndicatorViewStyleArrow;
             }
             return flag;
+        } else {
+            return NO;
         }
-        
+
     } else {
         return NO;
     }

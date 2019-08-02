@@ -36,7 +36,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (nullable UIScrollView *)panScrollable;
 
 /**
- * 是否允许pan scroll view
+ * determine ScrollView scrollEnabled
  * 默认为YES
  */
 - (BOOL)isPanScrollEnabled;
@@ -208,7 +208,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 询问delegate是否需要使拖拽手势生效
- * 若返回NO，则禁用拖拽在presented view上
+ * 若返回NO，则禁用拖拽手势操作
  * 默认为YES
  */
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;

@@ -81,6 +81,8 @@
          */
         - (nonnull UIColor *)backgroundBlurColor;
         ```
+* 0.2.9.6
+    * Fix set ScrollView contentInset top UI issue.    
         
         
 
