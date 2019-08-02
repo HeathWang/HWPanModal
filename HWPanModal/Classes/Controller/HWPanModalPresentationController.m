@@ -399,13 +399,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         return;
     }
     
-    if (scrollView.contentInset.top > 0) {
-        self.scrollViewYOffset = scrollView.contentOffset.y;
-    } else {
-        self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
-    }
+    self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
 
-    
 	__weak typeof(self) wkSelf = self;
 	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
 		if (wkSelf.containerView != nil) {
@@ -419,11 +414,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  This helps halt scrolling when we want to hold the scroll view in place.
 */
 - (void)trackScrolling:(UIScrollView *)scrollView {
-    if (scrollView.contentInset.top > 0) {
-        self.scrollViewYOffset = scrollView.contentOffset.y;
-    } else {
-        self.scrollViewYOffset = MAX(scrollView.contentOffset.y, 0);
-    }
+    self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
 	
     scrollView.showsVerticalScrollIndicator = self.originalScrollableShowsVerticalScrollIndicator ? YES : NO;
 }
@@ -618,11 +609,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     BOOL shouldFail = NO;
     UIScrollView *scrollView = [self.presentable panScrollable];
     if (scrollView) {
-        if (scrollView.contentInset.top > 0) {
-            shouldFail = scrollView.contentOffset.y > - scrollView.contentInset.top;
-        } else {
-            shouldFail = scrollView.contentOffset.y > 0;
-        }
+        shouldFail = scrollView.contentOffset.y > -MAX(scrollView.contentInset.top, 0);
 
         if (self.isPresentedViewAnchored && shouldFail) {
             CGPoint location = [panGestureRecognizer locationInView:self.presentedView];
