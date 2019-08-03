@@ -225,6 +225,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	self.presentedView.hw_size = frame.size;
 	self.panContainerView.contentView.frame = CGRectMake(0, 0, size.width, size.height);
 	self.presentedViewController.view.frame = self.panContainerView.contentView.bounds;
+    [self.presentedViewController.view setNeedsLayout];
+    [self.presentedViewController.view layoutIfNeeded];
 }
 
 - (void)configureScrollViewInsets {
