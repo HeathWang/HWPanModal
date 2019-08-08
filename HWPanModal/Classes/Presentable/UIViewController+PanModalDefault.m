@@ -154,5 +154,9 @@
     
 }
 
+- (void)panModalDidDismissed {
+    
+}
+
 
 @end

@@ -676,7 +676,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (void)dismissPresentedViewController {
 	[self.presentable panModalWillDismiss];
-	[self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
+        [self.presentable panModalDidDismissed];
+    }];
 }
 
 #pragma mark - Screen Gesture enevt
