@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalHeight.h>
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
+#import <HWPanModal/HWPanIndicatorView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -186,6 +187,11 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
  */
 - (BOOL)showDragIndicator;
+
+/**
+ * Allow to customize drag indicator
+ */
+- (HWPanIndicatorView*)customDragIndicator;
 
 #pragma mark - Keyboard handle
 

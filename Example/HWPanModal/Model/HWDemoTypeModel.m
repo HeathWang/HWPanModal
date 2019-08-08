@@ -22,6 +22,7 @@
 #import "HWMyCustomAnimationViewController.h"
 #import "HWColorBlocksViewController.h"
 #import "HWTextInputViewController.h"
+#import "HWCustomDragIndicatorController.h"
 
 @implementation HWDemoTypeModel
 
@@ -43,6 +44,7 @@
 	NSMutableArray *array = [NSMutableArray array];
 
 	HWDemoTypeModel *baseDemo = [HWDemoTypeModel modelWithTitle:@"Basic" targetClass:HWBaseViewController.class];
+    HWDemoTypeModel *customDragIndicatorDemo = [HWDemoTypeModel modelWithTitle:@"Custom drag indicator" targetClass:HWCustomDragIndicatorController.class];
 	HWDemoTypeModel *groupDemo = [HWDemoTypeModel modelWithTitle:@"Group" targetClass:HWGroupViewController.class];
 	HWDemoTypeModel *alertDemo = [HWDemoTypeModel modelWithTitle:@"Alert" targetClass:HWAlertViewController.class];
 	HWDemoTypeModel *autoAlertDemo = [HWDemoTypeModel modelWithTitle:@"Transient Alert" targetClass:HWTransientAlertViewController.class];
@@ -57,7 +59,7 @@
     HWDemoTypeModel *blurDemo = [HWDemoTypeModel modelWithTitle:@"Blur Background" targetClass:HWColorBlocksViewController.class];
     blurDemo.action = HWActionTypePush;
     
-	[array addObjectsFromArray:@[appDemo, blurDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
+	[array addObjectsFromArray:@[appDemo, customDragIndicatorDemo, blurDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

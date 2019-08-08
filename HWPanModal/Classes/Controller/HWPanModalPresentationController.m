@@ -886,9 +886,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (HWPanIndicatorView *)dragIndicatorView {
+    
 	if (!_dragIndicatorView) {
-		_dragIndicatorView = [HWPanIndicatorView new];
+        if ([self presentable] && [[self presentable] respondsToSelector:@selector(customDragIndicator)] && [[self presentable] customDragIndicator] != nil) {
+            _dragIndicatorView = [[self presentable] customDragIndicator];
+        } else {
+            _dragIndicatorView = [HWPanIndicatorView new];
+        }
 	}
+    
 	return _dragIndicatorView;
 }
 
