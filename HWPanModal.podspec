@@ -34,7 +34,7 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
   s.public_header_files = ['HWPanModal/Classes/HWPanModal.h', 'HWPanModal/Classes/Presentable/HWPanModalPresentable.h', 'HWPanModal/Classes/Presentable/HWPanModalHeight.h',
                            'HWPanModal/Classes/Presentable/UIViewController+PanModalDefault.h', 'HWPanModal/Classes/Presenter/UIViewController+PanModalPresenter.h', 'HWPanModal/Classes/Presenter/HWPanModalPresenterProtocol.h',
                            'HWPanModal/Classes/Presentable/UIViewController+Presentation.h', 'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h',
-                               'HWPanModal/Classes/View/HWPanIndicatorView.h']
+                               'HWPanModal/Classes/View/HWPanIndicatorView.h, 'HWPanModal/Classes/Controller/HWPanModalPresentationController.h']
   s.dependency 'KVOController'
   
 end
