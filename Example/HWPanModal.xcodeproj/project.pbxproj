@@ -47,6 +47,8 @@
 		7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9E38622B3682400B94AAD /* HWBlurViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		99F12257D88E310EED39DB32 /* Pods_HWPanModal_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44203A5E0B1E07D70F8BE38D /* Pods_HWPanModal_Tests.framework */; };
+		C8C5F94922FC16D500B36C8E /* HWCustomDragIndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */; };
+		C8C5F94D22FC1D2200B36C8E /* HWCustomPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,10 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BBA4C9C5928AB1AC2CBF965 /* Pods-HWPanModal_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModal_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C5F94722FC16D500B36C8E /* HWCustomDragIndicatorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCustomDragIndicatorController.h; sourceTree = "<group>"; };
+		C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCustomDragIndicatorController.m; sourceTree = "<group>"; };
+		C8C5F94B22FC1D2200B36C8E /* HWCustomPanIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCustomPanIndicatorView.h; sourceTree = "<group>"; };
+		C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCustomPanIndicatorView.m; sourceTree = "<group>"; };
 		CDDCB77B16D43A657DDB4E18 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EBAF4783CAD32F3AF56EE754 /* Pods-HWPanModal_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Tests/Pods-HWPanModal_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0FF5C6835E2F891655D5002 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -368,10 +374,13 @@
 		7EDE0B71228E52B1001E7580 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C8C5F94A22FC1D0E00B36C8E /* HWCustomPanIndicatorView */,
 				7EF8D54B227ECAA70093F1B3 /* HWBaseViewController.h */,
 				7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */,
 				7EF8D547227ECAA70093F1B3 /* HWGroupViewController.h */,
 				7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */,
+				C8C5F94722FC16D500B36C8E /* HWCustomDragIndicatorController.h */,
+				C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -439,6 +448,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C8C5F94A22FC1D0E00B36C8E /* HWCustomPanIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				C8C5F94B22FC1D2200B36C8E /* HWCustomPanIndicatorView.h */,
+				C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */,
+			);
+			path = HWCustomPanIndicatorView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +508,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = wangcongling;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 94Q9JHN685;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -621,6 +642,7 @@
 				7EF9E38422B34A2900B94AAD /* HWColorCollectionViewCell.m in Sources */,
 				7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */,
 				7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */,
+				C8C5F94922FC16D500B36C8E /* HWCustomDragIndicatorController.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */,
 				7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */,
@@ -636,6 +658,7 @@
 				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				C8C5F94D22FC1D2200B36C8E /* HWCustomPanIndicatorView.m in Sources */,
 				7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,6 +787,7 @@
 			baseConfigurationReference = 2FE71736D8F603D51C5EADF7 /* Pods-HWPanModal_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94Q9JHN685;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HWPanModal/HWPanModal-Prefix.pch";
 				INFOPLIST_FILE = "HWPanModal/HWPanModal-Info.plist";
@@ -780,6 +804,7 @@
 			baseConfigurationReference = 9BBA4C9C5928AB1AC2CBF965 /* Pods-HWPanModal_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94Q9JHN685;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HWPanModal/HWPanModal-Prefix.pch";
 				INFOPLIST_FILE = "HWPanModal/HWPanModal-Info.plist";

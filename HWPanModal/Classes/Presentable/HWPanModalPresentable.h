@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalHeight.h>
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
+#import <HWPanModal/HWPanIndicatorView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -187,6 +188,11 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)showDragIndicator;
 
+/**
+ * Allow to customize drag indicator
+ */
+- (HWPanIndicatorView*)customDragIndicator;
+
 #pragma mark - Keyboard handle
 
 /**
@@ -250,6 +256,11 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 通知回调即将dismiss
  */
 - (void)panModalWillDismiss;
+
+/**
+ * dismissed
+ */
+- (void)panModalDidDismissed;
 
 @end
 

@@ -676,7 +676,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (void)dismissPresentedViewController {
 	[self.presentable panModalWillDismiss];
-	[self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
+        [self.presentable panModalDidDismissed];
+    }];
 }
 
 #pragma mark - Screen Gesture enevt
@@ -886,9 +888,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (HWPanIndicatorView *)dragIndicatorView {
+    
 	if (!_dragIndicatorView) {
-		_dragIndicatorView = [HWPanIndicatorView new];
+        if ([self presentable] && [[self presentable] respondsToSelector:@selector(customDragIndicator)] && [[self presentable] customDragIndicator] != nil) {
+            _dragIndicatorView = [[self presentable] customDragIndicator];
+        } else {
+            _dragIndicatorView = [HWPanIndicatorView new];
+        }
 	}
+    
 	return _dragIndicatorView;
 }
 
