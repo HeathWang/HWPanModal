@@ -8,6 +8,8 @@
 #import <HWPanModal/HWPanModalPresentable.h>
 #import <HWPanModal/HWPanModalHeight.h>
 
+#import <HWPanModal/HWPanModalPresenterProtocol.h>
+
 #import <HWPanModal/UIViewController+PanModalDefault.h>
 #import <HWPanModal/UIViewController+Presentation.h>
 #import <HWPanModal/UIViewController+PanModalPresenter.h>
