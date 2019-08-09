@@ -14,4 +14,4 @@
 
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
 #import <HWPanModal/HWPanIndicatorView.h>
-
+#import <HWPanModal/HWPanModalPresentationController.h>
