@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalHeight.h>
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
-#import <HWPanModal/HWPanIndicatorView.h>
+#import <HWPanModal/HWPanModalIndicatorProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -182,6 +182,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (CGFloat)cornerRadius;
 
+#pragma mark - Indicator config
 /**
  * 是否显示drag指示view
  * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
@@ -189,9 +190,10 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)showDragIndicator;
 
 /**
- * Allow to customize drag indicator
+ * You can make the indicator customized. Just adopt `HWPanModalIndicatorProtocol`
+ * Default this method return nil, Then the default indicator will be used.
  */
-- (HWPanIndicatorView*)customDragIndicator;
+- (nullable UIView<HWPanModalIndicatorProtocol> *)customIndicatorView;
 
 #pragma mark - Keyboard handle
 
@@ -201,7 +203,6 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)isAutoHandleKeyboardEnabled;
 
-
 /**
  The offset that keyboard show from input view's bottom. It works when
  `isAutoHandleKeyboardEnabled` return YES.
@@ -210,7 +211,9 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (CGFloat)keyboardOffsetFromInputView;
 
-#pragma mark - delegate
+#pragma mark - Delegate
+
+#pragma mark - Pan Gesture delegate
 
 /**
  * 询问delegate是否需要使拖拽手势生效
@@ -236,6 +239,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
+ * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
+ * this delegate method will be called.
+ * @param percent 0 ~ 1, 1 means has dismissed
+ */
+- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
+
+#pragma mark - PresentationState change delegate
+/**
  * 是否应该变更panModal状态
  */
 - (BOOL)shouldTransitionToState:(PresentationState)state;
@@ -245,20 +256,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (void)willTransitionToState:(PresentationState)state;
 
+#pragma mark - Dismiss delegate
 /**
- * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
- * this delegate method will be called.
- * @param percent 0 ~ 1, 1 means has dismissed
- */
-- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
-
-/**
- * 通知回调即将dismiss
+ * will dismiss
  */
 - (void)panModalWillDismiss;
 
 /**
- * dismissed
+ * Did finish dismissing
  */
 - (void)panModalDidDismissed;
 

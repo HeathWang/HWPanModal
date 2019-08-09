@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UIView *leftView;
 @property (nonatomic, strong) UIView *rightView;
 
+@property (nonatomic, assign) HWIndicatorState state;
+
 @end
 
 @implementation HWPanIndicatorView
@@ -29,10 +31,25 @@
 	return self;
 }
 
-- (void)sizeToFit {
-	[super sizeToFit];
+- (void)animate:(void (^)(void))animations {
+	[UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut animations:animations completion:^(BOOL finished) {
 
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 34, 13);
+	}];
+}
+
+#pragma mark - HWPanModalIndicatorProtocol
+
+- (void)didChangeToState:(HWIndicatorState)state {
+    self.state = state;
+}
+
+- (CGSize)indicatorSize {
+	return CGSizeMake(34, 13);
+}
+
+- (void)setupSubviews {
+	CGSize size = [self indicatorSize];
+	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
 	CGFloat height = 5;
 	CGFloat correction = height / 2;
 
@@ -43,12 +60,7 @@
 	self.rightView.frame = CGRectMake(CGRectGetWidth(self.frame) / 2 - correction, 0, CGRectGetWidth(self.frame) / 2 + correction, height);
 	self.rightView.hw_centerY = self.hw_height / 2;
 	self.rightView.layer.cornerRadius = MIN(self.rightView.hw_width, self.rightView.hw_height) / 2;
-}
 
-- (void)animate:(void (^)(void))animations {
-	[UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut animations:animations completion:^(BOOL finished) {
-
-	}];
 }
 
 #pragma mark - Getter
@@ -76,22 +88,12 @@
 	self.rightView.backgroundColor = color;
 }
 
-- (void)setStyle:(PanIndicatorViewStyle)style {
-    // style not changed, just return
-    if (style == _style) {
-        return;
-    }
-	_style = style;
+- (void)setState:(HWIndicatorState)state {
+	
+	_state = state;
 
-	switch (style) {
-		case PanIndicatorViewStyleLine:{
-			[self animate:^{
-				self.leftView.transform = CGAffineTransformIdentity;
-				self.rightView.transform = CGAffineTransformIdentity;
-			}];
-		}
-			break;
-		case PanIndicatorViewStyleArrow: {
+	switch (state) {
+		case HWIndicatorStateNormal: {
 			CGFloat angle = 20 * M_PI / 180;
 			[self animate:^{
 				self.leftView.transform = CGAffineTransformMakeRotation(angle);
@@ -99,8 +101,14 @@
 			}];
 		}
 			break;
+		case HWIndicatorStatePullDown: {
+			[self animate:^{
+				self.leftView.transform = CGAffineTransformIdentity;
+				self.rightView.transform = CGAffineTransformIdentity;
+			}];
+		}
+			break;
 	}
 }
-
 
 @end

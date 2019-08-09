@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HWPanModal'
-  s.version          = '0.2.9.8'
+  s.version          = '0.3.0'
   s.summary          = 'HWPanModal is used to present controller and drag to dismiss.'
 
 # This description is used to generate tags and improve search results.
@@ -28,13 +28,18 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = ['HWPanModal/Classes/Layout/**/*', 'HWPanModal/Classes/Animator/**/*', 'HWPanModal/Classes/Controller/**/*',
-                    'HWPanModal/Classes/Delegate/**/*', 'HWPanModal/Classes/Presentable/**/*', 'HWPanModal/Classes/Presenter/**/*',
-                    'HWPanModal/Classes/View/**/*', 'HWPanModal/Classes/HWPanModal.h']
-  s.public_header_files = ['HWPanModal/Classes/HWPanModal.h', 'HWPanModal/Classes/Presentable/HWPanModalPresentable.h', 'HWPanModal/Classes/Presentable/HWPanModalHeight.h',
-                           'HWPanModal/Classes/Presentable/UIViewController+PanModalDefault.h', 'HWPanModal/Classes/Presenter/UIViewController+PanModalPresenter.h', 'HWPanModal/Classes/Presenter/HWPanModalPresenterProtocol.h',
-                           'HWPanModal/Classes/Presentable/UIViewController+Presentation.h', 'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h',
-                               'HWPanModal/Classes/View/HWPanIndicatorView.h', 'HWPanModal/Classes/Controller/HWPanModalPresentationController.h']
+  s.source_files = ['HWPanModal/Classes/**/*']
+  s.public_header_files = ['HWPanModal/Classes/HWPanModal.h',
+                           'HWPanModal/Classes/Presentable/HWPanModalPresentable.h',
+                           'HWPanModal/Classes/Presentable/HWPanModalHeight.h',
+                           'HWPanModal/Classes/Presentable/UIViewController+PanModalDefault.h',
+                           'HWPanModal/Classes/Presenter/UIViewController+PanModalPresenter.h',
+                           'HWPanModal/Classes/Presenter/HWPanModalPresenterProtocol.h',
+                           'HWPanModal/Classes/Presentable/UIViewController+Presentation.h',
+                           'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h',
+                           'HWPanModal/Classes/View/HWPanIndicatorView.h',
+                           'HWPanModal/Classes/View/HWPanModalIndicatorProtocol.h'
+                           ]
   s.dependency 'KVOController'
   
 end

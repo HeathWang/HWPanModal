@@ -118,6 +118,10 @@
 	return [self shouldRoundTopCorners];
 }
 
+- (nullable UIView <HWPanModalIndicatorProtocol> *)customIndicatorView {
+	return nil;
+}
+
 - (BOOL)isAutoHandleKeyboardEnabled {
 	return YES;
 }
