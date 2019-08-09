@@ -72,6 +72,7 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 ## TODO
 
 * [x] Handle keyboard show&dismiss.
+* [ ] High customize indicator view.
 * ~~Touch event can response to presenting VC.~~
 
 ## Compatibility
@@ -206,5 +207,4 @@ yishu.jay@gmail.com
 ## License
 
 <b>HWPanModal</b> is released under a MIT License. See LICENSE file for details.
-
 
