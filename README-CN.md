@@ -65,6 +65,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 6. 支持配置背景alpha，或者高斯模糊背景。注意：动态调整模糊效果仅工作于iOS9.0+。
 7. 支持显示隐藏指示器，修改圆角
 8. 自动处理键盘弹出消失事件。
+9. 自定义指示器indicator view。
 
 更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) 声明。
     
@@ -80,7 +81,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.9.6'
+pod 'HWPanModal', '~> 0.3.0'
 ```
 
 ## 如何使用
@@ -124,6 +125,7 @@ pod 'HWPanModal', '~> 0.2.9.6'
 * Change the state between short and long form. call `- (void)hw_panModalTransitionTo:(PresentationState)state;`
 * Change ScrollView ContentOffset. call `- (void)hw_panModalSetContentOffset:(CGPoint)offset;`
 * Reload layout. call `- (void)hw_panModalSetNeedsLayoutUpdate;`
+    * 注意：如果scrollable view的contentSize改变了，你必须调用改reload方法来更新UI。
 
 ### 自定义presenting VC动画编写
 
@@ -178,6 +180,69 @@ pod 'HWPanModal', '~> 0.2.9.6'
         return _customAnimation;
     }
     ```
+    
+### 自定义指示器indicator view
+
+You just need to create your own UIView, then adopt `HWPanModalIndicatorProtocol`.
+
+In your presented controller, return it:
+
+```Objective-C
+- (nullable UIView <HWPanModalIndicatorProtocol> *)customIndicatorView {
+    HWTextIndicatorView *textIndicatorView = [HWTextIndicatorView new];
+    return textIndicatorView;
+}
+```
+
+Here is `HWTextIndicatorView` code:
+
+```Objective-C
+@interface HWTextIndicatorView : UIView <HWPanModalIndicatorProtocol>
+
+@end
+
+@interface HWTextIndicatorView ()
+@property (nonatomic, strong) UILabel *stateLabel;
+@end
+
+@implementation HWTextIndicatorView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // init the _stateLabel
+        [self addSubview:_stateLabel];
+    }
+    return self;
+}
+
+
+- (void)didChangeToState:(HWIndicatorState)state {
+    switch (state) {
+        case HWIndicatorStateNormal: {
+            self.stateLabel.text = @"Please pull down to dismiss";
+            self.stateLabel.textColor = [UIColor whiteColor];
+        }
+            break;
+        case HWIndicatorStatePullDown: {
+            self.stateLabel.text = @"Keep pull down to dismiss";
+            self.stateLabel.textColor = [UIColor colorWithRed:1.000 green:0.200 blue:0.000 alpha:1.00];
+        }
+            break;
+    }
+}
+
+- (CGSize)indicatorSize {
+    return CGSizeMake(200, 18);
+}
+
+- (void)setupSubviews {
+    self.stateLabel.frame = self.bounds;
+}
+
+@end
+
+```    
 
 ## 例子
 
