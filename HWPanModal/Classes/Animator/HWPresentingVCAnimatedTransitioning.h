@@ -14,7 +14,7 @@
  * Returns a view controller involved in the transition.
  * @return The view controller object for the specified key or nil if the view controller could not be found.
  */
-- (__kindof UIViewController *)viewControllerForKey:(UITransitionContextViewControllerKey)key;
+- (__kindof  UIViewController * _Nullable )viewControllerForKey:(nonnull UITransitionContextViewControllerKey)key;
 
 /**
  * The Animation duration gets from ViewController which conforms HWPanModalPresentable
@@ -25,7 +25,7 @@
 /**
  * Transition container, from UIViewControllerContextTransitioning protocol
  */
-@property(nonatomic, readonly) UIView *containerView;
+@property(nonnull, nonatomic, readonly) UIView *containerView;
 
 @end
 
@@ -34,11 +34,11 @@
 /**
  * Write you custom animation when present.
  */
-- (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext;
+- (void)presentAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)transitionContext;
 /**
  * Write you custom animation when dismiss.
  */
-- (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext;
+- (void)dismissAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)transitionContext;
 
 @end
 

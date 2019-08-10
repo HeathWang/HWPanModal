@@ -873,6 +873,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			[[self presentable] respondsToSelector:@selector(customIndicatorView)] &&
 			[[self presentable] customIndicatorView] != nil) {
             _dragIndicatorView = [[self presentable] customIndicatorView];
+            // set the indicator size first in case `setupSubviews` can Not get the right size.
+            _dragIndicatorView.hw_size = [[[self presentable] customIndicatorView] indicatorSize];
         } else {
             _dragIndicatorView = [HWPanIndicatorView new];
         }

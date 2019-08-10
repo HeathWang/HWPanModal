@@ -22,7 +22,7 @@ typedef void(^didTap)(UITapGestureRecognizer *recognizer);
 @property (nonatomic, assign) DimState dimState;
 @property (nonatomic, assign) CGFloat percent;
 @property (nullable, nonatomic, copy) didTap tapBlock;
-@property (nonatomic, strong) UIColor *blurTintColor;
+@property (nullable, nonatomic, strong) UIColor *blurTintColor;
 
 /**
  * init with the max dim alpha & max blur radius.

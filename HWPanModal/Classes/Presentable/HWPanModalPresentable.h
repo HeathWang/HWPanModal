@@ -166,7 +166,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 默认转场效果为凹陷动画效果，如果该方法返回不为空，则使用自定义动画效果
  * 默认为nil
  */
-- (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
+- (nullable id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 
 #pragma mark - Content UI config
 
@@ -193,7 +193,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * You can make the indicator customized. Just adopt `HWPanModalIndicatorProtocol`
  * Default this method return nil, Then the default indicator will be used.
  */
-- (nullable UIView<HWPanModalIndicatorProtocol> *)customIndicatorView;
+- (__kindof UIView<HWPanModalIndicatorProtocol> * _Nullable)customIndicatorView;
 
 #pragma mark - Keyboard handle
 
@@ -220,14 +220,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 若返回NO，则禁用拖拽手势操作
  * 默认为YES
  */
-- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * 当pan recognizer状态为begin/changed时，通知delegate回调。
  * 当拖动presented View时，该方法会持续的回调
  * 默认实现为空
  */
-- (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (void)willRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * 是否优先执行dismiss拖拽手势，当存在panScrollable的情况下，如果此方法返回YES，则
@@ -256,14 +256,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  *
  * Default is NO
  */
-- (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (BOOL)shouldPrioritizePanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
  * this delegate method will be called.
  * @param percent 0 ~ 1, 1 means has dismissed
  */
-- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
+- (void)panModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
 
 #pragma mark - PresentationState change delegate
 /**

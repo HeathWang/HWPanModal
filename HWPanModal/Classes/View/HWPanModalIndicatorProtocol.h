@@ -21,7 +21,6 @@ typedef NS_ENUM(NSUInteger, HWIndicatorState) {
 
 /**
  * Tell the size of the indicator.
- * @return size.
  */
 - (CGSize)indicatorSize;
 

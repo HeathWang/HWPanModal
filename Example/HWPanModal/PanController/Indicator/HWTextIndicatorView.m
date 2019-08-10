@@ -51,7 +51,7 @@
 }
 
 - (void)setupSubviews {
-    self.stateLabel.frame = CGRectMake(0, 0, [self indicatorSize].width, [self indicatorSize].height);
+    self.stateLabel.frame = self.bounds;
 }
 
 

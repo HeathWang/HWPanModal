@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  * tint color
  * default is nil
  */
-@property (nonatomic, strong) UIColor *colorTint;
+@property (nullable, nonatomic, strong) UIColor *colorTint;
 /**
  * tint color alpha
  * default is 0.0
