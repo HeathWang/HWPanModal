@@ -22,6 +22,7 @@
 #import "HWMyCustomAnimationViewController.h"
 #import "HWColorBlocksViewController.h"
 #import "HWTextInputViewController.h"
+#import "HWIndicatorViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -56,8 +57,12 @@
     appDemo.action = HWActionTypePush;
     HWDemoTypeModel *blurDemo = [HWDemoTypeModel modelWithTitle:@"Blur Background" targetClass:HWColorBlocksViewController.class];
     blurDemo.action = HWActionTypePush;
+    HWDemoTypeModel *indicatorDemo = [HWDemoTypeModel modelWithTitle:@"Custom Indicator" targetClass:HWIndicatorViewController.class];
+    indicatorDemo.action = HWActionTypePush;
     
-	[array addObjectsFromArray:@[appDemo, blurDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
+	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo,
+			stackGroupDemo,
+			fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

@@ -21,6 +21,10 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7E4F007522FEF5A500149F34 /* HWIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */; };
+		7E4F007822FEF74100149F34 /* HWIndicatorPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */; };
+		7E4F007B22FF034B00149F34 /* HWTextIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */; };
+		7E4F007E22FF037100149F34 /* HWImmobileIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */; };
 		7E63BBC0394068D5944AA619 /* Pods_HWPanModal_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */; };
 		7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F88229CE85D000D7011 /* HWShareViewController.m */; };
 		7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F8C229D33B9000D7011 /* HWAppListViewController.m */; };
@@ -84,6 +88,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6FF2112F2DB6E7E18F8EE103 /* Pods-HWPanModal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Tests/Pods-HWPanModal_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4F007322FEF5A500149F34 /* HWIndicatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWIndicatorViewController.h; sourceTree = "<group>"; };
+		7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorViewController.m; sourceTree = "<group>"; };
+		7E4F007622FEF74100149F34 /* HWIndicatorPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWIndicatorPopViewController.h; sourceTree = "<group>"; };
+		7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorPopViewController.m; sourceTree = "<group>"; };
+		7E4F007922FF034B00149F34 /* HWTextIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTextIndicatorView.h; sourceTree = "<group>"; };
+		7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTextIndicatorView.m; sourceTree = "<group>"; };
+		7E4F007C22FF037100149F34 /* HWImmobileIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWImmobileIndicatorView.h; sourceTree = "<group>"; };
+		7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWImmobileIndicatorView.m; sourceTree = "<group>"; };
 		7E689F87229CE85D000D7011 /* HWShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWShareViewController.h; sourceTree = "<group>"; };
 		7E689F88229CE85D000D7011 /* HWShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
 		7E689F8B229D33B9000D7011 /* HWAppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppListViewController.h; sourceTree = "<group>"; };
@@ -350,6 +362,14 @@
 		7ECD8B4822FDC6E8001E7436 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
+				7E4F007322FEF5A500149F34 /* HWIndicatorViewController.h */,
+				7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */,
+				7E4F007622FEF74100149F34 /* HWIndicatorPopViewController.h */,
+				7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */,
+				7E4F007922FF034B00149F34 /* HWTextIndicatorView.h */,
+				7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */,
+				7E4F007C22FF037100149F34 /* HWImmobileIndicatorView.h */,
+				7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */,
 			);
 			path = Indicator;
 			sourceTree = "<group>";
@@ -626,6 +646,7 @@
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */,
 				7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */,
+				7E4F007B22FF034B00149F34 /* HWTextIndicatorView.m in Sources */,
 				7E8E844222B123A5009DA8BD /* HWMyCustomAnimationViewController.m in Sources */,
 				7EA965CF22B9F45A00BA5ED9 /* HWTextInputViewController.m in Sources */,
 				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
@@ -638,6 +659,7 @@
 				7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */,
 				7EDE0B75228E5428001E7580 /* HWDynamicHeightViewController.m in Sources */,
 				7EDE0B5922894244001E7580 /* HWFullScreenNavController.m in Sources */,
+				7E4F007522FEF5A500149F34 /* HWIndicatorViewController.m in Sources */,
 				7E7A62AC2280089500F12F8C /* HWAlertView.m in Sources */,
 				7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */,
 				7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */,
@@ -648,6 +670,8 @@
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */,
+				7E4F007822FEF74100149F34 /* HWIndicatorPopViewController.m in Sources */,
+				7E4F007E22FF037100149F34 /* HWImmobileIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@
 		self.backgroundColor = [UIColor clearColor];
 		[self addSubview:self.leftView];
 		[self addSubview:self.rightView];
-		self.color = [UIColor colorWithRed:0.792 green:0.788 blue:0.812 alpha:1.00];
+		self.indicatorColor = [UIColor colorWithRed:0.792 green:0.788 blue:0.812 alpha:1.00];
 	}
 
 	return self;
@@ -82,10 +82,10 @@
 
 #pragma mark - Setter
 
-- (void)setColor:(UIColor *)color {
-	_color = color;
-	self.leftView.backgroundColor = color;
-	self.rightView.backgroundColor = color;
+- (void)setIndicatorColor:(UIColor *)indicatorColor {
+	_indicatorColor = indicatorColor;
+	self.leftView.backgroundColor = indicatorColor;
+	self.rightView.backgroundColor = indicatorColor;
 }
 
 - (void)setState:(HWIndicatorState)state {

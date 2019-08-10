@@ -136,7 +136,7 @@
 		056EEFD5DBCE5AB70A9B39BA9143B98E /* KVOController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-umbrella.h"; sourceTree = "<group>"; };
 		05AE1E4FB3CDFFCD57B88299FF093524 /* Pods-HWPanModal_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HWPanModal_Tests-umbrella.h"; sourceTree = "<group>"; };
 		08E9964BF900E29C15143B39B8715166 /* HWPanModal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-umbrella.h"; sourceTree = "<group>"; };
-		09E1D15FCE85A120C9324FF872F8B134 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HWPanModal_Example.framework; path = "Pods-HWPanModal_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E1D15FCE85A120C9324FF872F8B134 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModal_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1DB40F9C9D22FA6B274349A108CCD0 /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FBKVOController.m"; path = "FBKVOController/NSObject+FBKVOController.m"; sourceTree = "<group>"; };
 		0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0D07354CBF8F75093C717CCEFE460920 /* Pods-HWPanModal_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HWPanModal_Example.modulemap"; sourceTree = "<group>"; };
@@ -146,16 +146,16 @@
 		1C9D749EC5C1B77B0B5952B23F588B51 /* HWPanContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanContainerView.m; sourceTree = "<group>"; };
 		1CEA7BE970FD13FB140E3181BB64299E /* HWPanModalPresentationDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationDelegate.m; sourceTree = "<group>"; };
 		1F5184387F10D241FB45A257ECB28C89 /* KVOController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KVOController.modulemap; sourceTree = "<group>"; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D4D5049E55012DB5CC5BF8B02C454C /* HWPanModalHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalHeight.h; sourceTree = "<group>"; };
 		223EDD307CFA805CA98EC9878AA5B2AD /* HWPanModalPresentationAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationAnimator.h; sourceTree = "<group>"; };
-		22DDB7DC04A733623C5335FF5A355BC2 /* Pods_HWPanModal_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HWPanModal_Tests.framework; path = "Pods-HWPanModal_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DDB7DC04A733623C5335FF5A355BC2 /* Pods_HWPanModal_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModal_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2502456305F69F29A611666CA9F9455E /* Pods-HWPanModal_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HWPanModal_Example-Info.plist"; sourceTree = "<group>"; };
 		253BC0FF42858F66C530BEAA955943F9 /* UIViewController+LayoutHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LayoutHelper.m"; sourceTree = "<group>"; };
 		2B2BC6E23C2C727561261EDBD91CC2B0 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		2F6247F93D13EE31D731C3A4E9BA2449 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F3EF570BC1D81F926B3132D26F785F /* HWVisualEffectView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWVisualEffectView.m; sourceTree = "<group>"; };
-		399EC9508E73C0D54D9BBD8741FBA137 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVOController.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		399EC9508E73C0D54D9BBD8741FBA137 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16AFEA3592F07274F3501EC53D0AE2 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		3A2502744C794BB61A3EFEB6BC847D55 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		3A5A687E7AD0E14BF508531BD92E3779 /* HWPanModalPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationController.m; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		5D8E7C63AE71009C32DA53CD4B1C1773 /* HWPanModalPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationController.h; sourceTree = "<group>"; };
 		5E6EC0C5043F3681EBF4866C00D970AD /* Pods-HWPanModal_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HWPanModal_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5EA8916523B15B6D86DDD32567DE0185 /* KVOController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-prefix.pch"; sourceTree = "<group>"; };
-		63794FAF5B1967AB2D47BB5C7AC4F912 /* HWPanModal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HWPanModal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		63794FAF5B1967AB2D47BB5C7AC4F912 /* HWPanModal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = HWPanModal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		63C5F278D9C3EFCA2E51FFA5257FF891 /* UIViewController+PanModalPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalPresenter.h"; sourceTree = "<group>"; };
 		67BEC34E1AAC74C8208F949A4339991B /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		69922958A263B56D658EBC77B96A68B9 /* UIViewController+PanModalDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalDefault.h"; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		722742158A15E1905DB55012FDF8D66A /* FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBKVOController.m; path = FBKVOController/FBKVOController.m; sourceTree = "<group>"; };
 		74DB18F6A0F5F589E6B6371F87AAFE00 /* HWPanModal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-prefix.pch"; sourceTree = "<group>"; };
 		757F6305D348A76F34544E6824DD111F /* HWPanModalPresentationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationDelegate.h; sourceTree = "<group>"; };
-		7819923046C4F6B199F8D45E9F7BA6B0 /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HWPanModal.framework; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7819923046C4F6B199F8D45E9F7BA6B0 /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		790FF2DC4E072068763F4B3AA1FBAF1C /* Pods-HWPanModal_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HWPanModal_Example-dummy.m"; sourceTree = "<group>"; };
 		7D7D930061AB001F4C5724C41DCF03FC /* Pods-HWPanModal_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HWPanModal_Tests-dummy.m"; sourceTree = "<group>"; };
 		820083D8D9EA003CC288944125110458 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
@@ -200,11 +200,11 @@
 		91164B0FAAE8B99C715BF8EE36C3D4D0 /* HWPanModal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HWPanModal-Info.plist"; sourceTree = "<group>"; };
 		930749D3EA7185800ACD0DAD4D3333D5 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		946946BC521980B239D325147A2663F1 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HWPanModal.h; path = HWPanModal/Classes/HWPanModal.h; sourceTree = "<group>"; };
-		954036ABC6DB7BB7D1AA3C8BBF2E6C9F /* README-CN.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-CN.md"; sourceTree = "<group>"; };
+		954036ABC6DB7BB7D1AA3C8BBF2E6C9F /* README-CN.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "README-CN.md"; sourceTree = "<group>"; };
 		9A475118A73D51015CEF41CFFBB32A21 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		9AFB985313F32EAF1E6872CE921FE6AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9AFB985313F32EAF1E6872CE921FE6AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9CD5478DB0C5458ACA601F89023F305D /* HWVisualEffectView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWVisualEffectView.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FB017B0BC19CB5E65E63D3575D0A776 /* Pods-HWPanModal_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HWPanModal_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A71220130F198DF5AD3407911A35DB15 /* Pods-HWPanModal_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3B10308F25EC067C56752BB089E7D11 /* HWDimmedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWDimmedView.m; sourceTree = "<group>"; };
@@ -318,7 +318,6 @@
 				004D7CD26154B14B97DFBA0C1E1AC147 /* ViewController+MASAdditions.m */,
 				C8DF5D7602A9007ADFC0F30639EDA79A /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -347,7 +346,6 @@
 				0B1DB40F9C9D22FA6B274349A108CCD0 /* NSObject+FBKVOController.m */,
 				5F98393EB8A1CA51961EE36F6D2B8107 /* Support Files */,
 			);
-			name = KVOController;
 			path = KVOController;
 			sourceTree = "<group>";
 		};
@@ -790,6 +788,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 7FBA273C18E91615C535477C63C283C7 /* Products */;
@@ -1033,8 +1032,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
