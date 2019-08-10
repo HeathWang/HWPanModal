@@ -230,11 +230,31 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
- * 是否优先dismiss拖拽手势，当存在scrollView的情况下，如果此方法返回YES，则
- * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，
- * 而scrollView没法拖动了
+ * 是否优先执行dismiss拖拽手势，当存在panScrollable的情况下，如果此方法返回YES，则
+ * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，而scrollView没法拖动了。
  *
+ * 例子：controller view上添加一个TableView，并铺满全屏，然后在controller view 顶部添加一个一定大小的viewA，
+ * 这个时候会发现viewA有时候无法拖动，可以实现此delegate方法来解决
+ ```
+ - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint loc = [panGestureRecognizer locationInView:self.view];
+    // check whether user pan action in viewA
+    if (CGRectContainsPoint(self.viewA.frame, loc)) {
+        return YES;
+    }
+
+    return NO;
+}
+ ```
  * 默认为NO
+ *
+ * This delegate is useful when you want panGestureRecognizer has a high prioritize and
+ * make scrollable does NOT scroll.
+ * Example: You controller add a full size tableView, then add viewA on top of your controller view.
+ * Now you find you can not drag the viewA, use this delegate to resolve problem.
+ * Please refer to code above this comment.
+ *
+ * Default is NO
  */
 - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
