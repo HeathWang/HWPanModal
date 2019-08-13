@@ -82,7 +82,9 @@
         - (nonnull UIColor *)backgroundBlurColor;
         ```
 * 0.2.9.6
-    * Fix set ScrollView contentInset top UI issue.    
+    * Fix set ScrollView contentInset top UI issue.   
+* 0.3.0
+    * Now you can custom your own indicator view. 
         
         
 

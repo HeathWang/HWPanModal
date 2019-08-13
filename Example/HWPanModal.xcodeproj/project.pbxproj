@@ -21,6 +21,10 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7E4F007522FEF5A500149F34 /* HWIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */; };
+		7E4F007822FEF74100149F34 /* HWIndicatorPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */; };
+		7E4F007B22FF034B00149F34 /* HWTextIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */; };
+		7E4F007E22FF037100149F34 /* HWImmobileIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */; };
 		7E63BBC0394068D5944AA619 /* Pods_HWPanModal_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */; };
 		7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F88229CE85D000D7011 /* HWShareViewController.m */; };
 		7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E689F8C229D33B9000D7011 /* HWAppListViewController.m */; };
@@ -47,8 +51,6 @@
 		7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9E38622B3682400B94AAD /* HWBlurViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		99F12257D88E310EED39DB32 /* Pods_HWPanModal_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44203A5E0B1E07D70F8BE38D /* Pods_HWPanModal_Tests.framework */; };
-		C8C5F94922FC16D500B36C8E /* HWCustomDragIndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */; };
-		C8C5F94D22FC1D2200B36C8E /* HWCustomPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6FF2112F2DB6E7E18F8EE103 /* Pods-HWPanModal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Tests/Pods-HWPanModal_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4F007322FEF5A500149F34 /* HWIndicatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWIndicatorViewController.h; sourceTree = "<group>"; };
+		7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorViewController.m; sourceTree = "<group>"; };
+		7E4F007622FEF74100149F34 /* HWIndicatorPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWIndicatorPopViewController.h; sourceTree = "<group>"; };
+		7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorPopViewController.m; sourceTree = "<group>"; };
+		7E4F007922FF034B00149F34 /* HWTextIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTextIndicatorView.h; sourceTree = "<group>"; };
+		7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTextIndicatorView.m; sourceTree = "<group>"; };
+		7E4F007C22FF037100149F34 /* HWImmobileIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWImmobileIndicatorView.h; sourceTree = "<group>"; };
+		7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWImmobileIndicatorView.m; sourceTree = "<group>"; };
 		7E689F87229CE85D000D7011 /* HWShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWShareViewController.h; sourceTree = "<group>"; };
 		7E689F88229CE85D000D7011 /* HWShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
 		7E689F8B229D33B9000D7011 /* HWAppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppListViewController.h; sourceTree = "<group>"; };
@@ -135,10 +145,6 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BBA4C9C5928AB1AC2CBF965 /* Pods-HWPanModal_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Example/Pods-HWPanModal_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A582E67BDFE79DED5D3EEA42 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModal_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C5F94722FC16D500B36C8E /* HWCustomDragIndicatorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCustomDragIndicatorController.h; sourceTree = "<group>"; };
-		C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCustomDragIndicatorController.m; sourceTree = "<group>"; };
-		C8C5F94B22FC1D2200B36C8E /* HWCustomPanIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCustomPanIndicatorView.h; sourceTree = "<group>"; };
-		C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCustomPanIndicatorView.m; sourceTree = "<group>"; };
 		CDDCB77B16D43A657DDB4E18 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EBAF4783CAD32F3AF56EE754 /* Pods-HWPanModal_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModal_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HWPanModal_Tests/Pods-HWPanModal_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0FF5C6835E2F891655D5002 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -353,6 +359,21 @@
 			path = TextInput;
 			sourceTree = "<group>";
 		};
+		7ECD8B4822FDC6E8001E7436 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F007322FEF5A500149F34 /* HWIndicatorViewController.h */,
+				7E4F007422FEF5A500149F34 /* HWIndicatorViewController.m */,
+				7E4F007622FEF74100149F34 /* HWIndicatorPopViewController.h */,
+				7E4F007722FEF74100149F34 /* HWIndicatorPopViewController.m */,
+				7E4F007922FF034B00149F34 /* HWTextIndicatorView.h */,
+				7E4F007A22FF034B00149F34 /* HWTextIndicatorView.m */,
+				7E4F007C22FF037100149F34 /* HWImmobileIndicatorView.h */,
+				7E4F007D22FF037100149F34 /* HWImmobileIndicatorView.m */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		7EDE0B5622894211001E7580 /* FullScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,13 +395,10 @@
 		7EDE0B71228E52B1001E7580 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C8C5F94A22FC1D0E00B36C8E /* HWCustomPanIndicatorView */,
 				7EF8D54B227ECAA70093F1B3 /* HWBaseViewController.h */,
 				7EF8D546227ECAA70093F1B3 /* HWBaseViewController.m */,
 				7EF8D547227ECAA70093F1B3 /* HWGroupViewController.h */,
 				7EF8D54C227ECAA70093F1B3 /* HWGroupViewController.m */,
-				C8C5F94722FC16D500B36C8E /* HWCustomDragIndicatorController.h */,
-				C8C5F94822FC16D500B36C8E /* HWCustomDragIndicatorController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -397,6 +415,7 @@
 		7EF8D545227ECAA70093F1B3 /* PanController */ = {
 			isa = PBXGroup;
 			children = (
+				7ECD8B4822FDC6E8001E7436 /* Indicator */,
 				7EA965CC22B9F43900BA5ED9 /* TextInput */,
 				7EF9E37E22B3477100B94AAD /* Blur */,
 				7E8E843F22B12367009DA8BD /* CustomPresentingVC */,
@@ -446,15 +465,6 @@
 				6FF2112F2DB6E7E18F8EE103 /* Pods-HWPanModal_Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C8C5F94A22FC1D0E00B36C8E /* HWCustomPanIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				C8C5F94B22FC1D2200B36C8E /* HWCustomPanIndicatorView.h */,
-				C8C5F94C22FC1D2200B36C8E /* HWCustomPanIndicatorView.m */,
-			);
-			path = HWCustomPanIndicatorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,19 +646,20 @@
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				7E7A62B72280503A00F12F8C /* HWUserGroupViewController.m in Sources */,
 				7E689F8D229D33B9000D7011 /* HWAppListViewController.m in Sources */,
+				7E4F007B22FF034B00149F34 /* HWTextIndicatorView.m in Sources */,
 				7E8E844222B123A5009DA8BD /* HWMyCustomAnimationViewController.m in Sources */,
 				7EA965CF22B9F45A00BA5ED9 /* HWTextInputViewController.m in Sources */,
 				7E7A62BA2280505B00F12F8C /* HWNavViewController.m in Sources */,
 				7EF9E38422B34A2900B94AAD /* HWColorCollectionViewCell.m in Sources */,
 				7E689F91229D36D1000D7011 /* HWShoppingCartViewController.m in Sources */,
 				7EF8D54F227ECAA70093F1B3 /* HWGroupViewController.m in Sources */,
-				C8C5F94922FC16D500B36C8E /* HWCustomDragIndicatorController.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				7E7A62B322804C2D00F12F8C /* HWColorDetailViewController.m in Sources */,
 				7E689F89229CE85D000D7011 /* HWShareViewController.m in Sources */,
 				7EF9E38722B3682400B94AAD /* HWBlurViewController.m in Sources */,
 				7EDE0B75228E5428001E7580 /* HWDynamicHeightViewController.m in Sources */,
 				7EDE0B5922894244001E7580 /* HWFullScreenNavController.m in Sources */,
+				7E4F007522FEF5A500149F34 /* HWIndicatorViewController.m in Sources */,
 				7E7A62AC2280089500F12F8C /* HWAlertView.m in Sources */,
 				7E7A62A2227FD62400F12F8C /* HWDemoTypeModel.m in Sources */,
 				7EF8D54E227ECAA70093F1B3 /* HWColorCell.m in Sources */,
@@ -658,8 +669,9 @@
 				7E7A62B022803DBB00F12F8C /* HWStackedGroupViewController.m in Sources */,
 				7EF8D54D227ECAA70093F1B3 /* HWBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				C8C5F94D22FC1D2200B36C8E /* HWCustomPanIndicatorView.m in Sources */,
 				7EDE0B69228D2F9D001E7580 /* HWPickerViewController.m in Sources */,
+				7E4F007822FEF74100149F34 /* HWIndicatorPopViewController.m in Sources */,
+				7E4F007E22FF037100149F34 /* HWImmobileIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

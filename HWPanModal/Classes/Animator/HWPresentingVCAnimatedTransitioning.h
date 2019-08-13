@@ -15,7 +15,7 @@ NS_SWIFT_NAME(PanModalPresentingViewControllerContextTransitioning)
  * Returns a view controller involved in the transition.
  * @return The view controller object for the specified key or nil if the view controller could not be found.
  */
-- (__kindof UIViewController *)viewControllerForKey:(UITransitionContextViewControllerKey)key;
+- (__kindof  UIViewController * _Nullable )viewControllerForKey:(nonnull UITransitionContextViewControllerKey)key;
 
 /**
  * The Animation duration gets from ViewController which conforms HWPanModalPresentable
@@ -26,7 +26,7 @@ NS_SWIFT_NAME(PanModalPresentingViewControllerContextTransitioning)
 /**
  * Transition container, from UIViewControllerContextTransitioning protocol
  */
-@property(nonatomic, readonly) UIView *containerView;
+@property(nonnull, nonatomic, readonly) UIView *containerView;
 
 @end
 
@@ -36,7 +36,7 @@ NS_SWIFT_NAME(PanModalPresentingViewControllerAnimatedTransitioning)
 /**
  * Write you custom animation when present.
  */
-- (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(presentTransition:);
+- (void)presentAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(presentTransition:);
 /**
  * Write you custom animation when dismiss.
  */

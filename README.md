@@ -66,12 +66,14 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 6. Support config background alpha or `blur` background. Note: Dynamic change blur effect ONLY works on iOS9.0+.
 7. Show / hide corner, indicator.
 8. Auto handle UIKeyboard show/hide.
+9. Hight customize indicator view.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
 
 ## TODO
 
 * [x] Handle keyboard show&dismiss.
+* [x] High customize indicator view.
 * ~~Touch event can response to presenting VC.~~
 
 ## Compatibility
@@ -87,7 +89,7 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
 
 ```ruby
-pod 'HWPanModal', '~> 0.2.9.6'
+pod 'HWPanModal', '~> 0.3.0'
 ```
 
 ## How to use
@@ -130,7 +132,9 @@ When You present you Controller, you can change the UI.
 Refer to `UIViewController+Presentation.h`.
 * Change the state between short and long form. call `- (void)hw_panModalTransitionTo:(PresentationState)state;`
 * Change ScrollView ContentOffset. call `- (void)hw_panModalSetContentOffset:(CGPoint)offset;`
-* Reload layout. call `- (void)hw_panModalSetNeedsLayoutUpdate;`
+* Reload layout. call `- (void)hw_panModalSetNeedsLayoutUpdate;` 
+    * **Note: When your scrollable changed it's contentSize, you _MUST_ reload the layout.**
+
 
 ### Custom Presenting VC Animation
 
@@ -186,7 +190,70 @@ Some guys want to animate Presenting VC when present/dismiss.
         return _customAnimation;
     }
     ```
+    
+### Custom your own indicator view
 
+You just need to create your own UIView, then adopt `HWPanModalIndicatorProtocol`.
+
+In your presented controller, return it:
+
+```Objective-C
+- (nullable UIView <HWPanModalIndicatorProtocol> *)customIndicatorView {
+    HWTextIndicatorView *textIndicatorView = [HWTextIndicatorView new];
+    return textIndicatorView;
+}
+```
+
+Here is `HWTextIndicatorView` code:
+
+```Objective-C
+@interface HWTextIndicatorView : UIView <HWPanModalIndicatorProtocol>
+
+@end
+
+@interface HWTextIndicatorView ()
+@property (nonatomic, strong) UILabel *stateLabel;
+@end
+
+@implementation HWTextIndicatorView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // init the _stateLabel
+        [self addSubview:_stateLabel];
+    }
+    return self;
+}
+
+
+- (void)didChangeToState:(HWIndicatorState)state {
+    switch (state) {
+        case HWIndicatorStateNormal: {
+            self.stateLabel.text = @"Please pull down to dismiss";
+            self.stateLabel.textColor = [UIColor whiteColor];
+        }
+            break;
+        case HWIndicatorStatePullDown: {
+            self.stateLabel.text = @"Keep pull down to dismiss";
+            self.stateLabel.textColor = [UIColor colorWithRed:1.000 green:0.200 blue:0.000 alpha:1.00];
+        }
+            break;
+    }
+}
+
+- (CGSize)indicatorSize {
+    return CGSizeMake(200, 18);
+}
+
+- (void)setupSubviews {
+    self.stateLabel.frame = self.bounds;
+}
+
+@end
+
+```
+    
 ## Example
 
 1. Clone this git.
@@ -206,5 +273,4 @@ yishu.jay@gmail.com
 ## License
 
 <b>HWPanModal</b> is released under a MIT License. See LICENSE file for details.
-
 

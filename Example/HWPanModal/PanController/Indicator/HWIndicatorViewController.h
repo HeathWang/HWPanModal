@@ -1,8 +1,8 @@
 //
-//  HWTextInputViewController.h
+//  HWIndicatorViewController.h
 //  HWPanModal_Example
 //
-//  Created by heath wang on 2019/6/19.
+//  Created by heath wang on 2019/8/10.
 //  Copyright © 2019 heath wang. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HWTextInputViewController : UIViewController
+@interface HWIndicatorViewController : UIViewController
 
 @end
 

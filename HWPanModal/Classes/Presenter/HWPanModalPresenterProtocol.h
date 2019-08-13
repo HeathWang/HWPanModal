@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 到viewControllerToPresent中。
  * use runtime to store this prop to presentedVC
  */
-@property (nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
+@property (nonnull, nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
 
 /**
  * Note: This method ONLY for iPad, like UIPopoverPresentationController.

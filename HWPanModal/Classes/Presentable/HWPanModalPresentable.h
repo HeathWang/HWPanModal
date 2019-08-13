@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalHeight.h>
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
-#import <HWPanModal/HWPanIndicatorView.h>
+#import <HWPanModal/HWPanModalIndicatorProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -166,7 +166,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * 默认转场效果为凹陷动画效果，如果该方法返回不为空，则使用自定义动画效果
  * 默认为nil
  */
-- (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
+- (nullable id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 
 #pragma mark - Content UI config
 
@@ -182,6 +182,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (CGFloat)cornerRadius;
 
+#pragma mark - Indicator config
 /**
  * 是否显示drag指示view
  * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
@@ -189,9 +190,10 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 - (BOOL)showDragIndicator;
 
 /**
- * Allow to customize drag indicator
+ * You can make the indicator customized. Just adopt `HWPanModalIndicatorProtocol`
+ * Default this method return nil, Then the default indicator will be used.
  */
-- (HWPanIndicatorView *)customDragIndicator;
+- (__kindof UIView<HWPanModalIndicatorProtocol> * _Nullable)customIndicatorView;
 
 #pragma mark - Keyboard handle
 
@@ -201,7 +203,6 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)isAutoHandleKeyboardEnabled;
 
-
 /**
  The offset that keyboard show from input view's bottom. It works when
  `isAutoHandleKeyboardEnabled` return YES.
@@ -210,31 +211,61 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (CGFloat)keyboardOffsetFromInputView;
 
-#pragma mark - delegate
+#pragma mark - Delegate
+
+#pragma mark - Pan Gesture delegate
 
 /**
  * 询问delegate是否需要使拖拽手势生效
  * 若返回NO，则禁用拖拽手势操作
  * 默认为YES
  */
-- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
  * 当pan recognizer状态为begin/changed时，通知delegate回调。
  * 当拖动presented View时，该方法会持续的回调
  * 默认实现为空
  */
-- (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (void)willRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
- * 是否优先dismiss拖拽手势，当存在scrollView的情况下，如果此方法返回YES，则
- * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，
- * 而scrollView没法拖动了
+ * 是否优先执行dismiss拖拽手势，当存在panScrollable的情况下，如果此方法返回YES，则
+ * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，而scrollView没法拖动了。
  *
- * 默认为NO
- */
-- (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+ * 例子：controller view上添加一个TableView，并铺满全屏，然后在controller view 顶部添加一个一定大小的viewA，
+ * 这个时候会发现viewA有时候无法拖动，可以实现此delegate方法来解决
+ ```
+ - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint loc = [panGestureRecognizer locationInView:self.view];
+    // check whether user pan action in viewA
+    if (CGRectContainsPoint(self.viewA.frame, loc)) {
+        return YES;
+    }
 
+    return NO;
+}
+ ```
+ * 默认为NO
+ *
+ * This delegate is useful when you want panGestureRecognizer has a high prioritize and
+ * make scrollable does NOT scroll.
+ * Example: You controller add a full size tableView, then add viewA on top of your controller view.
+ * Now you find you can not drag the viewA, use this delegate to resolve problem.
+ * Please refer to code above this comment.
+ *
+ * Default is NO
+ */
+- (BOOL)shouldPrioritizePanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
+
+/**
+ * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
+ * this delegate method will be called.
+ * @param percent 0 ~ 1, 1 means has dismissed
+ */
+- (void)panModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
+
+#pragma mark - PresentationState change delegate
 /**
  * 是否应该变更panModal状态
  */
@@ -245,20 +276,14 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (void)willTransitionToState:(PresentationState)state;
 
+#pragma mark - Dismiss delegate
 /**
- * When you pan present controller to dismiss, and the view's y <= shortFormYPos,
- * this delegate method will be called.
- * @param percent 0 ~ 1, 1 means has dismissed
- */
-- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent;
-
-/**
- * 通知回调即将dismiss
+ * will dismiss
  */
 - (void)panModalWillDismiss;
 
 /**
- * dismissed
+ * Did finish dismissing
  */
 - (void)panModalDidDismissed;
 

@@ -6,18 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HWPanModal/HWPanModalIndicatorProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, PanIndicatorViewStyle) {
-    PanIndicatorViewStyleLine NS_SWIFT_NAME(line),
-    PanIndicatorViewStyleArrow NS_SWIFT_NAME(arrow),
-};
+@interface HWPanIndicatorView : UIView <HWPanModalIndicatorProtocol>
 
-@interface HWPanIndicatorView : UIView
-
-@property (nonatomic, assign) PanIndicatorViewStyle style;
-@property (nonatomic, strong) UIColor *color;
+@property (nonnull, nonatomic, strong) UIColor *indicatorColor;
 
 @end
 
