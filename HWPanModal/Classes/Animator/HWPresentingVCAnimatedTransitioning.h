@@ -8,6 +8,7 @@
 #ifndef HWCustomPresentingVCAnimatedTransitioning_h
 #define HWCustomPresentingVCAnimatedTransitioning_h
 
+NS_SWIFT_NAME(PanModalPresentingViewControllerContextTransitioning)
 @protocol HWPresentingViewControllerContextTransitioning <NSObject>
 
 /**
@@ -29,16 +30,17 @@
 
 @end
 
+NS_SWIFT_NAME(PanModalPresentingViewControllerAnimatedTransitioning)
 @protocol HWPresentingViewControllerAnimatedTransitioning <NSObject>
 
 /**
  * Write you custom animation when present.
  */
-- (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext;
+- (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(presentTransition:);
 /**
  * Write you custom animation when dismiss.
  */
-- (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext;
+- (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(dismissTransition:);
 
 @end
 

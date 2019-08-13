@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, PanIndicatorViewStyle) {
-    PanIndicatorViewStyleLine,
-    PanIndicatorViewStyleArrow,
+    PanIndicatorViewStyleLine NS_SWIFT_NAME(line),
+    PanIndicatorViewStyleArrow NS_SWIFT_NAME(arrow),
 };
 
 @interface HWPanIndicatorView : UIView

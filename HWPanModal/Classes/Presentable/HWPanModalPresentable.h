@@ -14,8 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, PresentationState) {
-	PresentationStateShort,
-	PresentationStateLong,
+	PresentationStateShort NS_SWIFT_NAME(short),
+	PresentationStateLong NS_SWIFT_NAME(long),
 };
 
 typedef void(^AnimationBlockType)(void);
@@ -191,7 +191,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 /**
  * Allow to customize drag indicator
  */
-- (HWPanIndicatorView*)customDragIndicator;
+- (HWPanIndicatorView *)customDragIndicator;
 
 #pragma mark - Keyboard handle
 

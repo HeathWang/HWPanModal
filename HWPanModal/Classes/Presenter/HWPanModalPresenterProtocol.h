@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 这里我们将实现UIViewControllerTransitioningDelegate协议的delegate通过runtime存入
  * 到viewControllerToPresent中。
+ * use runtime to store this prop to presentedVC
  */
 @property (nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
 
