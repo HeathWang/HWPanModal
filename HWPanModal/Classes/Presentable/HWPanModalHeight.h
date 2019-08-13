@@ -26,7 +26,7 @@ typedef struct PanModalHeight PanModalHeight;
 /**
  * When heightType is PanModalHeightTypeMax, PanModalHeightTypeIntrinsic, the height value will be ignored.
  */
-CG_INLINE PanModalHeight PanModalHeightMake(PanModalHeightType heightType, CGFloat height) NS_SWIFT_NAME(PanModalHeight(type:height)) {
+CG_INLINE PanModalHeight PanModalHeightMake(PanModalHeightType heightType, CGFloat height) {
     PanModalHeight modalHeight;
     modalHeight.heightType = heightType;
     modalHeight.height = height;
