@@ -23,17 +23,6 @@
     [self pushViewController:userGroupViewController animated:YES];
 }
 
-- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
-    UIViewController *controller = [super popViewControllerAnimated:animated];
-    [self hw_panModalSetNeedsLayoutUpdate];
-    return controller;
-}
-
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    [super pushViewController:viewController animated:animated];
-    [self hw_panModalSetNeedsLayoutUpdate];
-}
-
 #pragma mark - HWPanModalPresentable
 
 - (UIScrollView *)panScrollable {

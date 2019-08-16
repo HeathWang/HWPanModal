@@ -20,6 +20,7 @@
 #import "HWPresentingVCAnimatedTransitioning.h"
 #import "HWPanIndicatorView.h"
 #import "HWPanModalIndicatorProtocol.h"
+#import "UINavigationController+HWPanModal.h"
 
 FOUNDATION_EXPORT double HWPanModalVersionNumber;
 FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];

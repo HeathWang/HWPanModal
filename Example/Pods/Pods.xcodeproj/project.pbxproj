@@ -8,86 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		02131E914CD548E4B2B9513871D94C08 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FB41D4D771D95962C0CEFFA526990 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0306CEA07684044D92BC60588119C231 /* HWPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C18E53D90484477470E8500732B094B0 /* HWPanIndicatorView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		03634E56D956486FE819C707A5B1BDBF /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DB40F9C9D22FA6B274349A108CCD0 /* NSObject+FBKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		05A040F35BF1C88F869404E1A940B493 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 930749D3EA7185800ACD0DAD4D3333D5 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05EA1447EEA0EB669F8DEE73964A7C60 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E8DA4D8C4D2AEB2A3845FB2BC78D0CD0 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		079D8F0775CF5682D358102B51A4B4AA /* HWPanModal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 236EE28C1B6976208762B42075923821 /* HWPanModal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A042850D1A038C1D50232567B2A5909 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B71C89F259BE5C27073B69832BC62 /* HWPanModalInteractiveAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0AF1AD35706D90B1A91F291B899EF8C0 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A64D2E226E70DAE29CDA551E5758B9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D703B1D051BA0976A5DE2B6864342FA /* UIViewController+Presentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 548A595FB500B26F0866800B16AB3B0D /* UIViewController+Presentation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0E7FF8C6F624558702E00178BC97E84A /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A475118A73D51015CEF41CFFBB32A21 /* MASViewAttribute.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0FFD19DFC32B9564FBCF5DC790766137 /* HWVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD5478DB0C5458ACA601F89023F305D /* HWVisualEffectView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1007A5D16EAF57C0B63EC6F206FD7083 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
-		11F0A1F6A06EE78E040D195B26769984 /* UIViewController+Presentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15730EF53BF8779BC48BB43870FF69CB /* UIViewController+Presentation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		12E263CAE24019CFE3D33943B079439A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BEC34E1AAC74C8208F949A4339991B /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		17938D80B3028E5FCE7242CF59152AB8 /* UIView+HW_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FDABD3E51CEDCE619402CD2E52D0EC43 /* UIView+HW_Frame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		19FAE795BD90A8A88E94083A149CB99C /* HWPanModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DF76EB538562C3B6208CA0BBCC3A3 /* HWPanModalAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1FE04432714EFB9C94634A38E799C6B1 /* HWPanModalPresenterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B5D6D432CF7E3D904010FC03D3FC9317 /* HWPanModalPresenterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15D9F452EF01509A48FFAB0BA3D8758D /* HWPanIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = CECB598B11B73BDBA7435A7ADF4F37A5 /* HWPanIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		204E68BD86AC4C1E9416A9C39D741288 /* HWPanModalPresentationAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F17E86544FC16583EF4E52CBADF8C /* HWPanModalPresentationAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		20C47629AD9EFF6232796690CA4FF6AC /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F64CCD5D3AF9C916373D270F12B2476 /* MASConstraintMaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		21014FF2F2DAB42680CF421E914DC41A /* HWPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E25CFAAD8B833D9ACB05043B161DF72 /* HWPanIndicatorView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		248D234778D36A89A6170BA3778A2777 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D298C2FA93ED4096591F87438C6129D5 /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		280D36330BAC5715615FF4A8B42D60D6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A16AFEA3592F07274F3501EC53D0AE2 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29139E48F617E4BF170B1659992B7432 /* UIViewController+PanModalDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = 69922958A263B56D658EBC77B96A68B9 /* UIViewController+PanModalDefault.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29A715748667991A932CB7CCF018B799 /* UIViewController+PanModalDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A540D918792B1541A3F8EDD56FAF1D1 /* UIViewController+PanModalDefault.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C43817529EB28E5896C72C9BE82A2FA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D7CD26154B14B97DFBA0C1E1AC147 /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		32CFA95BB6C9ADFE7B279D2AAFE01A50 /* UIViewController+PanModalPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F2946B00B7D8B0B2FFCCD7F4F2D53BFF /* UIViewController+PanModalPresenter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		335F63F603E0F31FF8CCD969667C3E62 /* HWDimmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B10308F25EC067C56752BB089E7D11 /* HWDimmedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		346080C0D1CA23399ADD739D722D7CEF /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = DD3EB1C60192AB81F5B4ED89537AE579 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34DFB0B87FB8D05C00DD6BB9F2D8B4E2 /* HWPanModalAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 864E52D7E23B56A20A3FA937968ABF52 /* HWPanModalAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		370BD00675B1B893A00C49707A15F0B9 /* HWPanModalPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA784A673351FC9BAA6159A619EB8AD /* HWPanModalPresentationAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3DA5F1D8E51CDD102A871C2F37770C7B /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 820083D8D9EA003CC288944125110458 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		425E368FB444E64F4EFC1CF5508EC001 /* HWPanModalIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 545C126B885F5DDD364F9887FE5CB8D2 /* HWPanModalIndicatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		429471DECF53B4CD9A771284B0A8AE33 /* HWPanModalPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 484940560A697373AD278D9440782B11 /* HWPanModalPresentationAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		49895E187EEE9E575E99000F21CD1286 /* HWPanContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F0230DF5A8EB7EF3E9A2FF8A60747FA0 /* HWPanContainerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		415CC624AA370B6A77FCBD96DDC8FF14 /* KVOController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 056EEFD5DBCE5AB70A9B39BA9143B98E /* KVOController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42894C181E80FE82D0C6950C991E3B59 /* HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = C7D90B9857E6A85DB55F54583DC12A0E /* HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		438EED983765AD9C21FFCD98B8EB9C44 /* HWPanModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05647969E5DBC0C1071451C4B7D7EF45 /* HWPanModalPresentationController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4B0981F9AC628CF5100C50FF4A163A4A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B2BC6E23C2C727561261EDBD91CC2B0 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		503142F0AE00DCA7E6666A0DE4A97A68 /* UIViewController+Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = D85C4341E8DAD9FAD963C15B9835FE0D /* UIViewController+Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D842244EDBA3496B440E75E6A6B612E /* HWDimmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 244A1CD24212D6EAFD10ED6C786335CD /* HWDimmedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		505A0529CDF3A5A2E694D0CE0BA81EDE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489EDDA95F50C333A6D981DABA7A943 /* View+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		55F6BC51CA40D2A351C88B3989931110 /* FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C55E50FD820CC06C1E6386F318C635 /* FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EA8C87C869CC8F0E6F7A9056D8344BF /* HWPresentingVCAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 72229F52964C9F0C1802D4B2A3F8F472 /* HWPresentingVCAnimatedTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64E92CF4026C91E38D25F661365BAFD1 /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DB40F9C9D22FA6B274349A108CCD0 /* NSObject+FBKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		63B79C66D70D105DE6902548792EF59F /* FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C55E50FD820CC06C1E6386F318C635 /* FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A6AD3A5BBDBFD0B4AF936BD518EC0B1 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED6B3270A61E0F9E25281BEF23AB22DC /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BC91CAC8241529C54AE329FF99F87AF /* HWDimmedView.h in Headers */ = {isa = PBXBuildFile; fileRef = B73CB235934E14D5B1D92834791EA209 /* HWDimmedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6C539AACDC35DB062A0CBC766269F89F /* UIViewController+PanModalDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = E242A22616B6882A48C823263318348E /* UIViewController+PanModalDefault.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		73BFEC36C605A51105752ED4303F23BD /* HWPanModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A687E7AD0E14BF508531BD92E3779 /* HWPanModalPresentationController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		757DC51538458AEA14AB66A33334BCF8 /* KVOController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8185A6048E64267203E4E540D294F2 /* KVOController-dummy.m */; };
-		773C7F4FC63174FB9D771584CCC82051 /* HWPanModalPresentationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEA7BE970FD13FB140E3181BB64299E /* HWPanModalPresentationDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		72AA2C8269392C08433F6DD692C482B8 /* NSObject+HW_Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7018B86404C0133B5345693A21FB21 /* NSObject+HW_Swizzle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		77EBC9E6E4CF8CF7896CFC8EA6A4DF15 /* HWPanModalPresenterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CE0C1B0F5D245F19297BEBAF33DBAB /* HWPanModalPresenterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79E9D7C1CDDB8E3398CAF29C3CB73F9D /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D955BCC809186AF715245601F024241A /* MASCompositeConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7CC2AAED0869DE364A5945E6D5775C7B /* KVOController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 056EEFD5DBCE5AB70A9B39BA9143B98E /* KVOController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F58C15A6A38AF7FC5C735613FF3DB5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
-		8277F9E878617759BCBBBF2DD3FF9AFE /* HWPanContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9D749EC5C1B77B0B5952B23F588B51 /* HWPanContainerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7B4BF8F5B5F7D3CAE3F07C2C3A1A4CBE /* HWPresentingVCAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = FC44E302331EBF498D6947722FD973A9 /* HWPresentingVCAnimatedTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82ED5976131E2B4D17460AEDA6C05615 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6247F93D13EE31D731C3A4E9BA2449 /* KVOController.framework */; };
 		8A0598769191AC55FFCC61B555C6F993 /* Pods-HWPanModal_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D4824653ACFD0C00F261929757ADA5 /* Pods-HWPanModal_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B074EF24BB61690EC115A770FE72999 /* HWPanModalPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D8E7C63AE71009C32DA53CD4B1C1773 /* HWPanModalPresentationController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8B92011C9373001132C8148BFC8F50B3 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 442429986F5E138A69754E861752C801 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C8D75761BC37257D78D4C16AC401B65 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6247F93D13EE31D731C3A4E9BA2449 /* KVOController.framework */; };
 		8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B4AA30D25F785901E0D881C7C6AB60 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 191A0189D08F59A1E26A6A5D9BFD8B32 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91FAE6EEAB059F712E9476C3F01D8DDF /* UIView+HW_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 904EDCCF2FF920E9384846DA410B2E6F /* UIView+HW_Frame.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		90E5F25EE0083DB35B721383E02BD338 /* UINavigationController+HWPanModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 612A37CC8CA29909F7FB9A19934B15F0 /* UINavigationController+HWPanModal.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9109DA61976D6EEF5780AB2E62718557 /* UIViewController+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FC22F8ECC3E1991D070D429E0557DB /* UIViewController+LayoutHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9140250451926778B1B2929F7D34ED97 /* HWPanModalAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F221E58080C640006603652648AA9D6 /* HWPanModalAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91B4224AB7802D302A67DB09416E0568 /* HWPanModalHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 259C8D93A4C6BC79B73201EC5E9263ED /* HWPanModalHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E26DDA3C4CC7BDACDD059969833B74 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF346DBD3342D25E9A994035622FDDD /* Masonry-dummy.m */; };
 		941955A19C40899D275604E6E9C21A6D /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5638CD38F8729FB02F84A5EE7C26FA69 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9723927AE1F62520F203394FC278D82B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
+		99CB06D8EB2C80FFE7D823F99E5C7BB4 /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49341E7408EE91CD1F651C4929F7AF07 /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C81BD9B583A9A79CD069DA6237CF2D1A /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA820CAFCDA77C13F91E865D6ACB2DB5 /* HWPanModalHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 21D4D5049E55012DB5CC5BF8B02C454C /* HWPanModalHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB6CF57DE90E734D8CA010A488A6E0D3 /* HWPanModalPresentationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F6305D348A76F34544E6824DD111F /* HWPanModalPresentationDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AF2752B72B3EC2E7A56DA350B530D642 /* HWPanIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CAC802A1D5EB490C3BDE2DDB6E60706 /* HWPanIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B360E9E54A44C707FF28441AF9BF88CB /* HWPanModalPresentable.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E4BE989BF53E9EAD6C69B0E4D88C7F /* HWPanModalPresentable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FEB1E5D1B6AED27120C646F199DED9C /* HWPanContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DD4598805FE2B39BFA6865F154A7CDDD /* HWPanContainerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A14D10457FCCBDEB5961214FE969702F /* UINavigationController+HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = B753995A54AEA35F422B1A401A9AD82D /* UINavigationController+HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4BD57DF2DDC91CD220C6E427FE9BC73 /* UIViewController+LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E34CB43A514C42E65EA7097B70D88A2 /* UIViewController+LayoutHelper.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A54209E41EC19CCB8E51C00DEC43D244 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
+		A7E8908FF2CC9AD2F559AF6117B0971F /* NSObject+HW_Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 152B513AE3A972E3BB2DAA4960500277 /* NSObject+HW_Swizzle.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AA3302EF20895BC2738A8ED489BAB18E /* HWPanModalIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E4284B80854CECA5681C59EF88DD9F22 /* HWPanModalIndicatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAFE23B18C96B182E69EE72284AA94C9 /* UIViewController+Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9999D646F3F796260A38BE7E58307A22 /* UIViewController+Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B35475CD4688D963A8249CF32725A41E /* HWVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 630242AF4CC56DBA56E8335089FC9222 /* HWVisualEffectView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B4A3387A8054895E90F6D2652DDF0DD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
-		B5A54D1C7F8D99A1A7B83DA189F65A63 /* HWPanModalInteractiveAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = FA92B9949A8A2DC040FFB7B116E1C2B7 /* HWPanModalInteractiveAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BEDC5B3C4E0BFFBDE88D941623017D2E /* HWPanModalPresentationAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EDD307CFA805CA98EC9878AA5B2AD /* HWPanModalPresentationAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C6EA401F972C7D54E2544A53D82D37CC /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49341E7408EE91CD1F651C4929F7AF07 /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4C0EE52E22C6F5F0B9F7B00EC4DBEC7 /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722742158A15E1905DB55012FDF8D66A /* FBKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BACA681A6F80E44E22DAB8704BD67DD6 /* HWVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9708F7BE88B82D0694DA79A8C666D53A /* HWVisualEffectView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BF38C7C4F4B4FD5269461793EA36912D /* HWPanModalPresentationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A055BCBB1BCAAAEB571659A95497FD /* HWPanModalPresentationDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C817B7AB413C60EA8F39BFF6236DC8CF /* Pods-HWPanModal_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D930061AB001F4C5724C41DCF03FC /* Pods-HWPanModal_Tests-dummy.m */; };
+		C9FE1BCCDBFE5EDEE854E0B5032C24DF /* NSObject+FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = D43CDAADB81C0D15BEECC26A3BBCED5F /* NSObject+FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB59DD4891E5FA606A1CEE3E6557514B /* HWPanModal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 131352C089A44CA8996041C43A523A9E /* HWPanModal-dummy.m */; };
 		CCEE3A8F2DC47678E604C187BF298687 /* Pods-HWPanModal_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05AE1E4FB3CDFFCD57B88299FF093524 /* Pods-HWPanModal_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF6061734B8FA526953E8A9099F77A4 /* UIKit.framework */; };
+		CFA6816F563848B2FD9ECA5B6320585E /* UIViewController+PanModalPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 576FF9036A5E71BB39D39EDF1AF61D7A /* UIViewController+PanModalPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFC0DE364E072FB0A0432DDEBC0E45A0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B2FDDEFD4D199CBEB2D69A4757CE3F /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D48E07A2BAB6AFD15356B3C2F4933320 /* HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 946946BC521980B239D325147A2663F1 /* HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D619398B3DD0A4ABF7FC380E2A1CAE34 /* UIViewController+PanModalDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E6A0220312125187F51F6B56532F07 /* UIViewController+PanModalDefault.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D62D938F537BEBABFF332AAA5B0F9B3D /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4439B2E5F7843F12A08875C0D0D1AF85 /* MASLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DD5E7DFB52F65DD3C256C101E5569C20 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408D80945AF1387C296DD15A5FF2885 /* HWPanModalInteractiveAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DF611116E30174567341CF36030D84E6 /* UIViewController+LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE256C579C63837B77A7195537CD9B9 /* UIViewController+LayoutHelper.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E19213624748B4170ABBF2F081A7EF10 /* HWPanModal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08E9964BF900E29C15143B39B8715166 /* HWPanModal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2EDF72C1423CD3D32947DD1733D9360 /* HWPanModal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E1D4BDE9CFC8C55B4699AB7F3DB8 /* HWPanModal-dummy.m */; };
-		E2FE3B63B9D2C2C8CEEE7FB726F7E1F2 /* UIViewController+PanModalPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C5F278D9C3EFCA2E51FFA5257FF891 /* UIViewController+PanModalPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D73D95403DB2F45FFA31196FF23752B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
+		D95A435CBFC002B86217611F830F63F5 /* HWPanModalPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 119FDC7A0B74A87E5969CEEC64121F23 /* HWPanModalPresentationController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DDA10F2FE5AA0F2A4FED9DDC38D9FE7B /* HWPanContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131640B4A37BFD5755BFFA2694106427 /* HWPanContainerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E02D3631FD51A5101C1AB0E49EBBCDFD /* KVOController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8185A6048E64267203E4E540D294F2 /* KVOController-dummy.m */; };
+		E1B30DD1C3BE80937F9068F8763EEBEA /* HWPanModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 567714F61D6023E1CE27DDB35665919A /* HWPanModalAnimator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */; };
 		E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB29258CD25E0B6104ADCB86E3E7AA3 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAE8B0895956885A752B173683A0D889 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2502744C794BB61A3EFEB6BC847D55 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF0EAAD059AB9ADEA008F39F7EED00B6 /* HWVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F3EF570BC1D81F926B3132D26F785F /* HWVisualEffectView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F0C3D964CF215B19685835925D261EF7 /* UIViewController+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 253BC0FF42858F66C530BEAA955943F9 /* UIViewController+LayoutHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F18240F94F1326EC17FE8F92EF1FFDD0 /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722742158A15E1905DB55012FDF8D66A /* FBKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EB057633EF8F6455898D9F269A928A98 /* UIView+HW_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 4171D122DD4749E9ADA143E78DED3B57 /* UIView+HW_Frame.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EFE2864D52A191999F21B56592D6C521 /* HWPanModalPresentable.h in Headers */ = {isa = PBXBuildFile; fileRef = 45706B113E0A1BE3CB00BF797D1CF470 /* HWPanModalPresentable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4912E4F2C3F861BFF7D590DA7C094D6 /* HWDimmedView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B62650542678C0B84B8FC2772511E7 /* HWDimmedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F98A438FBAA716B135CFBDA1F8C48DB4 /* HWPanModalPresentationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBF96E03FDF5865BBA87D73A64C9883 /* HWPanModalPresentationDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FAFBFA90F7BC3E7CF50F8A5CF0A8B264 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = B4B83BD9F0CEB00040073646D678C0FB /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB6E8868064203B51BDA00ED2CEEED84 /* NSObject+FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = D43CDAADB81C0D15BEECC26A3BBCED5F /* NSObject+FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB948732519C2E771914736C53705985 /* Pods-HWPanModal_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 790FF2DC4E072068763F4B3AA1FBAF1C /* Pods-HWPanModal_Example-dummy.m */; };
+		FC64437785EA5B3FF0B1B72524C61CEF /* HWPanModalInteractiveAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA5BE3FC9000DEFE98582C6A0D20702 /* HWPanModalInteractiveAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FFB207BE82DBDE7765E51DFCC961E52C /* UIViewController+PanModalPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7651E0372DCCF6F3775A50E60F948FC /* UIViewController+PanModalPresenter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FFFC9EDB435A24624878301A7DB0A28C /* UIView+HW_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7261DAA7768DC7A04B8340096A0C /* UIView+HW_Frame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,19 +116,19 @@
 			remoteGlobalIDString = 2568F753F09C4DFFD8770DCC78EDAEAE;
 			remoteInfo = KVOController;
 		};
-		8F4A3BD9A03E80D1FE4553B87ECCA1A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2568F753F09C4DFFD8770DCC78EDAEAE;
-			remoteInfo = KVOController;
-		};
 		A0A9A9648A3A9C223016F87D85450B1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D35803DE78F6DF3033DF7D92660F328;
 			remoteInfo = "Pods-HWPanModal_Example";
+		};
+		C0C7D48B5F1D44247F9178CF66876E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2568F753F09C4DFFD8770DCC78EDAEAE;
+			remoteInfo = KVOController;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -133,113 +137,117 @@
 		018C5234364F46C62C9B5F138C926DB2 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
 		03A64D2E226E70DAE29CDA551E5758B9 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		0489EDDA95F50C333A6D981DABA7A943 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		05647969E5DBC0C1071451C4B7D7EF45 /* HWPanModalPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationController.m; sourceTree = "<group>"; };
 		056EEFD5DBCE5AB70A9B39BA9143B98E /* KVOController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-umbrella.h"; sourceTree = "<group>"; };
 		05AE1E4FB3CDFFCD57B88299FF093524 /* Pods-HWPanModal_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HWPanModal_Tests-umbrella.h"; sourceTree = "<group>"; };
-		08E9964BF900E29C15143B39B8715166 /* HWPanModal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-umbrella.h"; sourceTree = "<group>"; };
 		09E1D15FCE85A120C9324FF872F8B134 /* Pods_HWPanModal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HWPanModal_Example.framework; path = "Pods-HWPanModal_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1DB40F9C9D22FA6B274349A108CCD0 /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FBKVOController.m"; path = "FBKVOController/NSObject+FBKVOController.m"; sourceTree = "<group>"; };
 		0CBEBBC3884818F2DDBDE9DC37113BA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0D07354CBF8F75093C717CCEFE460920 /* Pods-HWPanModal_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HWPanModal_Example.modulemap"; sourceTree = "<group>"; };
+		0F221E58080C640006603652648AA9D6 /* HWPanModalAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalAnimator.h; sourceTree = "<group>"; };
+		10A055BCBB1BCAAAEB571659A95497FD /* HWPanModalPresentationDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationDelegate.m; sourceTree = "<group>"; };
 		10D4824653ACFD0C00F261929757ADA5 /* Pods-HWPanModal_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HWPanModal_Example-umbrella.h"; sourceTree = "<group>"; };
-		15730EF53BF8779BC48BB43870FF69CB /* UIViewController+Presentation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Presentation.m"; sourceTree = "<group>"; };
+		119FDC7A0B74A87E5969CEEC64121F23 /* HWPanModalPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationController.h; sourceTree = "<group>"; };
+		131352C089A44CA8996041C43A523A9E /* HWPanModal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HWPanModal-dummy.m"; sourceTree = "<group>"; };
+		131640B4A37BFD5755BFFA2694106427 /* HWPanContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanContainerView.m; sourceTree = "<group>"; };
+		152B513AE3A972E3BB2DAA4960500277 /* NSObject+HW_Swizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+HW_Swizzle.h"; sourceTree = "<group>"; };
 		191A0189D08F59A1E26A6A5D9BFD8B32 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		1C9D749EC5C1B77B0B5952B23F588B51 /* HWPanContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanContainerView.m; sourceTree = "<group>"; };
-		1CEA7BE970FD13FB140E3181BB64299E /* HWPanModalPresentationDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationDelegate.m; sourceTree = "<group>"; };
+		1BA5BE3FC9000DEFE98582C6A0D20702 /* HWPanModalInteractiveAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalInteractiveAnimator.h; sourceTree = "<group>"; };
+		1E614B07C81AA007BA8F5846758C2519 /* README-CN.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-CN.md"; sourceTree = "<group>"; };
 		1F5184387F10D241FB45A257ECB28C89 /* KVOController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KVOController.modulemap; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21D4D5049E55012DB5CC5BF8B02C454C /* HWPanModalHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalHeight.h; sourceTree = "<group>"; };
-		223EDD307CFA805CA98EC9878AA5B2AD /* HWPanModalPresentationAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationAnimator.h; sourceTree = "<group>"; };
 		22DDB7DC04A733623C5335FF5A355BC2 /* Pods_HWPanModal_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HWPanModal_Tests.framework; path = "Pods-HWPanModal_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		236EE28C1B6976208762B42075923821 /* HWPanModal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-umbrella.h"; sourceTree = "<group>"; };
+		244A1CD24212D6EAFD10ED6C786335CD /* HWDimmedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWDimmedView.m; sourceTree = "<group>"; };
 		2502456305F69F29A611666CA9F9455E /* Pods-HWPanModal_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HWPanModal_Example-Info.plist"; sourceTree = "<group>"; };
-		253BC0FF42858F66C530BEAA955943F9 /* UIViewController+LayoutHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LayoutHelper.m"; sourceTree = "<group>"; };
+		259C8D93A4C6BC79B73201EC5E9263ED /* HWPanModalHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalHeight.h; sourceTree = "<group>"; };
 		2B2BC6E23C2C727561261EDBD91CC2B0 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		2F6247F93D13EE31D731C3A4E9BA2449 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36F3EF570BC1D81F926B3132D26F785F /* HWVisualEffectView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWVisualEffectView.m; sourceTree = "<group>"; };
+		351F3B76D648626A1809EB609612CADE /* HWPanModal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HWPanModal-Info.plist"; sourceTree = "<group>"; };
 		399EC9508E73C0D54D9BBD8741FBA137 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVOController.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16AFEA3592F07274F3501EC53D0AE2 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		3A2502744C794BB61A3EFEB6BC847D55 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		3A5A687E7AD0E14BF508531BD92E3779 /* HWPanModalPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationController.m; sourceTree = "<group>"; };
 		3B1929421AD6C324DA49E2A088CD558F /* Pods-HWPanModal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3D9FB41D4D771D95962C0CEFFA526990 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		3F64CCD5D3AF9C916373D270F12B2476 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		40083A98446A13EAAB4E676CEC270FCD /* KVOController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVOController.xcconfig; sourceTree = "<group>"; };
+		4171D122DD4749E9ADA143E78DED3B57 /* UIView+HW_Frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
 		41C55E50FD820CC06C1E6386F318C635 /* FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBKVOController.h; path = FBKVOController/FBKVOController.h; sourceTree = "<group>"; };
+		43B4236D38FA1F1911E65A8FDEEB51D8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		442429986F5E138A69754E861752C801 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		4439B2E5F7843F12A08875C0D0D1AF85 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		484940560A697373AD278D9440782B11 /* HWPanModalPresentationAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationAnimator.m; sourceTree = "<group>"; };
+		45706B113E0A1BE3CB00BF797D1CF470 /* HWPanModalPresentable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentable.h; sourceTree = "<group>"; };
+		46E6A0220312125187F51F6B56532F07 /* UIViewController+PanModalDefault.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalDefault.m"; sourceTree = "<group>"; };
 		49341E7408EE91CD1F651C4929F7AF07 /* KVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVOController.h; path = FBKVOController/KVOController.h; sourceTree = "<group>"; };
-		4DE256C579C63837B77A7195537CD9B9 /* UIViewController+LayoutHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LayoutHelper.h"; sourceTree = "<group>"; };
-		5408D80945AF1387C296DD15A5FF2885 /* HWPanModalInteractiveAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalInteractiveAnimator.m; sourceTree = "<group>"; };
-		545C126B885F5DDD364F9887FE5CB8D2 /* HWPanModalIndicatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalIndicatorProtocol.h; sourceTree = "<group>"; };
+		4A540D918792B1541A3F8EDD56FAF1D1 /* UIViewController+PanModalDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalDefault.h"; sourceTree = "<group>"; };
+		546F17E86544FC16583EF4E52CBADF8C /* HWPanModalPresentationAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationAnimator.h; sourceTree = "<group>"; };
+		548A595FB500B26F0866800B16AB3B0D /* UIViewController+Presentation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Presentation.m"; sourceTree = "<group>"; };
 		5638CD38F8729FB02F84A5EE7C26FA69 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		5CAC802A1D5EB490C3BDE2DDB6E60706 /* HWPanIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanIndicatorView.h; sourceTree = "<group>"; };
+		567714F61D6023E1CE27DDB35665919A /* HWPanModalAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalAnimator.m; sourceTree = "<group>"; };
+		576FF9036A5E71BB39D39EDF1AF61D7A /* UIViewController+PanModalPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalPresenter.h"; sourceTree = "<group>"; };
 		5CF6061734B8FA526953E8A9099F77A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		5D8E7C63AE71009C32DA53CD4B1C1773 /* HWPanModalPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationController.h; sourceTree = "<group>"; };
 		5E6EC0C5043F3681EBF4866C00D970AD /* Pods-HWPanModal_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HWPanModal_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5EA8916523B15B6D86DDD32567DE0185 /* KVOController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-prefix.pch"; sourceTree = "<group>"; };
-		63794FAF5B1967AB2D47BB5C7AC4F912 /* HWPanModal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HWPanModal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		63C5F278D9C3EFCA2E51FFA5257FF891 /* UIViewController+PanModalPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalPresenter.h"; sourceTree = "<group>"; };
+		612A37CC8CA29909F7FB9A19934B15F0 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
+		630242AF4CC56DBA56E8335089FC9222 /* HWVisualEffectView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWVisualEffectView.h; sourceTree = "<group>"; };
 		67BEC34E1AAC74C8208F949A4339991B /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		69922958A263B56D658EBC77B96A68B9 /* UIViewController+PanModalDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalDefault.h"; sourceTree = "<group>"; };
 		6A8185A6048E64267203E4E540D294F2 /* KVOController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVOController-dummy.m"; sourceTree = "<group>"; };
-		7038CF7E8E03562B8AEB0707B0F6BA62 /* HWPanModal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HWPanModal.xcconfig; sourceTree = "<group>"; };
+		6D7018B86404C0133B5345693A21FB21 /* NSObject+HW_Swizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HW_Swizzle.m"; sourceTree = "<group>"; };
 		70D388598AE5CE5C430B97B354BD571D /* Pods-HWPanModal_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HWPanModal_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		72229F52964C9F0C1802D4B2A3F8F472 /* HWPresentingVCAnimatedTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPresentingVCAnimatedTransitioning.h; sourceTree = "<group>"; };
 		722742158A15E1905DB55012FDF8D66A /* FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBKVOController.m; path = FBKVOController/FBKVOController.m; sourceTree = "<group>"; };
-		74DB18F6A0F5F589E6B6371F87AAFE00 /* HWPanModal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-prefix.pch"; sourceTree = "<group>"; };
-		757F6305D348A76F34544E6824DD111F /* HWPanModalPresentationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationDelegate.h; sourceTree = "<group>"; };
 		7819923046C4F6B199F8D45E9F7BA6B0 /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HWPanModal.framework; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		790FF2DC4E072068763F4B3AA1FBAF1C /* Pods-HWPanModal_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HWPanModal_Example-dummy.m"; sourceTree = "<group>"; };
+		7CDA46BEC9A1699FBE5962BC8F34A335 /* HWPanModal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HWPanModal.modulemap; sourceTree = "<group>"; };
 		7D7D930061AB001F4C5724C41DCF03FC /* Pods-HWPanModal_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HWPanModal_Tests-dummy.m"; sourceTree = "<group>"; };
+		7E25CFAAD8B833D9ACB05043B161DF72 /* HWPanIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanIndicatorView.m; sourceTree = "<group>"; };
 		820083D8D9EA003CC288944125110458 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		84C7E1D4BDE9CFC8C55B4699AB7F3DB8 /* HWPanModal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HWPanModal-dummy.m"; sourceTree = "<group>"; };
 		85DA7D8E8E025F57263A7C1C14AD1D37 /* Pods-HWPanModal_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HWPanModal_Example-frameworks.sh"; sourceTree = "<group>"; };
-		864E52D7E23B56A20A3FA937968ABF52 /* HWPanModalAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalAnimator.h; sourceTree = "<group>"; };
-		904EDCCF2FF920E9384846DA410B2E6F /* UIView+HW_Frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
 		908B5E64260C386739708E659E488ACB /* Pods-HWPanModal_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HWPanModal_Tests.modulemap"; sourceTree = "<group>"; };
-		91164B0FAAE8B99C715BF8EE36C3D4D0 /* HWPanModal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HWPanModal-Info.plist"; sourceTree = "<group>"; };
+		92BE7261DAA7768DC7A04B8340096A0C /* UIView+HW_Frame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+HW_Frame.m"; sourceTree = "<group>"; };
 		930749D3EA7185800ACD0DAD4D3333D5 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		946946BC521980B239D325147A2663F1 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HWPanModal.h; path = HWPanModal/Classes/HWPanModal.h; sourceTree = "<group>"; };
-		954036ABC6DB7BB7D1AA3C8BBF2E6C9F /* README-CN.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-CN.md"; sourceTree = "<group>"; };
+		93F240D08C6287BEED9AA90A8CEFB6F6 /* HWPanModal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HWPanModal-prefix.pch"; sourceTree = "<group>"; };
+		9708F7BE88B82D0694DA79A8C666D53A /* HWVisualEffectView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWVisualEffectView.m; sourceTree = "<group>"; };
+		9999D646F3F796260A38BE7E58307A22 /* UIViewController+Presentation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Presentation.h"; sourceTree = "<group>"; };
 		9A475118A73D51015CEF41CFFBB32A21 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		9AFB985313F32EAF1E6872CE921FE6AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		9CD5478DB0C5458ACA601F89023F305D /* HWVisualEffectView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWVisualEffectView.h; sourceTree = "<group>"; };
+		9BA784A673351FC9BAA6159A619EB8AD /* HWPanModalPresentationAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationAnimator.m; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E34CB43A514C42E65EA7097B70D88A2 /* UIViewController+LayoutHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LayoutHelper.h"; sourceTree = "<group>"; };
+		9F6B71C89F259BE5C27073B69832BC62 /* HWPanModalInteractiveAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalInteractiveAnimator.m; sourceTree = "<group>"; };
 		9FB017B0BC19CB5E65E63D3575D0A776 /* Pods-HWPanModal_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HWPanModal_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A2128F3FCE84AD0A161A1FCEAC971C70 /* HWPanModal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HWPanModal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A71220130F198DF5AD3407911A35DB15 /* Pods-HWPanModal_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B3B10308F25EC067C56752BB089E7D11 /* HWDimmedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWDimmedView.m; sourceTree = "<group>"; };
+		ABBF96E03FDF5865BBA87D73A64C9883 /* HWPanModalPresentationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationDelegate.h; sourceTree = "<group>"; };
+		B3B62650542678C0B84B8FC2772511E7 /* HWDimmedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWDimmedView.h; sourceTree = "<group>"; };
 		B4B83BD9F0CEB00040073646D678C0FB /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		B4DFD8A172916FFB0FE7BA089CA34BA4 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		B5B2FDDEFD4D199CBEB2D69A4757CE3F /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		B5D6D432CF7E3D904010FC03D3FC9317 /* HWPanModalPresenterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresenterProtocol.h; sourceTree = "<group>"; };
-		B73CB235934E14D5B1D92834791EA209 /* HWDimmedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWDimmedView.h; sourceTree = "<group>"; };
+		B5FC22F8ECC3E1991D070D429E0557DB /* UIViewController+LayoutHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LayoutHelper.m"; sourceTree = "<group>"; };
+		B753995A54AEA35F422B1A401A9AD82D /* UINavigationController+HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HWPanModal.h"; sourceTree = "<group>"; };
 		B78ACFBFAC937E17B9CD60F71FE620A5 /* Pods-HWPanModal_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HWPanModal_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B8E4BE989BF53E9EAD6C69B0E4D88C7F /* HWPanModalPresentable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentable.h; sourceTree = "<group>"; };
 		BEB29258CD25E0B6104ADCB86E3E7AA3 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		C18E53D90484477470E8500732B094B0 /* HWPanIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanIndicatorView.m; sourceTree = "<group>"; };
+		C7D90B9857E6A85DB55F54583DC12A0E /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HWPanModal.h; path = HWPanModal/Classes/HWPanModal.h; sourceTree = "<group>"; };
 		C81BD9B583A9A79CD069DA6237CF2D1A /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		CB32F2D9D30F76E5A646EFF91597383C /* Pods-HWPanModal_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CECB598B11B73BDBA7435A7ADF4F37A5 /* HWPanIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanIndicatorView.h; sourceTree = "<group>"; };
 		D0B613A82738EC4FDEED5D268E5048F8 /* KVOController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KVOController-Info.plist"; sourceTree = "<group>"; };
-		D17DF76EB538562C3B6208CA0BBCC3A3 /* HWPanModalAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HWPanModalAnimator.m; sourceTree = "<group>"; };
 		D298C2FA93ED4096591F87438C6129D5 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		D43CDAADB81C0D15BEECC26A3BBCED5F /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+FBKVOController.h"; path = "FBKVOController/NSObject+FBKVOController.h"; sourceTree = "<group>"; };
-		D85C4341E8DAD9FAD963C15B9835FE0D /* UIViewController+Presentation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Presentation.h"; sourceTree = "<group>"; };
+		D5BFCE0FF1DFBA8AB5DC2BCCF0FE2432 /* HWPanModal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HWPanModal.xcconfig; sourceTree = "<group>"; };
+		D7651E0372DCCF6F3775A50E60F948FC /* UIViewController+PanModalPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalPresenter.m"; sourceTree = "<group>"; };
 		D955BCC809186AF715245601F024241A /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		DD3EB1C60192AB81F5B4ED89537AE579 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		DD4598805FE2B39BFA6865F154A7CDDD /* HWPanContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanContainerView.h; sourceTree = "<group>"; };
 		DFA7E8F8E0A40EF1FF5EFE81A30B456C /* Pods-HWPanModal_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HWPanModal_Tests-Info.plist"; sourceTree = "<group>"; };
-		E242A22616B6882A48C823263318348E /* UIViewController+PanModalDefault.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalDefault.m"; sourceTree = "<group>"; };
+		E4284B80854CECA5681C59EF88DD9F22 /* HWPanModalIndicatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalIndicatorProtocol.h; sourceTree = "<group>"; };
 		E4B4AA30D25F785901E0D881C7C6AB60 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		E6E336125536A0F5EAF11E896D5CE803 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		E8DA4D8C4D2AEB2A3845FB2BC78D0CD0 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		ED6B3270A61E0F9E25281BEF23AB22DC /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		EEF346DBD3342D25E9A994035622FDDD /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		F0230DF5A8EB7EF3E9A2FF8A60747FA0 /* HWPanContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanContainerView.h; sourceTree = "<group>"; };
-		F21A036E0D0FAC40EDDE82D6C122128A /* HWPanModal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HWPanModal.modulemap; sourceTree = "<group>"; };
-		F2946B00B7D8B0B2FFCCD7F4F2D53BFF /* UIViewController+PanModalPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalPresenter.m"; sourceTree = "<group>"; };
+		F0CE0C1B0F5D245F19297BEBAF33DBAB /* HWPanModalPresenterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresenterProtocol.h; sourceTree = "<group>"; };
 		F352BD58CD1203A5A2E2C7ACD82260FB /* Pods-HWPanModal_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HWPanModal_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F648C802D676E03B879367DE50043636 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
-		FA92B9949A8A2DC040FFB7B116E1C2B7 /* HWPanModalInteractiveAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModalInteractiveAnimator.h; sourceTree = "<group>"; };
-		FDABD3E51CEDCE619402CD2E52D0EC43 /* UIView+HW_Frame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+HW_Frame.m"; sourceTree = "<group>"; };
+		FC44E302331EBF498D6947722FD973A9 /* HWPresentingVCAnimatedTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPresentingVCAnimatedTransitioning.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +267,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43C215F2CB9972E732799A9EBB9F050F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A54209E41EC19CCB8E51C00DEC43D244 /* Foundation.framework in Frameworks */,
+				82ED5976131E2B4D17460AEDA6C05615 /* KVOController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E047F76604659BF1B2099B2C412AC93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,20 +285,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		767B2ABD5FC3B6B233374349EDF6A749 /* Frameworks */ = {
+		70E2542AB6902558B102260A1E676484 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F58C15A6A38AF7FC5C735613FF3DB5E /* Foundation.framework in Frameworks */,
-				8C8D75761BC37257D78D4C16AC401B65 /* KVOController.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE055B701872C574DC2FEB0C70E3F25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1007A5D16EAF57C0B63EC6F206FD7083 /* Foundation.framework in Frameworks */,
+				D73D95403DB2F45FFA31196FF23752B4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,19 +330,14 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		3874B319C1B527CBF5E57C67C72D6948 /* Animator */ = {
+		35CAB0DB08A5904C738047451C63A972 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				864E52D7E23B56A20A3FA937968ABF52 /* HWPanModalAnimator.h */,
-				D17DF76EB538562C3B6208CA0BBCC3A3 /* HWPanModalAnimator.m */,
-				FA92B9949A8A2DC040FFB7B116E1C2B7 /* HWPanModalInteractiveAnimator.h */,
-				5408D80945AF1387C296DD15A5FF2885 /* HWPanModalInteractiveAnimator.m */,
-				223EDD307CFA805CA98EC9878AA5B2AD /* HWPanModalPresentationAnimator.h */,
-				484940560A697373AD278D9440782B11 /* HWPanModalPresentationAnimator.m */,
-				72229F52964C9F0C1802D4B2A3F8F472 /* HWPresentingVCAnimatedTransitioning.h */,
+				ABBF96E03FDF5865BBA87D73A64C9883 /* HWPanModalPresentationDelegate.h */,
+				10A055BCBB1BCAAAEB571659A95497FD /* HWPanModalPresentationDelegate.m */,
 			);
-			name = Animator;
-			path = HWPanModal/Classes/Animator;
+			name = Delegate;
+			path = HWPanModal/Classes/Delegate;
 			sourceTree = "<group>";
 		};
 		39CBEB32BA0D23167018CD4F96E29B27 /* KVOController */ = {
@@ -351,24 +354,15 @@
 			path = KVOController;
 			sourceTree = "<group>";
 		};
-		3FF0DE37FE95683CD84E82BE322EB565 /* Pod */ = {
+		43AB66EB58BD2A517FEB30A7E6B1C060 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				63794FAF5B1967AB2D47BB5C7AC4F912 /* HWPanModal.podspec */,
-				9AFB985313F32EAF1E6872CE921FE6AE /* LICENSE */,
-				954036ABC6DB7BB7D1AA3C8BBF2E6C9F /* README-CN.md */,
+				F0CE0C1B0F5D245F19297BEBAF33DBAB /* HWPanModalPresenterProtocol.h */,
+				576FF9036A5E71BB39D39EDF1AF61D7A /* UIViewController+PanModalPresenter.h */,
+				D7651E0372DCCF6F3775A50E60F948FC /* UIViewController+PanModalPresenter.m */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		43FD0AC7668E4C0ED6AB824DB1123B32 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				904EDCCF2FF920E9384846DA410B2E6F /* UIView+HW_Frame.h */,
-				FDABD3E51CEDCE619402CD2E52D0EC43 /* UIView+HW_Frame.m */,
-			);
-			name = Layout;
-			path = HWPanModal/Classes/Layout;
+			name = Presenter;
+			path = HWPanModal/Classes/Presenter;
 			sourceTree = "<group>";
 		};
 		5F98393EB8A1CA51961EE36F6D2B8107 /* Support Files */ = {
@@ -394,22 +388,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6DB36B119A1AAD261B9356EB9F8DA89A /* Presentable */ = {
-			isa = PBXGroup;
-			children = (
-				21D4D5049E55012DB5CC5BF8B02C454C /* HWPanModalHeight.h */,
-				B8E4BE989BF53E9EAD6C69B0E4D88C7F /* HWPanModalPresentable.h */,
-				4DE256C579C63837B77A7195537CD9B9 /* UIViewController+LayoutHelper.h */,
-				253BC0FF42858F66C530BEAA955943F9 /* UIViewController+LayoutHelper.m */,
-				69922958A263B56D658EBC77B96A68B9 /* UIViewController+PanModalDefault.h */,
-				E242A22616B6882A48C823263318348E /* UIViewController+PanModalDefault.m */,
-				D85C4341E8DAD9FAD963C15B9835FE0D /* UIViewController+Presentation.h */,
-				15730EF53BF8779BC48BB43870FF69CB /* UIViewController+Presentation.m */,
-			);
-			name = Presentable;
-			path = HWPanModal/Classes/Presentable;
-			sourceTree = "<group>";
-		};
 		71A6065645AD5A62050F6B139E9E1514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +395,20 @@
 				9D3120F3EE38EC9AD5B659BA358EF3C1 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78A654EAB51B06205517775208D27FBF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CDA46BEC9A1699FBE5962BC8F34A335 /* HWPanModal.modulemap */,
+				D5BFCE0FF1DFBA8AB5DC2BCCF0FE2432 /* HWPanModal.xcconfig */,
+				131352C089A44CA8996041C43A523A9E /* HWPanModal-dummy.m */,
+				351F3B76D648626A1809EB609612CADE /* HWPanModal-Info.plist */,
+				93F240D08C6287BEED9AA90A8CEFB6F6 /* HWPanModal-prefix.pch */,
+				236EE28C1B6976208762B42075923821 /* HWPanModal-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HWPanModal";
 			sourceTree = "<group>";
 		};
 		7FBA273C18E91615C535477C63C283C7 /* Products */ = {
@@ -431,14 +423,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84EE5D954B9D03B62E51545E6D4F4929 /* Controller */ = {
+		8B969AF0116B53AB0F5A7F1BCDCDAF72 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5D8E7C63AE71009C32DA53CD4B1C1773 /* HWPanModalPresentationController.h */,
-				3A5A687E7AD0E14BF508531BD92E3779 /* HWPanModalPresentationController.m */,
+				B3B62650542678C0B84B8FC2772511E7 /* HWDimmedView.h */,
+				244A1CD24212D6EAFD10ED6C786335CD /* HWDimmedView.m */,
+				DD4598805FE2B39BFA6865F154A7CDDD /* HWPanContainerView.h */,
+				131640B4A37BFD5755BFFA2694106427 /* HWPanContainerView.m */,
+				CECB598B11B73BDBA7435A7ADF4F37A5 /* HWPanIndicatorView.h */,
+				7E25CFAAD8B833D9ACB05043B161DF72 /* HWPanIndicatorView.m */,
+				E4284B80854CECA5681C59EF88DD9F22 /* HWPanModalIndicatorProtocol.h */,
+				630242AF4CC56DBA56E8335089FC9222 /* HWVisualEffectView.h */,
+				9708F7BE88B82D0694DA79A8C666D53A /* HWVisualEffectView.m */,
 			);
-			name = Controller;
-			path = HWPanModal/Classes/Controller;
+			name = View;
+			path = HWPanModal/Classes/View;
 			sourceTree = "<group>";
 		};
 		9D3120F3EE38EC9AD5B659BA358EF3C1 /* iOS */ = {
@@ -448,6 +447,21 @@
 				5CF6061734B8FA526953E8A9099F77A4 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		9FA43003DA63C0126E7ADEE9BD293E36 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				0F221E58080C640006603652648AA9D6 /* HWPanModalAnimator.h */,
+				567714F61D6023E1CE27DDB35665919A /* HWPanModalAnimator.m */,
+				1BA5BE3FC9000DEFE98582C6A0D20702 /* HWPanModalInteractiveAnimator.h */,
+				9F6B71C89F259BE5C27073B69832BC62 /* HWPanModalInteractiveAnimator.m */,
+				546F17E86544FC16583EF4E52CBADF8C /* HWPanModalPresentationAnimator.h */,
+				9BA784A673351FC9BAA6159A619EB8AD /* HWPanModalPresentationAnimator.m */,
+				FC44E302331EBF498D6947722FD973A9 /* HWPresentingVCAnimatedTransitioning.h */,
+			);
+			name = Animator;
+			path = HWPanModal/Classes/Animator;
 			sourceTree = "<group>";
 		};
 		9FFD157823CFB1DCB517EE8EF5DEFFB4 /* Pods-HWPanModal_Example */ = {
@@ -476,40 +490,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B6FB3921071728F97A1B51D1C4399CDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B73CB235934E14D5B1D92834791EA209 /* HWDimmedView.h */,
-				B3B10308F25EC067C56752BB089E7D11 /* HWDimmedView.m */,
-				F0230DF5A8EB7EF3E9A2FF8A60747FA0 /* HWPanContainerView.h */,
-				1C9D749EC5C1B77B0B5952B23F588B51 /* HWPanContainerView.m */,
-				5CAC802A1D5EB490C3BDE2DDB6E60706 /* HWPanIndicatorView.h */,
-				C18E53D90484477470E8500732B094B0 /* HWPanIndicatorView.m */,
-				545C126B885F5DDD364F9887FE5CB8D2 /* HWPanModalIndicatorProtocol.h */,
-				9CD5478DB0C5458ACA601F89023F305D /* HWVisualEffectView.h */,
-				36F3EF570BC1D81F926B3132D26F785F /* HWVisualEffectView.m */,
-			);
-			name = View;
-			path = HWPanModal/Classes/View;
-			sourceTree = "<group>";
-		};
 		B911C508028C80AED88AA849C264620F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F5E1B0DD7701BB3AAA465DAF1B66AE86 /* HWPanModal */,
+				C127BA1D7B88B6B87C2FF1780D875129 /* HWPanModal */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		C07D53ECDD20D68823D100EF37C1CD98 /* Presenter */ = {
+		B95C501C8C98D125D5DF1B5F7FC938E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B5D6D432CF7E3D904010FC03D3FC9317 /* HWPanModalPresenterProtocol.h */,
-				63C5F278D9C3EFCA2E51FFA5257FF891 /* UIViewController+PanModalPresenter.h */,
-				F2946B00B7D8B0B2FFCCD7F4F2D53BFF /* UIViewController+PanModalPresenter.m */,
+				119FDC7A0B74A87E5969CEEC64121F23 /* HWPanModalPresentationController.h */,
+				05647969E5DBC0C1071451C4B7D7EF45 /* HWPanModalPresentationController.m */,
 			);
-			name = Presenter;
-			path = HWPanModal/Classes/Presenter;
+			name = Controller;
+			path = HWPanModal/Classes/Controller;
+			sourceTree = "<group>";
+		};
+		C127BA1D7B88B6B87C2FF1780D875129 /* HWPanModal */ = {
+			isa = PBXGroup;
+			children = (
+				C7D90B9857E6A85DB55F54583DC12A0E /* HWPanModal.h */,
+				9FA43003DA63C0126E7ADEE9BD293E36 /* Animator */,
+				E2C73787EDEA81D5BAD828D583C7D841 /* Category */,
+				B95C501C8C98D125D5DF1B5F7FC938E0 /* Controller */,
+				35CAB0DB08A5904C738047451C63A972 /* Delegate */,
+				C7F90ED2113126554C03A92C85BBBF55 /* Pod */,
+				F8ECF847AF94D5E8017E5196C998B257 /* Presentable */,
+				43AB66EB58BD2A517FEB30A7E6B1C060 /* Presenter */,
+				78A654EAB51B06205517775208D27FBF /* Support Files */,
+				8B969AF0116B53AB0F5A7F1BCDCDAF72 /* View */,
+			);
+			name = HWPanModal;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C7F90ED2113126554C03A92C85BBBF55 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A2128F3FCE84AD0A161A1FCEAC971C70 /* HWPanModal.podspec */,
+				43B4236D38FA1F1911E65A8FDEEB51D8 /* LICENSE */,
+				1E614B07C81AA007BA8F5846758C2519 /* README-CN.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		C8DF5D7602A9007ADFC0F30639EDA79A /* Support Files */ = {
@@ -538,6 +562,20 @@
 			);
 			sourceTree = "<group>";
 		};
+		E2C73787EDEA81D5BAD828D583C7D841 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				152B513AE3A972E3BB2DAA4960500277 /* NSObject+HW_Swizzle.h */,
+				6D7018B86404C0133B5345693A21FB21 /* NSObject+HW_Swizzle.m */,
+				B753995A54AEA35F422B1A401A9AD82D /* UINavigationController+HWPanModal.h */,
+				612A37CC8CA29909F7FB9A19934B15F0 /* UINavigationController+HWPanModal.m */,
+				4171D122DD4749E9ADA143E78DED3B57 /* UIView+HW_Frame.h */,
+				92BE7261DAA7768DC7A04B8340096A0C /* UIView+HW_Frame.m */,
+			);
+			name = Category;
+			path = HWPanModal/Classes/Category;
+			sourceTree = "<group>";
+		};
 		E6C08B6AB1475B5A8B81EDA29358402A /* Pods-HWPanModal_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,76 +592,63 @@
 			path = "Target Support Files/Pods-HWPanModal_Tests";
 			sourceTree = "<group>";
 		};
-		F226361FECABDB835CCD36171EFC2625 /* Support Files */ = {
+		F8ECF847AF94D5E8017E5196C998B257 /* Presentable */ = {
 			isa = PBXGroup;
 			children = (
-				F21A036E0D0FAC40EDDE82D6C122128A /* HWPanModal.modulemap */,
-				7038CF7E8E03562B8AEB0707B0F6BA62 /* HWPanModal.xcconfig */,
-				84C7E1D4BDE9CFC8C55B4699AB7F3DB8 /* HWPanModal-dummy.m */,
-				91164B0FAAE8B99C715BF8EE36C3D4D0 /* HWPanModal-Info.plist */,
-				74DB18F6A0F5F589E6B6371F87AAFE00 /* HWPanModal-prefix.pch */,
-				08E9964BF900E29C15143B39B8715166 /* HWPanModal-umbrella.h */,
+				259C8D93A4C6BC79B73201EC5E9263ED /* HWPanModalHeight.h */,
+				45706B113E0A1BE3CB00BF797D1CF470 /* HWPanModalPresentable.h */,
+				9E34CB43A514C42E65EA7097B70D88A2 /* UIViewController+LayoutHelper.h */,
+				B5FC22F8ECC3E1991D070D429E0557DB /* UIViewController+LayoutHelper.m */,
+				4A540D918792B1541A3F8EDD56FAF1D1 /* UIViewController+PanModalDefault.h */,
+				46E6A0220312125187F51F6B56532F07 /* UIViewController+PanModalDefault.m */,
+				9999D646F3F796260A38BE7E58307A22 /* UIViewController+Presentation.h */,
+				548A595FB500B26F0866800B16AB3B0D /* UIViewController+Presentation.m */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/HWPanModal";
-			sourceTree = "<group>";
-		};
-		F41EB42001E0DD18010D6207522DBA06 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				757F6305D348A76F34544E6824DD111F /* HWPanModalPresentationDelegate.h */,
-				1CEA7BE970FD13FB140E3181BB64299E /* HWPanModalPresentationDelegate.m */,
-			);
-			name = Delegate;
-			path = HWPanModal/Classes/Delegate;
-			sourceTree = "<group>";
-		};
-		F5E1B0DD7701BB3AAA465DAF1B66AE86 /* HWPanModal */ = {
-			isa = PBXGroup;
-			children = (
-				946946BC521980B239D325147A2663F1 /* HWPanModal.h */,
-				3874B319C1B527CBF5E57C67C72D6948 /* Animator */,
-				84EE5D954B9D03B62E51545E6D4F4929 /* Controller */,
-				F41EB42001E0DD18010D6207522DBA06 /* Delegate */,
-				43FD0AC7668E4C0ED6AB824DB1123B32 /* Layout */,
-				3FF0DE37FE95683CD84E82BE322EB565 /* Pod */,
-				6DB36B119A1AAD261B9356EB9F8DA89A /* Presentable */,
-				C07D53ECDD20D68823D100EF37C1CD98 /* Presenter */,
-				F226361FECABDB835CCD36171EFC2625 /* Support Files */,
-				B6FB3921071728F97A1B51D1C4399CDF /* View */,
-			);
-			name = HWPanModal;
-			path = ../..;
+			name = Presentable;
+			path = HWPanModal/Classes/Presentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		39E16AE4FFEB881ED22BE7E8025A846C /* Headers */ = {
+		16666B6A2E0C43C876E6DA997C038FFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BC91CAC8241529C54AE329FF99F87AF /* HWDimmedView.h in Headers */,
-				49895E187EEE9E575E99000F21CD1286 /* HWPanContainerView.h in Headers */,
-				AF2752B72B3EC2E7A56DA350B530D642 /* HWPanIndicatorView.h in Headers */,
-				E19213624748B4170ABBF2F081A7EF10 /* HWPanModal-umbrella.h in Headers */,
-				D48E07A2BAB6AFD15356B3C2F4933320 /* HWPanModal.h in Headers */,
-				34DFB0B87FB8D05C00DD6BB9F2D8B4E2 /* HWPanModalAnimator.h in Headers */,
-				AA820CAFCDA77C13F91E865D6ACB2DB5 /* HWPanModalHeight.h in Headers */,
-				425E368FB444E64F4EFC1CF5508EC001 /* HWPanModalIndicatorProtocol.h in Headers */,
-				B5A54D1C7F8D99A1A7B83DA189F65A63 /* HWPanModalInteractiveAnimator.h in Headers */,
-				B360E9E54A44C707FF28441AF9BF88CB /* HWPanModalPresentable.h in Headers */,
-				BEDC5B3C4E0BFFBDE88D941623017D2E /* HWPanModalPresentationAnimator.h in Headers */,
-				8B074EF24BB61690EC115A770FE72999 /* HWPanModalPresentationController.h in Headers */,
-				AB6CF57DE90E734D8CA010A488A6E0D3 /* HWPanModalPresentationDelegate.h in Headers */,
-				1FE04432714EFB9C94634A38E799C6B1 /* HWPanModalPresenterProtocol.h in Headers */,
-				5EA8C87C869CC8F0E6F7A9056D8344BF /* HWPresentingVCAnimatedTransitioning.h in Headers */,
-				0FFD19DFC32B9564FBCF5DC790766137 /* HWVisualEffectView.h in Headers */,
-				91FAE6EEAB059F712E9476C3F01D8DDF /* UIView+HW_Frame.h in Headers */,
-				DF611116E30174567341CF36030D84E6 /* UIViewController+LayoutHelper.h in Headers */,
-				29139E48F617E4BF170B1659992B7432 /* UIViewController+PanModalDefault.h in Headers */,
-				E2FE3B63B9D2C2C8CEEE7FB726F7E1F2 /* UIViewController+PanModalPresenter.h in Headers */,
-				503142F0AE00DCA7E6666A0DE4A97A68 /* UIViewController+Presentation.h in Headers */,
+				F4912E4F2C3F861BFF7D590DA7C094D6 /* HWDimmedView.h in Headers */,
+				9FEB1E5D1B6AED27120C646F199DED9C /* HWPanContainerView.h in Headers */,
+				15D9F452EF01509A48FFAB0BA3D8758D /* HWPanIndicatorView.h in Headers */,
+				079D8F0775CF5682D358102B51A4B4AA /* HWPanModal-umbrella.h in Headers */,
+				42894C181E80FE82D0C6950C991E3B59 /* HWPanModal.h in Headers */,
+				9140250451926778B1B2929F7D34ED97 /* HWPanModalAnimator.h in Headers */,
+				91B4224AB7802D302A67DB09416E0568 /* HWPanModalHeight.h in Headers */,
+				AA3302EF20895BC2738A8ED489BAB18E /* HWPanModalIndicatorProtocol.h in Headers */,
+				FC64437785EA5B3FF0B1B72524C61CEF /* HWPanModalInteractiveAnimator.h in Headers */,
+				EFE2864D52A191999F21B56592D6C521 /* HWPanModalPresentable.h in Headers */,
+				204E68BD86AC4C1E9416A9C39D741288 /* HWPanModalPresentationAnimator.h in Headers */,
+				D95A435CBFC002B86217611F830F63F5 /* HWPanModalPresentationController.h in Headers */,
+				F98A438FBAA716B135CFBDA1F8C48DB4 /* HWPanModalPresentationDelegate.h in Headers */,
+				77EBC9E6E4CF8CF7896CFC8EA6A4DF15 /* HWPanModalPresenterProtocol.h in Headers */,
+				7B4BF8F5B5F7D3CAE3F07C2C3A1A4CBE /* HWPresentingVCAnimatedTransitioning.h in Headers */,
+				B35475CD4688D963A8249CF32725A41E /* HWVisualEffectView.h in Headers */,
+				A7E8908FF2CC9AD2F559AF6117B0971F /* NSObject+HW_Swizzle.h in Headers */,
+				A14D10457FCCBDEB5961214FE969702F /* UINavigationController+HWPanModal.h in Headers */,
+				EB057633EF8F6455898D9F269A928A98 /* UIView+HW_Frame.h in Headers */,
+				A4BD57DF2DDC91CD220C6E427FE9BC73 /* UIViewController+LayoutHelper.h in Headers */,
+				29A715748667991A932CB7CCF018B799 /* UIViewController+PanModalDefault.h in Headers */,
+				CFA6816F563848B2FD9ECA5B6320585E /* UIViewController+PanModalPresenter.h in Headers */,
+				AAFE23B18C96B182E69EE72284AA94C9 /* UIViewController+Presentation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762210C23027888F688D76FE78346974 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B79C66D70D105DE6902548792EF59F /* FBKVOController.h in Headers */,
+				415CC624AA370B6A77FCBD96DDC8FF14 /* KVOController-umbrella.h in Headers */,
+				99CB06D8EB2C80FFE7D823F99E5C7BB4 /* KVOController.h in Headers */,
+				C9FE1BCCDBFE5EDEE854E0B5032C24DF /* NSObject+FBKVOController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,28 +691,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEBD5D197E5952B454B5732BDCDCAF97 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55F6BC51CA40D2A351C88B3989931110 /* FBKVOController.h in Headers */,
-				7CC2AAED0869DE364A5945E6D5775C7B /* KVOController-umbrella.h in Headers */,
-				C6EA401F972C7D54E2544A53D82D37CC /* KVOController.h in Headers */,
-				FB6E8868064203B51BDA00ED2CEEED84 /* NSObject+FBKVOController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2568F753F09C4DFFD8770DCC78EDAEAE /* KVOController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E193C0E44CDF5D67473F7920B63FDED6 /* Build configuration list for PBXNativeTarget "KVOController" */;
+			buildConfigurationList = 3D0B8D049B9C533824D6E48F251805E2 /* Build configuration list for PBXNativeTarget "KVOController" */;
 			buildPhases = (
-				DEBD5D197E5952B454B5732BDCDCAF97 /* Headers */,
-				CE1285EBE959F0CF1A48242482944B70 /* Sources */,
-				CDE055B701872C574DC2FEB0C70E3F25 /* Frameworks */,
-				865C0E5ACD6F779795E7A83E7CF9AB7F /* Resources */,
+				762210C23027888F688D76FE78346974 /* Headers */,
+				B3FD29C8C95313664BDF5B89D1CC5970 /* Sources */,
+				70E2542AB6902558B102260A1E676484 /* Frameworks */,
+				13E2CE47D0015FDBDD9D163001CF491F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -721,17 +735,17 @@
 		};
 		31DCABABCA873FBA7A92FEB47D71ED8E /* HWPanModal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5334491ECFA3612BB3F418B01ADA75B8 /* Build configuration list for PBXNativeTarget "HWPanModal" */;
+			buildConfigurationList = CD59DDC85A9B88C8A9A7573B0F895E67 /* Build configuration list for PBXNativeTarget "HWPanModal" */;
 			buildPhases = (
-				39E16AE4FFEB881ED22BE7E8025A846C /* Headers */,
-				011A4E7B428E705E96440F60D9EE130E /* Sources */,
-				767B2ABD5FC3B6B233374349EDF6A749 /* Frameworks */,
-				0CA7DEA2683BB72018E3C7154E5350EB /* Resources */,
+				16666B6A2E0C43C876E6DA997C038FFF /* Headers */,
+				9AA0C563526E87EAE0630C2010BAB58C /* Sources */,
+				43C215F2CB9972E732799A9EBB9F050F /* Frameworks */,
+				3DDFCDFF09BB076BC001B24A98226C8B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				131A4F13224FC0A6464018C4F5F875BB /* PBXTargetDependency */,
+				B1230D1360DC39C6D64C58CD817C6C04 /* PBXTargetDependency */,
 			);
 			name = HWPanModal;
 			productName = HWPanModal;
@@ -806,7 +820,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0CA7DEA2683BB72018E3C7154E5350EB /* Resources */ = {
+		13E2CE47D0015FDBDD9D163001CF491F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -820,7 +834,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		865C0E5ACD6F779795E7A83E7CF9AB7F /* Resources */ = {
+		3DDFCDFF09BB076BC001B24A98226C8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -844,28 +858,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		011A4E7B428E705E96440F60D9EE130E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				335F63F603E0F31FF8CCD969667C3E62 /* HWDimmedView.m in Sources */,
-				8277F9E878617759BCBBBF2DD3FF9AFE /* HWPanContainerView.m in Sources */,
-				0306CEA07684044D92BC60588119C231 /* HWPanIndicatorView.m in Sources */,
-				E2EDF72C1423CD3D32947DD1733D9360 /* HWPanModal-dummy.m in Sources */,
-				19FAE795BD90A8A88E94083A149CB99C /* HWPanModalAnimator.m in Sources */,
-				DD5E7DFB52F65DD3C256C101E5569C20 /* HWPanModalInteractiveAnimator.m in Sources */,
-				429471DECF53B4CD9A771284B0A8AE33 /* HWPanModalPresentationAnimator.m in Sources */,
-				73BFEC36C605A51105752ED4303F23BD /* HWPanModalPresentationController.m in Sources */,
-				773C7F4FC63174FB9D771584CCC82051 /* HWPanModalPresentationDelegate.m in Sources */,
-				EF0EAAD059AB9ADEA008F39F7EED00B6 /* HWVisualEffectView.m in Sources */,
-				17938D80B3028E5FCE7242CF59152AB8 /* UIView+HW_Frame.m in Sources */,
-				F0C3D964CF215B19685835925D261EF7 /* UIViewController+LayoutHelper.m in Sources */,
-				6C539AACDC35DB062A0CBC766269F89F /* UIViewController+PanModalDefault.m in Sources */,
-				32CFA95BB6C9ADFE7B279D2AAFE01A50 /* UIViewController+PanModalPresenter.m in Sources */,
-				11F0A1F6A06EE78E040D195B26769984 /* UIViewController+Presentation.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		243AC06ED36FFE0DF9063A9D37E0BD09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -879,6 +871,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				C817B7AB413C60EA8F39BFF6236DC8CF /* Pods-HWPanModal_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA0C563526E87EAE0630C2010BAB58C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D842244EDBA3496B440E75E6A6B612E /* HWDimmedView.m in Sources */,
+				DDA10F2FE5AA0F2A4FED9DDC38D9FE7B /* HWPanContainerView.m in Sources */,
+				21014FF2F2DAB42680CF421E914DC41A /* HWPanIndicatorView.m in Sources */,
+				CB59DD4891E5FA606A1CEE3E6557514B /* HWPanModal-dummy.m in Sources */,
+				E1B30DD1C3BE80937F9068F8763EEBEA /* HWPanModalAnimator.m in Sources */,
+				0A042850D1A038C1D50232567B2A5909 /* HWPanModalInteractiveAnimator.m in Sources */,
+				370BD00675B1B893A00C49707A15F0B9 /* HWPanModalPresentationAnimator.m in Sources */,
+				438EED983765AD9C21FFCD98B8EB9C44 /* HWPanModalPresentationController.m in Sources */,
+				BF38C7C4F4B4FD5269461793EA36912D /* HWPanModalPresentationDelegate.m in Sources */,
+				BACA681A6F80E44E22DAB8704BD67DD6 /* HWVisualEffectView.m in Sources */,
+				72AA2C8269392C08433F6DD692C482B8 /* NSObject+HW_Swizzle.m in Sources */,
+				90E5F25EE0083DB35B721383E02BD338 /* UINavigationController+HWPanModal.m in Sources */,
+				FFFC9EDB435A24624878301A7DB0A28C /* UIView+HW_Frame.m in Sources */,
+				9109DA61976D6EEF5780AB2E62718557 /* UIViewController+LayoutHelper.m in Sources */,
+				D619398B3DD0A4ABF7FC380E2A1CAE34 /* UIViewController+PanModalDefault.m in Sources */,
+				FFB207BE82DBDE7765E51DFCC961E52C /* UIViewController+PanModalPresenter.m in Sources */,
+				0D703B1D051BA0976A5DE2B6864342FA /* UIViewController+Presentation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,13 +916,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE1285EBE959F0CF1A48242482944B70 /* Sources */ = {
+		B3FD29C8C95313664BDF5B89D1CC5970 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18240F94F1326EC17FE8F92EF1FFDD0 /* FBKVOController.m in Sources */,
-				757DC51538458AEA14AB66A33334BCF8 /* KVOController-dummy.m in Sources */,
-				64E92CF4026C91E38D25F661365BAFD1 /* NSObject+FBKVOController.m in Sources */,
+				B4C0EE52E22C6F5F0B9F7B00EC4DBEC7 /* FBKVOController.m in Sources */,
+				E02D3631FD51A5101C1AB0E49EBBCDFD /* KVOController-dummy.m in Sources */,
+				03634E56D956486FE819C707A5B1BDBF /* NSObject+FBKVOController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,11 +935,11 @@
 			target = 31DCABABCA873FBA7A92FEB47D71ED8E /* HWPanModal */;
 			targetProxy = 6350554D3A0BC60747044C3F71A1073E /* PBXContainerItemProxy */;
 		};
-		131A4F13224FC0A6464018C4F5F875BB /* PBXTargetDependency */ = {
+		B1230D1360DC39C6D64C58CD817C6C04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KVOController;
 			target = 2568F753F09C4DFFD8770DCC78EDAEAE /* KVOController */;
-			targetProxy = 8F4A3BD9A03E80D1FE4553B87ECCA1A5 /* PBXContainerItemProxy */;
+			targetProxy = C0C7D48B5F1D44247F9178CF66876E4F /* PBXContainerItemProxy */;
 		};
 		B21712AEEB1F028984C4EA02BEBD9870 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -946,7 +962,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		20EA807739B821FC63ACEE849B883B24 /* Debug */ = {
+		11C95CB8CC802C30C7A0F91C86576A38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40083A98446A13EAAB4E676CEC270FCD /* KVOController.xcconfig */;
 			buildSettings = {
@@ -971,10 +987,11 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		22CE0CC59DC8496C0E3AC93900F9C70D /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1043,9 +1060,9 @@
 			};
 			name = Debug;
 		};
-		40DCA8143919F2D2F9AD2C1907060DCE /* Debug */ = {
+		3D5B9B1F9C71B5BFA44D17991B2ECC19 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7038CF7E8E03562B8AEB0707B0F6BA62 /* HWPanModal.xcconfig */;
+			baseConfigurationReference = D5BFCE0FF1DFBA8AB5DC2BCCF0FE2432 /* HWPanModal.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1068,10 +1085,11 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1227,9 +1245,9 @@
 			};
 			name = Debug;
 		};
-		91B8608A29EAE6C9A4B81E48BBBB3C55 /* Release */ = {
+		874E7EB46AB18D506DED67C4B9EBAF14 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7038CF7E8E03562B8AEB0707B0F6BA62 /* HWPanModal.xcconfig */;
+			baseConfigurationReference = 40083A98446A13EAAB4E676CEC270FCD /* KVOController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1240,23 +1258,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HWPanModal/HWPanModal-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HWPanModal/HWPanModal-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KVOController/KVOController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KVOController/KVOController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HWPanModal/HWPanModal.modulemap";
-				PRODUCT_MODULE_NAME = HWPanModal;
-				PRODUCT_NAME = HWPanModal;
+				MODULEMAP_FILE = "Target Support Files/KVOController/KVOController.modulemap";
+				PRODUCT_MODULE_NAME = KVOController;
+				PRODUCT_NAME = KVOController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		9F3DD17813CA079E82F535711B676264 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1356,9 +1373,9 @@
 			};
 			name = Debug;
 		};
-		EEDDAE08D37695B56AD95B8B001EEE69 /* Release */ = {
+		DF90AC50D889FFC835215B79CB5C5FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40083A98446A13EAAB4E676CEC270FCD /* KVOController.xcconfig */;
+			baseConfigurationReference = D5BFCE0FF1DFBA8AB5DC2BCCF0FE2432 /* HWPanModal.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1369,41 +1386,40 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KVOController/KVOController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KVOController/KVOController-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HWPanModal/HWPanModal-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HWPanModal/HWPanModal-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KVOController/KVOController.modulemap";
-				PRODUCT_MODULE_NAME = KVOController;
-				PRODUCT_NAME = KVOController;
+				MODULEMAP_FILE = "Target Support Files/HWPanModal/HWPanModal.modulemap";
+				PRODUCT_MODULE_NAME = HWPanModal;
+				PRODUCT_NAME = HWPanModal;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D0B8D049B9C533824D6E48F251805E2 /* Build configuration list for PBXNativeTarget "KVOController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				874E7EB46AB18D506DED67C4B9EBAF14 /* Debug */,
+				11C95CB8CC802C30C7A0F91C86576A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
 				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5334491ECFA3612BB3F418B01ADA75B8 /* Build configuration list for PBXNativeTarget "HWPanModal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40DCA8143919F2D2F9AD2C1907060DCE /* Debug */,
-				91B8608A29EAE6C9A4B81E48BBBB3C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1426,20 +1442,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CD59DDC85A9B88C8A9A7573B0F895E67 /* Build configuration list for PBXNativeTarget "HWPanModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF90AC50D889FFC835215B79CB5C5FF7 /* Debug */,
+				3D5B9B1F9C71B5BFA44D17991B2ECC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D6DCC3A20B8340EBF9C7B02198630EE1 /* Build configuration list for PBXNativeTarget "Pods-HWPanModal_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				343CB3D0A84C49F8EA27509AAC81FCC5 /* Debug */,
 				22CE0CC59DC8496C0E3AC93900F9C70D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E193C0E44CDF5D67473F7920B63FDED6 /* Build configuration list for PBXNativeTarget "KVOController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				20EA807739B821FC63ACEE849B883B24 /* Debug */,
-				EEDDAE08D37695B56AD95B8B001EEE69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HWPanModal'
-  s.version          = '0.3.1'
+  s.version          = '0.3.2'
   s.summary          = 'HWPanModal is used to present controller and drag to dismiss.'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,8 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
                            'HWPanModal/Classes/Presentable/UIViewController+Presentation.h',
                            'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h',
                            'HWPanModal/Classes/View/HWPanIndicatorView.h',
-                           'HWPanModal/Classes/View/HWPanModalIndicatorProtocol.h'
+                           'HWPanModal/Classes/View/HWPanModalIndicatorProtocol.h',
+                           'HWPanModal/Classes/Category/UINavigationController+HWPanModal.h'
                            ]
   s.dependency 'KVOController'
   
