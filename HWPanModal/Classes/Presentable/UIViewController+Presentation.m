@@ -16,14 +16,17 @@
 @implementation UIViewController (Presentation)
 
 - (void)hw_panModalTransitionTo:(PresentationState)state {
+    if (!self.presentedVC) return;
     [self.presentedVC transitionToState:state];
 }
 
 - (void)hw_panModalSetContentOffset:(CGPoint)offset {
+    if (!self.presentedVC) return;
     [self.presentedVC setContentOffset:offset];
 }
 
 - (void)hw_panModalSetNeedsLayoutUpdate {
+    if (!self.presentedVC) return;
     [self.presentedVC setNeedsLayoutUpdate];
 }
 
