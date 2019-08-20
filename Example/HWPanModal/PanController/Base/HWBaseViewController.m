@@ -27,7 +27,7 @@
     if ([self isLandScape]) {
         return [self longFormHeight];
     }
-    return PanModalHeightMake(PanModalHeightTypeContent, 200);
+    return PanModalHeightMake(PanModalHeightTypeContent, 200.00001);
 }
 
 

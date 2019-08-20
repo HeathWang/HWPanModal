@@ -528,8 +528,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				if ([self isVelocityWithinSensitivityRange:velocity.y]) {
 					if (velocity.y < 0) {
 						[self transitionToState:PresentationStateLong];
-					} else if (([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @(self.containerView.frame.size.height)]] == self.longFormYPosition &&
-							CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
+					} else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @(self.containerView.frame.size.height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
 							![self.presentable allowsDragToDismiss]) {
 						[self transitionToState:PresentationStateShort];
 					} else {
@@ -538,9 +537,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				} else {
 					CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.containerView.frame.size.height), @(self.shortFormYPosition), @(self.longFormYPosition)]];
 
-					if (position == self.longFormYPosition) {
+					if (HW_TWO_FLOAT_IS_EQUAL(position, self.longFormYPosition)) {
 						[self transitionToState:PresentationStateLong];
-					} else if (position == self.shortFormYPosition || ![self.presentable allowsDragToDismiss]) {
+					} else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
 						[self transitionToState:PresentationStateShort];
 					} else {
 						[self dismissPresentedViewController];
@@ -635,21 +634,22 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	if (distances.count <= 0) {
 		return position;
 	}
-
+    
 	// TODO: need refine this sort code.
 	NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:distances.count];
     NSMutableDictionary *tmpDict = [NSMutableDictionary dictionaryWithCapacity:distances.count];
 
 	[distances enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		NSNumber *number = obj;
-		NSNumber *absValue = @(ABS(number.floatValue - position));
+		NSNumber *absValue = @(fabs(number.floatValue - position));
 		[tmpArr addObject:absValue];
-		tmpDict[absValue.stringValue] = number;
+        [tmpDict setObject:number forKey:absValue];
+		
 	}];
 
 	[tmpArr sortUsingSelector:@selector(compare:)];
 
-	NSNumber *result = tmpDict[((NSNumber *)tmpArr.firstObject).stringValue];
+	NSNumber *result = tmpDict[tmpArr.firstObject];
 	return result.floatValue;
 }
 
