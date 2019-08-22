@@ -86,7 +86,7 @@
 * 0.3.0
     * Now you can custom your own indicator view. 
 * 0.3.3
-    * support 
+    * support `Carthage` 
         
         
 
