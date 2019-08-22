@@ -5,6 +5,9 @@
        <img src="https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
+       <img src="https://img.shields.io/badge/Carthage-compatible-blue.svg" alt="Carthage compatible"/>
+    </a>
+    <a href="https://cocoapods.org/pods/HWPanModal">
        <img src="https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
