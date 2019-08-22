@@ -78,11 +78,21 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 
 
 ## 安装
-<a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
+
+### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.0'
+pod 'HWPanModal', '~> 0.3.3'
 ```
+
+### [Carthage](https://github.com/Carthage/Carthage)
+
+
+```ruby
+github "HeathWang/HWPanModal" ~> 0.3.3
+```
+
+Run `carthage update`
 
 ## 如何使用
 
@@ -247,9 +257,8 @@ Here is `HWTextIndicatorView` code:
 ## 例子
 
 1. Clone this git.
-2. open the terminal， go to the `Example` Folder.
-3. `pod install --verbose`
-4. Double click HWPanModal.xcworkspace, and run.
+2. open the terminal, run `pod install --verbose`
+3. Double click HWPanModal.xcworkspace, and run.
 
 ## 联系我
 

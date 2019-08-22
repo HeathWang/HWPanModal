@@ -86,11 +86,21 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 Because Objective-C KVO is hard to use, so I use KVOController = =
 
 ## Installation
-<a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>
+
+### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.0'
+pod 'HWPanModal', '~> 0.3.3'
 ```
+
+### [Carthage](https://github.com/Carthage/Carthage)
+
+
+```ruby
+github "HeathWang/HWPanModal" ~> 0.3.3
+```
+
+Run `carthage update`
 
 ## How to use
 
@@ -257,9 +267,8 @@ Here is `HWTextIndicatorView` code:
 ## Example
 
 1. Clone this git.
-2. open the terminal， go to the `Example` Folder.
-3. `pod install --verbose`
-4. Double click HWPanModal.xcworkspace, and run.
+2. open the terminal, run `pod install --verbose`
+3. Double click HWPanModal.xcworkspace, and run.
 
 ## Contact Me
 
