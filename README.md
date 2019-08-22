@@ -90,14 +90,14 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.3'
+pod 'HWPanModal', '~> 0.3.4'
 ```
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 
 ```ruby
-github "HeathWang/HWPanModal" ~> 0.3.3
+github "HeathWang/HWPanModal" ~> 0.3.4
 ```
 
 Run `carthage update`

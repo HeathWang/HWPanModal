@@ -82,14 +82,14 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.3'
+pod 'HWPanModal', '~> 0.3.4'
 ```
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 
 ```ruby
-github "HeathWang/HWPanModal" ~> 0.3.3
+github "HeathWang/HWPanModal" ~> 0.3.4
 ```
 
 Run `carthage update`
