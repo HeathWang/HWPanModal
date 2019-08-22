@@ -64,8 +64,8 @@
 	// If you are implementing a custom container controller, use this method to tell the child that its views are about to appear or disappear.
     
 	[fromVC beginAppearanceTransition:NO animated:YES];
-	[toVC beginAppearanceTransition:YES animated:YES];
-
+    [self beginAppearanceTransitionForController:toVC isAppearing:YES animated:YES];
+    
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
 	CGFloat yPos = presentable.shortFormYPos;
@@ -85,7 +85,7 @@
 		panView.hw_top = yPos;
 	} config:presentable completion:^(BOOL completion) {
 		[fromVC endAppearanceTransition];
-		[toVC endAppearanceTransition];
+        [self endAppearanceTransitionForController:toVC];
 		[context completeTransition:completion];
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
@@ -127,7 +127,8 @@
 	if (!fromVC && !toVC)
 		return;
 
-	[fromVC beginAppearanceTransition:NO animated:YES];
+    
+    [self beginAppearanceTransitionForController:fromVC isAppearing:NO animated:YES];
 	[toVC beginAppearanceTransition:YES animated:YES];
 
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
@@ -144,8 +145,8 @@
 			BOOL finished = ![context transitionWasCancelled];
 			if (finished) {
 				[fromVC.view removeFromSuperview];
-				[toVC endAppearanceTransition];
-				[fromVC endAppearanceTransition];
+                [self endAppearanceTransitionForController:fromVC];
+                [toVC endAppearanceTransition];
 			}
 			[context completeTransition:finished];
 		}];
@@ -154,8 +155,8 @@
 			panView.hw_top = context.containerView.frame.size.height;
 		} config:presentable completion:^(BOOL completion) {
 			[fromVC.view removeFromSuperview];
+            [self endAppearanceTransitionForController:fromVC];
 			[toVC endAppearanceTransition];
-			[fromVC endAppearanceTransition];
 			[context completeTransition:completion];
 		}];
 	}
@@ -220,6 +221,21 @@
 		return [controller transitionDuration];
 	}
 	return kTransitionDuration;
+}
+
+#pragma mark - private method
+
+- (void)beginAppearanceTransitionForController:(UIViewController *)VC isAppearing:(BOOL)isAppearing animated:(BOOL)animated {
+    // Fix `The unbalanced calls to begin/end appearance transitions` warning.
+    if (![VC isKindOfClass:UINavigationController.class]) {
+        [VC beginAppearanceTransition:isAppearing animated:animated];
+    }
+}
+
+- (void)endAppearanceTransitionForController:(UIViewController *)VC {
+    if (![VC isKindOfClass:UINavigationController.class]) {
+        [VC endAppearanceTransition];
+    }
 }
 
 @end

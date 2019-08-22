@@ -64,21 +64,16 @@
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)longFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMax, 100);
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
 }
 
 - (PanModalHeight)shortFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
+    return PanModalHeightMake(PanModalHeightTypeContent, 200);
 }
 
 - (UIScrollView *)panScrollable {
     return self.tableView;
 }
-
-- (BOOL)anchorModalToLongForm {
-    return YES;
-}
-
 
 #pragma mark - Getter
 

@@ -26,19 +26,6 @@
     [self pushViewController:[HWFullScreenViewController new] animated:NO];
 }
 
-#pragma mark - overriden
-
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-	[super pushViewController:viewController animated:animated];
-	[self hw_panModalSetNeedsLayoutUpdate];
-}
-
-- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
-	UIViewController *controller = [super popViewControllerAnimated:animated];
-	[self hw_panModalSetNeedsLayoutUpdate];
-	return controller;
-}
-
 #pragma mark - HWPanModalPresentable
 
 - (CGFloat)topOffset {

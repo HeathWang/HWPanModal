@@ -47,6 +47,11 @@
     return self.customAnimation;
 }
 
+- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent {
+    CGFloat scale = 0.9 + percent * 0.1;
+    self.presentingViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
+}
+
 - (HWMyCustomAnimation *)customAnimation {
     if (!_customAnimation) {
         _customAnimation = [HWMyCustomAnimation new];
@@ -63,7 +68,7 @@
     NSTimeInterval duration = [transitionContext mainTransitionDuration];
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        fromVC.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
     } completion:^(BOOL finished) {
         
     }];
