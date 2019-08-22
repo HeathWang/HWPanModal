@@ -28,18 +28,18 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = ['HWPanModal/Classes/**/*']
-  s.public_header_files = ['HWPanModal/Classes/HWPanModal.h',
-                           'HWPanModal/Classes/Presentable/HWPanModalPresentable.h',
-                           'HWPanModal/Classes/Presentable/HWPanModalHeight.h',
-                           'HWPanModal/Classes/Presentable/UIViewController+PanModalDefault.h',
-                           'HWPanModal/Classes/Presenter/UIViewController+PanModalPresenter.h',
-                           'HWPanModal/Classes/Presenter/HWPanModalPresenterProtocol.h',
-                           'HWPanModal/Classes/Presentable/UIViewController+Presentation.h',
-                           'HWPanModal/Classes/Animator/HWPresentingVCAnimatedTransitioning.h',
-                           'HWPanModal/Classes/View/HWPanIndicatorView.h',
-                           'HWPanModal/Classes/View/HWPanModalIndicatorProtocol.h',
-                           'HWPanModal/Classes/Category/UINavigationController+HWPanModal.h'
+  s.source_files = ['Sources/**/*']
+  s.public_header_files = ['Sources/HWPanModal.h',
+                           'Sources/Presentable/HWPanModalPresentable.h',
+                           'Sources/Presentable/HWPanModalHeight.h',
+                           'Sources/Presentable/UIViewController+PanModalDefault.h',
+                           'Sources/Presenter/UIViewController+PanModalPresenter.h',
+                           'Sources/Presenter/HWPanModalPresenterProtocol.h',
+                           'Sources/Presentable/UIViewController+Presentation.h',
+                           'Sources/Animator/HWPresentingVCAnimatedTransitioning.h',
+                           'Sources/View/HWPanIndicatorView.h',
+                           'Sources/View/HWPanModalIndicatorProtocol.h',
+                           'Sources/Category/UINavigationController+HWPanModal.h'
                            ]
   s.dependency 'KVOController'
   

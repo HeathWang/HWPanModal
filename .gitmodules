@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/KVOController"]
+	path = Carthage/Checkouts/KVOController
+	url = https://github.com/facebook/KVOController.git

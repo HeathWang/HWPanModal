@@ -1,0 +1,1095 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14E6955DF1EC77D031BD7C5C /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D642AE71ED9BB61BEAE26901 /* KVOController.framework */; };
+		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
+		60FDC295CFBEC4E7AF0C1344 /* HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F58E230D5BD200ED20D2 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F577230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.m */; };
+		7EA0F58F230D5BD200ED20D2 /* HWPanModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F579230D5B7400ED20D2 /* HWPanModalAnimator.m */; };
+		7EA0F590230D5BD200ED20D2 /* HWPanModalPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F57C230D5B7400ED20D2 /* HWPanModalPresentationAnimator.m */; };
+		7EA0F591230D5BD200ED20D2 /* UINavigationController+HWPanModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */; };
+		7EA0F592230D5BD200ED20D2 /* NSObject+HW_Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */; };
+		7EA0F593230D5BD200ED20D2 /* UIView+HW_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F557230D5B7300ED20D2 /* UIView+HW_Frame.m */; };
+		7EA0F594230D5BD200ED20D2 /* HWPanModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F55F230D5B7300ED20D2 /* HWPanModalPresentationController.m */; };
+		7EA0F595230D5BD200ED20D2 /* HWPanModalPresentationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F56B230D5B7300ED20D2 /* HWPanModalPresentationDelegate.m */; };
+		7EA0F596230D5BD200ED20D2 /* UIViewController+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */; };
+		7EA0F597230D5BD200ED20D2 /* UIViewController+PanModalDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F570230D5B7400ED20D2 /* UIViewController+PanModalDefault.m */; };
+		7EA0F598230D5BD300ED20D2 /* UIViewController+Presentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */; };
+		7EA0F599230D5BD300ED20D2 /* UIViewController+PanModalPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F55A230D5B7300ED20D2 /* UIViewController+PanModalPresenter.m */; };
+		7EA0F59A230D5BD300ED20D2 /* HWDimmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F562230D5B7300ED20D2 /* HWDimmedView.m */; };
+		7EA0F59B230D5BD300ED20D2 /* HWVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F564230D5B7300ED20D2 /* HWVisualEffectView.m */; };
+		7EA0F59C230D5BD300ED20D2 /* HWPanContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F565230D5B7300ED20D2 /* HWPanContainerView.m */; };
+		7EA0F59D230D5BD300ED20D2 /* HWPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F567230D5B7300ED20D2 /* HWPanIndicatorView.m */; };
+		7EA0F59E230D5BE000ED20D2 /* HWPresentingVCAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F578230D5B7400ED20D2 /* HWPresentingVCAnimatedTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F59F230D5BE000ED20D2 /* HWPanModalPresentationAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57A230D5B7400ED20D2 /* HWPanModalPresentationAnimator.h */; };
+		7EA0F5A0230D5BE000ED20D2 /* HWPanModalInteractiveAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57B230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.h */; };
+		7EA0F5A1230D5BE000ED20D2 /* HWPanModalAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57D230D5B7400ED20D2 /* HWPanModalAnimator.h */; };
+		7EA0F5A2230D5BE000ED20D2 /* UIView+HW_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */; };
+		7EA0F5A3230D5BE000ED20D2 /* UINavigationController+HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5A4230D5BE000ED20D2 /* NSObject+HW_Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */; };
+		7EA0F5A5230D5BE000ED20D2 /* HWPanModalPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55E230D5B7300ED20D2 /* HWPanModalPresentationController.h */; };
+		7EA0F5A6230D5BE000ED20D2 /* HWPanModalPresentationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F56C230D5B7300ED20D2 /* HWPanModalPresentationDelegate.h */; };
+		7EA0F5A7230D5BE000ED20D2 /* UIViewController+Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5A8230D5BE000ED20D2 /* HWPanModalPresentable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F571230D5B7400ED20D2 /* HWPanModalPresentable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5A9230D5BE000ED20D2 /* HWPanModalHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F573230D5B7400ED20D2 /* HWPanModalHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5AA230D5BE000ED20D2 /* UIViewController+LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F574230D5B7400ED20D2 /* UIViewController+LayoutHelper.h */; };
+		7EA0F5AB230D5BE000ED20D2 /* UIViewController+PanModalDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F575230D5B7400ED20D2 /* UIViewController+PanModalDefault.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5AC230D5BE000ED20D2 /* HWPanModalPresenterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55B230D5B7300ED20D2 /* HWPanModalPresenterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5AD230D5BE000ED20D2 /* UIViewController+PanModalPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55C230D5B7300ED20D2 /* UIViewController+PanModalPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5AE230D5BE000ED20D2 /* HWPanIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F561230D5B7300ED20D2 /* HWPanIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5AF230D5BE000ED20D2 /* HWPanContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F563230D5B7300ED20D2 /* HWPanContainerView.h */; };
+		7EA0F5B0230D5BE000ED20D2 /* HWDimmedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F566230D5B7300ED20D2 /* HWDimmedView.h */; };
+		7EA0F5B1230D5BE000ED20D2 /* HWPanModalIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F568230D5B7300ED20D2 /* HWPanModalIndicatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA0F5B2230D5BE000ED20D2 /* HWVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F569230D5B7300ED20D2 /* HWVisualEffectView.h */; };
+		7EA0F5B4230D5C2C00ED20D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */; };
+		7EA0F5B6230D5C3400ED20D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */; };
+		7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */; };
+		7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BD230D63D300ED20D2 /* HWMyCustomAnimationViewController.m */; };
+		7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BF230D63D300ED20D2 /* HWDynamicHeightViewController.m */; };
+		7EA0F603230D63D300ED20D2 /* HWAppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5C3230D63D300ED20D2 /* HWAppListViewController.m */; };
+		7EA0F604230D63D300ED20D2 /* HWTextIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5C5230D63D300ED20D2 /* HWTextIndicatorView.m */; };
+		7EA0F605230D63D300ED20D2 /* HWIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5C9230D63D300ED20D2 /* HWIndicatorViewController.m */; };
+		7EA0F606230D63D300ED20D2 /* HWImmobileIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5CB230D63D300ED20D2 /* HWImmobileIndicatorView.m */; };
+		7EA0F607230D63D300ED20D2 /* HWIndicatorPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5CC230D63D300ED20D2 /* HWIndicatorPopViewController.m */; };
+		7EA0F608230D63D300ED20D2 /* HWPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5CE230D63D300ED20D2 /* HWPickerViewController.m */; };
+		7EA0F609230D63D300ED20D2 /* HWTransientAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D3230D63D300ED20D2 /* HWTransientAlertViewController.m */; };
+		7EA0F60A230D63D300ED20D2 /* HWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D4230D63D300ED20D2 /* HWAlertView.m */; };
+		7EA0F60B230D63D300ED20D2 /* HWAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D5230D63D300ED20D2 /* HWAlertViewController.m */; };
+		7EA0F60C230D63D300ED20D2 /* HWTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D8230D63D300ED20D2 /* HWTextInputViewController.m */; };
+		7EA0F60D230D63D300ED20D2 /* HWInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D9230D63D300ED20D2 /* HWInputTableViewCell.m */; };
+		7EA0F60E230D63D300ED20D2 /* HWUserGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */; };
+		7EA0F60F230D63D300ED20D2 /* HWNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */; };
+		7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E4230D63D300ED20D2 /* HWColorBlocksViewController.m */; };
+		7EA0F611230D63D300ED20D2 /* HWColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E5230D63D300ED20D2 /* HWColorCollectionViewCell.m */; };
+		7EA0F612230D63D300ED20D2 /* HWBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E7230D63D300ED20D2 /* HWBlurViewController.m */; };
+		7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E9230D63D300ED20D2 /* HWColorCell.m */; };
+		7EA0F614230D63D300ED20D2 /* HWShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5ED230D63D300ED20D2 /* HWShoppingCartViewController.m */; };
+		7EA0F615230D63D300ED20D2 /* HWColorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5EF230D63D300ED20D2 /* HWColorDetailViewController.m */; };
+		7EA0F616230D63D300ED20D2 /* HWStackedGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5F2230D63D300ED20D2 /* HWStackedGroupViewController.m */; };
+		7EA0F617230D63D300ED20D2 /* HWFullScreenNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5F5230D63D300ED20D2 /* HWFullScreenNavController.m */; };
+		7EA0F618230D63D300ED20D2 /* HWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5F7230D63D300ED20D2 /* HWBaseViewController.m */; };
+		7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */; };
+		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
+		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
+		B8CF43F21F90CA8200389BFE /* HWPanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CF43891F90C16F00389BFE /* HWPanModal.framework */; };
+		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
+		B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
+		B8CF44031F90CAC000389BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */; };
+		B8CF44041F90CAC000389BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43FB1F90CAC000389BFE /* Main.storyboard */; };
+		B8CF44061F90CAC000389BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43FE1F90CAC000389BFE /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8CF43F31F90CA8D00389BFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8CF43801F90C16F00389BFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8CF43881F90C16F00389BFE;
+			remoteInfo = HWPanModal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
+		70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
+		7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HW_Swizzle.m"; sourceTree = "<group>"; };
+		7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
+		7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HWPanModal.h"; sourceTree = "<group>"; };
+		7EA0F557230D5B7300ED20D2 /* UIView+HW_Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HW_Frame.m"; sourceTree = "<group>"; };
+		7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HW_Swizzle.h"; sourceTree = "<group>"; };
+		7EA0F55A230D5B7300ED20D2 /* UIViewController+PanModalPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalPresenter.m"; sourceTree = "<group>"; };
+		7EA0F55B230D5B7300ED20D2 /* HWPanModalPresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresenterProtocol.h; sourceTree = "<group>"; };
+		7EA0F55C230D5B7300ED20D2 /* UIViewController+PanModalPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalPresenter.h"; sourceTree = "<group>"; };
+		7EA0F55E230D5B7300ED20D2 /* HWPanModalPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationController.h; sourceTree = "<group>"; };
+		7EA0F55F230D5B7300ED20D2 /* HWPanModalPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationController.m; sourceTree = "<group>"; };
+		7EA0F561230D5B7300ED20D2 /* HWPanIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanIndicatorView.h; sourceTree = "<group>"; };
+		7EA0F562230D5B7300ED20D2 /* HWDimmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDimmedView.m; sourceTree = "<group>"; };
+		7EA0F563230D5B7300ED20D2 /* HWPanContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanContainerView.h; sourceTree = "<group>"; };
+		7EA0F564230D5B7300ED20D2 /* HWVisualEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWVisualEffectView.m; sourceTree = "<group>"; };
+		7EA0F565230D5B7300ED20D2 /* HWPanContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanContainerView.m; sourceTree = "<group>"; };
+		7EA0F566230D5B7300ED20D2 /* HWDimmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDimmedView.h; sourceTree = "<group>"; };
+		7EA0F567230D5B7300ED20D2 /* HWPanIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanIndicatorView.m; sourceTree = "<group>"; };
+		7EA0F568230D5B7300ED20D2 /* HWPanModalIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalIndicatorProtocol.h; sourceTree = "<group>"; };
+		7EA0F569230D5B7300ED20D2 /* HWVisualEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWVisualEffectView.h; sourceTree = "<group>"; };
+		7EA0F56B230D5B7300ED20D2 /* HWPanModalPresentationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationDelegate.m; sourceTree = "<group>"; };
+		7EA0F56C230D5B7300ED20D2 /* HWPanModalPresentationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationDelegate.h; sourceTree = "<group>"; };
+		7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Presentation.h"; sourceTree = "<group>"; };
+		7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LayoutHelper.m"; sourceTree = "<group>"; };
+		7EA0F570230D5B7400ED20D2 /* UIViewController+PanModalDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalDefault.m"; sourceTree = "<group>"; };
+		7EA0F571230D5B7400ED20D2 /* HWPanModalPresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentable.h; sourceTree = "<group>"; };
+		7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Presentation.m"; sourceTree = "<group>"; };
+		7EA0F573230D5B7400ED20D2 /* HWPanModalHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalHeight.h; sourceTree = "<group>"; };
+		7EA0F574230D5B7400ED20D2 /* UIViewController+LayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LayoutHelper.h"; sourceTree = "<group>"; };
+		7EA0F575230D5B7400ED20D2 /* UIViewController+PanModalDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PanModalDefault.h"; sourceTree = "<group>"; };
+		7EA0F577230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalInteractiveAnimator.m; sourceTree = "<group>"; };
+		7EA0F578230D5B7400ED20D2 /* HWPresentingVCAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPresentingVCAnimatedTransitioning.h; sourceTree = "<group>"; };
+		7EA0F579230D5B7400ED20D2 /* HWPanModalAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalAnimator.m; sourceTree = "<group>"; };
+		7EA0F57A230D5B7400ED20D2 /* HWPanModalPresentationAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationAnimator.h; sourceTree = "<group>"; };
+		7EA0F57B230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalInteractiveAnimator.h; sourceTree = "<group>"; };
+		7EA0F57C230D5B7400ED20D2 /* HWPanModalPresentationAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationAnimator.m; sourceTree = "<group>"; };
+		7EA0F57D230D5B7400ED20D2 /* HWPanModalAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalAnimator.h; sourceTree = "<group>"; };
+		7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDemoTypeModel.m; sourceTree = "<group>"; };
+		7EA0F5B9230D63D300ED20D2 /* HWDemoTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDemoTypeModel.h; sourceTree = "<group>"; };
+		7EA0F5BC230D63D300ED20D2 /* HWMyCustomAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMyCustomAnimationViewController.h; sourceTree = "<group>"; };
+		7EA0F5BD230D63D300ED20D2 /* HWMyCustomAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMyCustomAnimationViewController.m; sourceTree = "<group>"; };
+		7EA0F5BF230D63D300ED20D2 /* HWDynamicHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDynamicHeightViewController.m; sourceTree = "<group>"; };
+		7EA0F5C0230D63D300ED20D2 /* HWDynamicHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDynamicHeightViewController.h; sourceTree = "<group>"; };
+		7EA0F5C2230D63D300ED20D2 /* HWAppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWAppListViewController.h; sourceTree = "<group>"; };
+		7EA0F5C3230D63D300ED20D2 /* HWAppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAppListViewController.m; sourceTree = "<group>"; };
+		7EA0F5C5230D63D300ED20D2 /* HWTextIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTextIndicatorView.m; sourceTree = "<group>"; };
+		7EA0F5C6230D63D300ED20D2 /* HWIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWIndicatorViewController.h; sourceTree = "<group>"; };
+		7EA0F5C7230D63D300ED20D2 /* HWImmobileIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWImmobileIndicatorView.h; sourceTree = "<group>"; };
+		7EA0F5C8230D63D300ED20D2 /* HWIndicatorPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWIndicatorPopViewController.h; sourceTree = "<group>"; };
+		7EA0F5C9230D63D300ED20D2 /* HWIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorViewController.m; sourceTree = "<group>"; };
+		7EA0F5CA230D63D300ED20D2 /* HWTextIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTextIndicatorView.h; sourceTree = "<group>"; };
+		7EA0F5CB230D63D300ED20D2 /* HWImmobileIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWImmobileIndicatorView.m; sourceTree = "<group>"; };
+		7EA0F5CC230D63D300ED20D2 /* HWIndicatorPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWIndicatorPopViewController.m; sourceTree = "<group>"; };
+		7EA0F5CE230D63D300ED20D2 /* HWPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPickerViewController.m; sourceTree = "<group>"; };
+		7EA0F5CF230D63D300ED20D2 /* HWPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPickerViewController.h; sourceTree = "<group>"; };
+		7EA0F5D1230D63D300ED20D2 /* HWAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWAlertViewController.h; sourceTree = "<group>"; };
+		7EA0F5D2230D63D300ED20D2 /* HWAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWAlertView.h; sourceTree = "<group>"; };
+		7EA0F5D3230D63D300ED20D2 /* HWTransientAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTransientAlertViewController.m; sourceTree = "<group>"; };
+		7EA0F5D4230D63D300ED20D2 /* HWAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAlertView.m; sourceTree = "<group>"; };
+		7EA0F5D5230D63D300ED20D2 /* HWAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAlertViewController.m; sourceTree = "<group>"; };
+		7EA0F5D6230D63D300ED20D2 /* HWTransientAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTransientAlertViewController.h; sourceTree = "<group>"; };
+		7EA0F5D8230D63D300ED20D2 /* HWTextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTextInputViewController.m; sourceTree = "<group>"; };
+		7EA0F5D9230D63D300ED20D2 /* HWInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInputTableViewCell.m; sourceTree = "<group>"; };
+		7EA0F5DA230D63D300ED20D2 /* HWTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTextInputViewController.h; sourceTree = "<group>"; };
+		7EA0F5DB230D63D300ED20D2 /* HWInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInputTableViewCell.h; sourceTree = "<group>"; };
+		7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserGroupViewController.m; sourceTree = "<group>"; };
+		7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNavViewController.m; sourceTree = "<group>"; };
+		7EA0F5DF230D63D300ED20D2 /* HWNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNavViewController.h; sourceTree = "<group>"; };
+		7EA0F5E0230D63D300ED20D2 /* HWUserGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserGroupViewController.h; sourceTree = "<group>"; };
+		7EA0F5E2230D63D300ED20D2 /* HWColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorCollectionViewCell.h; sourceTree = "<group>"; };
+		7EA0F5E3230D63D300ED20D2 /* HWBlurViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBlurViewController.h; sourceTree = "<group>"; };
+		7EA0F5E4230D63D300ED20D2 /* HWColorBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorBlocksViewController.m; sourceTree = "<group>"; };
+		7EA0F5E5230D63D300ED20D2 /* HWColorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorCollectionViewCell.m; sourceTree = "<group>"; };
+		7EA0F5E6230D63D300ED20D2 /* HWColorBlocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorBlocksViewController.h; sourceTree = "<group>"; };
+		7EA0F5E7230D63D300ED20D2 /* HWBlurViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBlurViewController.m; sourceTree = "<group>"; };
+		7EA0F5E9230D63D300ED20D2 /* HWColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorCell.m; sourceTree = "<group>"; };
+		7EA0F5EA230D63D300ED20D2 /* HWColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorCell.h; sourceTree = "<group>"; };
+		7EA0F5EC230D63D300ED20D2 /* HWShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWShoppingCartViewController.h; sourceTree = "<group>"; };
+		7EA0F5ED230D63D300ED20D2 /* HWShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWShoppingCartViewController.m; sourceTree = "<group>"; };
+		7EA0F5EF230D63D300ED20D2 /* HWColorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorDetailViewController.m; sourceTree = "<group>"; };
+		7EA0F5F0230D63D300ED20D2 /* HWStackedGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStackedGroupViewController.h; sourceTree = "<group>"; };
+		7EA0F5F1230D63D300ED20D2 /* HWColorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorDetailViewController.h; sourceTree = "<group>"; };
+		7EA0F5F2230D63D300ED20D2 /* HWStackedGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStackedGroupViewController.m; sourceTree = "<group>"; };
+		7EA0F5F4230D63D300ED20D2 /* HWFullScreenNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFullScreenNavController.h; sourceTree = "<group>"; };
+		7EA0F5F5230D63D300ED20D2 /* HWFullScreenNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWFullScreenNavController.m; sourceTree = "<group>"; };
+		7EA0F5F7230D63D300ED20D2 /* HWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseViewController.m; sourceTree = "<group>"; };
+		7EA0F5F8230D63D300ED20D2 /* HWGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWGroupViewController.h; sourceTree = "<group>"; };
+		7EA0F5F9230D63D300ED20D2 /* HWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseViewController.h; sourceTree = "<group>"; };
+		7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWGroupViewController.m; sourceTree = "<group>"; };
+		7EA0F5FC230D63D300ED20D2 /* HWShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWShareViewController.h; sourceTree = "<group>"; };
+		7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
+		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
+		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
+		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B8CF43891F90C16F00389BFE /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWPanModalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CF43F01F90C3F900389BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8CF43F61F90CAC000389BFE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B8CF43F71F90CAC000389BFE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B8CF43F81F90CAC000389BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8CF43FA1F90CAC000389BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B8CF43FC1F90CAC000389BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8CF43FD1F90CAC000389BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8CF43FE1F90CAC000389BFE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D642AE71ED9BB61BEAE26901 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
+		EFF6F32404E5DF47D9DB53E0 /* Pods-HWPanModalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.release.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8CF43851F90C16F00389BFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA0F5B6230D5C3400ED20D2 /* Foundation.framework in Frameworks */,
+				7EA0F5B4230D5C2C00ED20D2 /* UIKit.framework in Frameworks */,
+				14E6955DF1EC77D031BD7C5C /* KVOController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8CF43BD1F90C2C500389BFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8CF43F21F90CA8200389BFE /* HWPanModal.framework in Frameworks */,
+				1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49EDF9D653B0305DC19557AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */,
+				EFF6F32404E5DF47D9DB53E0 /* Pods-HWPanModalDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7EA0F552230D5B7300ED20D2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */,
+				7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */,
+				7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */,
+				7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */,
+				7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */,
+				7EA0F557230D5B7300ED20D2 /* UIView+HW_Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7EA0F559230D5B7300ED20D2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F55B230D5B7300ED20D2 /* HWPanModalPresenterProtocol.h */,
+				7EA0F55C230D5B7300ED20D2 /* UIViewController+PanModalPresenter.h */,
+				7EA0F55A230D5B7300ED20D2 /* UIViewController+PanModalPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7EA0F55D230D5B7300ED20D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F55E230D5B7300ED20D2 /* HWPanModalPresentationController.h */,
+				7EA0F55F230D5B7300ED20D2 /* HWPanModalPresentationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7EA0F560230D5B7300ED20D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F568230D5B7300ED20D2 /* HWPanModalIndicatorProtocol.h */,
+				7EA0F566230D5B7300ED20D2 /* HWDimmedView.h */,
+				7EA0F562230D5B7300ED20D2 /* HWDimmedView.m */,
+				7EA0F563230D5B7300ED20D2 /* HWPanContainerView.h */,
+				7EA0F565230D5B7300ED20D2 /* HWPanContainerView.m */,
+				7EA0F569230D5B7300ED20D2 /* HWVisualEffectView.h */,
+				7EA0F564230D5B7300ED20D2 /* HWVisualEffectView.m */,
+				7EA0F561230D5B7300ED20D2 /* HWPanIndicatorView.h */,
+				7EA0F567230D5B7300ED20D2 /* HWPanIndicatorView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EA0F56A230D5B7300ED20D2 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F56C230D5B7300ED20D2 /* HWPanModalPresentationDelegate.h */,
+				7EA0F56B230D5B7300ED20D2 /* HWPanModalPresentationDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		7EA0F56D230D5B7400ED20D2 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F573230D5B7400ED20D2 /* HWPanModalHeight.h */,
+				7EA0F571230D5B7400ED20D2 /* HWPanModalPresentable.h */,
+				7EA0F575230D5B7400ED20D2 /* UIViewController+PanModalDefault.h */,
+				7EA0F570230D5B7400ED20D2 /* UIViewController+PanModalDefault.m */,
+				7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */,
+				7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */,
+				7EA0F574230D5B7400ED20D2 /* UIViewController+LayoutHelper.h */,
+				7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */,
+			);
+			path = Presentable;
+			sourceTree = "<group>";
+		};
+		7EA0F576230D5B7400ED20D2 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F578230D5B7400ED20D2 /* HWPresentingVCAnimatedTransitioning.h */,
+				7EA0F57B230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.h */,
+				7EA0F577230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.m */,
+				7EA0F57D230D5B7400ED20D2 /* HWPanModalAnimator.h */,
+				7EA0F579230D5B7400ED20D2 /* HWPanModalAnimator.m */,
+				7EA0F57A230D5B7400ED20D2 /* HWPanModalPresentationAnimator.h */,
+				7EA0F57C230D5B7400ED20D2 /* HWPanModalPresentationAnimator.m */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		7EA0F5B7230D63D300ED20D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */,
+				7EA0F5B9230D63D300ED20D2 /* HWDemoTypeModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7EA0F5BA230D63D300ED20D2 /* PanControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5BB230D63D300ED20D2 /* CustomPresentingVC */,
+				7EA0F5BE230D63D300ED20D2 /* Dynamic */,
+				7EA0F5C1230D63D300ED20D2 /* App */,
+				7EA0F5C4230D63D300ED20D2 /* Indicator */,
+				7EA0F5CD230D63D300ED20D2 /* Picker */,
+				7EA0F5D0230D63D300ED20D2 /* Alert */,
+				7EA0F5D7230D63D300ED20D2 /* TextInput */,
+				7EA0F5DC230D63D300ED20D2 /* Navigation */,
+				7EA0F5E1230D63D300ED20D2 /* Blur */,
+				7EA0F5E8230D63D300ED20D2 /* View */,
+				7EA0F5EB230D63D300ED20D2 /* ShoppingCart */,
+				7EA0F5EE230D63D300ED20D2 /* Stacked */,
+				7EA0F5F3230D63D300ED20D2 /* FullScreen */,
+				7EA0F5F6230D63D300ED20D2 /* Base */,
+				7EA0F5FB230D63D300ED20D2 /* Share */,
+			);
+			path = PanControllerExample;
+			sourceTree = "<group>";
+		};
+		7EA0F5BB230D63D300ED20D2 /* CustomPresentingVC */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5BC230D63D300ED20D2 /* HWMyCustomAnimationViewController.h */,
+				7EA0F5BD230D63D300ED20D2 /* HWMyCustomAnimationViewController.m */,
+			);
+			path = CustomPresentingVC;
+			sourceTree = "<group>";
+		};
+		7EA0F5BE230D63D300ED20D2 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5C0230D63D300ED20D2 /* HWDynamicHeightViewController.h */,
+				7EA0F5BF230D63D300ED20D2 /* HWDynamicHeightViewController.m */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		7EA0F5C1230D63D300ED20D2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5C2230D63D300ED20D2 /* HWAppListViewController.h */,
+				7EA0F5C3230D63D300ED20D2 /* HWAppListViewController.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7EA0F5C4230D63D300ED20D2 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5CA230D63D300ED20D2 /* HWTextIndicatorView.h */,
+				7EA0F5C5230D63D300ED20D2 /* HWTextIndicatorView.m */,
+				7EA0F5C6230D63D300ED20D2 /* HWIndicatorViewController.h */,
+				7EA0F5C9230D63D300ED20D2 /* HWIndicatorViewController.m */,
+				7EA0F5C8230D63D300ED20D2 /* HWIndicatorPopViewController.h */,
+				7EA0F5CC230D63D300ED20D2 /* HWIndicatorPopViewController.m */,
+				7EA0F5C7230D63D300ED20D2 /* HWImmobileIndicatorView.h */,
+				7EA0F5CB230D63D300ED20D2 /* HWImmobileIndicatorView.m */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		7EA0F5CD230D63D300ED20D2 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5CF230D63D300ED20D2 /* HWPickerViewController.h */,
+				7EA0F5CE230D63D300ED20D2 /* HWPickerViewController.m */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		7EA0F5D0230D63D300ED20D2 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5D1230D63D300ED20D2 /* HWAlertViewController.h */,
+				7EA0F5D5230D63D300ED20D2 /* HWAlertViewController.m */,
+				7EA0F5D2230D63D300ED20D2 /* HWAlertView.h */,
+				7EA0F5D4230D63D300ED20D2 /* HWAlertView.m */,
+				7EA0F5D6230D63D300ED20D2 /* HWTransientAlertViewController.h */,
+				7EA0F5D3230D63D300ED20D2 /* HWTransientAlertViewController.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		7EA0F5D7230D63D300ED20D2 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5DA230D63D300ED20D2 /* HWTextInputViewController.h */,
+				7EA0F5D8230D63D300ED20D2 /* HWTextInputViewController.m */,
+				7EA0F5DB230D63D300ED20D2 /* HWInputTableViewCell.h */,
+				7EA0F5D9230D63D300ED20D2 /* HWInputTableViewCell.m */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
+		7EA0F5DC230D63D300ED20D2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5E0230D63D300ED20D2 /* HWUserGroupViewController.h */,
+				7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */,
+				7EA0F5DF230D63D300ED20D2 /* HWNavViewController.h */,
+				7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7EA0F5E1230D63D300ED20D2 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5E3230D63D300ED20D2 /* HWBlurViewController.h */,
+				7EA0F5E7230D63D300ED20D2 /* HWBlurViewController.m */,
+				7EA0F5E6230D63D300ED20D2 /* HWColorBlocksViewController.h */,
+				7EA0F5E4230D63D300ED20D2 /* HWColorBlocksViewController.m */,
+				7EA0F5E2230D63D300ED20D2 /* HWColorCollectionViewCell.h */,
+				7EA0F5E5230D63D300ED20D2 /* HWColorCollectionViewCell.m */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		7EA0F5E8230D63D300ED20D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5EA230D63D300ED20D2 /* HWColorCell.h */,
+				7EA0F5E9230D63D300ED20D2 /* HWColorCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EA0F5EB230D63D300ED20D2 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5EC230D63D300ED20D2 /* HWShoppingCartViewController.h */,
+				7EA0F5ED230D63D300ED20D2 /* HWShoppingCartViewController.m */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		7EA0F5EE230D63D300ED20D2 /* Stacked */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5F0230D63D300ED20D2 /* HWStackedGroupViewController.h */,
+				7EA0F5EF230D63D300ED20D2 /* HWColorDetailViewController.m */,
+				7EA0F5F1230D63D300ED20D2 /* HWColorDetailViewController.h */,
+				7EA0F5F2230D63D300ED20D2 /* HWStackedGroupViewController.m */,
+			);
+			path = Stacked;
+			sourceTree = "<group>";
+		};
+		7EA0F5F3230D63D300ED20D2 /* FullScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5F4230D63D300ED20D2 /* HWFullScreenNavController.h */,
+				7EA0F5F5230D63D300ED20D2 /* HWFullScreenNavController.m */,
+			);
+			path = FullScreen;
+			sourceTree = "<group>";
+		};
+		7EA0F5F6230D63D300ED20D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5F9230D63D300ED20D2 /* HWBaseViewController.h */,
+				7EA0F5F7230D63D300ED20D2 /* HWBaseViewController.m */,
+				7EA0F5F8230D63D300ED20D2 /* HWGroupViewController.h */,
+				7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7EA0F5FB230D63D300ED20D2 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5FC230D63D300ED20D2 /* HWShareViewController.h */,
+				7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		B166B8E64FB756BB90E33DF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */,
+				7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */,
+				D642AE71ED9BB61BEAE26901 /* KVOController.framework */,
+				70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = SOURCE_ROOT;
+		};
+		B8CF437F1F90C16F00389BFE = {
+			isa = PBXGroup;
+			children = (
+				B8CF43F51F90CAC000389BFE /* Demo */,
+				B8CF43EC1F90C3F300389BFE /* Sources */,
+				B8CF43EF1F90C3F900389BFE /* Supporting Files */,
+				B8CF438A1F90C16F00389BFE /* Products */,
+				B166B8E64FB756BB90E33DF6 /* Frameworks */,
+				49EDF9D653B0305DC19557AD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		B8CF438A1F90C16F00389BFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8CF43891F90C16F00389BFE /* HWPanModal.framework */,
+				B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8CF43EC1F90C3F300389BFE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */,
+				7EA0F576230D5B7400ED20D2 /* Animator */,
+				7EA0F552230D5B7300ED20D2 /* Category */,
+				7EA0F55D230D5B7300ED20D2 /* Controller */,
+				7EA0F56A230D5B7300ED20D2 /* Delegate */,
+				7EA0F56D230D5B7400ED20D2 /* Presentable */,
+				7EA0F559230D5B7300ED20D2 /* Presenter */,
+				7EA0F560230D5B7300ED20D2 /* View */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B8CF43EF1F90C3F900389BFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8CF43F01F90C3F900389BFE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8CF43F51F90CAC000389BFE /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7EA0F5B7230D63D300ED20D2 /* Model */,
+				7EA0F5BA230D63D300ED20D2 /* PanControllerExample */,
+				7EA0F5FF230D63D300ED20D2 /* HWViewController.h */,
+				7EA0F5FE230D63D300ED20D2 /* HWViewController.m */,
+				B8CF43F61F90CAC000389BFE /* AppDelegate.h */,
+				B8CF43F71F90CAC000389BFE /* AppDelegate.m */,
+				B8CF43F81F90CAC000389BFE /* Assets.xcassets */,
+				B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */,
+				B8CF43FB1F90CAC000389BFE /* Main.storyboard */,
+				B8CF43FD1F90CAC000389BFE /* Info.plist */,
+				B8CF43FE1F90CAC000389BFE /* main.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B8CF43861F90C16F00389BFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60FDC295CFBEC4E7AF0C1344 /* HWPanModal.h in Headers */,
+				7EA0F5A8230D5BE000ED20D2 /* HWPanModalPresentable.h in Headers */,
+				7EA0F59E230D5BE000ED20D2 /* HWPresentingVCAnimatedTransitioning.h in Headers */,
+				7EA0F5B1230D5BE000ED20D2 /* HWPanModalIndicatorProtocol.h in Headers */,
+				7EA0F5AD230D5BE000ED20D2 /* UIViewController+PanModalPresenter.h in Headers */,
+				7EA0F5A7230D5BE000ED20D2 /* UIViewController+Presentation.h in Headers */,
+				7EA0F5AC230D5BE000ED20D2 /* HWPanModalPresenterProtocol.h in Headers */,
+				7EA0F5AB230D5BE000ED20D2 /* UIViewController+PanModalDefault.h in Headers */,
+				7EA0F5A3230D5BE000ED20D2 /* UINavigationController+HWPanModal.h in Headers */,
+				7EA0F5AE230D5BE000ED20D2 /* HWPanIndicatorView.h in Headers */,
+				7EA0F5A9230D5BE000ED20D2 /* HWPanModalHeight.h in Headers */,
+				7EA0F59F230D5BE000ED20D2 /* HWPanModalPresentationAnimator.h in Headers */,
+				7EA0F5A0230D5BE000ED20D2 /* HWPanModalInteractiveAnimator.h in Headers */,
+				7EA0F5A1230D5BE000ED20D2 /* HWPanModalAnimator.h in Headers */,
+				7EA0F5A2230D5BE000ED20D2 /* UIView+HW_Frame.h in Headers */,
+				7EA0F5A4230D5BE000ED20D2 /* NSObject+HW_Swizzle.h in Headers */,
+				7EA0F5A5230D5BE000ED20D2 /* HWPanModalPresentationController.h in Headers */,
+				7EA0F5A6230D5BE000ED20D2 /* HWPanModalPresentationDelegate.h in Headers */,
+				7EA0F5AA230D5BE000ED20D2 /* UIViewController+LayoutHelper.h in Headers */,
+				7EA0F5AF230D5BE000ED20D2 /* HWPanContainerView.h in Headers */,
+				7EA0F5B0230D5BE000ED20D2 /* HWDimmedView.h in Headers */,
+				7EA0F5B2230D5BE000ED20D2 /* HWVisualEffectView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B8CF43881F90C16F00389BFE /* HWPanModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8CF43911F90C16F00389BFE /* Build configuration list for PBXNativeTarget "HWPanModal" */;
+			buildPhases = (
+				B8CF43841F90C16F00389BFE /* Sources */,
+				B8CF43851F90C16F00389BFE /* Frameworks */,
+				B8CF43861F90C16F00389BFE /* Headers */,
+				B8CF43871F90C16F00389BFE /* Resources */,
+				0666B13714D5E97B65BC5FC4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HWPanModal;
+			productName = HWPanModal;
+			productReference = B8CF43891F90C16F00389BFE /* HWPanModal.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B8CF43BF1F90C2C500389BFE /* HWPanModalDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8CF43D41F90C2C500389BFE /* Build configuration list for PBXNativeTarget "HWPanModalDemo" */;
+			buildPhases = (
+				829DCCF57947A63ABE165C08 /* [CP] Check Pods Manifest.lock */,
+				B8CF43BC1F90C2C500389BFE /* Sources */,
+				B8CF43BD1F90C2C500389BFE /* Frameworks */,
+				B8CF43BE1F90C2C500389BFE /* Resources */,
+				0782F3274CD6325E0FCC2EC1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8CF43F41F90CA8D00389BFE /* PBXTargetDependency */,
+			);
+			name = HWPanModalDemo;
+			productName = HWPanModalDemo;
+			productReference = B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8CF43801F90C16F00389BFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = wangcongling;
+				TargetAttributes = {
+					B8CF43881F90C16F00389BFE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = K4R83Q5KV5;
+						ProvisioningStyle = Automatic;
+					};
+					B8CF43BF1F90C2C500389BFE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = K4R83Q5KV5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B8CF43831F90C16F00389BFE /* Build configuration list for PBXProject "HWPanModal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B8CF437F1F90C16F00389BFE;
+			productRefGroup = B8CF438A1F90C16F00389BFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8CF43881F90C16F00389BFE /* HWPanModal */,
+				B8CF43BF1F90C2C500389BFE /* HWPanModalDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8CF43871F90C16F00389BFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8CF43BE1F90C2C500389BFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8CF44041F90CAC000389BFE /* Main.storyboard in Resources */,
+				B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */,
+				B8CF44031F90CAC000389BFE /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0666B13714D5E97B65BC5FC4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KVOController.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		0782F3274CD6325E0FCC2EC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		829DCCF57947A63ABE165C08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HWPanModalDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8CF43841F90C16F00389BFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA0F58E230D5BD200ED20D2 /* HWPanModalInteractiveAnimator.m in Sources */,
+				7EA0F58F230D5BD200ED20D2 /* HWPanModalAnimator.m in Sources */,
+				7EA0F590230D5BD200ED20D2 /* HWPanModalPresentationAnimator.m in Sources */,
+				7EA0F591230D5BD200ED20D2 /* UINavigationController+HWPanModal.m in Sources */,
+				7EA0F592230D5BD200ED20D2 /* NSObject+HW_Swizzle.m in Sources */,
+				7EA0F593230D5BD200ED20D2 /* UIView+HW_Frame.m in Sources */,
+				7EA0F594230D5BD200ED20D2 /* HWPanModalPresentationController.m in Sources */,
+				7EA0F595230D5BD200ED20D2 /* HWPanModalPresentationDelegate.m in Sources */,
+				7EA0F596230D5BD200ED20D2 /* UIViewController+LayoutHelper.m in Sources */,
+				7EA0F597230D5BD200ED20D2 /* UIViewController+PanModalDefault.m in Sources */,
+				7EA0F598230D5BD300ED20D2 /* UIViewController+Presentation.m in Sources */,
+				7EA0F599230D5BD300ED20D2 /* UIViewController+PanModalPresenter.m in Sources */,
+				7EA0F59A230D5BD300ED20D2 /* HWDimmedView.m in Sources */,
+				7EA0F59B230D5BD300ED20D2 /* HWVisualEffectView.m in Sources */,
+				7EA0F59C230D5BD300ED20D2 /* HWPanContainerView.m in Sources */,
+				7EA0F59D230D5BD300ED20D2 /* HWPanIndicatorView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8CF43BC1F90C2C500389BFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA0F603230D63D300ED20D2 /* HWAppListViewController.m in Sources */,
+				7EA0F609230D63D300ED20D2 /* HWTransientAlertViewController.m in Sources */,
+				7EA0F616230D63D300ED20D2 /* HWStackedGroupViewController.m in Sources */,
+				7EA0F60F230D63D300ED20D2 /* HWNavViewController.m in Sources */,
+				7EA0F60D230D63D300ED20D2 /* HWInputTableViewCell.m in Sources */,
+				7EA0F60A230D63D300ED20D2 /* HWAlertView.m in Sources */,
+				7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */,
+				7EA0F605230D63D300ED20D2 /* HWIndicatorViewController.m in Sources */,
+				7EA0F617230D63D300ED20D2 /* HWFullScreenNavController.m in Sources */,
+				7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */,
+				7EA0F60C230D63D300ED20D2 /* HWTextInputViewController.m in Sources */,
+				7EA0F612230D63D300ED20D2 /* HWBlurViewController.m in Sources */,
+				7EA0F608230D63D300ED20D2 /* HWPickerViewController.m in Sources */,
+				7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */,
+				7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */,
+				7EA0F606230D63D300ED20D2 /* HWImmobileIndicatorView.m in Sources */,
+				B8CF44061F90CAC000389BFE /* main.m in Sources */,
+				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
+				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
+				7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */,
+				7EA0F614230D63D300ED20D2 /* HWShoppingCartViewController.m in Sources */,
+				7EA0F607230D63D300ED20D2 /* HWIndicatorPopViewController.m in Sources */,
+				7EA0F618230D63D300ED20D2 /* HWBaseViewController.m in Sources */,
+				7EA0F615230D63D300ED20D2 /* HWColorDetailViewController.m in Sources */,
+				B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */,
+				7EA0F611230D63D300ED20D2 /* HWColorCollectionViewCell.m in Sources */,
+				7EA0F604230D63D300ED20D2 /* HWTextIndicatorView.m in Sources */,
+				7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */,
+				7EA0F60B230D63D300ED20D2 /* HWAlertViewController.m in Sources */,
+				7EA0F60E230D63D300ED20D2 /* HWUserGroupViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8CF43F41F90CA8D00389BFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8CF43881F90C16F00389BFE /* HWPanModal */;
+			targetProxy = B8CF43F31F90CA8D00389BFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8CF43FA1F90CAC000389BFE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B8CF43FB1F90CAC000389BFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8CF43FC1F90CAC000389BFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B8CF438F1F90C16F00389BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_HWPanModal_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8CF43901F90C16F00389BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_HWPanModal_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B8CF43921F90C16F00389BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B8CF43931F90C16F00389BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B8CF43D51F90C2C500389BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = NO;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B8CF43D61F90C2C500389BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFF6F32404E5DF47D9DB53E0 /* Pods-HWPanModalDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = NO;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B8CF43831F90C16F00389BFE /* Build configuration list for PBXProject "HWPanModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8CF438F1F90C16F00389BFE /* Debug */,
+				B8CF43901F90C16F00389BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8CF43911F90C16F00389BFE /* Build configuration list for PBXNativeTarget "HWPanModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8CF43921F90C16F00389BFE /* Debug */,
+				B8CF43931F90C16F00389BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8CF43D41F90C2C500389BFE /* Build configuration list for PBXNativeTarget "HWPanModalDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8CF43D51F90C2C500389BFE /* Debug */,
+				B8CF43D61F90C2C500389BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8CF43801F90C16F00389BFE /* Project object */;
+}
