@@ -85,6 +85,7 @@
 		7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */; };
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
+		7ECB23942310C522009C9A62 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB23932310C522009C9A62 /* KVOController.framework */; };
 		B8CF43F21F90CA8200389BFE /* HWPanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CF43891F90C16F00389BFE /* HWPanModal.framework */; };
 		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
 		B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
@@ -210,6 +211,7 @@
 		7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
+		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8CF43891F90C16F00389BFE /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +245,7 @@
 			files = (
 				7EA0F5B6230D5C3400ED20D2 /* Foundation.framework in Frameworks */,
 				7EA0F5B4230D5C2C00ED20D2 /* UIKit.framework in Frameworks */,
-				14E6955DF1EC77D031BD7C5C /* KVOController.framework in Frameworks */,
+				7ECB23942310C522009C9A62 /* KVOController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +579,7 @@
 		B166B8E64FB756BB90E33DF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7ECB23932310C522009C9A62 /* KVOController.framework */,
 				7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */,
 				7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */,
 				D642AE71ED9BB61BEAE26901 /* KVOController.framework */,
@@ -1214,6 +1217,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1234,6 +1241,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

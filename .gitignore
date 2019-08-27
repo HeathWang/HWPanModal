@@ -46,7 +46,7 @@ __pods/
 # Carthage/Checkouts
 
 Carthage/Build
-Carthage/
+# Carthage/
 
 # fastlane
 #
