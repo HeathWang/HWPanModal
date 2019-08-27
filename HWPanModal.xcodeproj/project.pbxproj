@@ -8,55 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */; };
-		14E6955DF1EC77D031BD7C5C /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D642AE71ED9BB61BEAE26901 /* KVOController.framework */; };
 		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
-		60FDC295CFBEC4E7AF0C1344 /* HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
 		7E300AE6230EB51E003FBFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE5230EB51E003FBFE7 /* Assets.xcassets */; };
 		7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */; };
-		7E300AEE230EB5EB003FBFE7 /* HWPanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CF43891F90C16F00389BFE /* HWPanModal.framework */; };
 		7E300AF2230EB966003FBFE7 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AF1230EB966003FBFE7 /* ExampleModel.swift */; };
-		7EA0F58E230D5BD200ED20D2 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F577230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.m */; };
-		7EA0F58F230D5BD200ED20D2 /* HWPanModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F579230D5B7400ED20D2 /* HWPanModalAnimator.m */; };
-		7EA0F590230D5BD200ED20D2 /* HWPanModalPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F57C230D5B7400ED20D2 /* HWPanModalPresentationAnimator.m */; };
-		7EA0F591230D5BD200ED20D2 /* UINavigationController+HWPanModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */; };
-		7EA0F592230D5BD200ED20D2 /* NSObject+HW_Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */; };
-		7EA0F593230D5BD200ED20D2 /* UIView+HW_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F557230D5B7300ED20D2 /* UIView+HW_Frame.m */; };
-		7EA0F594230D5BD200ED20D2 /* HWPanModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F55F230D5B7300ED20D2 /* HWPanModalPresentationController.m */; };
-		7EA0F595230D5BD200ED20D2 /* HWPanModalPresentationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F56B230D5B7300ED20D2 /* HWPanModalPresentationDelegate.m */; };
-		7EA0F596230D5BD200ED20D2 /* UIViewController+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */; };
-		7EA0F597230D5BD200ED20D2 /* UIViewController+PanModalDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F570230D5B7400ED20D2 /* UIViewController+PanModalDefault.m */; };
-		7EA0F598230D5BD300ED20D2 /* UIViewController+Presentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */; };
-		7EA0F599230D5BD300ED20D2 /* UIViewController+PanModalPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F55A230D5B7300ED20D2 /* UIViewController+PanModalPresenter.m */; };
-		7EA0F59A230D5BD300ED20D2 /* HWDimmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F562230D5B7300ED20D2 /* HWDimmedView.m */; };
-		7EA0F59B230D5BD300ED20D2 /* HWVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F564230D5B7300ED20D2 /* HWVisualEffectView.m */; };
-		7EA0F59C230D5BD300ED20D2 /* HWPanContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F565230D5B7300ED20D2 /* HWPanContainerView.m */; };
-		7EA0F59D230D5BD300ED20D2 /* HWPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F567230D5B7300ED20D2 /* HWPanIndicatorView.m */; };
-		7EA0F59E230D5BE000ED20D2 /* HWPresentingVCAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F578230D5B7400ED20D2 /* HWPresentingVCAnimatedTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F59F230D5BE000ED20D2 /* HWPanModalPresentationAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57A230D5B7400ED20D2 /* HWPanModalPresentationAnimator.h */; };
-		7EA0F5A0230D5BE000ED20D2 /* HWPanModalInteractiveAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57B230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.h */; };
-		7EA0F5A1230D5BE000ED20D2 /* HWPanModalAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F57D230D5B7400ED20D2 /* HWPanModalAnimator.h */; };
-		7EA0F5A2230D5BE000ED20D2 /* UIView+HW_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */; };
-		7EA0F5A3230D5BE000ED20D2 /* UINavigationController+HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5A4230D5BE000ED20D2 /* NSObject+HW_Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */; };
-		7EA0F5A5230D5BE000ED20D2 /* HWPanModalPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55E230D5B7300ED20D2 /* HWPanModalPresentationController.h */; };
-		7EA0F5A6230D5BE000ED20D2 /* HWPanModalPresentationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F56C230D5B7300ED20D2 /* HWPanModalPresentationDelegate.h */; };
-		7EA0F5A7230D5BE000ED20D2 /* UIViewController+Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5A8230D5BE000ED20D2 /* HWPanModalPresentable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F571230D5B7400ED20D2 /* HWPanModalPresentable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5A9230D5BE000ED20D2 /* HWPanModalHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F573230D5B7400ED20D2 /* HWPanModalHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5AA230D5BE000ED20D2 /* UIViewController+LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F574230D5B7400ED20D2 /* UIViewController+LayoutHelper.h */; };
-		7EA0F5AB230D5BE000ED20D2 /* UIViewController+PanModalDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F575230D5B7400ED20D2 /* UIViewController+PanModalDefault.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5AC230D5BE000ED20D2 /* HWPanModalPresenterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55B230D5B7300ED20D2 /* HWPanModalPresenterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5AD230D5BE000ED20D2 /* UIViewController+PanModalPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F55C230D5B7300ED20D2 /* UIViewController+PanModalPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5AE230D5BE000ED20D2 /* HWPanIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F561230D5B7300ED20D2 /* HWPanIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5AF230D5BE000ED20D2 /* HWPanContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F563230D5B7300ED20D2 /* HWPanContainerView.h */; };
-		7EA0F5B0230D5BE000ED20D2 /* HWDimmedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F566230D5B7300ED20D2 /* HWDimmedView.h */; };
-		7EA0F5B1230D5BE000ED20D2 /* HWPanModalIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F568230D5B7300ED20D2 /* HWPanModalIndicatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA0F5B2230D5BE000ED20D2 /* HWVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0F569230D5B7300ED20D2 /* HWVisualEffectView.h */; };
-		7EA0F5B4230D5C2C00ED20D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */; };
-		7EA0F5B6230D5C3400ED20D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */; };
 		7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */; };
 		7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BD230D63D300ED20D2 /* HWMyCustomAnimationViewController.m */; };
 		7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BF230D63D300ED20D2 /* HWDynamicHeightViewController.m */; };
@@ -85,24 +43,12 @@
 		7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */; };
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
-		7ECB23942310C522009C9A62 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB23932310C522009C9A62 /* KVOController.framework */; };
-		B8CF43F21F90CA8200389BFE /* HWPanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CF43891F90C16F00389BFE /* HWPanModal.framework */; };
 		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
 		B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
 		B8CF44031F90CAC000389BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */; };
 		B8CF44041F90CAC000389BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43FB1F90CAC000389BFE /* Main.storyboard */; };
 		B8CF44061F90CAC000389BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43FE1F90CAC000389BFE /* main.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B8CF43F31F90CA8D00389BFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8CF43801F90C16F00389BFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B8CF43881F90C16F00389BFE;
-			remoteInfo = HWPanModal;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
@@ -214,7 +160,6 @@
 		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B8CF43891F90C16F00389BFE /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWPanModalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF43F01F90C3F900389BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8CF43F61F90CAC000389BFE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -234,18 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E300AEE230EB5EB003FBFE7 /* HWPanModal.framework in Frameworks */,
 				07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8CF43851F90C16F00389BFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7EA0F5B6230D5C3400ED20D2 /* Foundation.framework in Frameworks */,
-				7EA0F5B4230D5C2C00ED20D2 /* UIKit.framework in Frameworks */,
-				7ECB23942310C522009C9A62 /* KVOController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +187,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8CF43F21F90CA8200389BFE /* HWPanModal.framework in Frameworks */,
 				1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +538,6 @@
 		B8CF438A1F90C16F00389BFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8CF43891F90C16F00389BFE /* HWPanModal.framework */,
 				B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */,
 				7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */,
 			);
@@ -655,38 +587,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		B8CF43861F90C16F00389BFE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				60FDC295CFBEC4E7AF0C1344 /* HWPanModal.h in Headers */,
-				7EA0F5A8230D5BE000ED20D2 /* HWPanModalPresentable.h in Headers */,
-				7EA0F59E230D5BE000ED20D2 /* HWPresentingVCAnimatedTransitioning.h in Headers */,
-				7EA0F5B1230D5BE000ED20D2 /* HWPanModalIndicatorProtocol.h in Headers */,
-				7EA0F5AD230D5BE000ED20D2 /* UIViewController+PanModalPresenter.h in Headers */,
-				7EA0F5A7230D5BE000ED20D2 /* UIViewController+Presentation.h in Headers */,
-				7EA0F5AC230D5BE000ED20D2 /* HWPanModalPresenterProtocol.h in Headers */,
-				7EA0F5AB230D5BE000ED20D2 /* UIViewController+PanModalDefault.h in Headers */,
-				7EA0F5A3230D5BE000ED20D2 /* UINavigationController+HWPanModal.h in Headers */,
-				7EA0F5AE230D5BE000ED20D2 /* HWPanIndicatorView.h in Headers */,
-				7EA0F5A9230D5BE000ED20D2 /* HWPanModalHeight.h in Headers */,
-				7EA0F59F230D5BE000ED20D2 /* HWPanModalPresentationAnimator.h in Headers */,
-				7EA0F5A0230D5BE000ED20D2 /* HWPanModalInteractiveAnimator.h in Headers */,
-				7EA0F5A1230D5BE000ED20D2 /* HWPanModalAnimator.h in Headers */,
-				7EA0F5A2230D5BE000ED20D2 /* UIView+HW_Frame.h in Headers */,
-				7EA0F5A4230D5BE000ED20D2 /* NSObject+HW_Swizzle.h in Headers */,
-				7EA0F5A5230D5BE000ED20D2 /* HWPanModalPresentationController.h in Headers */,
-				7EA0F5A6230D5BE000ED20D2 /* HWPanModalPresentationDelegate.h in Headers */,
-				7EA0F5AA230D5BE000ED20D2 /* UIViewController+LayoutHelper.h in Headers */,
-				7EA0F5AF230D5BE000ED20D2 /* HWPanContainerView.h in Headers */,
-				7EA0F5B0230D5BE000ED20D2 /* HWDimmedView.h in Headers */,
-				7EA0F5B2230D5BE000ED20D2 /* HWVisualEffectView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		7E300ADB230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXNativeTarget;
@@ -707,25 +607,6 @@
 			productReference = 7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B8CF43881F90C16F00389BFE /* HWPanModal */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B8CF43911F90C16F00389BFE /* Build configuration list for PBXNativeTarget "HWPanModal" */;
-			buildPhases = (
-				B8CF43841F90C16F00389BFE /* Sources */,
-				B8CF43851F90C16F00389BFE /* Frameworks */,
-				B8CF43861F90C16F00389BFE /* Headers */,
-				B8CF43871F90C16F00389BFE /* Resources */,
-				0666B13714D5E97B65BC5FC4 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HWPanModal;
-			productName = HWPanModal;
-			productReference = B8CF43891F90C16F00389BFE /* HWPanModal.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		B8CF43BF1F90C2C500389BFE /* HWPanModalDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8CF43D41F90C2C500389BFE /* Build configuration list for PBXNativeTarget "HWPanModalDemo" */;
@@ -739,7 +620,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B8CF43F41F90CA8D00389BFE /* PBXTargetDependency */,
 			);
 			name = HWPanModalDemo;
 			productName = HWPanModalDemo;
@@ -759,11 +639,6 @@
 				TargetAttributes = {
 					7E300ADB230EB51C003FBFE7 = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = K4R83Q5KV5;
-						ProvisioningStyle = Automatic;
-					};
-					B8CF43881F90C16F00389BFE = {
-						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = K4R83Q5KV5;
 						ProvisioningStyle = Automatic;
 					};
@@ -787,7 +662,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8CF43881F90C16F00389BFE /* HWPanModal */,
 				B8CF43BF1F90C2C500389BFE /* HWPanModalDemo */,
 				7E300ADB230EB51C003FBFE7 /* SwiftDemo */,
 			);
@@ -802,13 +676,6 @@
 				7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */,
 				7E300AE6230EB51E003FBFE7 /* Assets.xcassets in Resources */,
 				7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8CF43871F90C16F00389BFE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,24 +710,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0666B13714D5E97B65BC5FC4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/KVOController.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		0782F3274CD6325E0FCC2EC1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -868,10 +717,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWPanModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -936,29 +789,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8CF43841F90C16F00389BFE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7EA0F58E230D5BD200ED20D2 /* HWPanModalInteractiveAnimator.m in Sources */,
-				7EA0F58F230D5BD200ED20D2 /* HWPanModalAnimator.m in Sources */,
-				7EA0F590230D5BD200ED20D2 /* HWPanModalPresentationAnimator.m in Sources */,
-				7EA0F591230D5BD200ED20D2 /* UINavigationController+HWPanModal.m in Sources */,
-				7EA0F592230D5BD200ED20D2 /* NSObject+HW_Swizzle.m in Sources */,
-				7EA0F593230D5BD200ED20D2 /* UIView+HW_Frame.m in Sources */,
-				7EA0F594230D5BD200ED20D2 /* HWPanModalPresentationController.m in Sources */,
-				7EA0F595230D5BD200ED20D2 /* HWPanModalPresentationDelegate.m in Sources */,
-				7EA0F596230D5BD200ED20D2 /* UIViewController+LayoutHelper.m in Sources */,
-				7EA0F597230D5BD200ED20D2 /* UIViewController+PanModalDefault.m in Sources */,
-				7EA0F598230D5BD300ED20D2 /* UIViewController+Presentation.m in Sources */,
-				7EA0F599230D5BD300ED20D2 /* UIViewController+PanModalPresenter.m in Sources */,
-				7EA0F59A230D5BD300ED20D2 /* HWDimmedView.m in Sources */,
-				7EA0F59B230D5BD300ED20D2 /* HWVisualEffectView.m in Sources */,
-				7EA0F59C230D5BD300ED20D2 /* HWPanContainerView.m in Sources */,
-				7EA0F59D230D5BD300ED20D2 /* HWPanIndicatorView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B8CF43BC1F90C2C500389BFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -997,14 +827,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B8CF43F41F90CA8D00389BFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B8CF43881F90C16F00389BFE /* HWPanModal */;
-			targetProxy = B8CF43F31F90CA8D00389BFE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7E300AE2230EB51C003FBFE7 /* Main.storyboard */ = {
@@ -1208,54 +1030,6 @@
 			};
 			name = Release;
 		};
-		B8CF43921F90C16F00389BFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K4R83Q5KV5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B8CF43931F90C16F00389BFE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K4R83Q5KV5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		B8CF43D51F90C2C500389BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */;
@@ -1303,15 +1077,6 @@
 			buildConfigurations = (
 				B8CF438F1F90C16F00389BFE /* Debug */,
 				B8CF43901F90C16F00389BFE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B8CF43911F90C16F00389BFE /* Build configuration list for PBXNativeTarget "HWPanModal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B8CF43921F90C16F00389BFE /* Debug */,
-				B8CF43931F90C16F00389BFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

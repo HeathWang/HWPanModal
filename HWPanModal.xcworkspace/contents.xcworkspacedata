@@ -5,9 +5,6 @@
       location = "group:HWPanModal.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/KVOController/FBKVOController.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

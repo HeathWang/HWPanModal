@@ -96,15 +96,6 @@ Because Objective-C KVO is hard to use, so I use KVOController = =
 pod 'HWPanModal', '~> 0.3.4'
 ```
 
-### [Carthage](https://github.com/Carthage/Carthage)
-
-
-```ruby
-github "HeathWang/HWPanModal" ~> 0.3.4
-```
-
-Run `carthage update`
-
 ## How to use
 
 ### How to present from bottom
@@ -269,35 +260,9 @@ Here is `HWTextIndicatorView` code:
     
 ## Example
 
-For my limit technology, both support my project for `Carthage` and `CocoaPods`, making hard to run the demo if you want.
-Please follow below steps:
-
-### Using CocoaPods
 1. Clone this git.
-2. edit the Podfile
-
-    ```ruby
-    use_frameworks!
-    inhibit_all_warnings!
-    
-    platform :ios, '8.0'
-    
-    target 'HWPanModalDemo' do
-      pod 'Masonry'
-      pod 'HWPanModal', :path => './'
-    end
-    ```
-1. open the terminal, run `pod install --verbose`
-2. Double click HWPanModal.xcworkspace, and run.
-
-### Using Carthage
-
-1. Clone this git.
-2. make sure you install Carthage, and then execute `carthage update`
-3. then run `pod install`
-4. Double click HWPanModal.xcworkspace, and run.
-
-If you have good solution, please tell me, thanks.
+2. open the terminal, run `pod install`
+3. Double click HWPanModal.xcworkspace, and run.
 
 ## Contact Me
 

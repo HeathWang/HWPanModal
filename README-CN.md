@@ -85,15 +85,6 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 pod 'HWPanModal', '~> 0.3.4'
 ```
 
-### [Carthage](https://github.com/Carthage/Carthage)
-
-
-```ruby
-github "HeathWang/HWPanModal" ~> 0.3.4
-```
-
-Run `carthage update`
-
 ## 如何使用
 
 ### 如何从底部弹出控制器
@@ -256,35 +247,9 @@ Here is `HWTextIndicatorView` code:
 
 ## 例子
 
-因为个人能力技术限制，为了使该项目同时支持`Carthage` 和 `CocoaPods`，导致运行示例项目相对繁琐一点。
-请使用一下步骤来运行示例项目：
-
-### Using CocoaPods
 1. 克隆项目
-2. 编辑 Podfile
-
-    ```ruby
-    use_frameworks!
-    inhibit_all_warnings!
-    
-    platform :ios, '8.0'
-    
-    target 'HWPanModalDemo' do
-      pod 'Masonry'
-      pod 'HWPanModal', :path => './'
-    end
-    ```
-1. 运行 `pod install`
-2. 打开 HWPanModal.xcworkspace, 编译运行
-
-### Using Carthage
-
-1. 克隆项目
-2. 确保已安装 `Carthage`, 执行 `carthage update`
-3. 然后执行 `pod install`
-4. 打开 HWPanModal.xcworkspace, 编译运行
-
-如果你有好的解决方案，请告诉我，十分感谢。
+2. 然后执行 `pod install`
+3. 打开 HWPanModal.xcworkspace, 编译运行
 
 ## 联系我
 
