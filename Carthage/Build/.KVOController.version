@@ -1,0 +1,27 @@
+{
+  "Mac" : [
+    {
+      "name" : "KVOController",
+      "hash" : "8507718c4f20377c56acbc54190b4bfa05e02447cffc1c674dc06813183c2282"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "KVOController",
+      "hash" : "4e3cf08761471e834f0a59865a06e0e5f0b87abbf7346837fb453c1fb3f90361"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "KVOController",
+      "hash" : "bc20427745d89ee7af42a77a2fcae1bd12f331563631975df151f3424da6d3c2"
+    }
+  ],
+  "commitish" : "v1.2.0",
+  "iOS" : [
+    {
+      "name" : "KVOController",
+      "hash" : "b8b290d66d007b7927314cc41cc6e35c53d3388295d3d2cbbdb411d5b521a54a"
+    }
+  ]
+}
