@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */; };
 		14E6955DF1EC77D031BD7C5C /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D642AE71ED9BB61BEAE26901 /* KVOController.framework */; };
 		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
 		60FDC295CFBEC4E7AF0C1344 /* HWPanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
+		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
+		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
+		7E300AE6230EB51E003FBFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE5230EB51E003FBFE7 /* Assets.xcassets */; };
+		7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */; };
+		7E300AEE230EB5EB003FBFE7 /* HWPanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CF43891F90C16F00389BFE /* HWPanModal.framework */; };
+		7E300AF2230EB966003FBFE7 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AF1230EB966003FBFE7 /* ExampleModel.swift */; };
 		7EA0F58E230D5BD200ED20D2 /* HWPanModalInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F577230D5B7400ED20D2 /* HWPanModalInteractiveAnimator.m */; };
 		7EA0F58F230D5BD200ED20D2 /* HWPanModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F579230D5B7400ED20D2 /* HWPanModalAnimator.m */; };
 		7EA0F590230D5BD200ED20D2 /* HWPanModalPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F57C230D5B7400ED20D2 /* HWPanModalPresentationAnimator.m */; };
@@ -98,6 +106,15 @@
 /* Begin PBXFileReference section */
 		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
 		70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E300AE3230EB51C003FBFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E300AE5230EB51E003FBFE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E300AE8230EB51E003FBFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E300AEA230EB51E003FBFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E300AF1230EB966003FBFE7 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
 		7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HW_Swizzle.m"; sourceTree = "<group>"; };
 		7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
@@ -194,6 +211,7 @@
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8CF43891F90C16F00389BFE /* HWPanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWPanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWPanModalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF43F01F90C3F900389BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,10 +223,20 @@
 		B8CF43FD1F90CAC000389BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8CF43FE1F90CAC000389BFE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D642AE71ED9BB61BEAE26901 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
+		D84B1AC73A191270F8BB426A /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EFF6F32404E5DF47D9DB53E0 /* Pods-HWPanModalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.release.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E300AD9230EB51C003FBFE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E300AEE230EB5EB003FBFE7 /* HWPanModal.framework in Frameworks */,
+				07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8CF43851F90C16F00389BFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,8 +264,40 @@
 			children = (
 				AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */,
 				EFF6F32404E5DF47D9DB53E0 /* Pods-HWPanModalDemo.release.xcconfig */,
+				D84B1AC73A191270F8BB426A /* Pods-SwiftDemo.debug.xcconfig */,
+				B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7E300AEF230EB92A003FBFE7 /* Model */,
+				7E300AF0230EB939003FBFE7 /* ControllerExample */,
+				7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */,
+				7E300AE0230EB51C003FBFE7 /* ViewController.swift */,
+				7E300AE2230EB51C003FBFE7 /* Main.storyboard */,
+				7E300AE5230EB51E003FBFE7 /* Assets.xcassets */,
+				7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */,
+				7E300AEA230EB51E003FBFE7 /* Info.plist */,
+			);
+			path = SwiftDemo;
+			sourceTree = "<group>";
+		};
+		7E300AEF230EB92A003FBFE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E300AF1230EB966003FBFE7 /* ExampleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllerExample;
 			sourceTree = "<group>";
 		};
 		7EA0F552230D5B7300ED20D2 /* Category */ = {
@@ -521,6 +581,7 @@
 				7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */,
 				D642AE71ED9BB61BEAE26901 /* KVOController.framework */,
 				70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */,
+				76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = SOURCE_ROOT;
@@ -529,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				B8CF43F51F90CAC000389BFE /* Demo */,
+				7E300ADD230EB51C003FBFE7 /* SwiftDemo */,
 				B8CF43EC1F90C3F300389BFE /* Sources */,
 				B8CF43EF1F90C3F900389BFE /* Supporting Files */,
 				B8CF438A1F90C16F00389BFE /* Products */,
@@ -542,6 +604,7 @@
 			children = (
 				B8CF43891F90C16F00389BFE /* HWPanModal.framework */,
 				B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */,
+				7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -622,6 +685,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7E300ADB230EB51C003FBFE7 /* SwiftDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E300AED230EB51E003FBFE7 /* Build configuration list for PBXNativeTarget "SwiftDemo" */;
+			buildPhases = (
+				AE30C3A210A2D6C3610BB327 /* [CP] Check Pods Manifest.lock */,
+				7E300AD8230EB51C003FBFE7 /* Sources */,
+				7E300AD9230EB51C003FBFE7 /* Frameworks */,
+				7E300ADA230EB51C003FBFE7 /* Resources */,
+				024612B0BC03D35A77875EA3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftDemo;
+			productName = SwiftDemo;
+			productReference = 7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B8CF43881F90C16F00389BFE /* HWPanModal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8CF43911F90C16F00389BFE /* Build configuration list for PBXNativeTarget "HWPanModal" */;
@@ -667,9 +749,16 @@
 		B8CF43801F90C16F00389BFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = wangcongling;
 				TargetAttributes = {
+					7E300ADB230EB51C003FBFE7 = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = K4R83Q5KV5;
+						ProvisioningStyle = Automatic;
+					};
 					B8CF43881F90C16F00389BFE = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = K4R83Q5KV5;
@@ -697,11 +786,22 @@
 			targets = (
 				B8CF43881F90C16F00389BFE /* HWPanModal */,
 				B8CF43BF1F90C2C500389BFE /* HWPanModalDemo */,
+				7E300ADB230EB51C003FBFE7 /* SwiftDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E300ADA230EB51C003FBFE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */,
+				7E300AE6230EB51E003FBFE7 /* Assets.xcassets in Resources */,
+				7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8CF43871F90C16F00389BFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,6 +822,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		024612B0BC03D35A77875EA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0666B13714D5E97B65BC5FC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,9 +898,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE30C3A210A2D6C3610BB327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E300AD8230EB51C003FBFE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */,
+				7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */,
+				7E300AF2230EB966003FBFE7 /* ExampleModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8CF43841F90C16F00389BFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,6 +1004,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7E300AE2230EB51C003FBFE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E300AE3230EB51C003FBFE7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E300AE8230EB51E003FBFE7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -873,6 +1039,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7E300AEB230EB51E003FBFE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D84B1AC73A191270F8BB426A /* Pods-SwiftDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.SwiftDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E300AEC230EB51E003FBFE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4R83Q5KV5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.SwiftDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B8CF438F1F90C16F00389BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1039,7 +1255,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModalDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.HWPanModalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1054,7 +1270,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HWPanModalDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.HWPanModalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1062,6 +1278,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E300AED230EB51E003FBFE7 /* Build configuration list for PBXNativeTarget "SwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E300AEB230EB51E003FBFE7 /* Debug */,
+				7E300AEC230EB51E003FBFE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B8CF43831F90C16F00389BFE /* Build configuration list for PBXProject "HWPanModal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
