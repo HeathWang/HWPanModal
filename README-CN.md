@@ -121,7 +121,7 @@ pod 'HWPanModal', '~> 0.3.4'
 
 就是这么简单。
 
-### 如何主动更新控制器UI。
+### 如何主动更新控制器UI
 请查阅 `UIViewController+Presentation.h`，里面有详细说明。
 * Change the state between short and long form. call `- (void)hw_panModalTransitionTo:(PresentationState)state;`
 * Change ScrollView ContentOffset. call `- (void)hw_panModalSetContentOffset:(CGPoint)offset;`
