@@ -22,12 +22,6 @@ class GroupViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        colors.removeAll()
-        for _ in 1...10 {
-            colors.append(.random())
-        }
-        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -68,6 +62,10 @@ extension GroupViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
     }
     
 }
