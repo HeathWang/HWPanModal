@@ -26,6 +26,9 @@
 }
 
 - (void)hw_panModalSetNeedsLayoutUpdate {
+    if (![self conformsToProtocol:@protocol(HWPanModalPresentable)]) {
+        return;
+    }
     if (!self.presentedVC) return;
     [self.presentedVC setNeedsLayoutUpdate];
 }
