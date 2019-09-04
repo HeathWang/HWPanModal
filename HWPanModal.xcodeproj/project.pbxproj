@@ -17,6 +17,8 @@
 		7E20ABAF231F5BAB005941C5 /* CustomPresentingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABAE231F5BAB005941C5 /* CustomPresentingController.swift */; };
 		7E20ABB2231F5FD1005941C5 /* AutoHandleTextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB1231F5FD1005941C5 /* AutoHandleTextInputController.swift */; };
 		7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */; };
+		7E20ABB7231F6B37005941C5 /* ColorBlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB6231F6B37005941C5 /* ColorBlockController.swift */; };
+		7E20ABB9231F8B21005941C5 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB8231F8B21005941C5 /* BlurController.swift */; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		7E20ABAE231F5BAB005941C5 /* CustomPresentingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentingController.swift; sourceTree = "<group>"; };
 		7E20ABB1231F5FD1005941C5 /* AutoHandleTextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoHandleTextInputController.swift; sourceTree = "<group>"; };
 		7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		7E20ABB6231F6B37005941C5 /* ColorBlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlockController.swift; sourceTree = "<group>"; };
+		7E20ABB8231F8B21005941C5 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
 		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,22 @@
 			path = TextInput;
 			sourceTree = "<group>";
 		};
+		7E20ABB5231F6B0A005941C5 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABB6231F6B37005941C5 /* ColorBlockController.swift */,
+				7E20ABB8231F8B21005941C5 /* BlurController.swift */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		7E20ABBA231F8EA7005941C5 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +321,8 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E20ABBA231F8EA7005941C5 /* Indicator */,
+				7E20ABB5231F6B0A005941C5 /* Blur */,
 				7E20ABB0231F5F83005941C5 /* TextInput */,
 				7E20ABAD231F5B8C005941C5 /* CustomPresentingVC */,
 				7E20ABAA231F56CF005941C5 /* FullScreen */,
@@ -884,6 +906,8 @@
 				7E20ABAC231F57E3005941C5 /* FullScreenController.swift in Sources */,
 				7E20ABAF231F5BAB005941C5 /* CustomPresentingController.swift in Sources */,
 				7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */,
+				7E20ABB7231F6B37005941C5 /* ColorBlockController.swift in Sources */,
+				7E20ABB9231F8B21005941C5 /* BlurController.swift in Sources */,
 				7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */,
 				7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */,
 				7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */,

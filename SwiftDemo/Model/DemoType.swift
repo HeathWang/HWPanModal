@@ -46,7 +46,7 @@ struct DemoCell: DemoRowInfo {
         let vc = ViewController()
         vc.demoType = .app
         let app = DemoCell(string: "App Demo", rowVC: vc, action: .push)
-        let blur = DemoCell(string: "Blur Background", rowVC: BasicViewController(), action: .push)
+        let blur = DemoCell(string: "Blur Background", rowVC: ColorBlocksViewController(), action: .push)
         let indicator = DemoCell(string: "Custom Indicator", rowVC: BasicViewController(), action: .push)
         let keyboard = DemoCell(string: "Auto Handle Keyboard", rowVC: InputTableViewController())
         let basic = DemoCell(string: "Basic", rowVC: BasicViewController())
