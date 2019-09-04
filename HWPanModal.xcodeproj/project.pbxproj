@@ -15,6 +15,8 @@
 		7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA8231F562C005941C5 /* MyNavigationController.swift */; };
 		7E20ABAC231F57E3005941C5 /* FullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABAB231F57E3005941C5 /* FullScreenController.swift */; };
 		7E20ABAF231F5BAB005941C5 /* CustomPresentingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABAE231F5BAB005941C5 /* CustomPresentingController.swift */; };
+		7E20ABB2231F5FD1005941C5 /* AutoHandleTextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB1231F5FD1005941C5 /* AutoHandleTextInputController.swift */; };
+		7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		7E20ABA8231F562C005941C5 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		7E20ABAB231F57E3005941C5 /* FullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenController.swift; sourceTree = "<group>"; };
 		7E20ABAE231F5BAB005941C5 /* CustomPresentingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentingController.swift; sourceTree = "<group>"; };
+		7E20ABB1231F5FD1005941C5 /* AutoHandleTextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoHandleTextInputController.swift; sourceTree = "<group>"; };
+		7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +266,15 @@
 			path = CustomPresentingVC;
 			sourceTree = "<group>";
 		};
+		7E20ABB0231F5F83005941C5 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABB1231F5FD1005941C5 /* AutoHandleTextInputController.swift */,
+				7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
 		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +301,7 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E20ABB0231F5F83005941C5 /* TextInput */,
 				7E20ABAD231F5B8C005941C5 /* CustomPresentingVC */,
 				7E20ABAA231F56CF005941C5 /* FullScreen */,
 				7E20ABA7231F55CC005941C5 /* Navigation */,
@@ -875,7 +889,9 @@
 				7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */,
 				7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */,
 				7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */,
+				7E20ABB2231F5FD1005941C5 /* AutoHandleTextInputController.swift in Sources */,
 				7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */,
+				7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */,
 				7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */,
 				7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */,
 			);

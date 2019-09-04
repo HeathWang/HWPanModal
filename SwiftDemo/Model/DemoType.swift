@@ -48,7 +48,7 @@ struct DemoCell: DemoRowInfo {
         let app = DemoCell(string: "App Demo", rowVC: vc, action: .push)
         let blur = DemoCell(string: "Blur Background", rowVC: BasicViewController(), action: .push)
         let indicator = DemoCell(string: "Custom Indicator", rowVC: BasicViewController(), action: .push)
-        let keyboard = DemoCell(string: "Auto Handle Keyboard", rowVC: BasicViewController())
+        let keyboard = DemoCell(string: "Auto Handle Keyboard", rowVC: InputTableViewController())
         let basic = DemoCell(string: "Basic", rowVC: BasicViewController())
         let alert = DemoCell(string: "Alert", rowVC: AlertController())
         let transientAlert = DemoCell(string: "Transient", rowVC: TransientAlertController())
