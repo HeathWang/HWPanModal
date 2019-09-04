@@ -12,6 +12,8 @@
 		7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA0231E677E005941C5 /* DynamicHeight.swift */; };
 		7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA3231E7A5D005941C5 /* GroupController.swift */; };
 		7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */; };
+		7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA8231F562C005941C5 /* MyNavigationController.swift */; };
+		7E20ABAC231F57E3005941C5 /* FullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABAB231F57E3005941C5 /* FullScreenController.swift */; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		7E20ABA0231E677E005941C5 /* DynamicHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeight.swift; sourceTree = "<group>"; };
 		7E20ABA3231E7A5D005941C5 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStackedController.swift; sourceTree = "<group>"; };
+		7E20ABA8231F562C005941C5 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		7E20ABAB231F57E3005941C5 /* FullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenController.swift; sourceTree = "<group>"; };
 		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,22 @@
 			path = Group;
 			sourceTree = "<group>";
 		};
+		7E20ABA7231F55CC005941C5 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABA8231F562C005941C5 /* MyNavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7E20ABAA231F56CF005941C5 /* FullScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABAB231F57E3005941C5 /* FullScreenController.swift */,
+			);
+			path = FullScreen;
+			sourceTree = "<group>";
+		};
 		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +278,8 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E20ABAA231F56CF005941C5 /* FullScreen */,
+				7E20ABA7231F55CC005941C5 /* Navigation */,
 				7E20ABA2231E7A4F005941C5 /* Group */,
 				7E20AB9F231E6760005941C5 /* Dynamic */,
 				7EB5E92023169CA300CDB543 /* Alert */,
@@ -834,9 +856,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E20ABAC231F57E3005941C5 /* FullScreenController.swift in Sources */,
 				7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */,
 				7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */,
 				7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */,
+				7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */,
 				7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */,
 				7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */,
 				7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */,
