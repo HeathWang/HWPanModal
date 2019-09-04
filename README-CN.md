@@ -5,9 +5,6 @@
        <img src="https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/badge/Carthage-compatible-blue.svg" alt="Carthage compatible"/>
-    </a>
-    <a href="https://cocoapods.org/pods/HWPanModal">
        <img src="https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
@@ -53,6 +50,16 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
         </tr>
     </table>
 </div>
+
+## Index
+
+* <a href="#features">功能</a>
+* <a href="#compatibility">适配</a>
+* <a href="#installation">安装</a>
+* <a href="#how-to-use">如何使用</a>
+* <a href="#example">例子</a>
+* <a href="#contact-me">联系我</a>
+* <a href="#change-log">Change Log</a>
 
 ## 功能
 1. 支持任意类型的 `UIViewController`
@@ -249,7 +256,9 @@ Here is `HWTextIndicatorView` code:
 
 1. 克隆项目
 2. 然后执行 `pod install`
-3. 打开 HWPanModal.xcworkspace, 编译运行
+3. 打开 HWPanModal.xcworkspace, 选择OC或者Swift项目运行
+
+###### 我分别编写了纯`Objective-C` & `Swift`例子，基本涵盖了该framework的所有API使用。
 
 ## 联系我
 

@@ -5,9 +5,6 @@
        <img src="https://img.shields.io/cocoapods/v/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/badge/Carthage-compatible-blue.svg" alt="Carthage compatible"/>
-    </a>
-    <a href="https://cocoapods.org/pods/HWPanModal">
        <img src="https://img.shields.io/cocoapods/p/HWPanModal.svg?style=flat">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
@@ -56,6 +53,17 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
         </tr>
     </table>
 </div>
+
+## Index
+
+* <a href="#features">Features</a>
+* <a href="#todo">TODO</a>
+* <a href="#compatibility">Compatibility</a>
+* <a href="#installation">Installation</a>
+* <a href="#how-to-use">How to use</a>
+* <a href="#example">Example</a>
+* <a href="#contact-me">Contact Me</a>
+* <a href="#change-log">Change Log</a>
 
 
 ## Features
@@ -262,7 +270,9 @@ Here is `HWTextIndicatorView` code:
 
 1. Clone this git.
 2. open the terminal, run `pod install`
-3. Double click HWPanModal.xcworkspace, and run.
+3. Double click HWPanModal.xcworkspace, and select a target to run.
+
+###### I have wrote both **pure** `Objective-C` & `Swift`Examples , for most of the framework functions.
 
 ## Contact Me
 
