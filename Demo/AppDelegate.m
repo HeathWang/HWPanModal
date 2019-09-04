@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  HWPanModalDemo
 //
-//  Created by wangcongling on 08/21/2019.
-//  Copyright © 2019 wangcongling. All rights reserved.
+//  Created by Heath Wang on 08/21/2019.
+//  Copyright © 2019 Heath Wang. All rights reserved.
 //
 
 #import "AppDelegate.h"

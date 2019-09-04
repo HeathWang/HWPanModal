@@ -10,4 +10,5 @@ end
 target 'SwiftDemo' do
   platform :ios, '10.0'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'HWPanModal', :path => './'
 end

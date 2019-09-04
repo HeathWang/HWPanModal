@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */; };
 		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
+		7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA0231E677E005941C5 /* DynamicHeight.swift */; };
+		7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA3231E7A5D005941C5 /* GroupController.swift */; };
+		7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
 		7E300AE6230EB51E003FBFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE5230EB51E003FBFE7 /* Assets.xcassets */; };
 		7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */; };
-		7E300AF2230EB966003FBFE7 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AF1230EB966003FBFE7 /* ExampleModel.swift */; };
+		7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */; };
+		7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F6E8023162B3A00D9C897 /* DemoType.swift */; };
 		7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */; };
 		7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BD230D63D300ED20D2 /* HWMyCustomAnimationViewController.m */; };
 		7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5BF230D63D300ED20D2 /* HWDynamicHeightViewController.m */; };
@@ -43,6 +47,7 @@
 		7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */; };
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
+		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
 		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
 		B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
 		B8CF44031F90CAC000389BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */; };
@@ -54,6 +59,9 @@
 		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
 		70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E20ABA0231E677E005941C5 /* DynamicHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeight.swift; sourceTree = "<group>"; };
+		7E20ABA3231E7A5D005941C5 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStackedController.swift; sourceTree = "<group>"; };
 		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +69,8 @@
 		7E300AE5230EB51E003FBFE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E300AE8230EB51E003FBFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E300AEA230EB51E003FBFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E300AF1230EB966003FBFE7 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
+		7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		7E8F6E8023162B3A00D9C897 /* DemoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoType.swift; sourceTree = "<group>"; };
 		7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
 		7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HW_Swizzle.m"; sourceTree = "<group>"; };
 		7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
@@ -157,6 +166,7 @@
 		7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
+		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +215,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7E20AB9F231E6760005941C5 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABA0231E677E005941C5 /* DynamicHeight.swift */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		7E20ABA2231E7A4F005941C5 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				7E20ABA3231E7A5D005941C5 /* GroupController.swift */,
+				7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
 		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +250,7 @@
 		7E300AEF230EB92A003FBFE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7E300AF1230EB966003FBFE7 /* ExampleModel.swift */,
+				7E8F6E8023162B3A00D9C897 /* DemoType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,8 +258,20 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E20ABA2231E7A4F005941C5 /* Group */,
+				7E20AB9F231E6760005941C5 /* Dynamic */,
+				7EB5E92023169CA300CDB543 /* Alert */,
+				7E8F6E7D231626BD00D9C897 /* Basic */,
 			);
 			path = ControllerExample;
+			sourceTree = "<group>";
+		};
+		7E8F6E7D231626BD00D9C897 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */,
+			);
+			path = Basic;
 			sourceTree = "<group>";
 		};
 		7EA0F552230D5B7300ED20D2 /* Category */ = {
@@ -324,8 +363,8 @@
 		7EA0F5B7230D63D300ED20D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */,
 				7EA0F5B9230D63D300ED20D2 /* HWDemoTypeModel.h */,
+				7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,9 +512,9 @@
 			isa = PBXGroup;
 			children = (
 				7EA0F5F0230D63D300ED20D2 /* HWStackedGroupViewController.h */,
-				7EA0F5EF230D63D300ED20D2 /* HWColorDetailViewController.m */,
-				7EA0F5F1230D63D300ED20D2 /* HWColorDetailViewController.h */,
 				7EA0F5F2230D63D300ED20D2 /* HWStackedGroupViewController.m */,
+				7EA0F5F1230D63D300ED20D2 /* HWColorDetailViewController.h */,
+				7EA0F5EF230D63D300ED20D2 /* HWColorDetailViewController.m */,
 			);
 			path = Stacked;
 			sourceTree = "<group>";
@@ -507,6 +546,14 @@
 				7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		7EB5E92023169CA300CDB543 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7EB5E92123169CB600CDB543 /* AlertController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		B166B8E64FB756BB90E33DF6 /* Frameworks */ = {
@@ -699,10 +746,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HWPanModal-iOS10.0/HWPanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController-iOS10.0/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWPanModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,8 +768,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework",
-				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/HWPanModal-iOS8.0/HWPanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController-iOS8.0/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -783,9 +834,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */,
+				7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */,
+				7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */,
+				7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */,
 				7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */,
+				7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */,
 				7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */,
-				7E300AF2230EB966003FBFE7 /* ExampleModel.swift in Sources */,
+				7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,12 +937,19 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SnapKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -906,11 +969,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SnapKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heathwang.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
