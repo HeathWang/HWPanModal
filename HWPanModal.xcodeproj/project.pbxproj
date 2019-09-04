@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */; };
 		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
+		7E1822B1231FA7840049A076 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B0231FA7840049A076 /* ShareController.swift */; };
+		7E1822B3231FA79D0049A076 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */; };
+		7E1822B4231FA7AE0049A076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
 		7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA0231E677E005941C5 /* DynamicHeight.swift */; };
 		7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA3231E7A5D005941C5 /* GroupController.swift */; };
 		7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */; };
@@ -67,6 +70,8 @@
 		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
 		70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1822B0231FA7840049A076 /* ShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareController.swift; sourceTree = "<group>"; };
+		7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		7E20ABA0231E677E005941C5 /* DynamicHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeight.swift; sourceTree = "<group>"; };
 		7E20ABA3231E7A5D005941C5 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		7E20ABA5231E82A4005941C5 /* GroupStackedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStackedController.swift; sourceTree = "<group>"; };
@@ -299,6 +304,15 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
+		7E2CD398231FA75700BA8B09 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7E1822B0231FA7840049A076 /* ShareController.swift */,
+				7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		7E300ADD230EB51C003FBFE7 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +338,7 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E2CD398231FA75700BA8B09 /* App */,
 				7E20ABBA231F8EA7005941C5 /* Indicator */,
 				7E20ABB5231F6B0A005941C5 /* Blur */,
 				7E20ABB0231F5F83005941C5 /* TextInput */,
@@ -793,6 +808,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */,
+				7E1822B4231FA7AE0049A076 /* Assets.xcassets in Resources */,
 				7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,8 +936,10 @@
 				7E20ABB2231F5FD1005941C5 /* AutoHandleTextInputController.swift in Sources */,
 				7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */,
 				7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */,
+				7E1822B1231FA7840049A076 /* ShareController.swift in Sources */,
 				7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */,
 				7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */,
+				7E1822B3231FA79D0049A076 /* ShoppingCartController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

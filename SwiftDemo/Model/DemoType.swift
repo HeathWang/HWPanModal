@@ -67,9 +67,9 @@ struct DemoCell: DemoRowInfo {
 
     static func appDemoCells() -> [DemoCell] {
         let zhihu = DemoCell(string: "Group - Nav - 知乎评论", rowVC: MyNavigationViewController())
-        let share = DemoCell(string: "Share - 网易云音乐", rowVC: BasicViewController())
-        let jd = DemoCell(string: "Shopping - JD", rowVC: BasicViewController())
-        return [zhihu, picker, share, jd]
+        let share = DemoCell(string: "Share - 网易云音乐", rowVC: ShareViewController())
+        let jd = DemoCell(string: "Shopping - JD", rowVC: ShoppingCartViewController())
+        return [zhihu, share, jd]
     }
     
     static func indicatorCells() -> [DemoCell] {
