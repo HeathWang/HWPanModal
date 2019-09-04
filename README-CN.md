@@ -51,16 +51,6 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
     </table>
 </div>
 
-## Index
-
-* <a href="#features">功能</a>
-* <a href="#compatibility">适配</a>
-* <a href="#installation">安装</a>
-* <a href="#how-to-use">如何使用</a>
-* <a href="#example">例子</a>
-* <a href="#contact-me">联系我</a>
-* <a href="#change-log">Change Log</a>
-
 ## 功能
 1. 支持任意类型的 `UIViewController`
 2. 平滑的转场动画
