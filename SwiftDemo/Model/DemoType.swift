@@ -54,7 +54,7 @@ struct DemoCell: DemoRowInfo {
         let transientAlert = DemoCell(string: "Transient", rowVC: TransientAlertController())
         let dynamicHeight = DemoCell(string: "Dynamic Height", rowVC: DynamicViewController())
         let group = DemoCell(string: "Group", rowVC: GroupViewController())
-        let stackedGroup = DemoCell(string: "Group - Stacked", rowVC: BasicViewController())
+        let stackedGroup = DemoCell(string: "Group - Stacked", rowVC: GroupStackedViewController())
         let fullNav = DemoCell(string: "Full Screen - Nav", rowVC: BasicViewController())
         let customPresenting = DemoCell(string: "Custom Presenting Animation", rowVC: BasicViewController())
         return [app, blur, indicator, keyboard, basic, alert, transientAlert, dynamicHeight, group, stackedGroup, fullNav, customPresenting]
