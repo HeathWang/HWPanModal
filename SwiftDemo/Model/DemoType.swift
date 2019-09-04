@@ -25,6 +25,7 @@ extension DemoRowInfo {
 enum DemoList {
     case home
     case app
+    case indicator
 }
 
 enum Action {
@@ -46,8 +47,12 @@ struct DemoCell: DemoRowInfo {
         let vc = ViewController()
         vc.demoType = .app
         let app = DemoCell(string: "App Demo", rowVC: vc, action: .push)
+        
+        let indicatorVC = ViewController()
+        indicatorVC.demoType = .indicator
+        let indicator = DemoCell(string: "Custom Indicator", rowVC: indicatorVC, action: .push)
+        
         let blur = DemoCell(string: "Blur Background", rowVC: ColorBlocksViewController(), action: .push)
-        let indicator = DemoCell(string: "Custom Indicator", rowVC: BasicViewController(), action: .push)
         let keyboard = DemoCell(string: "Auto Handle Keyboard", rowVC: InputTableViewController())
         let basic = DemoCell(string: "Basic", rowVC: BasicViewController())
         let alert = DemoCell(string: "Alert", rowVC: AlertController())
@@ -66,5 +71,12 @@ struct DemoCell: DemoRowInfo {
         let share = DemoCell(string: "Share - 网易云音乐", rowVC: BasicViewController())
         let jd = DemoCell(string: "Shopping - JD", rowVC: BasicViewController())
         return [zhihu, picker, share, jd]
+    }
+    
+    static func indicatorCells() -> [DemoCell] {
+        let color = DemoCell(string: "Custom Default Indicator Color", rowVC: IndicatorPopViewController(style: .changeColor))
+        let text = DemoCell(string: "A Text Indicator View", rowVC: IndicatorPopViewController(style: .text))
+        let immo = DemoCell(string: "Immobile Indicator View", rowVC: IndicatorPopViewController(style: .immobile))
+        return [color, text, immo]
     }
 }

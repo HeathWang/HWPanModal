@@ -31,11 +31,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Swift Example"
+        
         if demoType == .home {
             dataSource = DemoCell.homeDemoCells()
+            title = "Swift Example"
         } else if demoType == .app {
             dataSource = DemoCell.appDemoCells()
+            title = "App Example"
+        } else if demoType == .indicator {
+            dataSource = DemoCell.indicatorCells()
+            title = "Indicator Example"
         }
         
         view.addSubview(tableView)

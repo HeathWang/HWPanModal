@@ -55,6 +55,8 @@
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
+		7EEF4686231F8F23006F5997 /* CustomIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */; };
+		7EEF4688231F917B006F5997 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF4687231F917B006F5997 /* IndicatorView.swift */; };
 		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
 		B8CF44021F90CAC000389BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
 		B8CF44031F90CAC000389BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F91F90CAC000389BFE /* LaunchScreen.storyboard */; };
@@ -182,6 +184,8 @@
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
+		7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIndicatorController.swift; sourceTree = "<group>"; };
+		7EEF4687231F917B006F5997 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8CF43C01F90C2C500389BFE /* HWPanModalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWPanModalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +295,8 @@
 		7E20ABBA231F8EA7005941C5 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
+				7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */,
+				7EEF4687231F917B006F5997 /* IndicatorView.swift */,
 			);
 			path = Indicator;
 			sourceTree = "<group>";
@@ -909,10 +915,12 @@
 				7E20ABB7231F6B37005941C5 /* ColorBlockController.swift in Sources */,
 				7E20ABB9231F8B21005941C5 /* BlurController.swift in Sources */,
 				7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */,
+				7EEF4686231F8F23006F5997 /* CustomIndicatorController.swift in Sources */,
 				7E20ABA4231E7A5D005941C5 /* GroupController.swift in Sources */,
 				7E20ABA9231F562C005941C5 /* MyNavigationController.swift in Sources */,
 				7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */,
 				7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */,
+				7EEF4688231F917B006F5997 /* IndicatorView.swift in Sources */,
 				7E20ABB2231F5FD1005941C5 /* AutoHandleTextInputController.swift in Sources */,
 				7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */,
 				7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */,
