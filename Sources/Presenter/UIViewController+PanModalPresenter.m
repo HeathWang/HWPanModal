@@ -15,9 +15,10 @@
 	return [self.transitioningDelegate isKindOfClass:HWPanModalPresentationDelegate.class];
 }
 
-- (void)presentPanModal:(UIViewController <HWPanModalPresentable> *)viewControllerToPresent sourceView:(nullable UIView *)sourceView sourceRect:(CGRect)rect {
-	HWPanModalPresentationDelegate *delegate = [HWPanModalPresentationDelegate new];
-	viewControllerToPresent.presentationDelegate = delegate;
+- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent sourceView:(UIView *)sourceView sourceRect:(CGRect)rect completion:(void (^)(void))completion {
+    
+    HWPanModalPresentationDelegate *delegate = [HWPanModalPresentationDelegate new];
+    viewControllerToPresent.presentationDelegate = delegate;
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad &&
         (sourceView && !CGRectEqualToRect(rect, CGRectZero))) {
@@ -34,13 +35,21 @@
     
     // fix for iOS 8 issue: the present action will delay.
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self presentViewController:viewControllerToPresent animated:YES completion:nil];
+        [self presentViewController:viewControllerToPresent animated:YES completion:completion];
     });
+}
+
+- (void)presentPanModal:(UIViewController <HWPanModalPresentable> *)viewControllerToPresent sourceView:(nullable UIView *)sourceView sourceRect:(CGRect)rect {
+    [self presentPanModal:viewControllerToPresent sourceView:sourceView sourceRect:rect completion:nil];
 
 }
 
 - (void)presentPanModal:(UIViewController <HWPanModalPresentable> *)viewControllerToPresent {
 	[self presentPanModal:viewControllerToPresent sourceView:nil sourceRect:CGRectZero];
+}
+
+- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent completion:(void (^)(void))completion {
+    [self presentPanModal:viewControllerToPresent sourceView:nil sourceRect:CGRectZero completion:completion];
 }
 
 - (HWPanModalPresentationDelegate *)presentationDelegate {

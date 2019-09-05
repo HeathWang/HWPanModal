@@ -19,11 +19,28 @@
 	return [UIApplication sharedApplication].keyWindow.rootViewController.bottomLayoutGuide.length;
 }
 
-- (HWPanModalPresentationController *)presentedVC {
-	if ([self.presentationController isKindOfClass:HWPanModalPresentationController.class]) {
-		return (HWPanModalPresentationController *) self.presentationController;
-	}
-	return nil;
+- (HWPanModalPresentationController *)hw_presentedVC {
+    /*
+     * Fix iOS13 bug: if we access presentationController before present VC, this will lead `modalPresentationStyle` not working.
+     * refer to: https://github.com/HeathWang/HWPanModal/issues/27
+     * Apple Doc: If you have not yet presented the current view controller, accessing this property creates a presentation controller based on the current value in the modalPresentationStyle property.
+     */
+    if (@available(iOS 13, *)) {
+        if (self.presentingViewController) {
+            return [self hw_getPanModalPresentationController];
+        } else {
+            return nil;
+        }
+    } else {
+        return [self hw_getPanModalPresentationController];
+    }
+}
+
+- (HWPanModalPresentationController *)hw_getPanModalPresentationController {
+    if ([self.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
+        return (HWPanModalPresentationController *) self.presentationController;
+    }
+    return nil;
 }
 
 /**
@@ -50,8 +67,8 @@
    is adjusted in PanModalPresentationController
  */
 - (CGFloat)bottomYPos {
-	if (self.presentedVC.containerView) {
-		return self.presentedVC.containerView.bounds.size.height - [self topOffset];
+	if (self.hw_presentedVC.containerView) {
+		return self.hw_presentedVC.containerView.bounds.size.height - [self topOffset];
 	}
 	return self.view.bounds.size.height;
 }
@@ -70,7 +87,7 @@
 		{
 			[self.view layoutIfNeeded];
 
-            CGSize targetSize = CGSizeMake(self.presentedVC.containerView ? self.presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
+            CGSize targetSize = CGSizeMake(self.hw_presentedVC.containerView ? self.hw_presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
             CGFloat intrinsicHeight = [self.view systemLayoutSizeFittingSize:targetSize].height;
 			return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);
 		}

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) CGFloat bottomLayoutOffset;
 
-@property (nullable, nonatomic, strong, readonly) HWPanModalPresentationController *presentedVC;
+@property (nullable, nonatomic, strong, readonly) HWPanModalPresentationController *hw_presentedVC;
 
 @property (nonatomic, assign, readonly) CGFloat shortFormYPos;
 

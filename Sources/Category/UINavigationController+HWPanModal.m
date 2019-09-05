@@ -19,7 +19,7 @@
 }
 
 - (void)hw_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    [self hw_pushViewController:viewController animated:YES];
+    [self hw_pushViewController:viewController animated:animated];
     [self hw_panModalSetNeedsLayoutUpdate];
 }
 

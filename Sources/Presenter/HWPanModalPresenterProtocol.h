@@ -16,21 +16,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) BOOL isPanModalPresented;
 /**
- * 这里我们将实现UIViewControllerTransitioningDelegate协议的delegate通过runtime存入
- * 到viewControllerToPresent中。
- * use runtime to store this prop to presentedVC
+ * 这里我们将实现UIViewControllerTransitioningDelegate协议的delegate通过runtime存入到viewControllerToPresent中。
+ * use runtime to store this prop to hw_presentedVC
  */
 @property (nonnull, nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
 
 /**
  * Note: This method ONLY for iPad, like UIPopoverPresentationController.
  */
-- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent sourceView:(nullable UIView *)sourceView sourceRect:(CGRect)rect;
+- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent
+             sourceView:(nullable UIView *)sourceView
+             sourceRect:(CGRect)rect;
+
+- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent
+             sourceView:(nullable UIView *)sourceView
+             sourceRect:(CGRect)rect
+             completion:(void (^ __nullable)(void))completion;
 
 /**
  * Present the Controller from bottom.
  */
 - (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent;
+
+- (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent
+             completion:(void (^ __nullable)(void))completion;
 
 @end
 

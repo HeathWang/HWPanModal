@@ -57,7 +57,9 @@
     if (demoTypeModel.action == HWActionTypePush) {
         [self.navigationController pushViewController:[demoTypeModel.targetClass new] animated:YES];
     } else {
-        [self presentPanModal:[[demoTypeModel.targetClass alloc] init]];
+        [self presentPanModal:[[demoTypeModel.targetClass alloc] init] completion:^{
+            
+        }];
     }
         
 }
