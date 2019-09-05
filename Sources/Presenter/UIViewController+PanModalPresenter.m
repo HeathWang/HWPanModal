@@ -18,7 +18,7 @@
 - (void)presentPanModal:(UIViewController<HWPanModalPresentable> *)viewControllerToPresent sourceView:(UIView *)sourceView sourceRect:(CGRect)rect completion:(void (^)(void))completion {
     
     HWPanModalPresentationDelegate *delegate = [HWPanModalPresentationDelegate new];
-    viewControllerToPresent.presentationDelegate = delegate;
+    viewControllerToPresent.hw_panModalPresentationDelegate = delegate;
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad &&
         (sourceView && !CGRectEqualToRect(rect, CGRectZero))) {
@@ -52,12 +52,12 @@
     [self presentPanModal:viewControllerToPresent sourceView:nil sourceRect:CGRectZero completion:completion];
 }
 
-- (HWPanModalPresentationDelegate *)presentationDelegate {
+- (HWPanModalPresentationDelegate *)hw_panModalPresentationDelegate {
 	return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setPresentationDelegate:(HWPanModalPresentationDelegate *)presentationDelegate {
-	objc_setAssociatedObject(self, @selector(presentationDelegate), presentationDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setHw_panModalPresentationDelegate:(HWPanModalPresentationDelegate *)hw_panModalPresentationDelegate {
+	objc_setAssociatedObject(self, @selector(hw_panModalPresentationDelegate), hw_panModalPresentationDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 

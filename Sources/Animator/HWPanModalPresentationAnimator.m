@@ -127,7 +127,6 @@
 	if (!fromVC && !toVC)
 		return;
 
-    
     [self beginAppearanceTransitionForController:fromVC isAppearing:NO animated:YES];
 	[toVC beginAppearanceTransition:YES animated:YES];
 
@@ -225,16 +224,16 @@
 
 #pragma mark - private method
 
-- (void)beginAppearanceTransitionForController:(UIViewController *)VC isAppearing:(BOOL)isAppearing animated:(BOOL)animated {
+- (void)beginAppearanceTransitionForController:(UIViewController *)viewController isAppearing:(BOOL)isAppearing animated:(BOOL)animated {
     // Fix `The unbalanced calls to begin/end appearance transitions` warning.
-    if (![VC isKindOfClass:UINavigationController.class]) {
-        [VC beginAppearanceTransition:isAppearing animated:animated];
+    if (![viewController isKindOfClass:UINavigationController.class]) {
+        [viewController beginAppearanceTransition:isAppearing animated:animated];
     }
 }
 
-- (void)endAppearanceTransitionForController:(UIViewController *)VC {
-    if (![VC isKindOfClass:UINavigationController.class]) {
-        [VC endAppearanceTransition];
+- (void)endAppearanceTransitionForController:(UIViewController *)viewController {
+    if (![viewController isKindOfClass:UINavigationController.class]) {
+        [viewController endAppearanceTransition];
     }
 }
 

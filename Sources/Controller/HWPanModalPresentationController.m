@@ -669,7 +669,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	switch (recognizer.state) {
 		case UIGestureRecognizerStateBegan:
 		{
-			self.presentedViewController.presentationDelegate.interactive = YES;
+			self.presentedViewController.hw_panModalPresentationDelegate.interactive = YES;
             [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
 		}
 			break;
@@ -682,7 +682,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
                 [[self interactiveAnimator] cancelInteractiveTransition];
             }
 
-			self.presentedViewController.presentationDelegate.interactive = NO;
+			self.presentedViewController.hw_panModalPresentationDelegate.interactive = NO;
 		}
 			break;
 		case UIGestureRecognizerStateChanged:
@@ -835,7 +835,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (HWPanModalInteractiveAnimator *)interactiveAnimator {
-	HWPanModalPresentationDelegate *presentationDelegate = self.presentedViewController.presentationDelegate;
+	HWPanModalPresentationDelegate *presentationDelegate = self.presentedViewController.hw_panModalPresentationDelegate;
 	return presentationDelegate.interactiveDismissalAnimator;
 }
 

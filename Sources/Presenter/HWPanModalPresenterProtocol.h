@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 这里我们将实现UIViewControllerTransitioningDelegate协议的delegate通过runtime存入到viewControllerToPresent中。
  * use runtime to store this prop to hw_presentedVC
  */
-@property (nonnull, nonatomic, strong) HWPanModalPresentationDelegate *presentationDelegate;
+@property (nonnull, nonatomic, strong) HWPanModalPresentationDelegate *hw_panModalPresentationDelegate;
 
 /**
  * Note: This method ONLY for iPad, like UIPopoverPresentationController.
