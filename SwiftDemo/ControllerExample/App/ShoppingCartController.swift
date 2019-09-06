@@ -26,6 +26,10 @@ class ShoppingCartViewController: UIViewController {
         view.addGestureRecognizer(tapGes)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @objc func didTapAction() {
         dismiss(animated: true, completion: nil)
     }
@@ -37,8 +41,8 @@ extension ShoppingCartViewController {
         return PanModalHeight(type: .content, height: 512)
     }
     
-    override func shouldAnimatePresentingVC() -> Bool {
-        return true
+    override func presentingVCAnimationStyle() -> PresentingViewControllerAnimationStyle {
+        return .shoppingCart
     }
     
     override func showDragIndicator() -> Bool {
@@ -46,7 +50,7 @@ extension ShoppingCartViewController {
     }
     
     override func transitionDuration() -> TimeInterval {
-        return 1.2
+        return 1.0
     }
     
     override func springDamping() -> CGFloat {

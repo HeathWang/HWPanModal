@@ -19,6 +19,10 @@ class MyCustomAnimationViewController: UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0.600, green: 1.000, blue: 0.600, alpha: 1)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension MyCustomAnimationViewController {
@@ -31,18 +35,14 @@ extension MyCustomAnimationViewController {
         return 0
     }
     
-    override func shouldAnimatePresentingVC() -> Bool {
-        return true
+    override func presentingVCAnimationStyle() -> PresentingViewControllerAnimationStyle {
+        return .custom
     }
     
     override func customPresentingVCAnimation() -> PanModalPresentingViewControllerAnimatedTransitioning? {
         return customAnimation
     }
     
-    override func panModalGestureRecognizer(_ panGestureRecognizer: UIPanGestureRecognizer, dismissPercent percent: CGFloat) {
-        let scale = 0.9 + percent * 0.1
-        presentingViewController?.view.transform = CGAffineTransform(scaleX: scale, y: scale)
-    }
 }
 
 fileprivate class MyCustomAnimation: NSObject, PanModalPresentingViewControllerAnimatedTransitioning {
@@ -56,11 +56,8 @@ fileprivate class MyCustomAnimation: NSObject, PanModalPresentingViewControllerA
     }
     
     func dismissTransition(context transitionContext: PanModalPresentingViewControllerContextTransitioning) {
-        let duration = transitionContext.mainTransitionDuration()
         let VC = transitionContext.viewController(forKey: .to)
-        UIView.animate(withDuration: duration) {
-            VC?.view.transform = CGAffineTransform.identity
-        }
+        VC?.view.transform = CGAffineTransform.identity
     }
     
 }
