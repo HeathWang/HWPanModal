@@ -13,7 +13,9 @@
     NSTimeInterval duration = [context mainTransitionDuration];
     UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        fromVC.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        CGFloat scale = 1 - statusBarHeight * 2 / CGRectGetHeight(fromVC.view.bounds);
+        fromVC.view.transform = CGAffineTransformMakeScale(scale, scale);
     } completion:^(BOOL finished) {
 
     }];

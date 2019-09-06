@@ -90,6 +90,7 @@
 		[fromVC endAppearanceTransition];
         [self endAppearanceTransitionForController:toVC];
 		[context completeTransition:completion];
+
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
         }

@@ -35,6 +35,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - HWPanModalPresentable
 
 
@@ -55,7 +59,7 @@
 }
 
 - (CGFloat)springDamping {
-    return 1;
+    return 0.95;
 }
 
 @end
