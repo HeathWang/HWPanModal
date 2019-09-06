@@ -10,6 +10,9 @@
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanContainerView.h"
 #import "UIView+HW_Frame.h"
+#import "HWPageSheetPresentingAnimation.h"
+#import "HWShoppingCartPresentingAnimation.h"
+#import "HWPanModalPresentationDelegate.h"
 
 @interface HWPresentingVCTransitionContext : NSObject <HWPresentingViewControllerContextTransitioning>
 
@@ -20,7 +23,6 @@
 
 - (instancetype)initWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC duration:(NSTimeInterval)duration containerView:(UIView *)containerView;
 
-
 @end
 
 @interface HWPanModalPresentationAnimator ()
@@ -29,22 +31,24 @@
 
 @property (nullable, nonatomic, strong) UISelectionFeedbackGenerator *feedbackGenerator API_AVAILABLE(ios(10.0));
 @property (nonatomic, strong) HWPresentingVCTransitionContext *presentingVCTransitionContext;
+@property (nonatomic, assign) PanModalInteractiveMode interactiveMode;
 
 @end
 
 @implementation HWPanModalPresentationAnimator
 
-- (instancetype)initWithTransitionStyle:(TransitionStyle)transitionStyle {
+- (instancetype)initWithTransitionStyle:(TransitionStyle)transitionStyle interactiveMode:(PanModalInteractiveMode)mode {
 	self = [super init];
 	if (self) {
 		_transitionStyle = transitionStyle;
+		_interactiveMode = mode;
 		if (transitionStyle == TransitionStylePresentation) {
-            if (@available(iOS 10.0, *)) {
-                _feedbackGenerator = [UISelectionFeedbackGenerator new];
-                [_feedbackGenerator prepare];
-            } else {
-                // Fallback on earlier versions
-            }
+			if (@available(iOS 10.0, *)) {
+				_feedbackGenerator = [UISelectionFeedbackGenerator new];
+				[_feedbackGenerator prepare];
+			} else {
+				// Fallback on earlier versions
+			}
 		}
 	}
 
@@ -69,7 +73,6 @@
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
 	CGFloat yPos = presentable.shortFormYPos;
-    NSTimeInterval duration = [presentable transitionDuration];
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
 	panView.frame = [context finalFrameForViewController:toVC];
@@ -91,30 +94,9 @@
             self.feedbackGenerator = nil;
         }
 	}];
-    
-    if ([presentable shouldAnimatePresentingVC]) {
-    	// use custom animation
-    	if ([presentable customPresentingVCAnimation]) {
-    		self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC
-    				duration:[presentable transitionDuration] containerView:context.containerView];
-			[[presentable customPresentingVCAnimation] presentAnimateTransition:self.presentingVCTransitionContext];
-		} else {
-			[UIView animateWithDuration:duration * 0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-				CATransform3D tran = CATransform3DIdentity;
-				tran.m34 = -1 / 1000.0f;
-				tran = CATransform3DRotate(tran, M_PI / 16, 1, 0, 0);
-				tran = CATransform3DTranslate(tran, 0, 0, -100);
-				fromVC.view.layer.transform = tran;
-			} completion:^(BOOL finished) {
 
-				[UIView animateWithDuration:duration * 0.6 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-					fromVC.view.layer.transform = CATransform3DMakeScale(0.93, 0.93, 1);
-				} completion:^(BOOL finished) {
-
-				}];
-			}];
-    	}
-    }
+	self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
+	[self presentAnimationForPresentingVC:presentable];
 }
 
 /**
@@ -133,24 +115,32 @@
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
 	UIView *panView = context.containerView.panContainerView ?: fromVC.view;
+    self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
 
+    // user toggle pan gesture to dismiss.
 	if ([context isInteractive]) {
+        
 		[HWPanModalAnimator smoothAnimate:^{
-			panView.hw_left = panView.hw_width;
-		} completion:^(BOOL completion) {
-			/**
-			 * 因为会有手势交互，所以需要判断是否cancel
-			 */
+			if (self.interactiveMode == PanModalInteractiveModeSideslip) {
+				panView.hw_left = panView.hw_width;
+			}
+
+			[self dismissAnimationForPresentingVC:presentable];
+		} duration:[presentable transitionDuration] completion:^(BOOL completion) {
+            // 因为会有手势交互，所以需要判断transitions是否cancel
 			BOOL finished = ![context transitionWasCancelled];
+
 			if (finished) {
-				[fromVC.view removeFromSuperview];
+                [fromVC.view removeFromSuperview];
                 [self endAppearanceTransitionForController:fromVC];
                 [toVC endAppearanceTransition];
 			}
-			[context completeTransition:finished];
+            [context completeTransition:finished];
+			
 		}];
 	} else {
 		[HWPanModalAnimator animate:^{
+			[self dismissAnimationForPresentingVC:presentable];
 			panView.hw_top = context.containerView.frame.size.height;
 		} config:presentable completion:^(BOOL completion) {
 			[fromVC.view removeFromSuperview];
@@ -160,25 +150,27 @@
 		}];
 	}
 
-	if ([presentable shouldAnimatePresentingVC]) {
+}
 
-		if ([presentable customPresentingVCAnimation]) {
-			self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
-			[[presentable customPresentingVCAnimation] dismissAnimateTransition:self.presentingVCTransitionContext];
-		} else {
-			[UIView animateWithDuration:[presentable transitionDuration] * 0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-				toVC.view.layer.transform = CATransform3DIdentity;
-			} completion:^(BOOL finished) {
+#pragma mark - presenting VC animation
 
-			}];
-		}
+- (void)presentAnimationForPresentingVC:(UIViewController<HWPanModalPresentable> *)presentable {
+	id<HWPresentingViewControllerAnimatedTransitioning> presentingAnimation = [self presentingVCAnimation:presentable];
+	if (presentingAnimation) {
+		[presentingAnimation presentAnimateTransition:self.presentingVCTransitionContext];
 	}
 }
 
-- (UIViewController<HWPanModalPresentable> *)panModalViewController:(id<UIViewControllerContextTransitioning>)context {
+- (void)dismissAnimationForPresentingVC:(UIViewController<HWPanModalPresentable> *)presentable {
+    id<HWPresentingViewControllerAnimatedTransitioning> presentingAnimation = [self presentingVCAnimation:presentable];
+    if (presentingAnimation) {
+        [presentingAnimation dismissAnimateTransition:self.presentingVCTransitionContext];
+    }
+}
+
+- (UIViewController <HWPanModalPresentable> *)panModalViewController:(id <UIViewControllerContextTransitioning>)context {
 	switch (self.transitionStyle) {
-		case TransitionStylePresentation:
-		{
+		case TransitionStylePresentation: {
 			UIViewController *controller = [context viewControllerForKey:UITransitionContextToViewControllerKey];
 			if ([controller conformsToProtocol:@protocol(HWPanModalPresentable)]) {
 				return (UIViewController <HWPanModalPresentable> *) controller;
@@ -186,8 +178,7 @@
 				return nil;
 			}
 		}
-		case TransitionStyleDismissal:
-		{
+		case TransitionStyleDismissal: {
 			UIViewController *controller = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
 			if ([controller conformsToProtocol:@protocol(HWPanModalPresentable)]) {
 				return (UIViewController <HWPanModalPresentable> *) controller;
@@ -220,6 +211,21 @@
 		return [controller transitionDuration];
 	}
 	return kTransitionDuration;
+}
+
+#pragma mark - presenting animated transition
+
+- (id<HWPresentingViewControllerAnimatedTransitioning>)presentingVCAnimation:(UIViewController<HWPanModalPresentable> *)presentable {
+	switch ([presentable presentingVCAnimationStyle]) {
+		case PresentingViewControllerAnimationStylePageSheet:
+			return [HWPageSheetPresentingAnimation new];
+		case PresentingViewControllerAnimationStyleShoppingCart:
+			return [HWShoppingCartPresentingAnimation new];
+		case PresentingViewControllerAnimationStyleCustom:
+			return [presentable customPresentingVCAnimation];
+		default:
+			return nil;
+	}
 }
 
 #pragma mark - private method

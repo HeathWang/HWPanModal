@@ -86,6 +86,10 @@
 	return NO;
 }
 
+- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+	return PresentingViewControllerAnimationStyleNone;
+}
+
 - (BOOL)shouldAnimatePresentingVC {
     return NO;
 }

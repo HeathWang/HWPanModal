@@ -39,17 +39,16 @@
 }
 
 
-- (BOOL)shouldAnimatePresentingVC {
+- (BOOL)allowScreenEdgeInteractive {
     return YES;
+}
+
+- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+    return PresentingViewControllerAnimationStyleCustom;
 }
 
 - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {
     return self.customAnimation;
-}
-
-- (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent {
-    CGFloat scale = 0.9 + percent * 0.1;
-    self.presentingViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
 }
 
 - (HWMyCustomAnimation *)customAnimation {
@@ -64,9 +63,9 @@
 @implementation HWMyCustomAnimation
 
 
-- (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
-    NSTimeInterval duration = [transitionContext mainTransitionDuration];
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+- (void)presentAnimateTransition:(nonnull id <HWPresentingViewControllerContextTransitioning>)context {
+    NSTimeInterval duration = [context mainTransitionDuration];
+    UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         fromVC.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
     } completion:^(BOOL finished) {
@@ -74,12 +73,10 @@
     }];
 }
 
-- (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
-    NSTimeInterval duration = [transitionContext mainTransitionDuration];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    [UIView animateWithDuration:duration animations:^{
-        toVC.view.transform = CGAffineTransformIdentity;
-    }];
+- (void)dismissAnimateTransition:(nonnull id <HWPresentingViewControllerContextTransitioning>)context {
+    // no need for using animating block.
+    UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
+    toVC.view.transform = CGAffineTransformIdentity;
 }
 
 @end

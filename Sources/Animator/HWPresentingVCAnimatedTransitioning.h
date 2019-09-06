@@ -36,11 +36,11 @@ NS_SWIFT_NAME(PanModalPresentingViewControllerAnimatedTransitioning)
 /**
  * Write you custom animation when present.
  */
-- (void)presentAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(presentTransition(context:));
+- (void)presentAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)context NS_SWIFT_NAME(presentTransition(context:));
 /**
  * Write you custom animation when dismiss.
  */
-- (void)dismissAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)transitionContext NS_SWIFT_NAME(dismissTransition(context:));
+- (void)dismissAnimateTransition:(nonnull id<HWPresentingViewControllerContextTransitioning>)context NS_SWIFT_NAME(dismissTransition(context:));
 
 @end
 

@@ -10,7 +10,7 @@
 @implementation HWPanModalInteractiveAnimator
 
 - (CGFloat)completionSpeed {
-    return 0.4;
+    return 0.618;
 }
 
 @end

@@ -342,8 +342,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (void)adjustToYPos:(CGFloat)yPos {
-	self.presentedView.hw_top = MAX(yPos, self.anchoredYPosition);
-
+    self.presentedView.hw_top = MAX(yPos, self.anchoredYPosition);
+    
     // change dim background starting from shortFormYPosition.
 	if (self.presentedView.frame.origin.y >= self.shortFormYPosition) {
         
@@ -354,13 +354,16 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		self.backgroundView.percent = 1 - percent;
 
 		[self.presentable panModalGestureRecognizer:self.panGestureRecognizer dismissPercent:MIN(percent, 1)];
+		if (self.presentedViewController.isBeingDismissed) {
+            [[self interactiveAnimator] updateInteractiveTransition:MIN(percent, 1)];
+        }
 	} else {
 		self.backgroundView.dimState = DimStateMax;
 	}
 }
 
 /**
- * Caluclates & stores the layout anchor points & options
+ * Calculates & stores the layout anchor points & options
  */
 - (void)configureViewLayout {
     
@@ -502,10 +505,20 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			case UIGestureRecognizerStateChanged: {
 				[self respondToPanGestureRecognizer:panGestureRecognizer];
 
-				if (self.presentedView.frame.origin.y == self.anchoredYPosition && self.extendsPanScrolling) {
+				if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+				    // check if toggle dismiss action
+				    if ([[self presentable] presentingVCAnimationStyle] > PresentingViewControllerAnimationStyleNone &&
+                        velocity.y > 0 &&
+                        (self.presentedView.frame.origin.y > self.shortFormYPosition || HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.shortFormYPosition))) {
+                        [self dismissPresentedViewControllerIsInteractive:YES mode:PanModalInteractiveModeDragDown];
+                    }
+				}
+
+				if (HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.anchoredYPosition) && self.extendsPanScrolling) {
 					[self.presentable willTransitionToState:PresentationStateLong];
 				}
 
+				// update drag indicator
 				if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
 					if (velocity.y > 0) {
 						[self.dragIndicatorView didChangeToState:HWIndicatorStatePullDown];
@@ -516,7 +529,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 			}
 				break;
-			default: {
+            case UIGestureRecognizerStateEnded:
+            case UIGestureRecognizerStateCancelled:
+            case UIGestureRecognizerStateFailed: {
+
 				/**
 				 * pan recognizer结束
 				 * 根据velocity(速度)，当velocity.y < 0，说明用户在向上拖拽view；当velocity.y > 0，向下拖拽
@@ -528,26 +544,40 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				if ([self isVelocityWithinSensitivityRange:velocity.y]) {
 					if (velocity.y < 0) {
 						[self transitionToState:PresentationStateLong];
-					} else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @(self.containerView.frame.size.height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
+                        [self cancelInteractiveTransition];
+                    } else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @(self.containerView.frame.size.height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
 							![self.presentable allowsDragToDismiss]) {
 						[self transitionToState:PresentationStateShort];
-					} else {
-						[self dismissPresentedViewController];
-					}
+                        [self cancelInteractiveTransition];
+                    } else {
+                        if (self.presentedViewController.isBeingDismissed) {
+                            [self finishInteractiveTransition];
+                        } else {
+                            [self dismissPresentedViewControllerIsInteractive:NO mode:PanModalInteractiveModeNone];
+                        }
+                    }
 				} else {
 					CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.containerView.frame.size.height), @(self.shortFormYPosition), @(self.longFormYPosition)]];
 
 					if (HW_TWO_FLOAT_IS_EQUAL(position, self.longFormYPosition)) {
 						[self transitionToState:PresentationStateLong];
-					} else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
+                        [self cancelInteractiveTransition];
+                    } else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
 						[self transitionToState:PresentationStateShort];
-					} else {
-						[self dismissPresentedViewController];
-					}
+                        [self cancelInteractiveTransition];
+                    } else {
+                        
+                        if (self.presentedViewController.isBeingDismissed) {
+                            [self finishInteractiveTransition];
+                        } else {
+                            [self dismissPresentedViewControllerIsInteractive:NO mode:PanModalInteractiveModeNone];
+                        }
+                    }
 				}
 
 			}
 				break;
+            default: break;
 		}
 	} else {
 		switch (panGestureRecognizer.state) {
@@ -555,7 +585,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			case UIGestureRecognizerStateCancelled:
 			case UIGestureRecognizerStateFailed: {
 				[self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
-			}
+                [self cancelInteractiveTransition];
+            }
 				break;
 			default:
 				break;
@@ -571,6 +602,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 		return ![self shouldFailPanGestureRecognizer:panGestureRecognizer];
 	} else {
+	    // stop pan gesture working.
         panGestureRecognizer.enabled = NO;
 		panGestureRecognizer.enabled = YES;
 		return NO;
@@ -591,6 +623,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     if (scrollView) {
         shouldFail = scrollView.contentOffset.y > -MAX(scrollView.contentInset.top, 0);
 
+        // we want scroll the panScrollable, not the presentedView
         if (self.isPresentedViewAnchored && shouldFail) {
             CGPoint location = [panGestureRecognizer locationInView:self.presentedView];
             BOOL flag = CGRectContainsPoint(scrollView.frame, location) || scrollView.isScrolling;
@@ -653,8 +686,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	return result.floatValue;
 }
 
-- (void)dismissPresentedViewController {
-	[self.presentable panModalWillDismiss];
+- (void)dismissPresentedViewControllerIsInteractive:(BOOL)isInteractive mode:(PanModalInteractiveMode)mode {
+    self.presentedViewController.hw_panModalPresentationDelegate.interactive = isInteractive;
+    self.presentedViewController.hw_panModalPresentationDelegate.interactiveMode = mode;
+    [self.presentable panModalWillDismiss];
     [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
         [self.presentable panModalDidDismissed];
     }];
@@ -663,37 +698,32 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 #pragma mark - Screen Gesture enevt
 
 - (void)screenEdgeInteractiveAction:(UIScreenEdgePanGestureRecognizer *)recognizer {
-	CGPoint translation = [recognizer translationInView:recognizer.view];
-	CGFloat percent = translation.x / CGRectGetWidth(recognizer.view.bounds);
+    CGPoint translation = [recognizer translationInView:recognizer.view];
+    CGFloat percent = translation.x / CGRectGetWidth(recognizer.view.bounds);
 
-	switch (recognizer.state) {
-		case UIGestureRecognizerStateBegan:
-		{
-			self.presentedViewController.hw_panModalPresentationDelegate.interactive = YES;
-            [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
-		}
-			break;
-		case UIGestureRecognizerStateCancelled:
-		case UIGestureRecognizerStateEnded:
-		{
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan: {
+            [self dismissPresentedViewControllerIsInteractive:YES mode:PanModalInteractiveModeSideslip];
+        }
+            break;
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateEnded: {
             if (percent > 0.5) {
-                [[self interactiveAnimator] finishInteractiveTransition];
+                [self finishInteractiveTransition];
             } else {
-                [[self interactiveAnimator] cancelInteractiveTransition];
+                [self cancelInteractiveTransition];
             }
 
-			self.presentedViewController.hw_panModalPresentationDelegate.interactive = NO;
-		}
-			break;
-		case UIGestureRecognizerStateChanged:
-		{
+        }
+            break;
+        case UIGestureRecognizerStateChanged: {
 
-			[[self interactiveAnimator] updateInteractiveTransition:percent];
-		}
-			break;
-		default:
-			break;
-	}
+            [[self interactiveAnimator] updateInteractiveTransition:percent];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)checkEdgeInteractive {
@@ -707,6 +737,36 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 			self.screenGestureRecognizer.enabled = YES;
 		}
 	}
+}
+
+
+#pragma mark - interactive handle
+
+- (void)finishInteractiveTransition {
+    if (self.presentedViewController.isBeingDismissed) {
+        [[self interactiveAnimator] finishInteractiveTransition];
+
+        if (self.presentedViewController.hw_panModalPresentationDelegate.interactiveMode != PanModalInteractiveModeDragDown)
+            return;
+
+        if ([[self presentable] presentingVCAnimationStyle] > PresentingViewControllerAnimationStyleNone) {
+            [HWPanModalAnimator animate:^{
+                [self presentedView].hw_top = self.containerView.frame.size.height;
+                self.dragIndicatorView.alpha = 0;
+                self.backgroundView.dimState = DimStateOff;
+            } config:[self presentable] completion:^(BOOL completion) {
+
+            }];
+        }
+    }
+}
+
+- (void)cancelInteractiveTransition {
+    if (self.presentedViewController.isBeingDismissed) {
+        [[self interactiveAnimator] cancelInteractiveTransition];
+        self.presentedViewController.hw_panModalPresentationDelegate.interactiveMode = PanModalInteractiveModeNone;
+        self.presentedViewController.hw_panModalPresentationDelegate.interactive = NO;
+    }
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -850,7 +910,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		__weak typeof(self) wkSelf = self;
 		_backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
 			if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
-				[wkSelf dismissPresentedViewController];
+                [wkSelf dismissPresentedViewControllerIsInteractive:NO mode:PanModalInteractiveModeNone];
 			}
 		};
 	}

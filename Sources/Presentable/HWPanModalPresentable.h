@@ -18,6 +18,17 @@ typedef NS_ENUM(NSInteger, PresentationState) {
 	PresentationStateLong NS_SWIFT_NAME(long),
 };
 
+typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
+    // no animation for presentingVC
+    PresentingViewControllerAnimationStyleNone NS_SWIFT_NAME(none),
+    // page sheet animation, like iOS13 default modalPresentation style
+    PresentingViewControllerAnimationStylePageSheet NS_SWIFT_NAME(pageSheet),
+    // shopping cart animation, like jd/taobao shopping cart animation
+    PresentingViewControllerAnimationStyleShoppingCart NS_SWIFT_NAME(shoppingCart),
+    // make your own custom animation
+    PresentingViewControllerAnimationStyleCustom NS_SWIFT_NAME(custom),
+};
+
 typedef void(^AnimationBlockType)(void);
 typedef void(^AnimationCompletionType)(BOOL completion);
 
@@ -155,16 +166,25 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 #pragma mark - Custom presentingViewController animation
 
 /**
+ * Config presentingViewController animation style, this animations will work for present & dismiss.
+ * Default is `PresentingViewControllerAnimationStyleNone`.
+ * @return The animation style.
+ */
+- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle;
+
+/**
  * 是否对presentingViewController做动画效果，默认该效果类似淘宝/京东购物车凹陷效果
  * 默认为NO
  */
-- (BOOL)shouldAnimatePresentingVC;
+- (BOOL)shouldAnimatePresentingVC DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.3.6, please use `- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle` replaced.");
 
 /**
- * 自定义presenting ViewController转场动画
- * 注意要使自定义效果生效，shouldAnimatePresentingVC 必须返回YES
- * 默认转场效果为凹陷动画效果，如果该方法返回不为空，则使用自定义动画效果
- * 默认为nil
+ * 自定义presenting ViewController转场动画，默认为nil
+ * 注意：如果实现该方法并返回非空示例，要使该方法生效，`- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle`必须返回PresentingViewControllerAnimationStyleCustom
+ *
+ * custom presenting ViewController transition animation, default is nil
+ * Note: If you implement this method and return non nil value, You must implement  `- (PresentingViewControllerAnimationStyle)
+ * presentingVCAnimationStyle` and return PresentingViewControllerAnimationStyleCustom
  */
 - (nullable id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation;
 

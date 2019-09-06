@@ -42,8 +42,8 @@
     return PanModalHeightMake(PanModalHeightTypeContent, 512.5);
 }
 
-- (BOOL)shouldAnimatePresentingVC {
-    return YES;
+- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+    return PresentingViewControllerAnimationStyleShoppingCart;
 }
 
 - (BOOL)showDragIndicator {

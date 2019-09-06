@@ -21,11 +21,11 @@
 @implementation HWPanModalPresentationDelegate
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-	return self.presentationAnimator;
+	return [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStylePresentation interactiveMode:PanModalInteractiveModeNone];
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-	return self.dismissalAnimator;
+	return [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStyleDismissal interactiveMode:self.interactiveMode];
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
@@ -50,26 +50,11 @@
 
 #pragma mark - Getter
 
-- (HWPanModalPresentationAnimator *)presentationAnimator {
-	if (!_presentationAnimator) {
-		_presentationAnimator = [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStylePresentation];
-	}
-	return _presentationAnimator;
-}
-
-- (HWPanModalPresentationAnimator *)dismissalAnimator {
-	if (!_dismissalAnimator) {
-		_dismissalAnimator = [[HWPanModalPresentationAnimator alloc] initWithTransitionStyle:TransitionStyleDismissal];
-	}
-	return _dismissalAnimator;
-}
-
 - (HWPanModalInteractiveAnimator *)interactiveDismissalAnimator {
 	if (!_interactiveDismissalAnimator) {
 		_interactiveDismissalAnimator = [[HWPanModalInteractiveAnimator alloc] init];
 	}
 	return _interactiveDismissalAnimator;
 }
-
 
 @end
