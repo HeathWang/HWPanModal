@@ -29,9 +29,6 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
     PresentingViewControllerAnimationStyleCustom NS_SWIFT_NAME(custom),
 };
 
-typedef void(^AnimationBlockType)(void);
-typedef void(^AnimationCompletionType)(BOOL completion);
-
 /**
  * HWPanModalPresentable为present配置协议
  * 默认情况下无需实现，只需Controller conforms 该协议
@@ -49,7 +46,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * determine ScrollView scrollEnabled
- * 默认为YES
+ * default is YES
  */
 - (BOOL)isPanScrollEnabled;
 
@@ -58,6 +55,12 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  * Use `panModalSetNeedsLayoutUpdate()` when updating insets.
  */
 - (UIEdgeInsets)scrollIndicatorInsets;
+
+/**
+ * A Boolean value that controls whether the scrollable horizontal scroll indicator is visible.
+ * default is YES.
+ */
+- (BOOL)showsScrollableHorizontalScrollIndicator;
 
 /**
  * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
@@ -75,7 +78,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
 
 /**
  * 当pan状态为short时候的高度
- * 默认状态下，shortFormHeight = longFormHeight
+ * default: shortFormHeight = longFormHeight
  */
 - (PanModalHeight)shortFormHeight;
 
@@ -163,7 +166,7 @@ typedef void(^AnimationCompletionType)(BOOL completion);
  */
 - (BOOL)isHapticFeedbackEnabled;
 
-#pragma mark - Custom presentingViewController animation
+#pragma mark - Customize presentingViewController animation
 
 /**
  * Config presentingViewController animation style, this animations will work for present & dismiss.

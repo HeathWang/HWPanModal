@@ -23,6 +23,7 @@
 #import "HWColorBlocksViewController.h"
 #import "HWTextInputViewController.h"
 #import "HWIndicatorViewController.h"
+#import "HWFetchDataViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -72,7 +73,8 @@
     HWDemoTypeModel *pickerDemo = [HWDemoTypeModel modelWithTitle:@"Picker" targetClass:HWPickerViewController.class];
     HWDemoTypeModel *shareDemo = [HWDemoTypeModel modelWithTitle:@"Share - 网易云音乐" targetClass:HWShareViewController.class];
     HWDemoTypeModel *shoppingDemo = [HWDemoTypeModel modelWithTitle:@"Shopping - JD" targetClass:HWShoppingCartViewController.class];
-    return @[navDemo, pickerDemo, shareDemo, shoppingDemo];
+    HWDemoTypeModel *fetchDataDemo = [HWDemoTypeModel modelWithTitle:@"Fetch Data & reload" targetClass:HWFetchDataViewController.class];
+    return @[navDemo, pickerDemo, shareDemo, shoppingDemo, fetchDataDemo];
 }
 
 @end

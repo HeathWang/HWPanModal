@@ -163,7 +163,7 @@ Some guys want to animate Presenting VC when present/dismiss.
     
     
     - (void)presentAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
-        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        NSTimeInterval duration = [transitionContext transitionDuration];
         UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
         // replace it.
         [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -174,7 +174,7 @@ Some guys want to animate Presenting VC when present/dismiss.
     }
     
     - (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
-        NSTimeInterval duration = [transitionContext mainTransitionDuration];
+        NSTimeInterval duration = [transitionContext transitionDuration];
         UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         // replace it.
         [UIView animateWithDuration:duration animations:^{

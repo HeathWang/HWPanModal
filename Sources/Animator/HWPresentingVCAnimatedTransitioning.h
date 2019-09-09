@@ -21,7 +21,7 @@ NS_SWIFT_NAME(PanModalPresentingViewControllerContextTransitioning)
  * The Animation duration gets from ViewController which conforms HWPanModalPresentable
  * - (NSTimeInterval)transitionDuration;
  */
-- (NSTimeInterval)mainTransitionDuration;
+- (NSTimeInterval)transitionDuration;
 
 /**
  * Transition container, from UIViewControllerContextTransitioning protocol

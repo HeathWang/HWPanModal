@@ -28,6 +28,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.600 green:1.000 blue:0.600 alpha:1.00];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return  UIStatusBarStyleLightContent;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)longFormHeight {
@@ -64,7 +68,7 @@
 
 
 - (void)presentAnimateTransition:(nonnull id <HWPresentingViewControllerContextTransitioning>)context {
-    NSTimeInterval duration = [context mainTransitionDuration];
+    NSTimeInterval duration = [context transitionDuration];
     UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         fromVC.view.transform = CGAffineTransformMakeScale(0.9, 0.9);

@@ -270,7 +270,7 @@
 	return nil;
 }
 
-- (NSTimeInterval)mainTransitionDuration {
+- (NSTimeInterval)transitionDuration {
 	return self.duration;
 }
 

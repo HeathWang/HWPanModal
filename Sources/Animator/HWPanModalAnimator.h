@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^AnimationBlockType)(void);
+typedef void(^AnimationCompletionType)(BOOL completion);
+
 static NSTimeInterval kTransitionDuration = 0.5;
 
 @interface HWPanModalAnimator : NSObject

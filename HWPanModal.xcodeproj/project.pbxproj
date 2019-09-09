@@ -22,6 +22,8 @@
 		7E20ABB4231F621D005941C5 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */; };
 		7E20ABB7231F6B37005941C5 /* ColorBlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB6231F6B37005941C5 /* ColorBlockController.swift */; };
 		7E20ABB9231F8B21005941C5 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20ABB8231F8B21005941C5 /* BlurController.swift */; };
+		7E2424992325FECE00421947 /* HWFetchDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2424982325FECE00421947 /* HWFetchDataViewController.m */; };
+		7E24249C23262CB000421947 /* FetchAndReload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24249B23262CB000421947 /* FetchAndReload.swift */; };
 		7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */; };
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
@@ -82,6 +84,9 @@
 		7E20ABB3231F621D005941C5 /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		7E20ABB6231F6B37005941C5 /* ColorBlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlockController.swift; sourceTree = "<group>"; };
 		7E20ABB8231F8B21005941C5 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
+		7E2424972325FECE00421947 /* HWFetchDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWFetchDataViewController.h; sourceTree = "<group>"; };
+		7E2424982325FECE00421947 /* HWFetchDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWFetchDataViewController.m; sourceTree = "<group>"; };
+		7E24249B23262CB000421947 /* FetchAndReload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAndReload.swift; sourceTree = "<group>"; };
 		7E300ADC230EB51C003FBFE7 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E300ADE230EB51C003FBFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E300AE0230EB51C003FBFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +309,23 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
+		7E2424962325FEB000421947 /* FetchData */ = {
+			isa = PBXGroup;
+			children = (
+				7E2424972325FECE00421947 /* HWFetchDataViewController.h */,
+				7E2424982325FECE00421947 /* HWFetchDataViewController.m */,
+			);
+			path = FetchData;
+			sourceTree = "<group>";
+		};
+		7E24249A23262C9B00421947 /* Fetch data */ = {
+			isa = PBXGroup;
+			children = (
+				7E24249B23262CB000421947 /* FetchAndReload.swift */,
+			);
+			path = "Fetch data";
+			sourceTree = "<group>";
+		};
 		7E2CD398231FA75700BA8B09 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +360,7 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E24249A23262C9B00421947 /* Fetch data */,
 				7E2CD398231FA75700BA8B09 /* App */,
 				7E20ABBA231F8EA7005941C5 /* Indicator */,
 				7E20ABB5231F6B0A005941C5 /* Blur */,
@@ -459,6 +482,7 @@
 		7EA0F5BA230D63D300ED20D2 /* PanControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E2424962325FEB000421947 /* FetchData */,
 				7EA0F5BB230D63D300ED20D2 /* CustomPresentingVC */,
 				7EA0F5BE230D63D300ED20D2 /* Dynamic */,
 				7EA0F5C1230D63D300ED20D2 /* App */,
@@ -940,6 +964,7 @@
 				7E300ADF230EB51C003FBFE7 /* AppDelegate.swift in Sources */,
 				7E20ABA6231E82A4005941C5 /* GroupStackedController.swift in Sources */,
 				7E1822B3231FA79D0049A076 /* ShoppingCartController.swift in Sources */,
+				7E24249C23262CB000421947 /* FetchAndReload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +984,7 @@
 				7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */,
 				7EA0F60C230D63D300ED20D2 /* HWTextInputViewController.m in Sources */,
 				7EA0F612230D63D300ED20D2 /* HWBlurViewController.m in Sources */,
+				7E2424992325FECE00421947 /* HWFetchDataViewController.m in Sources */,
 				7EA0F608230D63D300ED20D2 /* HWPickerViewController.m in Sources */,
 				7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */,
 				7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */,

@@ -55,11 +55,11 @@
 }
 
 - (NSTimeInterval)transitionDuration {
-    return 1.0;
+    return 0.8;
 }
 
 - (CGFloat)springDamping {
-    return 0.95;
+    return 0.9;
 }
 
 @end

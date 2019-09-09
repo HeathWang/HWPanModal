@@ -25,7 +25,7 @@
 - (PanModalHeight)longFormHeight {
 	if ([self panScrollable]) {
 		[[self panScrollable] layoutIfNeeded];
-		return PanModalHeightMake(PanModalHeightTypeContent, [self panScrollable].contentSize.height);
+		return PanModalHeightMake(PanModalHeightTypeContent, MAX([self panScrollable].contentSize.height, [self panScrollable].bounds.size.height));
 	} else {
 		return PanModalHeightMake(PanModalHeightTypeMax, 0);
 	}
@@ -59,6 +59,10 @@
 - (UIEdgeInsets)scrollIndicatorInsets {
 	CGFloat top = [self shouldRoundTopCorners] ? [self cornerRadius] : 0;
 	return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);
+}
+
+- (BOOL)showsScrollableHorizontalScrollIndicator {
+	return YES;
 }
 
 - (BOOL)anchorModalToLongForm {

@@ -37,8 +37,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, assign) BOOL anchorModalToLongForm;
 
-@property (nonatomic, assign) BOOL originalScrollableShowsVerticalScrollIndicator;
-
 @property (nonatomic, assign) CGFloat scrollViewYOffset;
 
 @property (nonatomic, assign) CGFloat shortFormYPosition;
@@ -374,7 +372,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         self.longFormYPosition = layoutPresentable.longFormYPos;
         self.anchorModalToLongForm = [layoutPresentable anchorModalToLongForm];
         self.extendsPanScrolling = [layoutPresentable allowsExtendedPanScrolling];
-        self.originalScrollableShowsVerticalScrollIndicator = [layoutPresentable panScrollable].showsVerticalScrollIndicator;
 
         self.containerView.userInteractionEnabled = [layoutPresentable isUserInteractionEnabled];
     }
@@ -404,8 +401,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 */
 - (void)trackScrolling:(UIScrollView *)scrollView {
     self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
-	
-    scrollView.showsVerticalScrollIndicator = self.originalScrollableShowsVerticalScrollIndicator ? YES : NO;
+    scrollView.showsVerticalScrollIndicator = [[self presentable] showsScrollableHorizontalScrollIndicator];
 }
 
 /**

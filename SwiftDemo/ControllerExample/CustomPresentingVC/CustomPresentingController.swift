@@ -3,7 +3,7 @@
 //  SwiftDemo
 //
 //  Created by heath wang on 2019/9/4.
-//  Copyright © 2019 wangcongling. All rights reserved.
+//  Copyright © 2019 Heath Wang. All rights reserved.
 //
 
 import Foundation
@@ -48,7 +48,7 @@ extension MyCustomAnimationViewController {
 fileprivate class MyCustomAnimation: NSObject, PanModalPresentingViewControllerAnimatedTransitioning {
     
     func presentTransition(context transitionContext: PanModalPresentingViewControllerContextTransitioning) {
-        let duration = transitionContext.mainTransitionDuration()
+        let duration = transitionContext.transitionDuration()
         let VC = transitionContext.viewController(forKey: .from)
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             VC?.view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)

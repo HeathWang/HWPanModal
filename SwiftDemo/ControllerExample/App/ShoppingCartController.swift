@@ -3,7 +3,7 @@
 //  SwiftDemo
 //
 //  Created by heath wang on 2019/9/4.
-//  Copyright © 2019 wangcongling. All rights reserved.
+//  Copyright © 2019 Heath Wang. All rights reserved.
 //
 
 import Foundation
