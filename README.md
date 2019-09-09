@@ -174,12 +174,9 @@ Some guys want to animate Presenting VC when present/dismiss.
     }
     
     - (void)dismissAnimateTransition:(id<HWPresentingViewControllerContextTransitioning>)transitionContext {
-        NSTimeInterval duration = [transitionContext transitionDuration];
-        UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-        // replace it.
-        [UIView animateWithDuration:duration animations:^{
-            toVC.view.transform = CGAffineTransformIdentity;
-        }];
+        // no need for using animating block.
+        UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
+        toVC.view.transform = CGAffineTransformIdentity;
     }
     
     @end
@@ -187,8 +184,9 @@ Some guys want to animate Presenting VC when present/dismiss.
 1. Overwrite below two method.
 
     ```Objective-C
-    - (BOOL)shouldAnimatePresentingVC {
-        return YES;
+    
+    - (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+        return PresentingViewControllerAnimationStyleCustom;
     }
     
     - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {

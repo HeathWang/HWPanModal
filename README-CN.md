@@ -163,8 +163,8 @@ pod 'HWPanModal', '~> 0.3.4'
 1. Overwrite below two method.
 
     ```Objective-C
-    - (BOOL)shouldAnimatePresentingVC {
-        return YES;
+    - (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+        return PresentingViewControllerAnimationStyleCustom;
     }
     
     - (id<HWPresentingViewControllerAnimatedTransitioning>)customPresentingVCAnimation {
