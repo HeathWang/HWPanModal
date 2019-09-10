@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)transitionToState:(PresentationState)state;
 
-- (void)setContentOffset:(CGPoint)offset;
+- (void)setScrollableContentOffset:(CGPoint)offset;
 
 @end
 

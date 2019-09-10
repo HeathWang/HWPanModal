@@ -1,7 +1,5 @@
 PODS:
-  - HWPanModal (0.3.6):
-    - KVOController
-  - KVOController (1.2.0)
+  - HWPanModal (0.4.1)
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
 
@@ -12,7 +10,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - KVOController
     - Masonry
     - SnapKit
 
@@ -21,8 +18,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  HWPanModal: da3eebd8e97914025bb472c958ff9fd0b9d14ef8
-  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  HWPanModal: b3540a3887a41e546de7cc559ec6870210dc02f2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 

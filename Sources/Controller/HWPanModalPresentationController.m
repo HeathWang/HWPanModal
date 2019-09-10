@@ -10,12 +10,12 @@
 #import "HWPanContainerView.h"
 #import "UIViewController+LayoutHelper.h"
 #import "HWPanModalAnimator.h"
-#import <KVOController/KVOController.h>
 #import "HWPanModalInteractiveAnimator.h"
 #import "HWPanModalPresentationDelegate.h"
 #import "UIViewController+PanModalPresenter.h"
 #import "HWPanIndicatorView.h"
 #import "UIView+HW_Frame.h"
+#import "KeyValueObserver.h"
 
 static CGFloat const kIndicatorYOffset = 5;
 static CGFloat const kSnapMovementSensitivity = 0.7;
@@ -60,6 +60,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 // keyboard handle
 @property (nonatomic, copy) NSDictionary *keyboardInfo;
+
+// kvo
+@property (nonatomic, strong) id observerToken;
 
 @end
 
@@ -156,10 +159,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)setNeedsLayoutUpdate {
 	[self configureViewLayout];
     [self updateBackgroundColor];
+	[self observeScrollable:[self.presentable panScrollable]];
 	[self adjustPresentedViewFrame];
-	[self checkEdgeInteractive];
-	[self observe:[self.presentable panScrollable]];
 	[self configureScrollViewInsets];
+    [self checkEdgeInteractive];
 }
 
 - (void)transitionToState:(PresentationState)state {
@@ -184,19 +187,18 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	self.currentPresentationState = state;
 }
 
-- (void)setContentOffset:(CGPoint)offset {
+- (void)setScrollableContentOffset:(CGPoint)offset {
 	if (![self.presentable panScrollable])
 		return;
 
 	UIScrollView *scrollView = [self.presentable panScrollable];
-	[self.KVOController unobserve:scrollView];
+	[self.observerToken unObserver];
 
 	[scrollView setContentOffset:offset animated:YES];
     // wait for animation finished.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self trackScrolling:scrollView];
-        
-        [self observe:scrollView];
+		[self observeScrollable:scrollView];
     });
 	
 }
@@ -379,20 +381,16 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 #pragma mark - UIScrollView handle
 
-- (void)observe:(UIScrollView *)scrollView {
+- (void)observeScrollable:(UIScrollView *)scrollView {
     
     if (!scrollView) {
+        // force set observerToken to nil, make sure to callback.
+        self.observerToken = nil;
         return;
     }
     
     self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
-
-	__weak typeof(self) wkSelf = self;
-	[self.KVOController observe:scrollView keyPath:kScrollViewKVOContentOffsetKey options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary<NSString *, id > *change) {
-		if (wkSelf.containerView != nil) {
-			[wkSelf didPanOnScrollView:object change:change];
-		}
-	}];
+    self.observerToken = [KeyValueObserver observeObject:scrollView keyPath:kScrollViewKVOContentOffsetKey target:self selector:@selector(didPanOnScrollViewChanged:) options:NSKeyValueObservingOptionOld];
 }
 
 /**
@@ -410,10 +408,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)haltScrolling:(UIScrollView *)scrollView {
 	[scrollView setContentOffset:CGPointMake(0, self.scrollViewYOffset) animated:NO];
 	scrollView.showsVerticalScrollIndicator = NO;
-
 }
 
-- (void)didPanOnScrollView:(UIScrollView *)scrollView change:(NSDictionary<NSKeyValueChangeKey, id> *)change {
+- (void)didPanOnScrollViewChanged:(NSDictionary<NSKeyValueChangeKey, id> *)change {
+
+	UIScrollView *scrollView = [[self presentable] panScrollable];
+	if (!scrollView) return;
 
 	if (!self.presentedViewController.isBeingDismissed && !self.presentedViewController.isBeingPresented) {
 
@@ -450,7 +450,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		 * 当present Controller，而且动画没有结束的时候，用户可能会对scrollView设置contentOffset
 		 * 首次用户滑动scrollView时，会因为scrollViewYOffset = 0而出现错位
 		 */
-		[self setContentOffset:scrollView.contentOffset];
+		 if (self.presentedViewController.isBeingPresented) {
+			 [self setScrollableContentOffset:scrollView.contentOffset];
+		 }
 	}
 }
 
@@ -725,16 +727,16 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)checkEdgeInteractive {
 	if ([self.presentedViewController isKindOfClass:UINavigationController.class]) {
 		UINavigationController *navigationController = (UINavigationController *) self.presentedViewController;
-		if ((navigationController.topViewController != navigationController.viewControllers.firstObject) &&
-			[[self presentable] allowScreenEdgeInteractive] &&
-			navigationController.viewControllers.count > 0) {
-			self.screenGestureRecognizer.enabled = NO;
-		} else if ([[self presentable] allowScreenEdgeInteractive]) {
+		if ([[self presentable] allowScreenEdgeInteractive] &&
+			navigationController.topViewController == navigationController.viewControllers.firstObject) {
 			self.screenGestureRecognizer.enabled = YES;
+		} else {
+			self.screenGestureRecognizer.enabled = NO;
 		}
+	} else {
+		self.screenGestureRecognizer.enabled = [[self presentable] allowScreenEdgeInteractive];
 	}
 }
-
 
 #pragma mark - interactive handle
 

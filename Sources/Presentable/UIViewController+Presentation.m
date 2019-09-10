@@ -22,7 +22,7 @@
 
 - (void)hw_panModalSetContentOffset:(CGPoint)offset {
     if (!self.hw_presentedVC) return;
-    [self.hw_presentedVC setContentOffset:offset];
+    [self.hw_presentedVC setScrollableContentOffset:offset];
 }
 
 - (void)hw_panModalSetNeedsLayoutUpdate {
