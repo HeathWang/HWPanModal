@@ -770,7 +770,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 #pragma mark - UIGestureRecognizerDelegate
 
 /**
- * 只有当其他的UIGestureRecognizer为pan recognizer时才能同时存在
+ * ONLY When otherGestureRecognizer is panGestureRecognizer, and target gestureRecognizer is panGestureRecognizer, return YES.
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
 	if ([gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
@@ -780,7 +780,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 /**
- * 当当前手势为screenGestureRecognizer时，其他pan recognizer都应该fail
+ * 当前手势为screenGestureRecognizer时，其他pan recognizer都应该fail
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
 	if (gestureRecognizer == self.screenGestureRecognizer && [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
