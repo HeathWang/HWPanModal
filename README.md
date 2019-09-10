@@ -85,6 +85,7 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 
 * [x] Handle keyboard show&dismiss.
 * [x] High customize indicator view.
+* [ ] Edge Interactive dismissal can work on full screen and configable distance to left edge.
 * ~~Touch event can response to presenting VC.~~
 
 ## Compatibility
