@@ -90,12 +90,6 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
 
-### Dependency
-
-[KVOController - facebook](https://github.com/facebook/KVOController)
-
-Because Objective-C KVO is hard to use, so I use KVOController = =
-
 ## Installation
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)

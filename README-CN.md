@@ -69,11 +69,6 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
 
-### 依赖
-
-[KVOController - facebook](https://github.com/facebook/KVOController)
-
-
 ## 安装
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
