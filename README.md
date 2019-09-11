@@ -69,9 +69,9 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 ## Features
 1. Supports any type of `UIViewController`
 2. Seamless transition between modal and content
-3. Support two kinds of GestureRecognizer
-    1. UIPanGestureRecognizer, direction is UP & Down.
-    2. UIScreenEdgePanGestureRecognizer, you can swipe on screen edge to dismiss controller. 
+3. Support two kinds of dismissal gestureRecognizer interaction
+    1. Pan gesture direction up&down
+    2. Pan gesture direction right, you can swipe on screen edge to dismiss controller. 
 4. Support write your own animation for presenting VC.
 5. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
 6. Support config background alpha or `blur` background. Note: Dynamic change blur effect ONLY works on iOS9.0+.
