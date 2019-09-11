@@ -354,7 +354,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		self.backgroundView.percent = 1 - percent;
 
 		[self.presentable panModalGestureRecognizer:self.panGestureRecognizer dismissPercent:MIN(percent, 1)];
-		if (self.presentedViewController.isBeingDismissed) {
+        if (self.presentedViewController.isBeingDismissed) {
             [[self interactiveAnimator] updateInteractiveTransition:MIN(percent, 1)];
         }
 	} else {
@@ -414,17 +414,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	UIScrollView *scrollView = [[self presentable] panScrollable];
 	if (!scrollView) return;
-
-	if (!self.presentedViewController.isBeingDismissed && !self.presentedViewController.isBeingPresented) {
-
+    
+	if ((!self.presentedViewController.isBeingDismissed && !self.presentedViewController.isBeingPresented) ||
+        (self.presentedViewController.isBeingDismissed && self.presentedViewController.hw_panModalPresentationDelegate.interactive)) {
+        
 		if (!self.isPresentedViewAnchored && scrollView.contentOffset.y > 0) {
 			[self haltScrolling:scrollView];
 		} else if ([scrollView isScrolling] || self.isPresentedViewAnimating) {
 
-			/**
-			 While we're scrolling upwards on the scrollView,
-			 store the last content offset position
-            */
+		    // While we're scrolling upwards on the scrollView, store the last content offset position
 			if (self.isPresentedViewAnchored) {
 				[self trackScrolling:scrollView];
 			} else {
@@ -433,15 +431,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 				 */
 				[self haltScrolling:scrollView];
 			}
-		}
-//        else if ([self.presentedViewController.view isKindOfClass:UIScrollView.class] && !self.isPresentedViewAnimating && scrollView.contentOffset.y <= 0) {
-//            /**
-//             * In the case where we drag down quickly on the scroll view and let go,
-//             `handleScrollViewTopBounce` adds a nice elegant touch.
-//             */
-//            [self handleScrollViewTopBounce:scrollView change:change];
-//        }
-        else {
+		} else {
 			[self trackScrolling:scrollView];
 		}
 
@@ -492,9 +482,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (void)didPanOnView:(UIPanGestureRecognizer *)panGestureRecognizer {
 
-
 	if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] && self.containerView && !self.keyboardInfo) {
-
 		CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
 
 		switch (panGestureRecognizer.state) {

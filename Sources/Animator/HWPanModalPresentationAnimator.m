@@ -12,7 +12,6 @@
 #import "UIView+HW_Frame.h"
 #import "HWPageSheetPresentingAnimation.h"
 #import "HWShoppingCartPresentingAnimation.h"
-#import "HWPanModalPresentationDelegate.h"
 
 @interface HWPresentingVCTransitionContext : NSObject <HWPresentingViewControllerContextTransitioning>
 
@@ -137,7 +136,6 @@
                 [toVC endAppearanceTransition];
 			}
             [context completeTransition:finished];
-			
 		}];
 	} else {
 		[HWPanModalAnimator animate:^{

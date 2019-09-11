@@ -10,6 +10,14 @@
 #import "HWFetchDataViewController.h"
 #import <HWPanModal/HWPanModal.h>
 
+@interface HWFetchDataDetailViewController : UIViewController
+
+@property (nonatomic, copy) NSString *textString;
+
+- (instancetype)initWithTextString:(NSString *)textString;
+
+@end
+
 @interface HWFetchDataViewController () <UITableViewDelegate, UITableViewDataSource, HWPanModalPresentable>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -81,6 +89,12 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *text = self.dataSource[indexPath.row];
+    HWFetchDataDetailViewController *detailViewController = [[HWFetchDataDetailViewController alloc] initWithTextString:text];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 #pragma mark - Getter
 
 - (UITableView *)tableView {
@@ -102,6 +116,40 @@
         _indicatorView.color = [UIColor blackColor];
     }
     return _indicatorView;
+}
+
+
+@end
+
+@implementation HWFetchDataDetailViewController
+
+- (instancetype)initWithTextString:(NSString *)textString {
+    self = [super init];
+    if (self) {
+        self.textString = textString;
+    }
+
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"Detail";
+
+    UILabel *label = [UILabel new];
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor colorWithRed:0.200 green:0.200 blue:0.200 alpha:1.00];
+    label.text = self.textString;
+    label.numberOfLines = 0;
+
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(@0);
+        make.left.equalTo(@20);
+        make.right.equalTo(@-20);
+    }];
 }
 
 
