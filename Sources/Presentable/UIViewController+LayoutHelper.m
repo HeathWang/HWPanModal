@@ -37,8 +37,21 @@
 }
 
 - (HWPanModalPresentationController *)hw_getPanModalPresentationController {
-    if ([self.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
-        return (HWPanModalPresentationController *) self.presentationController;
+    UIViewController *ancestorsVC;
+    
+    // seeking for the root presentation VC.
+    if (self.splitViewController) {
+        ancestorsVC = self.splitViewController;
+    } else if (self.navigationController) {
+        ancestorsVC = self.navigationController;
+    } else if (self.tabBarController) {
+        ancestorsVC = self.tabBarController;
+    } else {
+        ancestorsVC = self;
+    }
+    
+    if ([ancestorsVC.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
+        return (HWPanModalPresentationController *) ancestorsVC.presentationController;
     }
     return nil;
 }

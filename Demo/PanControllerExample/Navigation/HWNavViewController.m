@@ -8,7 +8,7 @@
 
 #import "HWNavViewController.h"
 #import <HWPanModal/HWPanModal.h>
-#import "HWUserGroupViewController.h"
+#import "HWFetchDataViewController.h"
 
 @interface HWNavViewController () <HWPanModalPresentable>
 
@@ -19,8 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    HWUserGroupViewController *userGroupViewController = [HWUserGroupViewController new];
-    [self pushViewController:userGroupViewController animated:YES];
+    self.navigationBar.translucent = NO;
+    HWFetchDataViewController *fetchDataVC = [HWFetchDataViewController new];
+    [self pushViewController:fetchDataVC animated:YES];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - HWPanModalPresentable
@@ -34,12 +39,12 @@
     return nil;
 }
 
-- (PanModalHeight)longFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMax, 0);
+- (CGFloat)topOffset {
+    return 0;
 }
 
-- (PanModalHeight)shortFormHeight {
-    return [self longFormHeight];
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, [UIApplication sharedApplication].statusBarFrame.size.height + 20);
 }
 
 - (BOOL)allowScreenEdgeInteractive {
@@ -48,6 +53,10 @@
 
 - (BOOL)showDragIndicator {
     return NO;
+}
+
+- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
+    return PresentingViewControllerAnimationStylePageSheet;
 }
 
 

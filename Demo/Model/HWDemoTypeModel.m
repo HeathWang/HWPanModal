@@ -74,7 +74,7 @@
     HWDemoTypeModel *shareDemo = [HWDemoTypeModel modelWithTitle:@"Share - 网易云音乐" targetClass:HWShareViewController.class];
     HWDemoTypeModel *shoppingDemo = [HWDemoTypeModel modelWithTitle:@"Shopping - JD" targetClass:HWShoppingCartViewController.class];
     HWDemoTypeModel *fetchDataDemo = [HWDemoTypeModel modelWithTitle:@"Fetch Data & reload" targetClass:HWFetchDataViewController.class];
-    return @[navDemo, pickerDemo, shareDemo, shoppingDemo, fetchDataDemo];
+    return @[navDemo, fetchDataDemo, pickerDemo, shareDemo, shoppingDemo];
 }
 
 @end

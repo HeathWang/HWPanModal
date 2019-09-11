@@ -55,7 +55,6 @@
     return [UIColor whiteColor];
 }
 
-
 - (UIEdgeInsets)scrollIndicatorInsets {
 	CGFloat top = [self shouldRoundTopCorners] ? [self cornerRadius] : 0;
 	return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);
@@ -71,8 +70,9 @@
 
 - (BOOL)allowsExtendedPanScrolling {
 	if ([self panScrollable]) {
-		[[self panScrollable] layoutIfNeeded];
-		return [self panScrollable].contentSize.height > ([self panScrollable].frame.size.height - self.bottomLayoutOffset);
+        UIScrollView *scrollable = [self panScrollable];
+		[scrollable layoutIfNeeded];
+		return scrollable.contentSize.height > (scrollable.frame.size.height - self.bottomLayoutOffset);
 	} else {
 		return NO;
 	}

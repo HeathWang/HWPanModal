@@ -44,7 +44,6 @@
 		7EA0F60B230D63D300ED20D2 /* HWAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D5230D63D300ED20D2 /* HWAlertViewController.m */; };
 		7EA0F60C230D63D300ED20D2 /* HWTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D8230D63D300ED20D2 /* HWTextInputViewController.m */; };
 		7EA0F60D230D63D300ED20D2 /* HWInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5D9230D63D300ED20D2 /* HWInputTableViewCell.m */; };
-		7EA0F60E230D63D300ED20D2 /* HWUserGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */; };
 		7EA0F60F230D63D300ED20D2 /* HWNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */; };
 		7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E4230D63D300ED20D2 /* HWColorBlocksViewController.m */; };
 		7EA0F611230D63D300ED20D2 /* HWColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5E5230D63D300ED20D2 /* HWColorCollectionViewCell.m */; };
@@ -162,10 +161,8 @@
 		7EA0F5D9230D63D300ED20D2 /* HWInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInputTableViewCell.m; sourceTree = "<group>"; };
 		7EA0F5DA230D63D300ED20D2 /* HWTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTextInputViewController.h; sourceTree = "<group>"; };
 		7EA0F5DB230D63D300ED20D2 /* HWInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInputTableViewCell.h; sourceTree = "<group>"; };
-		7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserGroupViewController.m; sourceTree = "<group>"; };
 		7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNavViewController.m; sourceTree = "<group>"; };
 		7EA0F5DF230D63D300ED20D2 /* HWNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNavViewController.h; sourceTree = "<group>"; };
-		7EA0F5E0230D63D300ED20D2 /* HWUserGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserGroupViewController.h; sourceTree = "<group>"; };
 		7EA0F5E2230D63D300ED20D2 /* HWColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWColorCollectionViewCell.h; sourceTree = "<group>"; };
 		7EA0F5E3230D63D300ED20D2 /* HWBlurViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBlurViewController.h; sourceTree = "<group>"; };
 		7EA0F5E4230D63D300ED20D2 /* HWColorBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWColorBlocksViewController.m; sourceTree = "<group>"; };
@@ -580,8 +577,6 @@
 		7EA0F5DC230D63D300ED20D2 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				7EA0F5E0230D63D300ED20D2 /* HWUserGroupViewController.h */,
-				7EA0F5DD230D63D300ED20D2 /* HWUserGroupViewController.m */,
 				7EA0F5DF230D63D300ED20D2 /* HWNavViewController.h */,
 				7EA0F5DE230D63D300ED20D2 /* HWNavViewController.m */,
 			);
@@ -998,7 +993,6 @@
 				7EA0F604230D63D300ED20D2 /* HWTextIndicatorView.m in Sources */,
 				7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */,
 				7EA0F60B230D63D300ED20D2 /* HWAlertViewController.m in Sources */,
-				7EA0F60E230D63D300ED20D2 /* HWUserGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

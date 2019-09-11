@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Comments";
+    
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.indicatorView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,8 +72,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
     cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = [UIFont italicSystemFontOfSize:16];
     cell.textLabel.text = self.dataSource[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - Getter
