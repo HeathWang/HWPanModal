@@ -39,16 +39,16 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
         </tr>
         <tr>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="200" />
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="180" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="200"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="180"/>
             </td>
         </tr>
     </table>

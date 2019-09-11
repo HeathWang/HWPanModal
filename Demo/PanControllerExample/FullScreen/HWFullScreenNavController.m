@@ -49,7 +49,7 @@
 }
 
 - (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction {
-    return 64;
+    return 0;
 }
 
 @end
