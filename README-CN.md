@@ -54,9 +54,9 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 ## 功能
 1. 支持任意类型的 `UIViewController`
 2. 平滑的转场动画
-3. 支持2种类型的手势操作
-    1. UIPanGestureRecognizer, 上下拖拽视图
-    2. UIScreenEdgePanGestureRecognizer, 侧滑关闭视图。
+3. 支持2种类型的手势dismiss视图
+    1. 上下方向拖动关闭视图。
+    2. 侧滑关闭视图，支持全屏侧滑。
 4. 支持为presenting VC编写自定义动画。
 5. 支持配置动画时间，动画options，弹性spring值
 6. 支持配置背景alpha，或者高斯模糊背景。注意：动态调整模糊效果仅工作于iOS9.0+。
