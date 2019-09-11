@@ -90,6 +90,10 @@
 	return NO;
 }
 
+- (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction {
+	return 0;
+}
+
 - (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
 	return PresentingViewControllerAnimationStyleNone;
 }

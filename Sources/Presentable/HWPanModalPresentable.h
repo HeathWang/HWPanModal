@@ -31,8 +31,12 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * HWPanModalPresentable为present配置协议
- * 默认情况下无需实现，只需Controller conforms 该协议
- * 通过category来默认实现以下所有方法。这样就不用通过继承来实现protocol
+ * 默认情况下无需实现，只需Controller适配该协议
+ * 通过category来默认实现以下所有方法，避免继承类
+ *
+ * This Protocol is the core of HWPanModal, we use it to config presentation.
+ * Default, you don't need to conform all of these methods, just implement what you want to customize.
+ * All the config has default value, we use a `UIViewController` category to conform `HWPanModalPresentable` protocol.
  */
 @protocol HWPanModalPresentable <NSObject>
 
@@ -127,7 +131,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (nonnull UIColor *)backgroundBlurColor;
 
-#pragma mark - User operation
+#pragma mark - User Interaction
 
 /**
  * 该bool值控制当pan View状态为long的情况下，是否可以继续拖拽到PanModalHeight = MAX的情况
@@ -161,6 +165,13 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (BOOL)allowScreenEdgeInteractive;
 
 /**
+ * Max allowed distance to screen left edge when you want to make screen edge pan interaction
+ * Default is 0, means it will ignore this limit, full screen left edge pan will work.
+ * @return distance to left screen edge
+ */
+- (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction;
+
+/**
  * 是否允许触觉反馈
  * 默认为YES
  */
@@ -174,12 +185,6 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  * @return The animation style.
  */
 - (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle;
-
-/**
- * 是否对presentingViewController做动画效果，默认该效果类似淘宝/京东购物车凹陷效果
- * 默认为NO
- */
-- (BOOL)shouldAnimatePresentingVC DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.3.6, please use `- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle` replaced.");
 
 /**
  * 自定义presenting ViewController转场动画，默认为nil
@@ -309,6 +314,14 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  * Did finish dismissing
  */
 - (void)panModalDidDismissed;
+
+#pragma mark - DEPRECATED DECLARE
+
+/**
+ * 是否对presentingViewController做动画效果，默认该效果类似淘宝/京东购物车凹陷效果
+ * 默认为NO
+ */
+- (BOOL)shouldAnimatePresentingVC DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.3.6, please use `- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle` replaced.");
 
 @end
 

@@ -56,7 +56,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 // gesture
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *screenGestureRecognizer;
+@property (nonatomic, strong) UIPanGestureRecognizer *screenEdgeGestureRecognizer;
 
 // keyboard handle
 @property (nonatomic, copy) NSDictionary *keyboardInfo;
@@ -283,7 +283,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	[containerView addGestureRecognizer:self.panGestureRecognizer];
 
 	if ([self.presentable allowScreenEdgeInteractive]) {
-		[containerView addGestureRecognizer:self.screenGestureRecognizer];
+		[containerView addGestureRecognizer:self.screenEdgeGestureRecognizer];
 	}
 
 	if ([self.presentable shouldRoundTopCorners]) {
@@ -657,7 +657,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (BOOL)isVelocityWithinSensitivityRange:(CGFloat)velocity {
-	return (ABS(velocity) - (1000 * (1 - kSnapMovementSensitivity))) > 0;
+	return (fabsf(velocity) - (1000.00f * (1 - kSnapMovementSensitivity))) > 0;
 }
 
 - (CGFloat)nearestDistance:(CGFloat)position inDistances:(NSArray *)distances {
@@ -672,7 +672,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	[distances enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		NSNumber *number = obj;
-		NSNumber *absValue = @(fabs(number.floatValue - position));
+		NSNumber *absValue = @(fabsf(number.floatValue - position));
 		[tmpArr addObject:absValue];
         [tmpDict setObject:number forKey:absValue];
 		
@@ -695,10 +695,9 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 #pragma mark - Screen Gesture enevt
 
-- (void)screenEdgeInteractiveAction:(UIScreenEdgePanGestureRecognizer *)recognizer {
+- (void)screenEdgeInteractiveAction:(UIPanGestureRecognizer *)recognizer {
     CGPoint translation = [recognizer translationInView:recognizer.view];
     CGFloat percent = translation.x / CGRectGetWidth(recognizer.view.bounds);
-
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
             [self dismissPresentedViewControllerIsInteractive:YES mode:PanModalInteractiveModeSideslip];
@@ -729,12 +728,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 		UINavigationController *navigationController = (UINavigationController *) self.presentedViewController;
 		if ([[self presentable] allowScreenEdgeInteractive] &&
 			navigationController.topViewController == navigationController.viewControllers.firstObject) {
-			self.screenGestureRecognizer.enabled = YES;
+			self.screenEdgeGestureRecognizer.enabled = YES;
 		} else {
-			self.screenGestureRecognizer.enabled = NO;
+			self.screenEdgeGestureRecognizer.enabled = NO;
 		}
 	} else {
-		self.screenGestureRecognizer.enabled = [[self presentable] allowScreenEdgeInteractive];
+		self.screenEdgeGestureRecognizer.enabled = [[self presentable] allowScreenEdgeInteractive];
 	}
 }
 
@@ -783,10 +782,39 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  * 当前手势为screenGestureRecognizer时，其他pan recognizer都应该fail
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-	if (gestureRecognizer == self.screenGestureRecognizer && [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
+	if (gestureRecognizer == self.screenEdgeGestureRecognizer && [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
 		return YES;
 	}
 	return NO;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer == self.screenEdgeGestureRecognizer) {
+        CGPoint velocity = [self.screenEdgeGestureRecognizer velocityInView:self.screenEdgeGestureRecognizer.view];
+        
+        if (velocity.x <= 0 || HW_TWO_FLOAT_IS_EQUAL(velocity.x, 0)) {
+            return NO;
+        }
+
+        // check the distance to left edge
+		CGPoint location = [self.screenEdgeGestureRecognizer locationInView:self.screenEdgeGestureRecognizer.view];
+        CGFloat thresholdDistance = [[self presentable] maxAllowedDistanceToLeftScreenEdgeForPanInteraction];
+        if (thresholdDistance > 0 && location.x > thresholdDistance) {
+			return NO;
+        }
+        
+        if (velocity.x > 0 && HW_TWO_FLOAT_IS_EQUAL(velocity.y, 0)) {
+            return YES;
+        }
+        
+        //TODO: this logic can be updated later.
+        if (velocity.x > 0 && velocity.x / fabsf(velocity.y) > 2) {
+            return YES;
+        }
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - UIKeyboard Handle
@@ -951,16 +979,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	return _panGestureRecognizer;
 }
 
-- (UIScreenEdgePanGestureRecognizer *)screenGestureRecognizer {
-	if (!_screenGestureRecognizer) {
-		_screenGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(screenEdgeInteractiveAction:)];
-		_screenGestureRecognizer.minimumNumberOfTouches = 1;
-		_screenGestureRecognizer.maximumNumberOfTouches = 1;
-		_screenGestureRecognizer.delegate = self;
-		_screenGestureRecognizer.edges = UIRectEdgeLeft;
+- (UIPanGestureRecognizer *)screenEdgeGestureRecognizer {
+	if (!_screenEdgeGestureRecognizer) {
+		_screenEdgeGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(screenEdgeInteractiveAction:)];
+		_screenEdgeGestureRecognizer.minimumNumberOfTouches = 1;
+		_screenEdgeGestureRecognizer.maximumNumberOfTouches = 1;
+		_screenEdgeGestureRecognizer.delegate = self;
 	}
 
-	return _screenGestureRecognizer;
+	return _screenEdgeGestureRecognizer;
 }
 
 #pragma mark - dealloc

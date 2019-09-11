@@ -38,7 +38,7 @@ static inline BOOL HW_FLOAT_IS_ZERO(CGFloat value) {
 }
 
 static inline BOOL HW_TWO_FLOAT_IS_EQUAL(CGFloat x, CGFloat y) {
-    CGFloat minusValue = fabs(x - y);
+    CGFloat minusValue = fabsf(x - y);
     CGFloat criticalValue = 0.0001;
     if (minusValue < criticalValue || minusValue < FLT_MIN) {
         return YES;
