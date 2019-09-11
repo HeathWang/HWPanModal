@@ -67,15 +67,7 @@ extension GroupDetailViewController {
     override func longFormHeight() -> PanModalHeight {
         return PanModalHeight(type: .topInset, height: 250)
     }
-    
-    override func backgroundBlurColor() -> UIColor {
-        return .white
-    }
-    
-    override func backgroundBlurRadius() -> CGFloat {
-        return 15
-    }
-    
+        
     override func anchorModalToLongForm() -> Bool {
         return false
     }
