@@ -70,7 +70,7 @@ struct DemoCell: DemoRowInfo {
         let share = DemoCell(string: "Share - 网易云音乐", rowVC: ShareViewController())
         let jd = DemoCell(string: "Shopping - JD", rowVC: ShoppingCartViewController())
         let fetchData = DemoCell(string: "Fetch Data & reload", rowVC: FetchDataViewController())
-        return [zhihu, share, jd, fetchData]
+        return [zhihu, fetchData, share, jd]
     }
     
     static func indicatorCells() -> [DemoCell] {

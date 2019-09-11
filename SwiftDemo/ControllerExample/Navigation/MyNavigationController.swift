@@ -15,8 +15,12 @@ class MyNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userVC = UserGroupViewController()
-        pushViewController(userVC, animated: false)
+        let fetchDataVC = FetchDataViewController()
+        pushViewController(fetchDataVC, animated: false)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
@@ -30,8 +34,12 @@ extension MyNavigationViewController {
         return nil
     }
     
+    override func topOffset() -> CGFloat {
+        return 0
+    }
+    
     override func longFormHeight() -> PanModalHeight {
-        return PanModalHeight(type: .max, height: 0)
+        return PanModalHeight(type: .topInset, height: UIApplication.shared.statusBarFrame.height + 20)
     }
     
     override func allowScreenEdgeInteractive() -> Bool {
@@ -40,6 +48,10 @@ extension MyNavigationViewController {
     
     override func showDragIndicator() -> Bool {
         return false
+    }
+    
+    override func presentingVCAnimationStyle() -> PresentingViewControllerAnimationStyle {
+        return .pageSheet
     }
 }
 

@@ -36,6 +36,8 @@ class FetchDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Comments"
+        
         view.addSubview(tableView)
         view.addSubview(indicatorView)
         
@@ -84,5 +86,42 @@ extension FetchDataViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let str = self.dataSource[indexPath.row]
+        let detailVC = FetchDataDetailViewController()
+        detailVC.textString = str
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+}
+
+class FetchDataDetailViewController: UIViewController {
+
+    var textString: String = ""
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        navigationItem.title = "Detail"
+        
+        let label = UILabel(frame: .zero)
+        label.text = textString
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = UIColor(displayP3Red: 0.200, green: 0.200, blue: 0.200, alpha: 1)
+        label.numberOfLines = 0
+        
+        view.addSubview(label)
+        label.snp.makeConstraints { (maker) in
+            maker.left.equalTo(20)
+            maker.right.equalTo(-20)
+            maker.centerY.equalTo(view)
+        }
+        
+    }
     
 }
