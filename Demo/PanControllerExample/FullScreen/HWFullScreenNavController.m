@@ -33,7 +33,11 @@
 }
 
 - (NSTimeInterval)transitionDuration {
-    return 0.5;
+    return 0.4;
+}
+
+- (CGFloat)springDamping {
+    return 1;
 }
 
 - (BOOL)shouldRoundTopCorners {
@@ -51,6 +55,16 @@
 - (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction {
     return 0;
 }
+
+// if you use some framework like FDFullscreenPopGesture, follow this code.
+/*
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    if (self.fd_fullscreenPopGestureRecognizer.state == UIGestureRecognizerStateBegan || self.fd_fullscreenPopGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        return NO;
+    }
+    return YES;
+}
+ */
 
 @end
 
