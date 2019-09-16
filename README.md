@@ -86,7 +86,7 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 * [x] Handle keyboard show&dismiss.
 * [x] High customize indicator view.
 * [x] Edge Interactive dismissal can work on full screen and configable distance to left edge.
-* ~~Touch event can response to presenting VC.~~
+* [ ] Touch event can response to presenting VC, working on it.
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
