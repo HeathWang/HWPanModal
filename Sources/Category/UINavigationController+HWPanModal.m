@@ -11,11 +11,16 @@
 
 @implementation UINavigationController (HWPanModal)
 
-+ (void)load {
-    [self hw_swizzleInstanceMethod:@selector(pushViewController:animated:) with:@selector(hw_pushViewController:animated:)];
-    [self hw_swizzleInstanceMethod:@selector(popViewControllerAnimated:) with:@selector(hw_popViewControllerAnimated:)];
-    [self hw_swizzleInstanceMethod:@selector(popToViewController:animated:) with:@selector(hw_popToViewController:animated:)];
-    [self hw_swizzleInstanceMethod:@selector(hw_popToRootViewControllerAnimated:) with:@selector(hw_popToRootViewControllerAnimated:)];
++ (void)initialize {
+    if (self == [UINavigationController self]) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [self hw_swizzleInstanceMethod:@selector(pushViewController:animated:) with:@selector(hw_pushViewController:animated:)];
+            [self hw_swizzleInstanceMethod:@selector(popViewControllerAnimated:) with:@selector(hw_popViewControllerAnimated:)];
+            [self hw_swizzleInstanceMethod:@selector(popToViewController:animated:) with:@selector(hw_popToViewController:animated:)];
+            [self hw_swizzleInstanceMethod:@selector(hw_popToRootViewControllerAnimated:) with:@selector(hw_popToRootViewControllerAnimated:)];
+        });
+    }
 }
 
 - (void)hw_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
