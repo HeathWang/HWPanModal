@@ -95,8 +95,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	if (!self.containerView)
 		return;
+    
+    // do not add background view if below config return `YES`
+    if (![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+        [self layoutBackgroundView:self.containerView];
+    }
 
-	[self layoutBackgroundView:self.containerView];
 	[self layoutPresentedView:self.containerView];
 	[self configureScrollViewInsets];
 
@@ -108,8 +112,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 	__weak  typeof(self) wkSelf = self;
 	[self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context) {
 		wkSelf.backgroundView.dimState = DimStateMax;
-		[self.presentedViewController setNeedsStatusBarAppearanceUpdate];
-	} completion:nil];
+		[wkSelf.presentedViewController setNeedsStatusBarAppearanceUpdate];
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        
+        if ([[wkSelf presentable] allowsTouchEventsPassingThroughTransitionView]) {
+            // hack TransitionView
+            [wkSelf.containerView setValue:@(YES) forKey:@"ignoreDirectTouchEvents"];
+        }
+    }];
 
 }
 
@@ -914,7 +924,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (HWDimmedView *)backgroundView {
-	if (!_backgroundView) {
+	if (!_backgroundView && ![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
 		if (self.presentable) {
 			_backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha] blurRadius:[self.presentable backgroundBlurRadius]];
 		} else {

@@ -118,6 +118,10 @@
 	return YES;
 }
 
+- (BOOL)allowsTouchEventsPassingThroughTransitionView {
+	return NO;
+}
+
 - (BOOL)shouldRoundTopCorners {
 	return YES;
 }
@@ -127,6 +131,9 @@
 }
 
 - (BOOL)showDragIndicator {
+    if ([self allowsTouchEventsPassingThroughTransitionView]) {
+        return NO;
+    }
 	return [self shouldRoundTopCorners];
 }
 

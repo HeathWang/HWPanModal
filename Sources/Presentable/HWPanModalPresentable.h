@@ -44,7 +44,9 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * 支持同步拖拽的scrollView
- * 如果ViewController中包含scrollView并且你想scrollView滑动和拖拽手势同事存在，请返回此scrollView
+ * 如果ViewController中包含scrollView并且你想scrollView滑动和拖拽手势同时存在，请返回此scrollView
+ *
+ * If your ViewController has a scrollable view(UIScrollView and subclass), and you want pan gesture and scrollable both work, return it.
  */
 - (nullable UIScrollView *)panScrollable;
 
@@ -69,14 +71,17 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 /**
  * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
  * 其余情况返回NO
+ *
+ * If panScrollable exists, and scrollView contentSize > (size + bottomLayoutOffset), auto return YES, otherwise return NO.
+ * You can make your own logic if you want, and you know what you are doing.
  */
 - (BOOL)allowsExtendedPanScrolling;
 
 #pragma mark - Offset/position
 
 /**
- * offset：屏幕顶部距离
- * 默认为topLayoutGuide.length + 21.0.
+ * Screen top offset from presented viewController
+ * Default is topLayoutGuide.length + 21.0.
  */
 - (CGFloat)topOffset;
 
@@ -94,25 +99,28 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 #pragma mark - Animation config
 
 /**
- * spring弹性动画数值，默认未0.9
+ * spring弹性动画数值
+ * Default is 0.9
  */
 - (CGFloat)springDamping;
 
 /**
- * 转场动画时间，默认为0.5s
+ * 转场动画时间
+ * Default is 0.5 second
  */
 - (NSTimeInterval)transitionDuration;
 
 /**
  * 转场动画options
- * 默认为 UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+ * Default is UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
  */
 - (UIViewAnimationOptions)transitionAnimationOptions;
 
 #pragma mark - Background config
 
 /**
- * 背景透明度，默认为0.7
+ * 背景透明度
+ * Default is 0.7
  */
 - (CGFloat)backgroundAlpha;
 
@@ -148,19 +156,39 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * 是否允许drag操作dismiss presented Controller
- * 默认为YES
+ * Default is YES
  */
 - (BOOL)allowsDragToDismiss;
 
 /**
  * 是否允许用户操作
- * 默认为YES
+ * Default is YES
  */
 - (BOOL)isUserInteractionEnabled;
 
 /**
+ * 是否允许触觉反馈
+ * Default is YES
+ */
+- (BOOL)isHapticFeedbackEnabled;
+
+/**
+ * 是否允许触摸事件透传到presenting ViewController。如果你有特殊需求的话(比如弹出一个底部视图，但是你想操作弹出视图下面的view，即presenting VC)，可开启此功能
+ * 注意开启此功能，背景视图将被移除，同时拖拽指示器会默认隐藏。
+ * 
+ * Whether allows touch events passing through the transition container view.
+ * In some situations, you present the bottom VC, and you want to operate the presenting VC(mapView, scrollView and etc), enable this func.
+ *
+ * Note: When allows, the background view will be removed, and the drag indicator will be hidden.
+ * @return Default is NO.
+ */
+- (BOOL)allowsTouchEventsPassingThroughTransitionView;
+
+#pragma mark - Screen left egde interaction
+
+/**
  * 是否允许屏幕边缘侧滑手势
- * 默认为NO，不允许
+ * Default is NO，not allowed this user interaction.
  */
 - (BOOL)allowScreenEdgeInteractive;
 
@@ -170,12 +198,6 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  * @return distance to left screen edge
  */
 - (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction;
-
-/**
- * 是否允许触觉反馈
- * 默认为YES
- */
-- (BOOL)isHapticFeedbackEnabled;
 
 #pragma mark - Customize presentingViewController animation
 
@@ -200,20 +222,21 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * 是否顶部圆角
- * 默认为YES
+ * Default is YES
  */
 - (BOOL)shouldRoundTopCorners;
 
 /**
  * 顶部圆角数值
- * 默认为8.0
+ * Default is 8.0
  */
 - (CGFloat)cornerRadius;
 
 #pragma mark - Indicator config
+
 /**
  * 是否显示drag指示view
- * 默认为YES，该属性默认取‘- (BOOL)shouldRoundTopCorners’
+ * Default is YES，Default this method depend on `- (BOOL)shouldRoundTopCorners`
  */
 - (BOOL)showDragIndicator;
 
