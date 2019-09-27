@@ -102,7 +102,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     }
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
-    	self.currentPresentationState == PresentationStateLong;
+    	self.currentPresentationState = PresentationStateLong;
     }
 
 	[self layoutPresentedView:self.containerView];
@@ -659,7 +659,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (BOOL)isVelocityWithinSensitivityRange:(CGFloat)velocity {
-	return (fabsf(velocity) - (1000.00f * (1 - kSnapMovementSensitivity))) > 0;
+	return (fabs(velocity) - (1000.00f * (1 - kSnapMovementSensitivity))) > 0;
 }
 
 - (CGFloat)nearestDistance:(CGFloat)position inDistances:(NSArray *)distances {
@@ -674,7 +674,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 	[distances enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		NSNumber *number = obj;
-		NSNumber *absValue = @(fabsf(number.floatValue - position));
+		NSNumber *absValue = @(fabs(number.floatValue - position));
 		[tmpArr addObject:absValue];
         [tmpDict setObject:number forKey:absValue];
 		
@@ -810,7 +810,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         }
         
         //TODO: this logic can be updated later.
-        if (velocity.x > 0 && velocity.x / fabsf(velocity.y) > 2) {
+        if (velocity.x > 0 && velocity.x / fabs(velocity.y) > 2) {
             return YES;
         }
         return NO;
