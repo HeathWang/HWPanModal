@@ -78,6 +78,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 7. Show / hide corner, indicator.
 8. Auto handle UIKeyboard show/hide.
 9. Hight customize indicator view.
+10. Touch event response can pass through to presenting VC.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) declare.
 
@@ -86,7 +87,8 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 * [x] Handle keyboard show&dismiss.
 * [x] High customize indicator view.
 * [x] Edge Interactive dismissal can work on full screen and configable distance to left edge.
-* [ ] Touch event can response to presenting VC, working on it.
+* [x] Touch event can response to presenting VC, working on it.
+* [ ] Strip the presented view container view, make it can use directly.
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
