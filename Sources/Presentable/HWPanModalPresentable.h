@@ -96,6 +96,14 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (PanModalHeight)longFormHeight;
 
+/**
+ * 初始弹出高度状态，默认为`shortFormHeight`
+ *
+ * Origin presentation height state, if you have special requirement, change it.
+ * Default is `shortFormHeight`
+ */
+- (PresentationState)originPresentationState;
+
 #pragma mark - Animation config
 
 /**

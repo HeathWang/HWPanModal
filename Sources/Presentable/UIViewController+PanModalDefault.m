@@ -31,6 +31,10 @@
 	}
 }
 
+- (PresentationState)originPresentationState {
+	return PresentationStateShort;
+}
+
 - (CGFloat)springDamping {
 	return 0.8;
 }

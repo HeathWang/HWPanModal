@@ -72,6 +72,9 @@
 	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
 	CGFloat yPos = presentable.shortFormYPos;
+	if ([presentable originPresentationState] == PresentationStateLong) {
+		yPos = presentable.longFormYPos;
+	}
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
 	panView.frame = [context finalFrameForViewController:toVC];

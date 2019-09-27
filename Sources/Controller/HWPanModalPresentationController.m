@@ -101,6 +101,10 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         [self layoutBackgroundView:self.containerView];
     }
 
+    if ([[self presentable] originPresentationState] == PresentationStateLong) {
+    	self.currentPresentationState == PresentationStateLong;
+    }
+
 	[self layoutPresentedView:self.containerView];
 	[self configureScrollViewInsets];
 
