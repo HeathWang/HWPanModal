@@ -64,7 +64,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 8. 自动处理键盘弹出消失事件。
 9. 自定义指示器indicator view。
 
-更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) 声明。
+更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) 声明。
     
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
