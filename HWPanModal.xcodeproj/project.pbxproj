@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		07D646286406C5195E0D58C3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */; };
 		1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */; };
+		7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E044BC8233DEF1000D01981 /* HWMapViewController.m */; };
+		7E044BCB233DEF2400D01981 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E044BCA233DEF2400D01981 /* MapKit.framework */; };
+		7E044BCE233E070400D01981 /* HWEventPassThroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E044BCD233E070400D01981 /* HWEventPassThroughViewController.m */; };
 		7E1822B1231FA7840049A076 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B0231FA7840049A076 /* ShareController.swift */; };
 		7E1822B3231FA79D0049A076 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */; };
 		7E1822B4231FA7AE0049A076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
@@ -71,6 +74,11 @@
 		1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HWPanModal.h; sourceTree = "<group>"; };
 		70F9099756161A2FCD7F1210 /* Pods_HWPanModalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWPanModalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E731BBFF93D4BD5774B1D2 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E044BC7233DEF1000D01981 /* HWMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMapViewController.h; sourceTree = "<group>"; };
+		7E044BC8233DEF1000D01981 /* HWMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWMapViewController.m; sourceTree = "<group>"; };
+		7E044BCA233DEF2400D01981 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7E044BCC233E070400D01981 /* HWEventPassThroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEventPassThroughViewController.h; sourceTree = "<group>"; };
+		7E044BCD233E070400D01981 /* HWEventPassThroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEventPassThroughViewController.m; sourceTree = "<group>"; };
 		7E1822B0231FA7840049A076 /* ShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareController.swift; sourceTree = "<group>"; };
 		7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		7E20ABA0231E677E005941C5 /* DynamicHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeight.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E044BCB233DEF2400D01981 /* MapKit.framework in Frameworks */,
 				1AEAE82985CAAEE26F99678B /* Pods_HWPanModalDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +245,17 @@
 				B7169DDD6D3C823664D309DE /* Pods-SwiftDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E044BC6233DEE9400D01981 /* EventThrough */ = {
+			isa = PBXGroup;
+			children = (
+				7E044BC7233DEF1000D01981 /* HWMapViewController.h */,
+				7E044BC8233DEF1000D01981 /* HWMapViewController.m */,
+				7E044BCC233E070400D01981 /* HWEventPassThroughViewController.h */,
+				7E044BCD233E070400D01981 /* HWEventPassThroughViewController.m */,
+			);
+			path = EventThrough;
 			sourceTree = "<group>";
 		};
 		7E20AB9F231E6760005941C5 /* Dynamic */ = {
@@ -479,6 +499,7 @@
 		7EA0F5BA230D63D300ED20D2 /* PanControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E044BC6233DEE9400D01981 /* EventThrough */,
 				7E2424962325FEB000421947 /* FetchData */,
 				7EA0F5BB230D63D300ED20D2 /* CustomPresentingVC */,
 				7EA0F5BE230D63D300ED20D2 /* Dynamic */,
@@ -665,6 +686,7 @@
 		B166B8E64FB756BB90E33DF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E044BCA233DEF2400D01981 /* MapKit.framework */,
 				7ECB23932310C522009C9A62 /* KVOController.framework */,
 				7EA0F5B5230D5C3400ED20D2 /* Foundation.framework */,
 				7EA0F5B3230D5C2C00ED20D2 /* UIKit.framework */,
@@ -972,6 +994,7 @@
 				7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */,
 				7EA0F605230D63D300ED20D2 /* HWIndicatorViewController.m in Sources */,
 				7EA0F617230D63D300ED20D2 /* HWFullScreenNavController.m in Sources */,
+				7E044BCE233E070400D01981 /* HWEventPassThroughViewController.m in Sources */,
 				7EA0F601230D63D300ED20D2 /* HWMyCustomAnimationViewController.m in Sources */,
 				7EA0F60C230D63D300ED20D2 /* HWTextInputViewController.m in Sources */,
 				7EA0F612230D63D300ED20D2 /* HWBlurViewController.m in Sources */,
@@ -983,6 +1006,7 @@
 				B8CF44061F90CAC000389BFE /* main.m in Sources */,
 				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
 				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
+				7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */,
 				7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */,
 				7EA0F614230D63D300ED20D2 /* HWShoppingCartViewController.m in Sources */,
 				7EA0F607230D63D300ED20D2 /* HWIndicatorPopViewController.m in Sources */,
