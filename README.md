@@ -79,7 +79,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 8. Auto handle UIKeyboard show/hide.
 9. Hight customize indicator view.
 
-More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal/Classes/Presentable/HWPanModalPresentable.h) declare.
+More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) declare.
 
 ## TODO
 
