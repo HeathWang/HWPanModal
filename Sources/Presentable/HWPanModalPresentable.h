@@ -189,6 +189,8 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  *
  * Note: When allows, the background view will be removed, and the drag indicator will be hidden.
  * @return Default is NO.
+ *
+ * Note: You SHOULD MUST dismiss the presented VC in the right time.
  */
 - (BOOL)allowsTouchEventsPassingThroughTransitionView;
 
