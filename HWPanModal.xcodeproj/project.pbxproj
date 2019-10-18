@@ -61,6 +61,8 @@
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
+		7ED9DE7D235987C700AE8A60 /* HWTestViewPanModalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */; };
+		7ED9DE8023598ADE00AE8A60 /* HWSimplePanModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */; };
 		7EEF4686231F8F23006F5997 /* CustomIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */; };
 		7EEF4688231F917B006F5997 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF4687231F917B006F5997 /* IndicatorView.swift */; };
 		B8CF44011F90CAC000389BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF43F71F90CAC000389BFE /* AppDelegate.m */; };
@@ -197,6 +199,12 @@
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
+		7ED9DE7B235987C700AE8A60 /* HWTestViewPanModalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTestViewPanModalController.h; sourceTree = "<group>"; };
+		7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTestViewPanModalController.m; sourceTree = "<group>"; };
+		7ED9DE7E23598ADE00AE8A60 /* HWSimplePanModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWSimplePanModalView.h; sourceTree = "<group>"; };
+		7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWSimplePanModalView.m; sourceTree = "<group>"; };
+		7EEC7D202355A162009E91D8 /* HWPanModalPresentableHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentableHandler.h; sourceTree = "<group>"; };
+		7EEC7D212355A162009E91D8 /* HWPanModalPresentableHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentableHandler.m; sourceTree = "<group>"; };
 		7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIndicatorController.swift; sourceTree = "<group>"; };
 		7EEF4687231F917B006F5997 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		AAD6968C508B3328E47CD906 /* Pods-HWPanModalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWPanModalDemo.debug.xcconfig"; path = "Target Support Files/Pods-HWPanModalDemo/Pods-HWPanModalDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -499,6 +507,7 @@
 		7EA0F5BA230D63D300ED20D2 /* PanControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7ED9DE7A2359877900AE8A60 /* TestViewPanModal */,
 				7E044BC6233DEE9400D01981 /* EventThrough */,
 				7E2424962325FEB000421947 /* FetchData */,
 				7EA0F5BB230D63D300ED20D2 /* CustomPresentingVC */,
@@ -683,6 +692,26 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		7ED9DE7A2359877900AE8A60 /* TestViewPanModal */ = {
+			isa = PBXGroup;
+			children = (
+				7ED9DE7B235987C700AE8A60 /* HWTestViewPanModalController.h */,
+				7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */,
+				7ED9DE7E23598ADE00AE8A60 /* HWSimplePanModalView.h */,
+				7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */,
+			);
+			path = TestViewPanModal;
+			sourceTree = "<group>";
+		};
+		7EEC7D1F2355A10D009E91D8 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC7D202355A162009E91D8 /* HWPanModalPresentableHandler.h */,
+				7EEC7D212355A162009E91D8 /* HWPanModalPresentableHandler.m */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
 		B166B8E64FB756BB90E33DF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +751,7 @@
 		B8CF43EC1F90C3F300389BFE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC7D1F2355A10D009E91D8 /* Mediator */,
 				1D0B2D9E2EA6FB304D1D0FB2 /* HWPanModal.h */,
 				7EA0F576230D5B7400ED20D2 /* Animator */,
 				7EA0F552230D5B7300ED20D2 /* Category */,
@@ -1006,6 +1036,8 @@
 				B8CF44061F90CAC000389BFE /* main.m in Sources */,
 				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
 				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
+				7ED9DE8023598ADE00AE8A60 /* HWSimplePanModalView.m in Sources */,
+				7ED9DE7D235987C700AE8A60 /* HWTestViewPanModalController.m in Sources */,
 				7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */,
 				7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */,
 				7EA0F614230D63D300ED20D2 /* HWShoppingCartViewController.m in Sources */,

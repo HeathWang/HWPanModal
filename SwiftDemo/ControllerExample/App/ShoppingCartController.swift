@@ -26,9 +26,9 @@ class ShoppingCartViewController: UIViewController {
         view.addGestureRecognizer(tapGes)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     @objc func didTapAction() {
         dismiss(animated: true, completion: nil)

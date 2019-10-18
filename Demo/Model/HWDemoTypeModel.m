@@ -25,6 +25,7 @@
 #import "HWIndicatorViewController.h"
 #import "HWFetchDataViewController.h"
 #import "HWMapViewController.h"
+#import "HWTestViewPanModalController.h"
 
 @implementation HWDemoTypeModel
 
@@ -54,6 +55,8 @@
 	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
     HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
     HWDemoTypeModel *textInputDemo = [HWDemoTypeModel modelWithTitle:@"Handle Keyboard" targetClass:HWTextInputViewController.class];
+    HWDemoTypeModel *testViewDemo = [HWDemoTypeModel modelWithTitle:@"Use PanModal View, same as ViewController" targetClass:HWTestViewPanModalController.class];
+    testViewDemo.action = HWActionTypePush;
     
     HWDemoTypeModel *appDemo = [HWDemoTypeModel modelWithTitle:@"App Demo" targetClass:HWAppListViewController.class];
     appDemo.action = HWActionTypePush;
@@ -63,10 +66,8 @@
     indicatorDemo.action = HWActionTypePush;
     HWDemoTypeModel *mapDemo = [HWDemoTypeModel modelWithTitle:@"Events Passing Through TransitionView" targetClass:HWMapViewController.class];
     mapDemo.action = HWActionTypePush;
-    
-	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo,
-			stackGroupDemo,
-			fullScreenDemo, customAnimationDemo]];
+
+	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, testViewDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

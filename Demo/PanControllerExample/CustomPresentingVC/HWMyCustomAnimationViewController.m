@@ -28,9 +28,9 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.600 green:1.000 blue:0.600 alpha:1.00];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return  UIStatusBarStyleLightContent;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return  UIStatusBarStyleLightContent;
+//}
 
 #pragma mark - HWPanModalPresentable
 

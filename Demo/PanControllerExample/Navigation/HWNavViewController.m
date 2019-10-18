@@ -24,9 +24,9 @@
     [self pushViewController:fetchDataVC animated:YES];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
 
 #pragma mark - HWPanModalPresentable
 

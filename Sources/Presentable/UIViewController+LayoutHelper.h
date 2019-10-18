@@ -10,22 +10,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * 该category为实现了HWPanModalPresentable的Controller使用
- */
-@interface UIViewController (LayoutHelper)
+@protocol HWPanModalPresentableLayoutProtocol <NSObject>
 
 @property (nonatomic, assign, readonly) CGFloat topLayoutOffset;
 
 @property (nonatomic, assign, readonly) CGFloat bottomLayoutOffset;
-
-@property (nullable, nonatomic, strong, readonly) HWPanModalPresentationController *hw_presentedVC;
 
 @property (nonatomic, assign, readonly) CGFloat shortFormYPos;
 
 @property (nonatomic, assign, readonly) CGFloat longFormYPos;
 
 @property (nonatomic, assign, readonly) CGFloat bottomYPos;
+
+@end
+
+/**
+ * Help presentedViewController/presented View to layout.
+ */
+@interface UIViewController (LayoutHelper) <HWPanModalPresentableLayoutProtocol>
+
+@property (nullable, nonatomic, strong, readonly) HWPanModalPresentationController *hw_presentedVC;
 
 @end
 

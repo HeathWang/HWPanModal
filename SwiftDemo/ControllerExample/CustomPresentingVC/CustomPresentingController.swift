@@ -19,9 +19,9 @@ class MyCustomAnimationViewController: UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0.600, green: 1.000, blue: 0.600, alpha: 1)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
 }
 

@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * HWPanModalPresentable为present配置协议
- * 默认情况下无需实现，只需Controller适配该协议
+ * 默认情况下无需实现，只需Controller/View适配该协议
  * 通过category来默认实现以下所有方法，避免继承类
  *
  * This Protocol is the core of HWPanModal, we use it to config presentation.
@@ -199,6 +199,8 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 /**
  * 是否允许屏幕边缘侧滑手势
  * Default is NO，not allowed this user interaction.
+ *
+ * Note: Currently only works on UIViewController.
  */
 - (BOOL)allowScreenEdgeInteractive;
 

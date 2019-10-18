@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, PanModalHeightType) {
     PanModalHeightTypeMaxTopInset NS_SWIFT_NAME(topInset), // from top offset
     PanModalHeightTypeContent NS_SWIFT_NAME(content), // from bottom
     PanModalHeightTypeContentIgnoringSafeArea NS_SWIFT_NAME(contentIgnoringSafeArea), // from bottom ignore safeArea
-    PanModalHeightTypeIntrinsic NS_SWIFT_NAME(intrinsic),
+    PanModalHeightTypeIntrinsic NS_SWIFT_NAME(intrinsic), // auto get size
 };
 
 struct PanModalHeight {

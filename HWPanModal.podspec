@@ -29,18 +29,6 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
   s.ios.deployment_target = '8.0'
 
   s.source_files = ['Sources/**/*']
-  s.public_header_files = ['Sources/HWPanModal.h',
-                           'Sources/Presentable/HWPanModalPresentable.h',
-                           'Sources/Presentable/HWPanModalHeight.h',
-                           'Sources/Presentable/UIViewController+PanModalDefault.h',
-                           'Sources/Presenter/UIViewController+PanModalPresenter.h',
-                           'Sources/Presenter/HWPanModalPresenterProtocol.h',
-                           'Sources/Presentable/UIViewController+Presentation.h',
-                           'Sources/Animator/HWPresentingVCAnimatedTransitioning.h',
-                           'Sources/View/HWPanIndicatorView.h',
-                           'Sources/View/HWPanModalIndicatorProtocol.h',
-                           'Sources/Category/UINavigationController+HWPanModal.h'
-                           ]
-  # s.dependency 'KVOController'
+  s.public_header_files = ['Sources/**/*.h']
   
 end

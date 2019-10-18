@@ -10,6 +10,8 @@ typedef NS_ENUM(NSUInteger, HWIndicatorState) {
     HWIndicatorStatePullDown NS_SWIFT_NAME(pull),   // drag down state
 };
 
+static CGFloat const kIndicatorYOffset = 5;
+
 @protocol HWPanModalIndicatorProtocol <NSObject>
 
 /**

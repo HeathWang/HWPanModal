@@ -19,9 +19,9 @@ class MyNavigationViewController: UINavigationController {
         pushViewController(fetchDataVC, animated: false)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
 }
 
 extension MyNavigationViewController {
