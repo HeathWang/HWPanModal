@@ -55,7 +55,7 @@
 	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
     HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
     HWDemoTypeModel *textInputDemo = [HWDemoTypeModel modelWithTitle:@"Handle Keyboard" targetClass:HWTextInputViewController.class];
-    HWDemoTypeModel *testViewDemo = [HWDemoTypeModel modelWithTitle:@"Use PanModal View, same as ViewController" targetClass:HWTestViewPanModalController.class];
+    HWDemoTypeModel *testViewDemo = [HWDemoTypeModel modelWithTitle:@"Use PanModal View" targetClass:HWTestViewPanModalController.class];
     testViewDemo.action = HWActionTypePush;
     
     HWDemoTypeModel *appDemo = [HWDemoTypeModel modelWithTitle:@"App Demo" targetClass:HWAppListViewController.class];

@@ -10,6 +10,8 @@
 #import <HWPanModal/HWPanModalPresentationUpdateProtocol.h>
 #import <HWPanModal/UIViewController+LayoutHelper.h>
 
+@class HWPanModalContainerView;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HWPanModalContentView : UIView <HWPanModalPresentable, HWPanModalPresentationUpdateProtocol, HWPanModalPresentableLayoutProtocol>

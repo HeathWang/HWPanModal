@@ -55,7 +55,6 @@
 - (void)prepare {
     [self.presentingView addSubview:self];
     self.frame = self.presentingView.bounds;
-    
 
     _handler = [[HWPanModalPresentableHandler alloc] initWithPresentable:self.contentView];
     _handler.delegate = self;
@@ -93,25 +92,30 @@
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
         yPos = self.contentView.longFormYPos;
     }
+    
+    // refresh layout
+    [self configureViewLayout];
+    [self adjustPresentedViewFrame];
 
     self.panContainerView.hw_top = self.hw_height;
-
+    
     if ([[self presentable] isHapticFeedbackEnabled]) {
         if (@available(iOS 10.0, *)) {
             [self.feedbackGenerator selectionChanged];
         }
     }
-
+    
     [HWPanModalAnimator animate:^{
         self.panContainerView.hw_top = yPos;
         self.backgroundView.dimState = DimStateMax;
     } config:[self presentable] completion:^(BOOL completion) {
         self.isPresenting = NO;
+        
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
         }
     }];
-
+    
 }
 
 - (void)layoutSubviews {
@@ -160,7 +164,7 @@
 - (void)adjustPresentedViewFrame {
     CGRect frame = self.frame;
     CGSize size = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame) - self.handler.anchoredYPosition);
-
+    
     self.panContainerView.hw_size = frame.size;
     self.panContainerView.contentView.frame = CGRectMake(0, 0, size.width, size.height);
     self.contentView.frame = self.panContainerView.contentView.bounds;

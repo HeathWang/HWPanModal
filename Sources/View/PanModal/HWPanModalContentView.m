@@ -10,7 +10,7 @@
 
 @interface HWPanModalContentView ()
 
-@property (nonatomic, weak) HWPanModalContainerView *containerView;
+@property (nonatomic, weak, readonly) HWPanModalContainerView *containerView;
 
 @end
 
@@ -23,7 +23,6 @@
         view = [UIApplication sharedApplication].keyWindow;
     }
     HWPanModalContainerView *containerView = [[HWPanModalContainerView alloc] initWithPresentingView:view contentView:self];
-    self.containerView = containerView;
 }
 
 #pragma mark - HWPanModalPresentationUpdateProtocol
@@ -233,7 +232,8 @@
 }
 
 - (CGFloat)longFormYPos {
-    return MAX([self topMarginFromPanModalHeight:[self longFormHeight]], [self topMarginFromPanModalHeight:PanModalHeightMake(PanModalHeightTypeMax, 0)]) + [self topOffset];
+    CGFloat longFrom = MAX([self topMarginFromPanModalHeight:[self longFormHeight]], [self topMarginFromPanModalHeight:PanModalHeightMake(PanModalHeightTypeMax, 0)]) + [self topOffset];
+    return longFrom;
 }
 
 - (CGFloat)bottomYPos {
@@ -264,5 +264,19 @@
             return 0;
     }
 }
+
+#pragma mark - Getter
+
+- (HWPanModalContainerView *)containerView {
+    UIView *fatherView = self.superview;
+    while (fatherView) {
+        if ([fatherView isKindOfClass:HWPanModalContainerView.class]) {
+            return (HWPanModalContentView *) fatherView;
+        }
+        fatherView = fatherView.superview;
+    }
+    return nil;
+}
+
 
 @end

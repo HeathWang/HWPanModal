@@ -384,13 +384,13 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)configureViewLayout {
 
     if ([self.presentable isKindOfClass:UIViewController.class]) {
-        UIViewController<HWPanModalPresentable> *layoutPresentable = self.presentable;
+        UIViewController<HWPanModalPresentable> *layoutPresentable = (UIViewController<HWPanModalPresentable> *) self.presentable;
         self.shortFormYPosition = layoutPresentable.shortFormYPos;
         self.longFormYPosition = layoutPresentable.longFormYPos;
         self.anchorModalToLongForm = [layoutPresentable anchorModalToLongForm];
         self.extendsPanScrolling = [layoutPresentable allowsExtendedPanScrolling];
     } else if ([self.presentable isKindOfClass:HWPanModalContentView.class]) {
-        HWPanModalContentView<HWPanModalPresentable> *layoutPresentable = self.presentable;
+        HWPanModalContentView<HWPanModalPresentable> *layoutPresentable = (HWPanModalContentView<HWPanModalPresentable> *) self.presentable;
         self.shortFormYPosition = layoutPresentable.shortFormYPos;
         self.longFormYPosition = layoutPresentable.longFormYPos;
         self.anchorModalToLongForm = [layoutPresentable anchorModalToLongForm];

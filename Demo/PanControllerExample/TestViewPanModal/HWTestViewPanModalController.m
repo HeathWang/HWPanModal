@@ -9,10 +9,12 @@
 #import "HWTestViewPanModalController.h"
 #import <Masonry/Masonry.h>
 #import "HWSimplePanModalView.h"
+#import "HWAutoSizePanModalContentView.h"
 
 @interface HWTestViewPanModalController ()
 
 @property (nonatomic, strong) UIButton *presentButton;
+@property (nonatomic, strong) UIButton *autoSizeButton;
 
 @end
 
@@ -24,10 +26,17 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.presentButton];
+    [self.view addSubview:self.autoSizeButton];
 
     [self.presentButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(CGPointZero);
         make.size.mas_equalTo(CGSizeMake(88, 66));
+    }];
+
+    [self.autoSizeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(self.presentButton);
+        make.top.equalTo(self.presentButton.mas_bottom).offset(0);
+        make.centerX.equalTo(@0);
     }];
 }
 
@@ -38,17 +47,37 @@
     [simplePanModalView presentInView:nil];
 }
 
+- (void)didTapToAutoSize {
+    HWAutoSizePanModalContentView *autoSizePanModalContentView = [HWAutoSizePanModalContentView new];
+    [autoSizePanModalContentView presentInView:nil];
+}
+
+#pragma mark - private method
+
+- (UIButton *)buttonWithTitle:(NSString *)title {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitleColor:[UIColor colorWithRed:0.000 green:0.600 blue:0.800 alpha:1.00] forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    return button;
+}
+
 #pragma mark - Getter
 
 - (UIButton *)presentButton {
     if (!_presentButton) {
-        _presentButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_presentButton setTitleColor:[UIColor colorWithRed:0.000 green:0.600 blue:0.800 alpha:1.00] forState:UIControlStateNormal];
-        [_presentButton setTitle:@"Present" forState:UIControlStateNormal];
-        _presentButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        _presentButton = [self buttonWithTitle:@"Present"];
         [_presentButton addTarget:self action:@selector(didTapToPresent) forControlEvents:UIControlEventTouchUpInside];
     }
     return _presentButton;
+}
+
+- (UIButton *)autoSizeButton {
+    if (!_autoSizeButton) {
+        _autoSizeButton = [self buttonWithTitle:@"AutoSize"];
+        [_autoSizeButton addTarget:self action:@selector(didTapToAutoSize) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _autoSizeButton;
 }
 
 

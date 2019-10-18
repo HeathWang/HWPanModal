@@ -31,6 +31,7 @@
 		7E300AE1230EB51C003FBFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E300AE0230EB51C003FBFE7 /* ViewController.swift */; };
 		7E300AE4230EB51C003FBFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE2230EB51C003FBFE7 /* Main.storyboard */; };
 		7E300AE9230EB51E003FBFE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E300AE7230EB51E003FBFE7 /* LaunchScreen.storyboard */; };
+		7E503CD92359BEA7000B73F9 /* HWAutoSizePanModalContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E503CD82359BEA7000B73F9 /* HWAutoSizePanModalContentView.m */; };
 		7E8F6E7F231626CF00D9C897 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */; };
 		7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F6E8023162B3A00D9C897 /* DemoType.swift */; };
 		7EA0F600230D63D300ED20D2 /* HWDemoTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5B8230D63D300ED20D2 /* HWDemoTypeModel.m */; };
@@ -102,6 +103,8 @@
 		7E300AE3230EB51C003FBFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E300AE8230EB51E003FBFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E300AEA230EB51E003FBFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E503CD72359BEA7000B73F9 /* HWAutoSizePanModalContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAutoSizePanModalContentView.h; sourceTree = "<group>"; };
+		7E503CD82359BEA7000B73F9 /* HWAutoSizePanModalContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAutoSizePanModalContentView.m; sourceTree = "<group>"; };
 		7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		7E8F6E8023162B3A00D9C897 /* DemoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoType.swift; sourceTree = "<group>"; };
 		7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
@@ -699,6 +702,8 @@
 				7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */,
 				7ED9DE7E23598ADE00AE8A60 /* HWSimplePanModalView.h */,
 				7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */,
+				7E503CD72359BEA7000B73F9 /* HWAutoSizePanModalContentView.h */,
+				7E503CD82359BEA7000B73F9 /* HWAutoSizePanModalContentView.m */,
 			);
 			path = TestViewPanModal;
 			sourceTree = "<group>";
@@ -1033,6 +1038,7 @@
 				7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */,
 				7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */,
 				7EA0F606230D63D300ED20D2 /* HWImmobileIndicatorView.m in Sources */,
+				7E503CD92359BEA7000B73F9 /* HWAutoSizePanModalContentView.m in Sources */,
 				B8CF44061F90CAC000389BFE /* main.m in Sources */,
 				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
 				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
