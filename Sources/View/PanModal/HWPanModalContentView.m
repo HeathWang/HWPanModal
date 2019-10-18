@@ -254,12 +254,11 @@
         case PanModalHeightTypeContentIgnoringSafeArea:
             return self.bottomYPos - panModalHeight.height;
         case PanModalHeightTypeIntrinsic: {
-            /*[self.view layoutIfNeeded];
+            [self layoutIfNeeded];
 
-            CGSize targetSize = CGSizeMake(self.hw_presentedVC.containerView ? self.hw_presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
-            CGFloat intrinsicHeight = [self.view systemLayoutSizeFittingSize:targetSize].height;
-            return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);*/
-            return 0;
+            CGSize targetSize = CGSizeMake(self.containerView ? self.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
+            CGFloat intrinsicHeight = [self systemLayoutSizeFittingSize:targetSize].height;
+            return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);
         }
         default:
             return 0;
