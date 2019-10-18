@@ -67,20 +67,32 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 
 ## Features
-1. Supports any type of `UIViewController`
-2. Seamless transition between modal and content
-3. Support two kinds of dismissal gestureRecognizer interaction
+1. Supports any type of `UIViewController` to present.
+2. Support View which inherit from `HWPanModalContentView` to present.
+3. Seamless transition between modal and content.
+4. Support two kinds of dismissal gestureRecognizer interaction
     1. Pan gesture direction up&down
     2. Pan gesture direction right, you can swipe on screen edge to dismiss controller. 
-4. Support write your own animation for presenting VC.
-5. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
-6. Support config background alpha or `blur` background. Note: Dynamic change blur effect ONLY works on iOS9.0+.
-7. Show / hide corner, indicator.
-8. Auto handle UIKeyboard show/hide.
-9. Hight customize indicator view.
-10. Touch event response can pass through to presenting VC.
+5. Support write your own animation for presenting VC.
+6. Support config animation `Duration`, `AnimationOptions`, `springDamping`.
+7. Support config background alpha or `blur` background. Note: Dynamic change blur effect ONLY works on iOS9.0+.
+8. Show / hide corner, indicator.
+9. Auto handle UIKeyboard show/hide.
+10. Hight customize indicator view.
+11. Touch event response can pass through to presenting VC.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) declare.
+
+### What's different between UIViewController and HWPanModalContentView to present ?
+
+From version 0.6.0, this framework support using `HWPanModalContentView` to present from bottom, that means we can add subview(inherit from `HWPanModalContentView`) to the target view that you want to show.
+
+The different is `HWPanModalContentView` is just a view, and support some animations, unlike present ViewController, you will got ViewController life circle, and navigation stack.
+
+`HWPanModalContentView` limit:
+* Currently not support screen rotation.
+* Not support edge horizontal pan to dismiss.
+* Not support customize presentingVC animation. (There is no presentingVC for view).
 
 ## TODO
 
@@ -88,7 +100,7 @@ More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWP
 * [x] High customize indicator view.
 * [x] Edge Interactive dismissal can work on full screen and configable distance to left edge.
 * [x] Touch event can response to presenting VC, working on it.
-* [ ] Strip the presented view container view, make it can use directly.
+* [x] Strip the presented view container view, make it can use directly.
 
 ## Compatibility
 **iOS 8.0+**, support Objective-C & Swift.
@@ -103,7 +115,7 @@ pod 'HWPanModal', '~> 0.3.4'
 
 ## How to use
 
-### How to present from bottom
+### How to present UIViewController from bottom
 Your UIViewController need to conform `HWPanModalPresentable`. If you use default, nothing more will be written.
 
 ```Objective-C
@@ -135,7 +147,7 @@ Where you need to present this Controller.
 
 yeah! Easy.
 
-### Change state, scrollView contentOffset, reload layout
+### Change state, scrollView contentOffset, reload layout. IMPORTANT!
 
 When You present you Controller, you can change the UI.
 Refer to `UIViewController+Presentation.h`.
@@ -259,6 +271,31 @@ Here is `HWTextIndicatorView` code:
 
 @end
 
+```
+
+### How to use HWPanModalContentView
+
+You should always inherit from `HWPanModalContentView`. `HWPanModalContentView` conforms `HWPanModalPresentable` like the way using UIViewController.
+
+```Objective-C
+@interface HWSimplePanModalView : HWPanModalContentView
+
+@end
+
+@implementation HWSimplePanModalView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // add view and layout.
+    }
+    
+    return self;
+}
+
+// present it.
+HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
+[simplePanModalView presentInView:nil];
 ```
     
 ## Example

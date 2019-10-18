@@ -53,19 +53,31 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 
 ## 功能
 1. 支持任意类型的 `UIViewController`
-2. 平滑的转场动画
-3. 支持2种类型的手势dismiss视图
+2. 支持继承自 `HWPanModalContentView` 的view
+3. 平滑的转场动画
+4. 支持2种类型的手势dismiss视图
     1. 上下方向拖动关闭视图。
     2. 侧滑关闭视图，支持全屏侧滑。
-4. 支持为presenting VC编写自定义动画。
-5. 支持配置动画时间，动画options，弹性spring值
-6. 支持配置背景alpha，或者高斯模糊背景。注意：动态调整模糊效果仅工作于iOS9.0+。
-7. 支持显示隐藏指示器，修改圆角
-8. 自动处理键盘弹出消失事件。
-9. 自定义指示器indicator view。
-10. 事件可以穿透到下层presenting VC。
+5. 支持为presenting VC编写自定义动画。
+6. 支持配置动画时间，动画options，弹性spring值
+7. 支持配置背景alpha，或者高斯模糊背景。注意：动态调整模糊效果仅工作于iOS9.0+。
+8. 支持显示隐藏指示器，修改圆角
+9. 自动处理键盘弹出消失事件。
+10. 自定义指示器indicator view。
+11. 事件可以穿透到下层presenting VC。
 
 更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) 声明。
+
+### 弹出UIViewController和HWPanModalContentView的不同点？
+
+从0.6.0版本后, 该框架支持使用 `HWPanModalContentView` 从底部弹出视图, 这说明以前只支持present ViewController，现在同样支持把view通过add subview的方式添加的目标视图。
+
+不同点是 `HWPanModalContentView` 只是一个view视图, 通过添加一些动画实现了原本的功能。不像present ViewController的模式，你可以获得controller的整个生命周期，并且可以使用navigation栈来push VC。
+
+`HWPanModalContentView` 目前的限制:
+* 不支持转屏。
+* 不支持屏幕边缘横向拖拽来dismiss。
+* 不支持自定义presenting VC动画。（因为是view，没有presenting VC）
     
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
@@ -236,7 +248,33 @@ Here is `HWTextIndicatorView` code:
 
 @end
 
-```    
+```   
+
+### 如何使用HWPanModalContentView
+
+你必须继承自 `HWPanModalContentView`. `HWPanModalContentView` 适配 `HWPanModalPresentable` 协议，就像你可用该协议来present一样。
+
+```Objective-C
+@interface HWSimplePanModalView : HWPanModalContentView
+
+@end
+
+@implementation HWSimplePanModalView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // add view and layout.
+    }
+    
+    return self;
+}
+
+// present it.
+HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
+[simplePanModalView presentInView:nil];
+```
+ 
 
 ## 例子
 

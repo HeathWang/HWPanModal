@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * present in the target view
- * @param view The view which present to.
+ * @param view The view which present to. If the view is nil, will use UIWindow's keyWindow.
  */
 - (void)presentInView:(nullable UIView *)view;
 
