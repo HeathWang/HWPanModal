@@ -19,7 +19,7 @@
 </p>
 
 
-HWPanModal is used to present controller and drag to dismiss.
+HWPanModal is used to present controller and drag to dismiss. Similar with iOS13 default present Modal style.
 
 Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
