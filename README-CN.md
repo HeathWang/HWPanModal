@@ -70,7 +70,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 
 ### 弹出UIViewController和HWPanModalContentView的不同点？
 
-从0.6.0版本后, 该框架支持使用 `HWPanModalContentView` 从底部弹出视图, 这说明以前只支持present ViewController，现在同样支持把view通过add subview的方式添加的目标视图。
+从0.6.0版本后, 该框架支持使用 `HWPanModalContentView` 从底部弹出视图, 即实现了present ViewController同样的交互和动画。
 
 不同点是 `HWPanModalContentView` 只是一个view视图, 通过添加一些动画实现了原本的功能。不像present ViewController的模式，你可以获得controller的整个生命周期，并且可以使用navigation栈来push VC。
 
@@ -78,6 +78,7 @@ APP中常见的从底部弹出视图，比如知乎APP的查看评论、抖音�
 * 不支持转屏。
 * 不支持屏幕边缘横向拖拽来dismiss。
 * 不支持自定义presenting VC动画。（因为是view，没有presenting VC）
+
     
 ## 适配
 **iOS 8.0+**, support Objective-C & Swift.
