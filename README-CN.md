@@ -29,6 +29,14 @@ APP中常见的从底部弹出视图，可以通过该框架快速实现，只�
 5. iOS13 默认模态(present)效果
 6. And more...
 
+## 特别感谢
+
+Special Thanks to JetBrains! I use AppCode IDE to develop my open source project.
+<p style="align: left">
+    <a href="https://www.jetbrains.com/?from=HWPanModal">
+       <img src="icon_AppCode.png">
+    </a>
+</p>
 
 ## 截图
 

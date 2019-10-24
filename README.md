@@ -30,7 +30,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 ## Special Thanks
 
 Special Thanks to JetBrains! I use AppCode IDE to develop my open source project.
-<p style="align: center">
+<p style="align: left">
     <a href="https://www.jetbrains.com/?from=HWPanModal">
        <img src="icon_AppCode.png">
     </a>
