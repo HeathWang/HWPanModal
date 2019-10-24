@@ -80,6 +80,10 @@
     return PanModalHeightMake(PanModalHeightTypeContent, 200);
 }
 
+- (CGFloat)topOffset {
+    return [UIApplication sharedApplication].keyWindow.rootViewController.topLayoutGuide.length + 21;
+}
+
 - (BOOL)shouldRoundTopCorners {
     return YES;
 }

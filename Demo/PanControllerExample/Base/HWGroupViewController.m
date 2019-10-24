@@ -75,6 +75,10 @@
     return self.tableView;
 }
 
+- (BOOL)showsScrollableVerticalScrollIndicator {
+    return NO;
+}
+
 #pragma mark - Getter
 
 - (NSArray<UIColor *> *)colors {

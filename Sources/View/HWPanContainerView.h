@@ -15,6 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIView *contentView;
 
 - (instancetype)initWithPresentedView:(UIView *)presentedView frame:(CGRect)frame;
+
+- (void)updateShadow:(UIColor *)shadowColor
+        shadowRadius:(CGFloat)shadowRadius
+        shadowOffset:(CGSize)shadowOffset
+       shadowOpacity:(float)shadowOpacity;
+
 @end
 
 @interface UIView (PanContainer)

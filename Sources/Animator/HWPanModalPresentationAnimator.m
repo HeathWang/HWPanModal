@@ -141,9 +141,20 @@
             [context completeTransition:finished];
 		}];
 	} else {
+        
+        CGFloat offsetY = 0;
+        HWPanModalShadow shadowConfig = [presentable contentShadow];
+        if (shadowConfig.shadowColor) {
+            // we should make the panView move further to hide the shadow effect.
+            offsetY = offsetY + shadowConfig.shadowRadius + shadowConfig.shadowOffset.height;
+            if ([presentable showDragIndicator]) {
+                offsetY += [presentable customIndicatorView] ? [presentable customIndicatorView].indicatorSize.height : 13;
+            }
+        }
+        
 		[HWPanModalAnimator animate:^{
 			[self dismissAnimationForPresentingVC:presentable];
-			panView.hw_top = context.containerView.frame.size.height;
+			panView.hw_top = (context.containerView.frame.size.height + offsetY);
 		} config:presentable completion:^(BOOL completion) {
 			[fromVC.view removeFromSuperview];
             [self endAppearanceTransitionForController:fromVC];

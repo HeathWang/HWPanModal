@@ -10,6 +10,7 @@
 @interface HWPanContainerView ()
 
 @property (nonatomic, strong) UIView *contentView;
+
 @end
 
 @implementation HWPanContainerView
@@ -18,13 +19,21 @@
 	self = [super initWithFrame:frame];
     if (self) {
     	_contentView = [UIView new];
+        
     	_contentView.frame = self.bounds;
 		[self addSubview:_contentView];
-
 		[_contentView addSubview:presentedView];
     }
 	
     return self;
+}
+
+- (void)updateShadow:(UIColor *)shadowColor shadowRadius:(CGFloat)shadowRadius shadowOffset:(CGSize)shadowOffset shadowOpacity:(float)shadowOpacity {
+    
+    self.layer.shadowColor = shadowColor.CGColor;
+    self.layer.shadowRadius = shadowRadius;
+    self.layer.shadowOffset = shadowOffset;
+    self.layer.shadowOpacity = shadowOpacity;
 }
 
 @end

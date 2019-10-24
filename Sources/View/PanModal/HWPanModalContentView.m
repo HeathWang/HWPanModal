@@ -23,6 +23,7 @@
         view = [UIApplication sharedApplication].keyWindow;
     }
     HWPanModalContainerView *containerView = [[HWPanModalContainerView alloc] initWithPresentingView:view contentView:self];
+    [containerView show];
 }
 
 #pragma mark - HWPanModalPresentationUpdateProtocol
@@ -95,7 +96,7 @@
     return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);
 }
 
-- (BOOL)showsScrollableHorizontalScrollIndicator {
+- (BOOL)showsScrollableVerticalScrollIndicator {
     return YES;
 }
 
@@ -165,6 +166,10 @@
     return 8;
 }
 
+- (HWPanModalShadow)contentShadow {
+    return PanModalShadowMake(nil, 0, CGSizeZero, 0);
+}
+
 - (BOOL)showDragIndicator {
     if ([self allowsTouchEventsPassingThroughTransitionView]) {
         return NO;
@@ -219,11 +224,11 @@
 #pragma mark - HWPanModalPresentableLayoutProtocol
 
 - (CGFloat)topLayoutOffset {
-    return [UIApplication sharedApplication].keyWindow.rootViewController.topLayoutGuide.length;
+    return 0;
 }
 
 - (CGFloat)bottomLayoutOffset {
-    return [UIApplication sharedApplication].keyWindow.rootViewController.bottomLayoutGuide.length;
+    return 0;
 }
 
 - (CGFloat)shortFormYPos {
@@ -271,7 +276,7 @@
     UIView *fatherView = self.superview;
     while (fatherView) {
         if ([fatherView isKindOfClass:HWPanModalContainerView.class]) {
-            return (HWPanModalContentView *) fatherView;
+            return (HWPanModalContainerView *) fatherView;
         }
         fatherView = fatherView.superview;
     }

@@ -63,10 +63,10 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (UIEdgeInsets)scrollIndicatorInsets;
 
 /**
- * A Boolean value that controls whether the scrollable horizontal scroll indicator is visible.
+ * A Boolean value that controls whether the scrollable vertical scroll indicator is visible.
  * default is YES.
  */
-- (BOOL)showsScrollableHorizontalScrollIndicator;
+- (BOOL)showsScrollableVerticalScrollIndicator;
 
 /**
  * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
@@ -243,6 +243,12 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  * Default is 8.0
  */
 - (CGFloat)cornerRadius;
+
+/**
+* presented content shadow
+* Default is None config
+*/
+- (HWPanModalShadow)contentShadow;
 
 #pragma mark - Indicator config
 

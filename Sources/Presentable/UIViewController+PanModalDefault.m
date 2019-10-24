@@ -64,7 +64,7 @@
 	return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);
 }
 
-- (BOOL)showsScrollableHorizontalScrollIndicator {
+- (BOOL)showsScrollableVerticalScrollIndicator {
 	return YES;
 }
 
@@ -132,6 +132,10 @@
 
 - (CGFloat)cornerRadius {
 	return 8;
+}
+
+- (HWPanModalShadow)contentShadow {
+    return PanModalShadowMake(nil, 0, CGSizeZero, 0);
 }
 
 - (BOOL)showDragIndicator {

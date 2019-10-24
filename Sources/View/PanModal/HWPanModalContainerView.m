@@ -43,13 +43,15 @@
     if (self) {
         _presentingView = presentingView;
         _contentView = contentView;
-
-        [self prepare];
-        [self presentAnimationWillBegin];
-        [self beginPresentAnimation];
     }
 
     return self;
+}
+
+- (void)show {
+    [self prepare];
+    [self presentAnimationWillBegin];
+    [self beginPresentAnimation];
 }
 
 - (void)prepare {
@@ -290,20 +292,10 @@
 
     [[self presentable] panModalWillDismiss];
 
-    CGFloat indicatorHeight = 0;
-    if ([[self presentable] showDragIndicator]) {
-        indicatorHeight += kIndicatorYOffset;
-        if ([[self presentable] customIndicatorView]) {
-            UIView<HWPanModalIndicatorProtocol> *customIndicator = [[self presentable] customIndicatorView];
-            indicatorHeight += [customIndicator indicatorSize].height;
-        } else {
-            indicatorHeight += 13;
-        }
-    }
-
     [HWPanModalAnimator animate:^{
-        self.panContainerView.hw_top = CGRectGetHeight(self.bounds) + indicatorHeight;
+        self.panContainerView.hw_top = CGRectGetHeight(self.bounds);
         self.backgroundView.dimState = DimStateOff;
+        self.dragIndicatorView.alpha = 0;
     } config:[self presentable] completion:^(BOOL completion) {
         [self removeFromSuperview];
         [[self presentable] panModalDidDismissed];

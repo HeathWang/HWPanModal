@@ -228,6 +228,8 @@
 	if ([self.presentable showDragIndicator]) {
 		[self addDragIndicatorViewToView:self.panContainerView];
 	}
+    
+    [self addShadowToContainerView];
 
 	[self setNeedsLayoutUpdate];
 	[self adjustPanContainerBackgroundColor];
@@ -266,6 +268,13 @@
 	// 提高性能
 	view.layer.shouldRasterize = YES;
 	view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+}
+
+- (void)addShadowToContainerView {
+    HWPanModalShadow shadow = [[self presentable] contentShadow];
+    if (shadow.shadowColor) {
+        [self.panContainerView updateShadow:shadow.shadowColor shadowRadius:shadow.shadowRadius shadowOffset:shadow.shadowOffset shadowOpacity:shadow.shadowOpacity];
+    }
 }
 
 - (void)snapToYPos:(CGFloat)yPos {

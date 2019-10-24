@@ -33,6 +33,24 @@ CG_INLINE PanModalHeight PanModalHeightMake(PanModalHeightType heightType, CGFlo
     return modalHeight;
 }
 
+struct HWPanModalShadow {
+    UIColor *shadowColor;
+    CGFloat shadowRadius;
+    CGSize shadowOffset;
+    float shadowOpacity;
+};
+
+typedef struct HWPanModalShadow HWPanModalShadow;
+
+CG_INLINE HWPanModalShadow PanModalShadowMake(UIColor *shadowColor, CGFloat shadowRadius, CGSize shadowOffset, float shadowOpacity) {
+    HWPanModalShadow shadowConfig;
+    shadowConfig.shadowColor = shadowColor;
+    shadowConfig.shadowRadius = shadowRadius;
+    shadowConfig.shadowOffset = shadowOffset;
+    shadowConfig.shadowOpacity = shadowOpacity;
+    return shadowConfig;
+}
+
 static inline BOOL HW_FLOAT_IS_ZERO(CGFloat value) {
     return (value > -FLT_EPSILON) && (value < FLT_EPSILON);
 }

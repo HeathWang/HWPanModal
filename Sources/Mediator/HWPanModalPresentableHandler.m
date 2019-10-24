@@ -282,7 +282,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 */
 - (void)trackScrolling:(UIScrollView *)scrollView {
     self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
-    scrollView.showsVerticalScrollIndicator = [[self presentable] showsScrollableHorizontalScrollIndicator];
+    scrollView.showsVerticalScrollIndicator = [[self presentable] showsScrollableVerticalScrollIndicator];
 }
 
 /**
