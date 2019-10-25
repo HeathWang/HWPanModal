@@ -90,6 +90,7 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
 9. Auto handle UIKeyboard show/hide.
 10. Hight customize indicator view.
 11. Touch event response can pass through to presenting VC.
+12. Config presented view shadow style.
 
 More config pls see [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) declare.
 
