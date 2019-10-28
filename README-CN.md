@@ -79,6 +79,7 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
 9. 自动处理键盘弹出消失事件。
 10. 自定义指示器indicator view。
 11. 事件可以穿透到下层presenting VC。
+12. 可配置presented content 阴影。
 
 更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) 声明。
 
