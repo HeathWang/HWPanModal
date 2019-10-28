@@ -96,12 +96,16 @@
     return 0.618;
 }
 
-- (CGFloat)backgroundBlurRadius {
-    return 5;
-}
-
 - (UIScrollView *)panScrollable {
     return self.tableView;
+}
+
+- (BOOL)allowsTouchEventsPassingThroughTransitionView {
+    return YES;
+}
+
+- (CGFloat)backgroundBlurRadius {
+    return 1;
 }
 
 #pragma mark - Getter

@@ -80,6 +80,9 @@
 }
 
 - (CGFloat)backgroundAlpha {
+    if ([self allowsTouchEventsPassingThroughTransitionView]) {
+        return 0;
+    }
     return 0.7;
 }
 

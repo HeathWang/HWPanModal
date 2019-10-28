@@ -181,13 +181,13 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (BOOL)isHapticFeedbackEnabled;
 
 /**
- * 是否允许触摸事件透传到presenting ViewController。如果你有特殊需求的话(比如弹出一个底部视图，但是你想操作弹出视图下面的view，即presenting VC)，可开启此功能
- * 注意开启此功能，背景视图将被移除，同时拖拽指示器会默认隐藏。
- * 
- * Whether allows touch events passing through the transition container view.
- * In some situations, you present the bottom VC, and you want to operate the presenting VC(mapView, scrollView and etc), enable this func.
+ * 是否允许触摸事件透传到presenting ViewController/View。如果你有特殊需求的话(比如弹出一个底部视图，但是你想操作弹出视图下面的view，即presenting VC/View)，可开启此功能
+ * 注意开启此功能，拖拽指示器会默认隐藏，背景色alpha默认为0.
  *
- * Note: When allows, the background view will be removed, and the drag indicator will be hidden.
+ * Whether allows touch events passing through the transition container view.
+ * In some situations, you present the bottom VC/View, and you want to operate the presenting VC/View(mapView, scrollView and etc), enable this func.
+ *
+ * Note: When allows, the background view alpha = 0, and the drag indicator will be hidden.
  * @return Default is NO.
  *
  * Note: You SHOULD MUST dismiss the presented VC in the right time.

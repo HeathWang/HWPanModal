@@ -63,10 +63,7 @@
 	if (!self.containerView)
 		return;
     
-    // do not add background view if below config return `YES`
-    if (![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
-        [self layoutBackgroundView:self.containerView];
-    }
+    [self layoutBackgroundView:self.containerView];
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
     	self.currentPresentationState = PresentationStateLong;
@@ -443,19 +440,24 @@
 }
 
 - (HWDimmedView *)backgroundView {
-	if (!_backgroundView && ![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+	if (!_backgroundView) {
 		if (self.presentable) {
 			_backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha] blurRadius:[self.presentable backgroundBlurRadius]];
 		} else {
 			_backgroundView = [[HWDimmedView alloc] init];
 		}
+        
+        if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+            _backgroundView.userInteractionEnabled = NO;
+        } else {
+            __weak typeof(self) wkSelf = self;
+            _backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
+                if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
+                    [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
+                }
+            };
+        }
 
-		__weak typeof(self) wkSelf = self;
-		_backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
-			if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
-                [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
-			}
-		};
 	}
     
     return _backgroundView;

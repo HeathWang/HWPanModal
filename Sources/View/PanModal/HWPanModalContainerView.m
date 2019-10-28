@@ -72,11 +72,7 @@
 
 - (void)presentAnimationWillBegin {
 
-    if (![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
-        [self layoutBackgroundView];
-    } else {
-        self.userInteractionEnabled = NO;
-    }
+    [self layoutBackgroundView];
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
         self.currentPresentationState = PresentationStateLong;
@@ -200,8 +196,12 @@
         return;
 
     self.handler.presentedView = self.panContainerView;
-
-    [self addGestureRecognizer:self.handler.panGestureRecognizer];
+    
+    if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+        [self.panContainerView addGestureRecognizer:self.handler.panGestureRecognizer];
+    } else {
+        [self addGestureRecognizer:self.handler.panGestureRecognizer];
+    }
 
     if ([self.presentable shouldRoundTopCorners]) {
         [self addRoundedCornersToView:self.panContainerView.contentView];
@@ -328,6 +328,34 @@
     return NO;
 }
 
+#pragma mark - event handle
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    if (!self.userInteractionEnabled || self.hidden || self.alpha < 0.01) {
+        return nil;
+    }
+
+    if (![self pointInside:point withEvent:event]) {
+        return nil;
+    }
+    
+    BOOL eventThrough = [[self presentable] allowsTouchEventsPassingThroughTransitionView];
+    if (eventThrough) {
+        CGPoint convertedPoint = [self.panContainerView convertPoint:point fromView:self];
+        if (CGRectGetWidth(self.panContainerView.frame) >= convertedPoint.x &&
+            convertedPoint.x > 0 &&
+            CGRectGetHeight(self.panContainerView.frame) >= convertedPoint.y &&
+            convertedPoint.y > 0) {
+            return [super hitTest:point withEvent:event];
+        } else {
+            return nil;
+        }
+    } else {
+        return [super hitTest:point withEvent:event];
+    }
+}
+
 #pragma mark - getter
 
 - (id<HWPanModalPresentable>)presentable {
@@ -338,19 +366,24 @@
 }
 
 - (HWDimmedView *)backgroundView {
-    if (!_backgroundView && ![[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+    if (!_backgroundView) {
         if (self.presentable) {
             _backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha] blurRadius:[self.presentable backgroundBlurRadius]];
         } else {
             _backgroundView = [[HWDimmedView alloc] init];
         }
+        
+        if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+            _backgroundView.userInteractionEnabled = NO;
+        } else {
+            __weak typeof(self) wkSelf = self;
+            _backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
+                if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
+                    [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
+                }
+            };
+        }
 
-        __weak typeof(self) wkSelf = self;
-        _backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
-            if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
-                [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
-            }
-        };
     }
 
     return _backgroundView;
