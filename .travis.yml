@@ -1,4 +1,29 @@
-osx_image: xcode11.1
 language: objective-c
-xcode_project: HWPanModal.xcodeproj
-script: xcodebuild -project HWPanModal.xcodeproj -scheme "HWPanModalDemo" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest'
+osx_image: xcode11
+
+cache: cocoapods
+podfile: Podfile
+
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+    - XCODE_WORKSPACE=HWPanModal.xcworkspace
+    - DESTINATION="OS=13.0,name=iPhone XS"
+  matrix:
+    - SCHEME_OC="HWPanModalDemo"
+    - SCHEME_SWIFT="SwiftDemo"
+
+before_install:
+  - gem install xcpretty --no-document --quiet
+  - gem install cocoapods --pre --no-document --quiet
+  - sh Startup.sh
+
+script:
+  - set -o pipefail
+  - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_OC" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+  - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_SWIFT" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+  - pod lib lint --allow-warnings
+
+after_success:
+  - sleep 3
