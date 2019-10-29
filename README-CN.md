@@ -14,7 +14,10 @@
        <img src="https://img.shields.io/badge/language-objective--c-blue.svg">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat">
+       <img src="https://travis-ci.org/HeathWang/HWPanModal.svg?branch=master">
+    </a>
+    <a href="https://codebeat.co/projects/github-com-heathwang-hwpanmodal-master">
+        <img alt="codebeat badge" src="https://codebeat.co/badges/fb96e7ea-2320-4219-8f19-777674a97d0e" />
     </a>
 </p>
 
@@ -50,16 +53,16 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
         </tr>
         <tr>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="180" />
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example.gif" width="180" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_3.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_4.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_2.gif" width="180"/>
             </td>
         </tr>
     </table>
@@ -103,7 +106,7 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.4'
+pod 'HWPanModal', '~> 0.6.0'
 ```
 
 ## 如何使用

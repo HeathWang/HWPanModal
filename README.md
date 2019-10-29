@@ -52,16 +52,16 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
         </tr>
         <tr>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example.gif" width="180" />
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example.gif" width="180" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_3.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_3.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_4.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_4.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/HWPanModal_example_2.gif" width="180"/>
+            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_2.gif" width="180"/>
             </td>
         </tr>
     </table>
@@ -124,7 +124,7 @@ The different is `HWPanModalContentView` is just a view, and support some animat
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.3.4'
+pod 'HWPanModal', '~> 0.6.0'
 ```
 
 ## How to use
