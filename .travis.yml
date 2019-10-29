@@ -9,7 +9,7 @@ env:
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
     - XCODE_WORKSPACE=HWPanModal.xcworkspace
-    - DESTINATION="OS=13.0,name=iPhone XS"
+    - DESTINATION="OS=13.0,name=iPhone 8"
   matrix:
     - SCHEME_OC="HWPanModalDemo"
     - SCHEME_SWIFT="SwiftDemo"
@@ -22,7 +22,7 @@ before_install:
 script:
   - set -o pipefail
   - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_OC" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
-  - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_SWIFT" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+  # - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_SWIFT" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
   - pod lib lint --allow-warnings
 
 after_success:
