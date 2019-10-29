@@ -71,97 +71,20 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
             case UIGestureRecognizerStateBegan:
             case UIGestureRecognizerStateChanged: {
-                [self respondToPanGestureRecognizer:panGestureRecognizer];
-
-                if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-                    // check if toggle dismiss action
-                    if ([[self presentable] presentingVCAnimationStyle] > PresentingViewControllerAnimationStyleNone &&
-                            velocity.y > 0 &&
-                            (self.presentedView.frame.origin.y > self.shortFormYPosition || HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.shortFormYPosition))) {
-                        [self dismissPresentable:YES mode:PanModalInteractiveModeDragDown];
-                    }
-                }
-
-                if (HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.anchoredYPosition) && self.extendsPanScrolling) {
-                    [self.presentable willTransitionToState:PresentationStateLong];
-                }
-
-                // update drag indicator
-                if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-                    if (velocity.y > 0) {
-                        [self.dragIndicatorView didChangeToState:HWIndicatorStatePullDown];
-                    } else if (velocity.y < 0 && self.presentedView.frame.origin.y <= self.anchoredYPosition && !self.extendsPanScrolling) {
-                        [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
-                    }
-                }
-
+                [self handlePanGestureBeginOrChanged:panGestureRecognizer];
             }
                 break;
             case UIGestureRecognizerStateEnded:
             case UIGestureRecognizerStateCancelled:
             case UIGestureRecognizerStateFailed: {
-
-                /**
-                 * pan recognizer结束
-                 * 根据velocity(速度)，当velocity.y < 0，说明用户在向上拖拽view；当velocity.y > 0，向下拖拽
-                 * 根据拖拽的速度，处理不同的情况：
-                 * 1.超过拖拽速度阈值时并且向下拖拽，dismiss controller
-                 * 2.向上拖拽永远不会dismiss，回弹至相应的状态
-                 */
-
-                if ([self isVelocityWithinSensitivityRange:velocity.y]) {
-                    if (velocity.y < 0) {
-                        [self transitionToState:PresentationStateLong];
-                        [self cancelInteractiveTransition];
-                    } else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @([self containerSize].height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
-                            ![self.presentable allowsDragToDismiss]) {
-                        [self transitionToState:PresentationStateShort];
-                        [self cancelInteractiveTransition];
-                    } else {
-                        if ([self isBeingDismissed]) {
-                            [self finishInteractiveTransition];
-                        } else {
-                            [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
-                        }
-                    }
-                } else {
-                    CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition)]];
-
-                    if (HW_TWO_FLOAT_IS_EQUAL(position, self.longFormYPosition)) {
-                        [self transitionToState:PresentationStateLong];
-                        [self cancelInteractiveTransition];
-                    } else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
-                        [self transitionToState:PresentationStateShort];
-                        [self cancelInteractiveTransition];
-                    } else {
-
-                        if ([self isBeingDismissed]) {
-                            [self finishInteractiveTransition];
-                        } else {
-                            [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
-                        }
-                    }
-                }
-
+                [self handlePanGestureEnded:panGestureRecognizer];
             }
                 break;
             default: break;
         }
     } else {
-        switch (panGestureRecognizer.state) {
-            case UIGestureRecognizerStateEnded:
-            case UIGestureRecognizerStateCancelled:
-            case UIGestureRecognizerStateFailed: {
-                [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
-                [self cancelInteractiveTransition];
-            }
-                break;
-            default:
-                break;
-        }
-        [panGestureRecognizer setTranslation:CGPointZero inView:panGestureRecognizer.view];
+        [self handlePanGestureDidNotResponse:panGestureRecognizer];
     }
-
 }
 
 - (BOOL)shouldResponseToPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
@@ -248,7 +171,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         NSNumber *number = obj;
         NSNumber *absValue = @(fabs(number.floatValue - position));
         [tmpArr addObject:absValue];
-        [tmpDict setObject:number forKey:absValue];
+        tmpDict[absValue] = number;
 
     }];
 
@@ -260,6 +183,95 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 - (void)screenEdgeInteractiveAction:(UIPanGestureRecognizer *)gestureRecognizer {
     //
+}
+
+#pragma mark - handle did Pan gesture events
+
+- (void)handlePanGestureDidNotResponse:(UIPanGestureRecognizer *)panGestureRecognizer {
+    switch (panGestureRecognizer.state) {
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateFailed: {
+            [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+            [self cancelInteractiveTransition];
+        }
+            break;
+        default:
+            break;
+    }
+    [panGestureRecognizer setTranslation:CGPointZero inView:panGestureRecognizer.view];
+}
+
+- (void)handlePanGestureBeginOrChanged:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
+    [self respondToPanGestureRecognizer:panGestureRecognizer];
+
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        // check if toggle dismiss action
+        if ([[self presentable] presentingVCAnimationStyle] > PresentingViewControllerAnimationStyleNone &&
+                velocity.y > 0 &&
+                (self.presentedView.frame.origin.y > self.shortFormYPosition || HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.shortFormYPosition))) {
+            [self dismissPresentable:YES mode:PanModalInteractiveModeDragDown];
+        }
+    }
+
+    if (HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.anchoredYPosition) && self.extendsPanScrolling) {
+        [self.presentable willTransitionToState:PresentationStateLong];
+    }
+
+    // update drag indicator
+    if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        if (velocity.y > 0) {
+            [self.dragIndicatorView didChangeToState:HWIndicatorStatePullDown];
+        } else if (velocity.y < 0 && self.presentedView.frame.origin.y <= self.anchoredYPosition && !self.extendsPanScrolling) {
+            [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+        }
+    }
+}
+
+- (void)handlePanGestureEnded:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
+    /**
+     * pan recognizer结束
+     * 根据velocity(速度)，当velocity.y < 0，说明用户在向上拖拽view；当velocity.y > 0，向下拖拽
+     * 根据拖拽的速度，处理不同的情况：
+     * 1.超过拖拽速度阈值时并且向下拖拽，dismiss controller
+     * 2.向上拖拽永远不会dismiss，回弹至相应的状态
+     */
+
+    if ([self isVelocityWithinSensitivityRange:velocity.y]) {
+        if (velocity.y < 0) {
+            [self transitionToState:PresentationStateLong];
+            [self cancelInteractiveTransition];
+        } else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @([self containerSize].height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
+                ![self.presentable allowsDragToDismiss]) {
+            [self transitionToState:PresentationStateShort];
+            [self cancelInteractiveTransition];
+        } else {
+            if ([self isBeingDismissed]) {
+                [self finishInteractiveTransition];
+            } else {
+                [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
+            }
+        }
+    } else {
+        CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition)]];
+
+        if (HW_TWO_FLOAT_IS_EQUAL(position, self.longFormYPosition)) {
+            [self transitionToState:PresentationStateLong];
+            [self cancelInteractiveTransition];
+        } else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
+            [self transitionToState:PresentationStateShort];
+            [self cancelInteractiveTransition];
+        } else {
+
+            if ([self isBeingDismissed]) {
+                [self finishInteractiveTransition];
+            } else {
+                [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
+            }
+        }
+    }
 }
 
 #pragma mark - UIScrollView kvo
