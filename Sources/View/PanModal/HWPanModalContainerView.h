@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)show;
 
+- (void)dismissAnimated:(BOOL)flag completion:(void (^)(void))completion;
+
 - (void)setNeedsLayoutUpdate;
 
 - (void)transitionToState:(PresentationState)state;

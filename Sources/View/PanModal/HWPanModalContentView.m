@@ -10,7 +10,7 @@
 
 @interface HWPanModalContentView ()
 
-@property (nonatomic, weak, readonly) HWPanModalContainerView *containerView;
+@property (nonatomic, weak) HWPanModalContainerView *containerView;
 
 @end
 
@@ -24,6 +24,10 @@
     }
     HWPanModalContainerView *containerView = [[HWPanModalContainerView alloc] initWithPresentingView:view contentView:self];
     [containerView show];
+}
+
+- (void)dismissAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    [self.containerView dismissAnimated:flag completion:completion];
 }
 
 #pragma mark - HWPanModalPresentationUpdateProtocol
@@ -276,15 +280,19 @@
 #pragma mark - Getter
 
 - (HWPanModalContainerView *)containerView {
-    UIView *fatherView = self.superview;
-    while (fatherView) {
-        if ([fatherView isKindOfClass:HWPanModalContainerView.class]) {
-            return (HWPanModalContainerView *) fatherView;
+    // we assume the container view will not change after we got it.
+    if (!_containerView) {
+        UIView *fatherView = self.superview;
+        while (fatherView) {
+            if ([fatherView isKindOfClass:HWPanModalContainerView.class]) {
+                _containerView = (HWPanModalContainerView *) fatherView;
+                break;
+            }
+            fatherView = fatherView.superview;
         }
-        fatherView = fatherView.superview;
     }
-    return nil;
-}
 
+    return _containerView;
+}
 
 @end

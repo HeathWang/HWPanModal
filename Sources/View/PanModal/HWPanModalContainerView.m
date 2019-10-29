@@ -32,6 +32,8 @@
 @property (nonatomic, strong) HWPanContainerView *panContainerView;
 @property (nonatomic, strong) UIView<HWPanModalIndicatorProtocol> *dragIndicatorView;
 
+@property (nonatomic, copy) void(^animationBlock)(void);
+
 @property (nullable, nonatomic, strong) UISelectionFeedbackGenerator *feedbackGenerator API_AVAILABLE(ios(10.0));
 
 @end
@@ -52,6 +54,20 @@
     [self prepare];
     [self presentAnimationWillBegin];
     [self beginPresentAnimation];
+}
+
+- (void)dismissAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    if (flag) {
+        self.animationBlock = completion;
+        [self dismiss:NO mode:PanModalInteractiveModeNone];
+    } else {
+
+        [[self presentable] panModalWillDismiss];
+        [self removeFromSuperview];
+        [[self presentable] panModalDidDismissed];
+
+        completion ? completion() : nil;
+    }
 }
 
 - (void)prepare {
@@ -299,6 +315,7 @@
     } config:[self presentable] completion:^(BOOL completion) {
         [self removeFromSuperview];
         [[self presentable] panModalDidDismissed];
+        self.animationBlock ? self.animationBlock() : nil;
     }];
 
 }

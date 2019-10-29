@@ -9,6 +9,12 @@
 #import "HWAutoSizePanModalContentView.h"
 #import <Masonry/Masonry.h>
 
+@interface HWAutoSizePanModalContentView ()
+
+@property (nonatomic, strong) UIButton *closeButton;
+
+@end
+
 @implementation HWAutoSizePanModalContentView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -21,16 +27,42 @@
         label.numberOfLines = 0;
         [self addSubview:label];
         
+        [self addSubview:self.closeButton];
+        
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(20, 20, 20, 20));
+            make.left.top.equalTo(@20);
+            make.right.equalTo(@-20);
+            make.bottom.equalTo(self.closeButton.mas_top).offset(-20);
+        }];
+        
+        [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(100, 44));
+            make.centerX.equalTo(@0);
+            make.bottom.equalTo(@-30);
         }];
     }
     return self;
 }
 
+- (void)dismissAction {
+    [self dismissAnimated:YES completion:^{
+        NSLog(@"finish animation.");
+    }];
+}
 
 - (PanModalHeight)longFormHeight {
     return PanModalHeightMake(PanModalHeightTypeIntrinsic, 0);
+}
+
+- (UIButton *)closeButton {
+    if (!_closeButton) {
+        _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_closeButton setTitle:@"CLOSE" forState:UIControlStateNormal];
+        [_closeButton setTitleColor:[UIColor colorWithRed:0.000 green:0.600 blue:0.400 alpha:1.00] forState:UIControlStateNormal];
+        [_closeButton addTarget:self action:@selector(dismissAction) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _closeButton;
 }
 
 @end
