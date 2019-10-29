@@ -1,0 +1,4 @@
+osx_image: xcode11.1
+language: objective-c
+xcode_project: HWPanModal.xcodeproj
+script: xcodebuild -project HWPanModal.xcodeproj -scheme "HWPanModalDemo" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest'
