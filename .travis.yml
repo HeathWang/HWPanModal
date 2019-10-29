@@ -12,7 +12,7 @@ env:
     - DESTINATION="OS=13.0,name=iPhone 8"
   matrix:
     - SCHEME_OC="HWPanModalDemo"
-    - SCHEME_SWIFT="SwiftDemo"
+#     - SCHEME_SWIFT="SwiftDemo"
 
 before_install:
   - gem install xcpretty --no-document --quiet
@@ -22,7 +22,7 @@ before_install:
 script:
   - set -o pipefail
   - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_OC" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build CODE_SIGN_IDENTITY='' | xcpretty -c;
-  - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_SWIFT" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build CODE_SIGN_IDENTITY='' | xcpretty -c;
+#   - xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$SCHEME_SWIFT" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build CODE_SIGN_IDENTITY='' | xcpretty -c;
   - pod lib lint --allow-warnings
 
 after_success:
