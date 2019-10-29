@@ -35,7 +35,7 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 Special Thanks to JetBrains! I use AppCode IDE to develop my open source project.
 <p style="align: left">
     <a href="https://www.jetbrains.com/?from=HWPanModal">
-       <img src="icon_AppCode.png">
+       <img src="images/icon_AppCode.png">
     </a>
 </p>
 
@@ -52,16 +52,16 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
         </tr>
         <tr>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example.gif" width="180" />
+            <img src="images/HWPanModal_example.gif" width="180" />
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_3.gif" width="180"/>
+            <img src="images/HWPanModal_example_3.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_4.gif" width="180"/>
+            <img src="images/HWPanModal_example_4.gif" width="180"/>
             </td>
             <td style="text-align: center">
-            <img src="https://github.com/HeathWang/HWPanModal/blob/master/images/HWPanModal_example_2.gif" width="180"/>
+            <img src="images/HWPanModal_example_2.gif" width="180"/>
             </td>
         </tr>
     </table>
