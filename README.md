@@ -14,13 +14,10 @@
        <img src="https://img.shields.io/badge/language-objective--c-blue.svg">
     </a>
     <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/cocoapods/l/HWPanModal.svg?style=flat">
-    </a>
-    <a href="https://cocoapods.org/pods/HWPanModal">
        <img src="https://travis-ci.org/HeathWang/HWPanModal.svg?branch=master">
     </a>
-    <a href="https://cocoapods.org/pods/HWPanModal">
-       <img src="https://img.shields.io/codecov/c/github/ReSwift/ReSwift.svg?style=flat-square">
+    <a href="https://codebeat.co/projects/github-com-heathwang-hwpanmodal-master">
+        <img alt="codebeat badge" src="https://codebeat.co/badges/fb96e7ea-2320-4219-8f19-777674a97d0e" />
     </a>
 </p>
 
