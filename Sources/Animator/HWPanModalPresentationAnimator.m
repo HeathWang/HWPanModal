@@ -137,6 +137,7 @@
                 [fromVC.view removeFromSuperview];
                 [self endAppearanceTransitionForController:fromVC];
                 [toVC endAppearanceTransition];
+                context.containerView.userInteractionEnabled = YES;
 			}
             [context completeTransition:finished];
 		}];

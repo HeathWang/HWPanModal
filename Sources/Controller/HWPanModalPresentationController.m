@@ -336,6 +336,8 @@
 
 - (void)finishInteractiveTransition {
 	if (self.presentedViewController.isBeingDismissed) {
+        // make the containerView can not response event action.
+        self.containerView.userInteractionEnabled = NO;
 		[[self interactiveAnimator] finishInteractiveTransition];
 
 		if (self.presentedViewController.hw_panModalPresentationDelegate.interactiveMode != PanModalInteractiveModeDragDown)
