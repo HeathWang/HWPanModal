@@ -119,6 +119,12 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (NSTimeInterval)transitionDuration;
 
 /**
+ * starting from version 0.6.5, Only works when dismiss
+ * Default is same as `- (NSTimeInterval)transitionDuration;`
+ */
+- (NSTimeInterval)dismissalDuration;
+
+/**
  * 转场动画options
  * Default is UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
  */

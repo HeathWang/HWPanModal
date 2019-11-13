@@ -10,11 +10,22 @@
 @implementation HWPanModalAnimator
 
 + (void)animate:(AnimationBlockType)animations config:(nullable id<HWPanModalPresentable>)config completion:(AnimationCompletionType)completion {
-	[HWPanModalAnimator animate:animations config:config startingFromPercent:1 completion:completion];
+	[HWPanModalAnimator animate:animations config:config startingFromPercent:1 isPresentation:YES completion:completion];
 }
 
-+ (void)animate:(AnimationBlockType)animations config:(nullable id<HWPanModalPresentable>)config startingFromPercent:(CGFloat)animationPercent completion:(AnimationCompletionType)completion {
-    NSTimeInterval duration = config ? [config transitionDuration] : kTransitionDuration;
++ (void)dismissAnimate:(AnimationBlockType)animations config:(nullable id<HWPanModalPresentable>)config completion:(AnimationCompletionType)completion {
+    [HWPanModalAnimator animate:animations config:config startingFromPercent:1 isPresentation:NO completion:completion];
+}
+
++ (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config startingFromPercent:(CGFloat)animationPercent isPresentation:(BOOL)flag completion:(AnimationCompletionType)completion {
+
+    NSTimeInterval duration = kTransitionDuration;
+    if  (flag) {
+        duration = config ? [config transitionDuration] : kTransitionDuration;
+    } else {
+        duration = config ? [config dismissalDuration] : kTransitionDuration;
+    }
+
     duration = duration * MAX(animationPercent, 0);
     CGFloat springDamping = config ? [config springDamping] : 1.0;
     UIViewAnimationOptions options = config ? [config transitionAnimationOptions] : UIViewAnimationOptionPreferredFramesPerSecondDefault;

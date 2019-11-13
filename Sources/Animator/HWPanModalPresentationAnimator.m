@@ -122,48 +122,53 @@
 
     // user toggle pan gesture to dismiss.
 	if ([context isInteractive]) {
-        
-		[HWPanModalAnimator smoothAnimate:^{
-			if (self.interactiveMode == PanModalInteractiveModeSideslip) {
-				panView.hw_left = panView.hw_width;
-			}
-
-			[self dismissAnimationForPresentingVC:presentable];
-		} duration:[presentable transitionDuration] completion:^(BOOL completion) {
-            // 因为会有手势交互，所以需要判断transitions是否cancel
-			BOOL finished = ![context transitionWasCancelled];
-
-			if (finished) {
-                [fromVC.view removeFromSuperview];
-                [self endAppearanceTransitionForController:fromVC];
-                [toVC endAppearanceTransition];
-                context.containerView.userInteractionEnabled = YES;
-			}
-            [context completeTransition:finished];
-		}];
+		[self interactionDismiss:context fromVC:fromVC toVC:toVC presentable:presentable panView:panView];
 	} else {
-        
-        CGFloat offsetY = 0;
-        HWPanModalShadow shadowConfig = [presentable contentShadow];
-        if (shadowConfig.shadowColor) {
-            // we should make the panView move further to hide the shadow effect.
-            offsetY = offsetY + shadowConfig.shadowRadius + shadowConfig.shadowOffset.height;
-            if ([presentable showDragIndicator]) {
-                offsetY += [presentable customIndicatorView] ? [presentable customIndicatorView].indicatorSize.height : 13;
-            }
-        }
-        
-		[HWPanModalAnimator animate:^{
-			[self dismissAnimationForPresentingVC:presentable];
-			panView.hw_top = (context.containerView.frame.size.height + offsetY);
-		} config:presentable completion:^(BOOL completion) {
-			[fromVC.view removeFromSuperview];
-            [self endAppearanceTransitionForController:fromVC];
-			[toVC endAppearanceTransition];
-			[context completeTransition:completion];
-		}];
+		[self springDismiss:context fromVC:fromVC toVC:toVC presentable:presentable panView:panView];
+	}
+}
+
+- (void)springDismiss:(id <UIViewControllerContextTransitioning>)context fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC presentable:(UIViewController <HWPanModalPresentable> *)presentable panView:(UIView *)panView {
+	CGFloat offsetY = 0;
+	HWPanModalShadow shadowConfig = [presentable contentShadow];
+	if (shadowConfig.shadowColor) {
+		// we should make the panView move further to hide the shadow effect.
+		offsetY = offsetY + shadowConfig.shadowRadius + shadowConfig.shadowOffset.height;
+		if ([presentable showDragIndicator]) {
+			offsetY += [presentable customIndicatorView] ? [presentable customIndicatorView].indicatorSize.height : 13;
+		}
 	}
 
+	[HWPanModalAnimator dismissAnimate:^{
+		[self dismissAnimationForPresentingVC:presentable];
+		panView.hw_top = (context.containerView.frame.size.height + offsetY);
+	} config:presentable completion:^(BOOL completion) {
+		[fromVC.view removeFromSuperview];
+		[self endAppearanceTransitionForController:fromVC];
+		[toVC endAppearanceTransition];
+		[context completeTransition:completion];
+	}];
+}
+
+- (void)interactionDismiss:(id <UIViewControllerContextTransitioning>)context fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC presentable:(UIViewController <HWPanModalPresentable> *)presentable panView:(UIView *)panView {
+	[HWPanModalAnimator smoothAnimate:^{
+		if (self.interactiveMode == PanModalInteractiveModeSideslip) {
+			panView.hw_left = panView.hw_width;
+		}
+
+		[self dismissAnimationForPresentingVC:presentable];
+	} duration:[presentable dismissalDuration] completion:^(BOOL completion) {
+		// 因为会有手势交互，所以需要判断transitions是否cancel
+		BOOL finished = ![context transitionWasCancelled];
+
+		if (finished) {
+			[fromVC.view removeFromSuperview];
+			[self endAppearanceTransitionForController:fromVC];
+			[toVC endAppearanceTransition];
+			context.containerView.userInteractionEnabled = YES;
+		}
+		[context completeTransition:finished];
+	}];
 }
 
 #pragma mark - presenting VC animation

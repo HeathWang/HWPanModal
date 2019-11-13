@@ -65,7 +65,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 - (void)didPanOnView:(UIPanGestureRecognizer *)panGestureRecognizer {
 
     if ([self shouldResponseToPanGestureRecognizer:panGestureRecognizer] && !self.keyboardInfo) {
-        CGPoint velocity = [panGestureRecognizer velocityInView:self.presentedView];
 
         switch (panGestureRecognizer.state) {
 

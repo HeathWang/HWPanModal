@@ -79,6 +79,10 @@
     return 0.5;
 }
 
+- (NSTimeInterval)dismissalDuration {
+    return [self transitionDuration];
+}
+
 - (UIViewAnimationOptions)transitionAnimationOptions {
     return UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState;
 }

@@ -19,7 +19,7 @@ static NSTimeInterval kTransitionDuration = 0.5;
 
 + (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config completion:(nullable AnimationCompletionType)completion;
 
-+ (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config startingFromPercent:(CGFloat)animationPercent completion:(AnimationCompletionType)completion;
++ (void)dismissAnimate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config completion:(AnimationCompletionType)completion;
 
 + (void)smoothAnimate:(AnimationBlockType)animations duration:(NSTimeInterval)duration completion:(nullable AnimationCompletionType)completion;
 @end
