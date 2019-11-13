@@ -9,6 +9,7 @@
 #import <Masonry/View+MASAdditions.h>
 #import "HWFetchDataViewController.h"
 #import <HWPanModal/HWPanModal.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface HWFetchDataDetailViewController : UIViewController
 
@@ -24,6 +25,8 @@
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
+@property (nonatomic, strong) MJRefreshHeader *refreshHeader;
+
 @end
 
 @implementation HWFetchDataViewController
@@ -32,6 +35,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Comments";
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didTapDoneButton)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.indicatorView];
@@ -45,6 +51,9 @@
 
     [self.indicatorView startAnimating];
     [self fetchData];
+    
+    self.refreshHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchData)];
+    self.tableView.mj_header = self.refreshHeader;
 
 }
 
@@ -62,13 +71,30 @@
         [self.tableView reloadData];
         [self.indicatorView stopAnimating];
         [self hw_panModalSetNeedsLayoutUpdate];
+        
+        if (self.tableView.mj_header.isRefreshing) {
+            [self.tableView.mj_header endRefreshing];
+        }
     });
+}
+
+- (void)didTapDoneButton {
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - HWPanModalPresentable
 
 - (nullable UIScrollView *)panScrollable {
     return self.tableView;
+}
+
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    // 如果拖拽的点在navigation bar上，则返回yes，可以拖拽，否则只能滑动tableView
+    CGPoint loc = [panGestureRecognizer locationInView:self.navigationController.navigationBar];
+    if (CGRectContainsPoint(self.navigationController.navigationBar.frame, loc)) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - UITableViewDataSource

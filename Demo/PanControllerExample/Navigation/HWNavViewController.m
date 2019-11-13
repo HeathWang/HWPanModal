@@ -59,5 +59,15 @@
     return PresentingViewControllerAnimationStylePageSheet;
 }
 
+// let the navigation stack top VC handle it.
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    UIViewController *VC = self.topViewController;
+    if ([VC conformsToProtocol:@protocol(HWPanModalPresentable)]) {
+        id<HWPanModalPresentable> obj = VC;
+        return [obj shouldRespondToPanModalGestureRecognizer:panGestureRecognizer];
+    }
+    return YES;
+}
+
 
 @end

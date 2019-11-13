@@ -4,6 +4,7 @@ inhibit_all_warnings!
 target 'HWPanModalDemo' do
   platform :ios, '8.0'
   pod 'Masonry'
+  pod 'MJRefresh'
   pod 'HWPanModal', :path => './'
 end
 
