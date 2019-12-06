@@ -12,8 +12,6 @@
 
 @interface HWPanModalPresentationDelegate ()
 
-@property (nonatomic, strong) HWPanModalPresentationAnimator *presentationAnimator;
-@property (nonatomic, strong) HWPanModalPresentationAnimator *dismissalAnimator;
 @property (nonatomic, strong) HWPanModalInteractiveAnimator *interactiveDismissalAnimator;
 
 @end
@@ -56,5 +54,13 @@
 	}
 	return _interactiveDismissalAnimator;
 }
+
+#ifdef DEBUG
+
+- (void)dealloc {
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+#endif
 
 @end

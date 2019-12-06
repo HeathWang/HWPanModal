@@ -25,14 +25,14 @@
      * refer to: https://github.com/HeathWang/HWPanModal/issues/27
      * Apple Doc: If you have not yet presented the current view controller, accessing this property creates a presentation controller based on the current value in the modalPresentationStyle property.
      */
-    if (@available(iOS 13, *)) {
-        if (self.presentingViewController) {
-            return [self hw_getPanModalPresentationController];
-        } else {
-            return nil;
-        }
-    } else {
+    
+    /**
+     * fix bug: https://github.com/HeathWang/HWPanModal/issues/37
+     */
+    if (self.presentingViewController) {
         return [self hw_getPanModalPresentationController];
+    } else {
+        return nil;
     }
 }
 

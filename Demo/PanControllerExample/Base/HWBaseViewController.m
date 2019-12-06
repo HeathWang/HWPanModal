@@ -60,5 +60,13 @@
     return NO;
 }
 
+#ifdef DEBUG
+
+- (void)dealloc {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+#endif
+
 
 @end

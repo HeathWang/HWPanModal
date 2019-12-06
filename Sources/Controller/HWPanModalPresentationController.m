@@ -58,6 +58,8 @@
 	[self configureViewLayout];
 }
 
+#pragma mark - Tracking the Transition Start and End
+
 - (void)presentationTransitionWillBegin {
 
 	if (!self.containerView)
@@ -115,6 +117,15 @@
 
 	}];
 }
+
+- (void)dismissalTransitionDidEnd:(BOOL)completed {
+	if (completed) {
+		// break the delegate
+		self.delegate = nil;
+	}
+}
+
+#pragma mark - UIContentContainer protocol
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
 	[super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
@@ -492,8 +503,12 @@
 
 #pragma mark - dealloc
 
+#ifdef DEBUG
+
 - (void)dealloc {
-    
+	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
+
+#endif
 
 @end
