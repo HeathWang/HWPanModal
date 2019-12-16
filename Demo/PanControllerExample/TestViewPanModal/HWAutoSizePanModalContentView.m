@@ -3,7 +3,7 @@
 //  HWPanModalDemo
 //
 //  Created by heath wang on 2019/10/18.
-//  Copyright © 2019 wangcongling. All rights reserved.
+//  Copyright © 2019 heath wang. All rights reserved.
 //
 
 #import "HWAutoSizePanModalContentView.h"

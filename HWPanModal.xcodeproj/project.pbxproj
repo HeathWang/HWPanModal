@@ -62,6 +62,8 @@
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
+		7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */; };
+		7EC3DEFA23A73EB3005B9968 /* UIDevice+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3DEF923A73EB3005B9968 /* UIDevice+HW.m */; };
 		7ED9DE7D235987C700AE8A60 /* HWTestViewPanModalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */; };
 		7ED9DE8023598ADE00AE8A60 /* HWSimplePanModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */; };
 		7EEF4686231F8F23006F5997 /* CustomIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF4685231F8F23006F5997 /* CustomIndicatorController.swift */; };
@@ -201,6 +203,10 @@
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		7EC3DEF423A729B0005B9968 /* HWPanModalNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPanModalNavView.h; sourceTree = "<group>"; };
+		7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPanModalNavView.m; sourceTree = "<group>"; };
+		7EC3DEF823A73EB3005B9968 /* UIDevice+HW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HW.h"; sourceTree = "<group>"; };
+		7EC3DEF923A73EB3005B9968 /* UIDevice+HW.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HW.m"; sourceTree = "<group>"; };
 		7ECB23932310C522009C9A62 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Checkouts/KVOController.framework; sourceTree = "<group>"; };
 		7ED9DE7B235987C700AE8A60 /* HWTestViewPanModalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTestViewPanModalController.h; sourceTree = "<group>"; };
 		7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTestViewPanModalController.m; sourceTree = "<group>"; };
@@ -674,6 +680,8 @@
 				7EA0F5F7230D63D300ED20D2 /* HWBaseViewController.m */,
 				7EA0F5F8230D63D300ED20D2 /* HWGroupViewController.h */,
 				7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */,
+				7EC3DEF423A729B0005B9968 /* HWPanModalNavView.h */,
+				7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -693,6 +701,15 @@
 				7EB5E92123169CB600CDB543 /* AlertController.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		7EC3DEF723A73EA0005B9968 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7EC3DEF823A73EB3005B9968 /* UIDevice+HW.h */,
+				7EC3DEF923A73EB3005B9968 /* UIDevice+HW.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7ED9DE7A2359877900AE8A60 /* TestViewPanModal */ = {
@@ -780,6 +797,7 @@
 		B8CF43F51F90CAC000389BFE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7EC3DEF723A73EA0005B9968 /* Utils */,
 				7EA0F5B7230D63D300ED20D2 /* Model */,
 				7EA0F5BA230D63D300ED20D2 /* PanControllerExample */,
 				7EA0F5FF230D63D300ED20D2 /* HWViewController.h */,
@@ -1039,12 +1057,14 @@
 				7EA0F608230D63D300ED20D2 /* HWPickerViewController.m in Sources */,
 				7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */,
 				7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */,
+				7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */,
 				7EA0F606230D63D300ED20D2 /* HWImmobileIndicatorView.m in Sources */,
 				7E503CD92359BEA7000B73F9 /* HWAutoSizePanModalContentView.m in Sources */,
 				B8CF44061F90CAC000389BFE /* main.m in Sources */,
 				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
 				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
 				7ED9DE8023598ADE00AE8A60 /* HWSimplePanModalView.m in Sources */,
+				7EC3DEFA23A73EB3005B9968 /* UIDevice+HW.m in Sources */,
 				7ED9DE7D235987C700AE8A60 /* HWTestViewPanModalController.m in Sources */,
 				7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */,
 				7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */,

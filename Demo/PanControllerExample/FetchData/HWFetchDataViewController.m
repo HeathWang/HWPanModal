@@ -8,19 +8,24 @@
 
 #import <Masonry/View+MASAdditions.h>
 #import "HWFetchDataViewController.h"
+#import "HWPanModalNavView.h"
+#import "UIDevice+HW.h"
+
 #import <HWPanModal/HWPanModal.h>
 #import <MJRefresh/MJRefresh.h>
 
-@interface HWFetchDataDetailViewController : UIViewController
+@interface HWFetchDataDetailViewController : UIViewController <HWPanModalPresentable, HWPanModalNavViewDelegate>
 
 @property (nonatomic, copy) NSString *textString;
+@property (nonatomic, strong) HWPanModalNavView *navView;
 
 - (instancetype)initWithTextString:(NSString *)textString;
 
 @end
 
-@interface HWFetchDataViewController () <UITableViewDelegate, UITableViewDataSource, HWPanModalPresentable>
+@interface HWFetchDataViewController () <UITableViewDelegate, UITableViewDataSource, HWPanModalPresentable, HWPanModalNavViewDelegate>
 
+@property (nonatomic, strong) HWPanModalNavView *navView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
@@ -34,15 +39,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"Comments";
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didTapDoneButton)];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    
+
+    [self.view addSubview:self.navView];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.indicatorView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.top.equalTo(self.navView.mas_bottom);
+        make.left.right.bottom.equalTo(@0);
     }];
 
     [self.indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -55,6 +58,11 @@
     self.refreshHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchData)];
     self.tableView.mj_header = self.refreshHeader;
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self hw_panModalTransitionTo:PresentationStateLong];
 }
 
 - (void)fetchData {
@@ -90,11 +98,15 @@
 
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
     // 如果拖拽的点在navigation bar上，则返回yes，可以拖拽，否则只能滑动tableView
-    CGPoint loc = [panGestureRecognizer locationInView:self.navigationController.navigationBar];
-    if (CGRectContainsPoint(self.navigationController.navigationBar.frame, loc)) {
+    CGPoint loc = [panGestureRecognizer locationInView:self.view];
+    if (CGRectContainsPoint(self.navView.frame, loc)) {
         return YES;
     }
     return NO;
+}
+
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, [UIApplication sharedApplication].statusBarFrame.size.height + 20);
 }
 
 #pragma mark - UITableViewDataSource
@@ -121,6 +133,12 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+#pragma mark - HWPanModalNavViewDelegate
+
+- (void)didTapRightButton {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - Getter
 
 - (UITableView *)tableView {
@@ -144,6 +162,16 @@
     return _indicatorView;
 }
 
+- (HWPanModalNavView *)navView {
+    if (!_navView) {
+        _navView = [[HWPanModalNavView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
+        _navView.title = @"Comments";
+        _navView.backButtonTitle = nil;
+        _navView.delegate = self;
+    }
+    return _navView;
+}
+
 
 @end
 
@@ -160,8 +188,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"Detail";
+    self.view.backgroundColor = [UIColor colorWithRed:0.800 green:0.800 blue:0.800 alpha:1.00];
+    [self.view addSubview:self.navView];
 
     UILabel *label = [UILabel new];
     label.font = [UIFont boldSystemFontOfSize:20];
@@ -176,6 +204,38 @@
         make.left.equalTo(@20);
         make.right.equalTo(@-20);
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self hw_panModalTransitionTo:PresentationStateLong];
+}
+
+#pragma mark - HWPanModalNavViewDelegate
+
+- (void)didTapBackButton {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didTapRightButton {
+    [self dismissViewControllerAnimated:YES completion:^{
+
+    }];
+}
+
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 0);
+}
+
+- (HWPanModalNavView *)navView {
+    if (!_navView) {
+        _navView = [[HWPanModalNavView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIDevice statusBarAndNaviBarHeight])];
+        _navView.title = @"Detail";
+        _navView.backButtonTitle = @"Back";
+        _navView.delegate = self;
+        _navView.statusBarHeight = [UIDevice statusBarHeight];
+    }
+    return _navView;
 }
 
 

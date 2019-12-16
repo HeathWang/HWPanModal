@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.translucent = NO;
+    // use custom navigation bar
+    self.navigationBarHidden = YES;
     HWFetchDataViewController *fetchDataVC = [HWFetchDataViewController new];
     [self pushViewController:fetchDataVC animated:YES];
 }
@@ -44,6 +45,12 @@
 }
 
 - (PanModalHeight)longFormHeight {
+    // we will let child vc to config panModal
+    UIViewController *VC = self.topViewController;
+    if ([VC conformsToProtocol:@protocol(HWPanModalPresentable)]) {
+        id<HWPanModalPresentable> obj = VC;
+        return [obj longFormHeight];
+    }
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, [UIApplication sharedApplication].statusBarFrame.size.height + 20);
 }
 
