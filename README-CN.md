@@ -313,7 +313,7 @@ yishu.jay@gmail.com
 WX二维码:
 <p style="align: left">
     <a>
-       <img src="images/groupChat.jpg" style="width:277px;height:266px;">
+       <img src="images/groupChat.jpg" width="277">
     </a>
 </p>
 
