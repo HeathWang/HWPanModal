@@ -312,8 +312,8 @@ yishu.jay@gmail.com
 
 WX二维码:
 <p style="align: left">
-    <a href="https://www.jetbrains.com/?from=HWPanModal">
-       <img src="images/groupChat.jpg">
+    <a>
+       <img src="images/groupChat.jpg" style="width:277px;height:266px;">
     </a>
 </p>
 
