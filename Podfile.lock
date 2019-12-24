@@ -1,7 +1,7 @@
 PODS:
-  - HWPanModal (0.6.5)
+  - HWPanModal (0.6.6)
   - Masonry (1.1.0)
-  - MJRefresh (3.2.2)
+  - MJRefresh (3.3.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -11,20 +11,19 @@ DEPENDENCIES:
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Masonry
-    - SnapKit
   trunk:
+    - Masonry
     - MJRefresh
+    - SnapKit
 
 EXTERNAL SOURCES:
   HWPanModal:
     :path: "./"
 
 SPEC CHECKSUMS:
-  HWPanModal: 4c4df3643b94ac97b70a1aa9832404670ba49d7b
+  HWPanModal: 26bc3797e07f784e8132941b523363bb757c670a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
 PODFILE CHECKSUM: 24ff80068f561fbc26d2f805a824157293a67886

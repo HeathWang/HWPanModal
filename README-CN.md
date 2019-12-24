@@ -308,6 +308,15 @@ HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
 Heath Wang
 yishu.jay@gmail.com
 
+## 讨论群
+
+WX二维码:
+<p style="align: left">
+    <a href="https://www.jetbrains.com/?from=HWPanModal">
+       <img src="images/groupChat.jpg">
+    </a>
+</p>
+
 ## License
 
 <b>HWPanModal</b> is released under a MIT License. See LICENSE file for details.
