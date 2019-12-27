@@ -330,7 +330,7 @@ yishu.jay@gmail.com
 WeChat Group QR Code:
 <p style="align: left">
     <a>
-       <img src="images/groupChat.jpg" style="width:277px;height:266px;">
+       <img src="images/groupChat.jpg" width="277">
     </a>
 </p>
 
