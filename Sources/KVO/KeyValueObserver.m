@@ -65,10 +65,13 @@
     }
     
     id strongTarget = self.target;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [strongTarget performSelector:self.selector withObject:change];
-#pragma clang diagnostic pop
+    
+    if ([strongTarget respondsToSelector:self.selector]) {
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [strongTarget performSelector:self.selector withObject:change];
+        #pragma clang diagnostic pop
+    }
 }
 
 - (void)dealloc {
