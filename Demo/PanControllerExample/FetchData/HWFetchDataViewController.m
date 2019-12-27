@@ -106,7 +106,15 @@
 }
 
 - (PanModalHeight)longFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, [UIApplication sharedApplication].statusBarFrame.size.height + 20);
+    return PanModalHeightMake(PanModalHeightTypeMaxTopInset, [UIApplication sharedApplication].statusBarFrame.size.height);
+}
+
+- (CGFloat)topOffset {
+    return 0;
+}
+
+- (BOOL)showDragIndicator {
+    return NO;
 }
 
 #pragma mark - UITableViewDataSource
@@ -133,6 +141,10 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
 #pragma mark - HWPanModalNavViewDelegate
 
 - (void)didTapRightButton {
@@ -147,6 +159,8 @@
         _tableView.rowHeight = UITableViewAutomaticDimension;
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
         _tableView.estimatedRowHeight = 60;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
 
         _tableView.delegate = self;
         _tableView.dataSource = self;
