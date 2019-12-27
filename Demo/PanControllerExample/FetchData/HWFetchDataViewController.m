@@ -62,7 +62,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self hw_panModalTransitionTo:PresentationStateLong];
+    [self hw_panModalTransitionTo:PresentationStateLong animated:NO];
 }
 
 - (void)fetchData {
@@ -222,7 +222,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self hw_panModalTransitionTo:PresentationStateLong];
+    [self hw_panModalTransitionTo:PresentationStateLong animated:NO];
 }
 
 #pragma mark - HWPanModalNavViewDelegate

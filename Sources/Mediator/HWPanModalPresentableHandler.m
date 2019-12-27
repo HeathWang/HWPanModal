@@ -335,7 +335,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
          * 首次用户滑动scrollView时，会因为scrollViewYOffset = 0而出现错位
          */
          if ([self isBeingPresented]) {
-             [self setScrollableContentOffset:scrollView.contentOffset];
+             [self setScrollableContentOffset:scrollView.contentOffset animated:YES];
          }
     }
 }
@@ -373,16 +373,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     }
 }
 
-- (void)setScrollableContentOffset:(CGPoint)offset {
-    if (![self.presentable panScrollable])
-        return;
+- (void)setScrollableContentOffset:(CGPoint)offset animated:(BOOL)animated {
+    if (![self.presentable panScrollable]) return;
 
     UIScrollView *scrollView = [self.presentable panScrollable];
     [self.observerToken unObserver];
 
-    [scrollView setContentOffset:offset animated:YES];
+    [scrollView setContentOffset:offset animated:animated];
     // wait for animation finished.
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) ((animated ? 0.30 : 0.1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
         [self trackScrolling:scrollView];
         [self observeScrollable];

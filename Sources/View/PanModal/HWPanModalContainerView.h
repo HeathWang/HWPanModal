@@ -22,10 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setNeedsLayoutUpdate;
 
-- (void)transitionToState:(PresentationState)state;
+- (void)transitionToState:(PresentationState)state animated:(BOOL)animated;
 
-- (void)setScrollableContentOffset:(CGPoint)offset;
-
+- (void)setScrollableContentOffset:(CGPoint)offset animated:(BOOL)animated;
 
 @end
 

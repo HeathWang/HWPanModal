@@ -33,15 +33,23 @@
 #pragma mark - HWPanModalPresentationUpdateProtocol
 
 - (void)hw_panModalTransitionTo:(PresentationState)state {
-    [self.containerView transitionToState:state];
+    [self.containerView transitionToState:state animated:YES];
 }
 
 - (void)hw_panModalSetContentOffset:(CGPoint)offset {
-    [self.containerView setScrollableContentOffset:offset];
+    [self.containerView setScrollableContentOffset:offset animated:YES];
 }
 
 - (void)hw_panModalSetNeedsLayoutUpdate {
     [self.containerView setNeedsLayoutUpdate];
+}
+
+- (void)hw_panModalTransitionTo:(PresentationState)state animated:(BOOL)animated {
+    [self.containerView transitionToState:state animated:animated];
+}
+
+- (void)hw_panModalSetContentOffset:(CGPoint)offset animated:(BOOL)animated {
+    [self.containerView setScrollableContentOffset:offset animated:animated];
 }
 
 #pragma mark - HWPanModalPresentable

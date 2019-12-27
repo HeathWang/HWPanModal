@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configureScrollViewInsets;
 
-- (void)setScrollableContentOffset:(CGPoint)offset;
+- (void)setScrollableContentOffset:(CGPoint)offset animated:(BOOL)animated;
 
 - (void)configureViewLayout;
 

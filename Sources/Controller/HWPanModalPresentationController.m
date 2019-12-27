@@ -139,7 +139,7 @@
 			}
 		}
 	} completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
-		[self transitionToState:self.currentPresentationState];
+		[self transitionToState:self.currentPresentationState animated:YES];
 	}];
 }
 
@@ -154,30 +154,31 @@
     [self checkEdgeInteractive];
 }
 
-- (void)transitionToState:(PresentationState)state {
-	[self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
-	if (![self.presentable shouldTransitionToState:state])
-		return;
+- (void)transitionToState:(PresentationState)state animated:(BOOL)animated {
 
-	[self.presentable willTransitionToState:state];
+    if (![self.presentable shouldTransitionToState:state])
+        return;
 
-	switch (state) {
-		case PresentationStateLong: {
-			[self snapToYPos:self.handler.longFormYPosition];
-		}
-			break;
-		case PresentationStateShort:{
-			[self snapToYPos:self.handler.shortFormYPosition];
-		}
-			break;
-		default:
-			break;
-	}
-	self.currentPresentationState = state;
+    [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+    [self.presentable willTransitionToState:state];
+
+    switch (state) {
+        case PresentationStateLong: {
+            [self snapToYPos:self.handler.longFormYPosition animated:animated];
+        }
+            break;
+        case PresentationStateShort: {
+            [self snapToYPos:self.handler.shortFormYPosition animated:animated];
+        }
+            break;
+        default:
+            break;
+    }
+    self.currentPresentationState = state;
 }
 
-- (void)setScrollableContentOffset:(CGPoint)offset {
-	[self.handler setScrollableContentOffset:offset];
+- (void)setScrollableContentOffset:(CGPoint)offset animated:(BOOL)animated {
+	[self.handler setScrollableContentOffset:offset animated:animated];
 }
 
 #pragma mark - layout
@@ -285,13 +286,18 @@
     }
 }
 
-- (void)snapToYPos:(CGFloat)yPos {
-	[HWPanModalAnimator animate:^{
-        self.isPresentedViewAnimating = YES;
+- (void)snapToYPos:(CGFloat)yPos animated:(BOOL)animated {
+
+	if (animated) {
+		[HWPanModalAnimator animate:^{
+			self.isPresentedViewAnimating = YES;
+			[self adjustToYPos:yPos];
+		} config:self.presentable completion:^(BOOL completion) {
+			self.isPresentedViewAnimating = NO;
+		}];
+	} else {
 		[self adjustToYPos:yPos];
-	} config:self.presentable completion:^(BOOL completion) {
-		self.isPresentedViewAnimating = NO;
-	}];
+	}
 }
 
 - (void)adjustToYPos:(CGFloat)yPos {
@@ -340,7 +346,7 @@
 }
 
 - (void)presentableTransitionToState:(PresentationState)state {
-	[self transitionToState:state];
+	[self transitionToState:state animated:YES];
 }
 
 #pragma mark - interactive handle

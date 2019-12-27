@@ -15,10 +15,24 @@
 - (void)hw_panModalTransitionTo:(PresentationState)state NS_SWIFT_NAME(panModalTransitionTo(state:));
 
 /**
- * When presented ViewController has a UIScrollView,
- * Use This method to update UIScrollView contentOffset
+ * force update pan modal State, short/long
+ * @param state transition state
+ * @param animated whether animate when set state
+ */
+- (void)hw_panModalTransitionTo:(PresentationState)state animated:(BOOL)animated NS_SWIFT_NAME(panModalTransitionTo(state:animated:));
+
+/**
+ * When presented ViewController has a UIScrollView, Use This method to update UIScrollView contentOffset
+ * Default it has animation
  */
 - (void)hw_panModalSetContentOffset:(CGPoint)offset NS_SWIFT_NAME(panModalSetContentOffset(offset:));
+
+/**
+ * When presented ViewController has a UIScrollView, Use This method to update UIScrollView contentOffset
+ * @param offset scrollView offset value
+ * @param animated whether animate
+ */
+- (void)hw_panModalSetContentOffset:(CGPoint)offset animated:(BOOL)animated NS_SWIFT_NAME(panModalSetContentOffset(offset:animated:));
 
 /**
  * Note：if we present a NavigationController, and we want to pan screen edge to dismiss.

@@ -17,12 +17,23 @@
 
 - (void)hw_panModalTransitionTo:(PresentationState)state {
     if (!self.hw_presentedVC) return;
-    [self.hw_presentedVC transitionToState:state];
+    [self.hw_presentedVC transitionToState:state animated:YES];
 }
+
+- (void)hw_panModalTransitionTo:(PresentationState)state animated:(BOOL)animated {
+    if (!self.hw_presentedVC) return;
+    [self.hw_presentedVC transitionToState:state animated:animated];
+}
+
+- (void)hw_panModalSetContentOffset:(CGPoint)offset animated:(BOOL)animated {
+    if (!self.hw_presentedVC) return;
+    [self.hw_presentedVC setScrollableContentOffset:offset animated:animated];
+}
+
 
 - (void)hw_panModalSetContentOffset:(CGPoint)offset {
     if (!self.hw_presentedVC) return;
-    [self.hw_presentedVC setScrollableContentOffset:offset];
+    [self.hw_presentedVC setScrollableContentOffset:offset animated:YES];
 }
 
 - (void)hw_panModalSetNeedsLayoutUpdate {
