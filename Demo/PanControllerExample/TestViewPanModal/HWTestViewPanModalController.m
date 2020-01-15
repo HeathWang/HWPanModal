@@ -10,11 +10,13 @@
 #import <Masonry/Masonry.h>
 #import "HWSimplePanModalView.h"
 #import "HWAutoSizePanModalContentView.h"
+#include "HWCollectionPanModalView.h"
 
 @interface HWTestViewPanModalController ()
 
 @property (nonatomic, strong) UIButton *presentButton;
 @property (nonatomic, strong) UIButton *autoSizeButton;
+@property (nonatomic, strong) UIButton *collectionViewButton;
 
 @end
 
@@ -27,16 +29,23 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.presentButton];
     [self.view addSubview:self.autoSizeButton];
+    [self.view addSubview:self.collectionViewButton];
 
     [self.presentButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(CGPointZero);
-        make.size.mas_equalTo(CGSizeMake(88, 66));
+        make.center.mas_equalTo(CGPointMake(0, -40));
+        make.size.mas_equalTo(CGSizeMake(120, 66));
     }];
 
     [self.autoSizeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.equalTo(self.presentButton);
         make.top.equalTo(self.presentButton.mas_bottom).offset(0);
         make.centerX.equalTo(@0);
+    }];
+    
+    [self.collectionViewButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(self.presentButton);
+        make.centerX.equalTo(@0);
+        make.top.equalTo(self.autoSizeButton.mas_bottom).offset(0);
     }];
 }
 
@@ -50,6 +59,11 @@
 - (void)didTapToAutoSize {
     HWAutoSizePanModalContentView *autoSizePanModalContentView = [HWAutoSizePanModalContentView new];
     [autoSizePanModalContentView presentInView:nil];
+}
+
+- (void)didTapCollectionViewButton {
+    HWCollectionPanModalView *collectionPanModalView = [HWCollectionPanModalView new];
+    [collectionPanModalView presentInView:nil];
 }
 
 #pragma mark - private method
@@ -78,6 +92,14 @@
         [_autoSizeButton addTarget:self action:@selector(didTapToAutoSize) forControlEvents:UIControlEventTouchUpInside];
     }
     return _autoSizeButton;
+}
+
+- (UIButton *)collectionViewButton {
+    if (!_collectionViewButton) {
+        _collectionViewButton = [self buttonWithTitle:@"CollectionView"];
+        [_collectionViewButton addTarget:self action:@selector(didTapCollectionViewButton) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _collectionViewButton;
 }
 
 

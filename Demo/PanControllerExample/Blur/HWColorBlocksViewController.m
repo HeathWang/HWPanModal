@@ -11,6 +11,7 @@
 #import "HWColorCollectionViewCell.h"
 #import <HWPanModal/HWPanModal.h>
 #import "HWBlurViewController.h"
+#import "UIColor+HW.h"
 
 @interface HWColorBlocksViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -79,7 +80,7 @@
     if (!_colors) {
         NSMutableArray<UIColor *> *tmp = [NSMutableArray arrayWithCapacity:20];
         for (int i = 0; i < 20; ++i) {
-            UIColor *color = [UIColor colorWithRed:(arc4random() % 255 + 1) / 255.0f green:(arc4random() % 255 + 1) / 255.0f blue:(arc4random() % 255 + 1) / 255.0f alpha:1];
+            UIColor *color = [UIColor hw_randomColor];
             [tmp addObject:color];
         }
 

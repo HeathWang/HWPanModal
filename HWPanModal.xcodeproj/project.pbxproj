@@ -62,6 +62,8 @@
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
+		7EC329C123CEB17A002F878C /* HWCollectionPanModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */; };
+		7EC329C423CEB2E5002F878C /* UIColor+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C323CEB2E5002F878C /* UIColor+HW.m */; };
 		7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */; };
 		7EC3DEFA23A73EB3005B9968 /* UIDevice+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3DEF923A73EB3005B9968 /* UIDevice+HW.m */; };
 		7ED9DE7D235987C700AE8A60 /* HWTestViewPanModalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9DE7C235987C700AE8A60 /* HWTestViewPanModalController.m */; };
@@ -203,6 +205,10 @@
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		7EC329BF23CEB17A002F878C /* HWCollectionPanModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCollectionPanModalView.h; sourceTree = "<group>"; };
+		7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCollectionPanModalView.m; sourceTree = "<group>"; };
+		7EC329C223CEB2E5002F878C /* UIColor+HW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HW.h"; sourceTree = "<group>"; };
+		7EC329C323CEB2E5002F878C /* UIColor+HW.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HW.m"; sourceTree = "<group>"; };
 		7EC3DEF423A729B0005B9968 /* HWPanModalNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPanModalNavView.h; sourceTree = "<group>"; };
 		7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPanModalNavView.m; sourceTree = "<group>"; };
 		7EC3DEF823A73EB3005B9968 /* UIDevice+HW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HW.h"; sourceTree = "<group>"; };
@@ -708,6 +714,8 @@
 			children = (
 				7EC3DEF823A73EB3005B9968 /* UIDevice+HW.h */,
 				7EC3DEF923A73EB3005B9968 /* UIDevice+HW.m */,
+				7EC329C223CEB2E5002F878C /* UIColor+HW.h */,
+				7EC329C323CEB2E5002F878C /* UIColor+HW.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -721,6 +729,8 @@
 				7ED9DE7F23598ADE00AE8A60 /* HWSimplePanModalView.m */,
 				7E503CD72359BEA7000B73F9 /* HWAutoSizePanModalContentView.h */,
 				7E503CD82359BEA7000B73F9 /* HWAutoSizePanModalContentView.m */,
+				7EC329BF23CEB17A002F878C /* HWCollectionPanModalView.h */,
+				7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */,
 			);
 			path = TestViewPanModal;
 			sourceTree = "<group>";
@@ -1055,6 +1065,7 @@
 				7EA0F612230D63D300ED20D2 /* HWBlurViewController.m in Sources */,
 				7E2424992325FECE00421947 /* HWFetchDataViewController.m in Sources */,
 				7EA0F608230D63D300ED20D2 /* HWPickerViewController.m in Sources */,
+				7EC329C123CEB17A002F878C /* HWCollectionPanModalView.m in Sources */,
 				7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */,
 				7EA0F610230D63D300ED20D2 /* HWColorBlocksViewController.m in Sources */,
 				7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */,
@@ -1069,6 +1080,7 @@
 				7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */,
 				7EA0F613230D63D300ED20D2 /* HWColorCell.m in Sources */,
 				7EA0F614230D63D300ED20D2 /* HWShoppingCartViewController.m in Sources */,
+				7EC329C423CEB2E5002F878C /* UIColor+HW.m in Sources */,
 				7EA0F607230D63D300ED20D2 /* HWIndicatorPopViewController.m in Sources */,
 				7EA0F618230D63D300ED20D2 /* HWBaseViewController.m in Sources */,
 				7EA0F615230D63D300ED20D2 /* HWColorDetailViewController.m in Sources */,
