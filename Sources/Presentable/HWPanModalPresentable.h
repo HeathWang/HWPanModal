@@ -292,7 +292,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 /**
  * 询问delegate是否需要使拖拽手势生效
- * 若返回NO，则禁用拖拽手势操作
+ * 若返回NO，则禁用拖拽手势操作，即不能拖拽dismiss
  * 默认为YES
  */
 - (BOOL)shouldRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
