@@ -104,8 +104,8 @@
     return YES;
 }
 
-- (CGFloat)backgroundBlurRadius {
-    return 1;
+- (HWBackgroundConfig *)backgroundConfig {
+    return [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorSystemVisualEffect];
 }
 
 #pragma mark - Getter

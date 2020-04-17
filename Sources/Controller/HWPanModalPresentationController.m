@@ -213,7 +213,7 @@
 }
 
 - (void)updateBackgroundColor {
-    self.backgroundView.blurTintColor = [self.presentable backgroundBlurColor];
+	self.backgroundView.blurTintColor = [self.presentable backgroundConfig].blurTintColor;
 }
 
 - (void)layoutPresentedView:(UIView *)containerView {
@@ -461,7 +461,7 @@
 - (HWDimmedView *)backgroundView {
 	if (!_backgroundView) {
 		if (self.presentable) {
-			_backgroundView = [[HWDimmedView alloc] initWithDimAlpha:[self.presentable backgroundAlpha] blurRadius:[self.presentable backgroundBlurRadius]];
+			_backgroundView = [[HWDimmedView alloc] initWithBackgroundConfig:[self.presentable backgroundConfig]];
 		} else {
 			_backgroundView = [[HWDimmedView alloc] init];
 		}

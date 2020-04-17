@@ -10,6 +10,7 @@
 #import <HWPanModal/HWPanModalHeight.h>
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
 #import <HWPanModal/HWPanModalIndicatorProtocol.h>
+#import <HWPanModal/HWBackgroundConfig.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -132,26 +133,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 #pragma mark - Background config
 
-/**
- * 背景透明度
- * Default is 0.7
- */
-- (CGFloat)backgroundAlpha;
-
-/**
- * Blur background
- * This function can NOT coexist with backgroundAlpha
- * Default use backgroundAlpha, Once you set backgroundBlurRadius > 0, blur will work.
- * I recommend set the value 10 ~ 20.
- * @return blur radius
- */
-- (CGFloat)backgroundBlurRadius;
-
-/**
- * blur background color
- * @return color, default is White Color.
- */
-- (nonnull UIColor *)backgroundBlurColor;
+- (HWBackgroundConfig *)backgroundConfig;
 
 #pragma mark - User Interaction
 
@@ -369,6 +351,27 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  * 默认为NO
  */
 - (BOOL)shouldAnimatePresentingVC DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.3.6, please use `- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle` replaced.");
+
+/**
+ * 背景透明度
+ * Default is 0.7
+ */
+- (CGFloat)backgroundAlpha DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.7.0, please use `- (HWBackgroundConfig *)backgroundConfig` replaced.");
+
+/**
+ * Blur background
+ * This function can NOT coexist with backgroundAlpha
+ * Default use backgroundAlpha, Once you set backgroundBlurRadius > 0, blur will work.
+ * Recommend set the value 10 ~ 20.
+ * @return blur radius
+ */
+- (CGFloat)backgroundBlurRadius DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.7.0, please use `- (HWBackgroundConfig *)backgroundConfig` replaced.");
+
+/**
+ * blur background color
+ * @return color, default is White Color.
+ */
+- (nonnull UIColor *)backgroundBlurColor DEPRECATED_MSG_ATTRIBUTE("This api has been marked as DEPRECATED on version 0.7.0, please use `- (HWBackgroundConfig *)backgroundConfig` replaced.");
 
 @end
 

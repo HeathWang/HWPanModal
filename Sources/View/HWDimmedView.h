@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HWBackgroundConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,10 +25,15 @@ typedef void(^didTap)(UITapGestureRecognizer *recognizer);
 @property (nullable, nonatomic, copy) didTap tapBlock;
 @property (nullable, nonatomic, strong) UIColor *blurTintColor;
 
+@property (nonatomic, readonly) HWBackgroundConfig *backgroundConfig;
+
 /**
  * init with the max dim alpha & max blur radius.
  */
 - (instancetype)initWithDimAlpha:(CGFloat)dimAlpha blurRadius:(CGFloat)blurRadius;
+
+- (instancetype)initWithBackgroundConfig:(HWBackgroundConfig *)backgroundConfig;
+
 
 @end
 

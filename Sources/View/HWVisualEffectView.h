@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) CGFloat scale;
 
+- (void)updateBlurEffect:(UIVisualEffect *)effect;
+
 @end
 
 NS_ASSUME_NONNULL_END

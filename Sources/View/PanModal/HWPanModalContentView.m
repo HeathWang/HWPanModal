@@ -110,6 +110,10 @@
     return [UIColor whiteColor];
 }
 
+- (HWBackgroundConfig *)backgroundConfig {
+    return [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
+}
+
 - (UIEdgeInsets)scrollIndicatorInsets {
     CGFloat top = [self shouldRoundTopCorners] ? [self cornerRadius] : 0;
     return UIEdgeInsetsMake(top, 0, self.bottomLayoutOffset, 0);

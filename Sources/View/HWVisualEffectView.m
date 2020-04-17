@@ -36,6 +36,13 @@ NSString * const kHWBlurEffectScaleKey = @"scale";
     return self;
 }
 
+#pragma mark - public method
+
+- (void)updateBlurEffect:(UIVisualEffect *)effect {
+    self.blurEffect = effect;
+    self.effect = self.blurEffect;
+}
+
 #pragma mark - private method
 
 - (nullable id)__valueForKey:(NSString *)key {

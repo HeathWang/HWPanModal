@@ -21,7 +21,8 @@ class BlurViewController: UIViewController {
         return PanModalHeight(type: .topInset, height: 150)
     }
     
-    override func backgroundBlurRadius() -> CGFloat {
-        return 15
+    override func backgroundConfig() -> HWBackgroundConfig {
+        return HWBackgroundConfig(behavior: .customBlurEffect)
     }
+    
 }

@@ -27,8 +27,10 @@
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 150);
 }
 
-- (CGFloat)backgroundBlurRadius {
-    return 15;
+- (HWBackgroundConfig *)backgroundConfig {
+    HWBackgroundConfig *backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorCustomBlurEffect];
+    backgroundConfig.backgroundBlurRadius = 15;
+    return backgroundConfig;
 }
 
 @end

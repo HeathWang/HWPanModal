@@ -7,11 +7,13 @@
 
 #import "HWDimmedView.h"
 #import "HWVisualEffectView.h"
+#import "HWBackgroundConfig.h"
 
 @interface HWDimmedView ()
 
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) HWVisualEffectView *blurView;
+@property (nonatomic, strong) HWBackgroundConfig *backgroundConfig;
 
 @property (nonatomic, assign) CGFloat maxDimAlpha;
 @property (nonatomic, assign) CGFloat maxBlurRadius;
@@ -44,6 +46,20 @@
 	return self;
 }
 
+- (instancetype)initWithBackgroundConfig:(HWBackgroundConfig *)backgroundConfig {
+	self = [super initWithFrame:CGRectZero];
+	if (self) {
+		self.backgroundConfig = backgroundConfig;
+		_maxDimAlpha = backgroundConfig.backgroundAlpha;
+		_maxBlurRadius = backgroundConfig.backgroundBlurRadius;
+		_blurTintColor = backgroundConfig.blurTintColor;
+
+		[self commonInit];
+	}
+
+	return self;
+}
+
 - (void)commonInit {
     _dimState = DimStateOff;
     _maxBlurTintAlpha = 0.5;
@@ -56,7 +72,7 @@
 }
 
 - (void)setupView {
-	self.isBlurMode = self.maxBlurRadius > 0;
+	self.isBlurMode = self.maxBlurRadius > 0 || self.backgroundConfig.visualEffect;
 	if (self.isBlurMode) {
 		[self addSubview:self.blurView];
 	} else {
@@ -105,6 +121,8 @@
 	}
 
 	if (self.isBlurMode) {
+		if (self.backgroundConfig.visualEffect) return;
+
 		self.blurView.blurRadius = blurRadius;
 		self.blurView.colorTintAlpha = blurTintAlpha;
 	} else {
@@ -139,9 +157,15 @@
 - (HWVisualEffectView *)blurView {
 	if (!_blurView) {
 		_blurView = [HWVisualEffectView new];
-        _blurView.colorTint = [UIColor whiteColor];
-        _blurView.colorTintAlpha = self.maxBlurTintAlpha;
-		_blurView.userInteractionEnabled = NO;
+
+		if (self.backgroundConfig.visualEffect) {
+			[_blurView updateBlurEffect:self.backgroundConfig.visualEffect];
+		} else {
+			_blurView.colorTint = [UIColor whiteColor];
+			_blurView.colorTintAlpha = self.maxBlurTintAlpha;
+			_blurView.userInteractionEnabled = NO;
+		}
+
 	}
 	return _blurView;
 }
