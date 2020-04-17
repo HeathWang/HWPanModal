@@ -133,6 +133,10 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 
 #pragma mark - Background config
 
+/**
+ * use this object to config background alpha or blur effect
+ * @return background config object
+ */
 - (HWBackgroundConfig *)backgroundConfig;
 
 #pragma mark - User Interaction

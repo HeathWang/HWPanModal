@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, HWBackgroundBehavior) {
 @property (nonatomic, assign) CGFloat backgroundAlpha; // default is 0.7
 // ONLY works for backgroundBehavior = HWBackgroundBehaviorSystemVisualEffect
 @property (nonatomic, strong) UIVisualEffect *visualEffect; // default is UIBlurEffectStyleLight
+
 // ONLY works for backgroundBehavior = HWBackgroundBehaviorCustomBlurEffect
 @property (nonatomic, strong) UIColor *blurTintColor; // default is white color
 @property (nonatomic, assign) CGFloat backgroundBlurRadius; // default is 10
