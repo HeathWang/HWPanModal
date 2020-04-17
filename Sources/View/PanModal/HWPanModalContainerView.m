@@ -17,7 +17,7 @@
 @interface HWPanModalContainerView () <HWPanModalPresentableHandlerDelegate, HWPanModalPresentableHandlerDataSource>
 
 @property (nonatomic, strong) HWPanModalContentView<HWPanModalPresentable> *contentView;
-@property (nonatomic, strong) UIView *presentingView;
+@property (nonatomic, weak) UIView *presentingView;
 
 @property (nonatomic, strong) HWPanModalPresentableHandler *handler;
 

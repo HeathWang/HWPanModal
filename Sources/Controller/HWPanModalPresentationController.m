@@ -507,14 +507,4 @@
 	return _dragIndicatorView;
 }
 
-#pragma mark - dealloc
-
-#ifdef DEBUG
-
-- (void)dealloc {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-#endif
-
 @end
