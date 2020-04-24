@@ -100,9 +100,13 @@
     return self.tableView;
 }
 
-- (BOOL)allowsTouchEventsPassingThroughTransitionView {
-    return YES;
+- (HWPanModalShadow)contentShadow {
+    return PanModalShadowMake([UIColor systemPinkColor], 10, CGSizeMake(1, 1), 1);
 }
+
+//- (BOOL)allowsTouchEventsPassingThroughTransitionView {
+//    return YES;
+//}
 
 - (HWBackgroundConfig *)backgroundConfig {
     return [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorSystemVisualEffect];

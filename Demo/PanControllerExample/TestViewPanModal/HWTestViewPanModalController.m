@@ -9,7 +9,6 @@
 #import "HWTestViewPanModalController.h"
 #import <Masonry/Masonry.h>
 #import "HWSimplePanModalView.h"
-#import "HWAutoSizePanModalContentView.h"
 #include "HWCollectionPanModalView.h"
 
 @interface HWTestViewPanModalController ()
@@ -57,8 +56,7 @@
 }
 
 - (void)didTapToAutoSize {
-    HWAutoSizePanModalContentView *autoSizePanModalContentView = [HWAutoSizePanModalContentView new];
-    [autoSizePanModalContentView presentInView:nil];
+    // TODO:
 }
 
 - (void)didTapCollectionViewButton {

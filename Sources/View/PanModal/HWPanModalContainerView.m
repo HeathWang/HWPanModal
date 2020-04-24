@@ -140,11 +140,16 @@
 #pragma mark - public method
 
 - (void)setNeedsLayoutUpdate {
+
     [self configureViewLayout];
     [self updateBackgroundColor];
     [self.handler observeScrollable];
     [self adjustPresentedViewFrame];
     [self.handler configureScrollViewInsets];
+
+    [self updateContainerViewShadow];
+    [self updateDragIndicatorView];
+    [self updateRoundedCorners];
 }
 
 - (void)transitionToState:(PresentationState)state animated:(BOOL)animated {
@@ -219,14 +224,6 @@
         [self addGestureRecognizer:self.handler.panGestureRecognizer];
     }
 
-    if ([self.presentable shouldRoundTopCorners]) {
-        [self addRoundedCornersToView:self.panContainerView.contentView];
-    }
-
-    if ([self.presentable showDragIndicator]) {
-        [self addDragIndicatorViewToView:self.panContainerView];
-    }
-
     [self setNeedsLayoutUpdate];
     [self adjustPanContainerBackgroundColor];
 }
@@ -235,21 +232,48 @@
     self.panContainerView.contentView.backgroundColor = self.contentView.backgroundColor ? : [self.presentable panScrollable].backgroundColor;
 }
 
+- (void)updateDragIndicatorView {
+    if ([self.presentable showDragIndicator]) {
+        [self addDragIndicatorViewToView:self.panContainerView];
+    } else {
+        self.dragIndicatorView.hidden = YES;
+    }
+}
+
 - (void)addDragIndicatorViewToView:(UIView *)view {
+    // if has been add, won't update it.
+    self.dragIndicatorView.hidden = NO;
+
+    if (self.dragIndicatorView.superview == view) {
+        [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+        return;
+    }
+
     self.handler.dragIndicatorView = self.dragIndicatorView;
     [view addSubview:self.dragIndicatorView];
     CGSize indicatorSize = [self.dragIndicatorView indicatorSize];
-    self.dragIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-    // layout
-    NSLayoutConstraint *bottomCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1 constant:-kIndicatorYOffset];
-    NSLayoutConstraint *centerXCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-    NSLayoutConstraint *widthCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:indicatorSize.width];
-    NSLayoutConstraint *heightCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:indicatorSize.height];
 
-    [view addConstraints:@[bottomCons, centerXCons, widthCons, heightCons]];
+    self.dragIndicatorView.frame = CGRectMake((view.hw_width - indicatorSize.width) / 2, -kIndicatorYOffset - indicatorSize.height, indicatorSize.width, indicatorSize.height);
 
     [self.dragIndicatorView setupSubviews];
     [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+}
+
+- (void)updateContainerViewShadow {
+    HWPanModalShadow shadow = [[self presentable] contentShadow];
+    if (shadow.shadowColor) {
+        [self.panContainerView updateShadow:shadow.shadowColor shadowRadius:shadow.shadowRadius shadowOffset:shadow.shadowOffset shadowOpacity:shadow.shadowOpacity];
+    } else {
+        [self.panContainerView clearShadow];
+    }
+}
+
+- (void)updateRoundedCorners {
+    if ([self.presentable shouldRoundTopCorners]) {
+        [self addRoundedCornersToView:self.panContainerView.contentView];
+    } else {
+        [self resetRoundedCornersToView:self.panContainerView.contentView];
+    }
 }
 
 - (void)addRoundedCornersToView:(UIView *)view {
@@ -264,6 +288,11 @@
     // 提高性能
     view.layer.shouldRasterize = YES;
     view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+}
+
+- (void)resetRoundedCornersToView:(UIView *)view {
+    view.layer.mask = nil;
+    view.layer.shouldRasterize = NO;
 }
 
 - (void)snapToYPos:(CGFloat)yPos animated:(BOOL)animated {
