@@ -52,7 +52,7 @@
 	HWDemoTypeModel *autoAlertDemo = [HWDemoTypeModel modelWithTitle:@"Transient Alert" targetClass:HWTransientAlertViewController.class];
 	HWDemoTypeModel *stackGroupDemo = [HWDemoTypeModel modelWithTitle:@"Group - Stacked" targetClass:HWStackedGroupViewController.class];
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
-	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Height" targetClass:HWDynamicHeightViewController.class];
+	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Update UI" targetClass:HWDynamicHeightViewController.class];
     HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
     HWDemoTypeModel *textInputDemo = [HWDemoTypeModel modelWithTitle:@"Handle Keyboard" targetClass:HWTextInputViewController.class];
     HWDemoTypeModel *testViewDemo = [HWDemoTypeModel modelWithTitle:@"Use PanModal View" targetClass:HWTestViewPanModalController.class];

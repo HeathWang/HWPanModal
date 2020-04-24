@@ -51,6 +51,11 @@ CG_INLINE HWPanModalShadow PanModalShadowMake(UIColor *shadowColor, CGFloat shad
     return shadowConfig;
 }
 
+CG_INLINE HWPanModalShadow PanModalShadowNil() {
+    HWPanModalShadow shadowConfig;
+    return shadowConfig;
+}
+
 static inline BOOL HW_FLOAT_IS_ZERO(CGFloat value) {
     return (value > -FLT_EPSILON) && (value < FLT_EPSILON);
 }

@@ -17,8 +17,24 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 
 @interface HWDynamicHeightViewController () <HWPanModalPresentable>
 
+// height
 @property (nonatomic, strong) UIButton *changeShortButton;
 @property (nonatomic, strong) UIButton *changeLongButton;
+
+// shadow
+@property (nonatomic, strong) UIButton *changeShadowButton;
+@property (nonatomic, strong) UIButton *clearShadowButton;
+
+@property (nonatomic, assign) HWPanModalShadow shadowConfig;
+
+// corner
+@property (nonatomic, strong) UIButton *changeRoundCornerButton;
+@property (nonatomic, strong) UIButton *clearRoundCornerButton;
+
+@property (nonatomic, assign) CGFloat roundRadius;
+@property (nonatomic, assign) BOOL shouldRound;
+
+@property (nonatomic, strong) UISwitch *indicatorSwitch;
 
 @property (nonatomic, assign) PanModalHeight shortHeight;
 @property (nonatomic, assign) PanModalHeight longHeight;
@@ -31,21 +47,59 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:0.542 green:0.740 blue:0.082 alpha:1.00];
+    self.view.backgroundColor = [UIColor colorWithRed:1.000 green:0.800 blue:1.000 alpha:1.00];
 	[self.view addSubview:self.changeShortButton];
 	[self.view addSubview:self.changeLongButton];
 
+
 	[self.changeShortButton mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.left.equalTo(@20);
-		make.right.equalTo(@-20);
 		make.top.equalTo(@20);
 		make.height.mas_equalTo(44);
+		make.size.equalTo(@[self.changeLongButton]);
 	}];
 
 	[self.changeLongButton mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.size.equalTo(self.changeShortButton);
+		make.left.equalTo(self.changeShortButton.mas_right).offset(20);
+		make.top.equalTo(self.changeShortButton);
+		make.right.equalTo(@-20);
+	}];
+
+	[self.view addSubview:self.changeShadowButton];
+	[self.view addSubview:self.clearShadowButton];
+	[self.changeShadowButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.height.mas_equalTo(44);
+		make.size.equalTo(@[self.clearShadowButton]);
 		make.left.equalTo(self.changeShortButton);
 		make.top.equalTo(self.changeShortButton.mas_bottom).offset(20);
+	}];
+
+	[self.clearShadowButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(self.changeShadowButton.mas_right).offset(20);
+		make.top.equalTo(self.changeShadowButton);
+		make.right.equalTo(@-20);
+	}];
+    
+    [self.view addSubview:self.changeRoundCornerButton];
+    [self.view addSubview:self.clearRoundCornerButton];
+    
+    [self.changeRoundCornerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(44);
+        make.size.equalTo(@[self.clearRoundCornerButton]);
+        make.left.equalTo(self.changeShortButton);
+        make.top.equalTo(self.clearShadowButton.mas_bottom).offset(20);
+    }];
+    
+    [self.clearRoundCornerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.changeRoundCornerButton.mas_right).offset(20);
+        make.top.equalTo(self.changeRoundCornerButton);
+        make.right.equalTo(@-20);
+    }];
+
+	[self.view addSubview:self.indicatorSwitch];
+	[self.indicatorSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.centerX.equalTo(@0);
+		make.top.equalTo(self.changeRoundCornerButton.mas_bottom).offset(20);
 	}];
 }
 
@@ -61,6 +115,31 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 	self.currentType = ChangeHeightTypeLong;
 	[self hw_panModalSetNeedsLayoutUpdate];
 	[self hw_panModalTransitionTo:PresentationStateLong];
+}
+
+- (void)onTapDefaultShadow {
+	self.shadowConfig = PanModalShadowMake([UIColor blueColor], 8, CGSizeMake(0, 2), 1);
+	[self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (void)onTapClearShadow {
+	self.shadowConfig = PanModalShadowNil();
+	[self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (void)onTapChangeRoundCorner {
+	self.roundRadius = 12;
+    self.shouldRound = YES;
+	[self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (void)onTapClearRoundCorner {
+	self.shouldRound = NO;
+	[self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (void)onTapChangeIndicator {
+	[self hw_panModalSetNeedsLayoutUpdate];
 }
 
 #pragma mark - HWPanModalPresentable
@@ -83,6 +162,22 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 	return self.longHeight;
 }
 
+- (HWPanModalShadow)contentShadow {
+	return self.shadowConfig;
+}
+
+- (BOOL)shouldRoundTopCorners {
+	return self.shouldRound;
+}
+
+- (CGFloat)cornerRadius {
+	return self.roundRadius;
+}
+
+- (BOOL)showDragIndicator {
+	return self.indicatorSwitch.on;
+}
+
 #pragma mark - private method
 
 - (UIButton *)buttonWithTitle:(NSString *)title {
@@ -100,7 +195,7 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 
 - (UIButton *)changeShortButton {
 	if (!_changeShortButton) {
-		_changeShortButton = [self buttonWithTitle:@"Dynamic Change short Form Height"];
+		_changeShortButton = [self buttonWithTitle:@"Short Form Height"];
 		[_changeShortButton addTarget:self action:@selector(onTapChangeShort) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _changeShortButton;
@@ -108,10 +203,51 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 
 - (UIButton *)changeLongButton {
 	if (!_changeLongButton) {
-		_changeLongButton = [self buttonWithTitle:@"Dynamic Change long Form Height"];
+		_changeLongButton = [self buttonWithTitle:@"Long Form Height"];
 		[_changeLongButton addTarget:self action:@selector(onTapChangeLong) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _changeLongButton;
+}
+
+- (UIButton *)changeShadowButton {
+	if (!_changeShadowButton) {
+		_changeShadowButton = [self buttonWithTitle:@"Default Shadow"];
+		[_changeShadowButton addTarget:self action:@selector(onTapDefaultShadow) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _changeShadowButton;
+}
+
+- (UIButton *)clearShadowButton {
+	if (!_clearShadowButton) {
+		_clearShadowButton = [self buttonWithTitle:@"Clear Shadow"];
+		[_clearShadowButton addTarget:self action:@selector(onTapClearShadow) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _clearShadowButton;
+}
+
+- (UIButton *)changeRoundCornerButton {
+	if (!_changeRoundCornerButton) {
+		_changeRoundCornerButton = [self buttonWithTitle:@"Corner 4"];
+		[_changeRoundCornerButton addTarget:self action:@selector(onTapChangeRoundCorner) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _changeRoundCornerButton;
+}
+
+- (UIButton *)clearRoundCornerButton {
+	if (!_clearRoundCornerButton) {
+		_clearRoundCornerButton = [self buttonWithTitle:@"Corner 0"];
+		[_clearRoundCornerButton addTarget:self action:@selector(onTapClearRoundCorner) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _clearRoundCornerButton;
+}
+
+
+- (UISwitch *)indicatorSwitch {
+	if (!_indicatorSwitch) {
+		_indicatorSwitch = [UISwitch new];
+		[_indicatorSwitch addTarget:self action:@selector(onTapChangeIndicator) forControlEvents:UIControlEventValueChanged];
+	}
+	return _indicatorSwitch;
 }
 
 

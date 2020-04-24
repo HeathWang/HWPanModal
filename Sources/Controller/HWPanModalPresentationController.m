@@ -147,9 +147,14 @@
 
 - (void)setNeedsLayoutUpdate {
 	[self configureViewLayout];
+	[self adjustPresentedViewFrame];
+
     [self updateBackgroundColor];
-    [self.handler observeScrollable];
-    [self adjustPresentedViewFrame];
+	[self updateContainerViewShadow];
+	[self updateDragIndicatorView];
+	[self updateRoundedCorners];
+
+	[self.handler observeScrollable];
 	[self.handler configureScrollViewInsets];
     [self checkEdgeInteractive];
 }
@@ -230,16 +235,6 @@
         [self.handler.screenEdgeGestureRecognizer addTarget:self action:@selector(screenEdgeInteractiveAction:)];
 	}
 
-	if ([self.presentable shouldRoundTopCorners]) {
-		[self addRoundedCornersToView:self.panContainerView.contentView];
-	}
-
-	if ([self.presentable showDragIndicator]) {
-		[self addDragIndicatorViewToView:self.panContainerView];
-	}
-    
-    [self addShadowToContainerView];
-
 	[self setNeedsLayoutUpdate];
 	[self adjustPanContainerBackgroundColor];
 }
@@ -248,21 +243,39 @@
 	self.panContainerView.contentView.backgroundColor = self.presentedViewController.view.backgroundColor ? : [self.presentable panScrollable].backgroundColor;
 }
 
+- (void)updateDragIndicatorView {
+	if ([self.presentable showDragIndicator]) {
+		[self addDragIndicatorViewToView:self.panContainerView];
+	} else {
+        self.dragIndicatorView.hidden = YES;
+	}
+}
+
 - (void)addDragIndicatorViewToView:(UIView *)view {
+	// if has been add, won't update it.
+    self.dragIndicatorView.hidden = NO;
+    
+    if (self.dragIndicatorView.superview == view) {
+        [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+        return;
+    }
+
     self.handler.dragIndicatorView = self.dragIndicatorView;
 	[view addSubview:self.dragIndicatorView];
 	CGSize indicatorSize = [self.dragIndicatorView indicatorSize];
-	self.dragIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-	// layout
-    NSLayoutConstraint *bottomCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.presentedView attribute:NSLayoutAttributeTop multiplier:1 constant:-kIndicatorYOffset];
-    NSLayoutConstraint *centerXCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.presentedView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-    NSLayoutConstraint *widthCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:indicatorSize.width];
-    NSLayoutConstraint *heightCons = [NSLayoutConstraint constraintWithItem:self.dragIndicatorView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:indicatorSize.height];
-
-    [view addConstraints:@[bottomCons, centerXCons, widthCons, heightCons]];
+    
+    self.dragIndicatorView.frame = CGRectMake((view.hw_width - indicatorSize.width) / 2, -kIndicatorYOffset - indicatorSize.height, indicatorSize.width, indicatorSize.height);
 
 	[self.dragIndicatorView setupSubviews];
 	[self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
+}
+
+- (void)updateRoundedCorners {
+	if ([self.presentable shouldRoundTopCorners]) {
+		[self addRoundedCornersToView:self.panContainerView.contentView];
+	} else {
+		[self resetRoundedCornersToView:self.panContainerView.contentView];
+	}
 }
 
 - (void)addRoundedCornersToView:(UIView *)view {
@@ -279,12 +292,31 @@
 	view.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
 
-- (void)addShadowToContainerView {
+- (void)resetRoundedCornersToView:(UIView *)view {
+	view.layer.mask = nil;
+	view.layer.shouldRasterize = NO;
+}
+
+- (void)updateContainerViewShadow {
     HWPanModalShadow shadow = [[self presentable] contentShadow];
     if (shadow.shadowColor) {
         [self.panContainerView updateShadow:shadow.shadowColor shadowRadius:shadow.shadowRadius shadowOffset:shadow.shadowOffset shadowOpacity:shadow.shadowOpacity];
-    }
+    } else {
+		[self.panContainerView clearShadow];
+	}
 }
+
+
+/**
+ * Calculates & stores the layout anchor points & options
+ */
+- (void)configureViewLayout {
+    
+    [self.handler configureViewLayout];
+    self.containerView.userInteractionEnabled = [[self presentable] isUserInteractionEnabled];
+}
+
+#pragma mark - y position update
 
 - (void)snapToYPos:(CGFloat)yPos animated:(BOOL)animated {
 
@@ -301,33 +333,24 @@
 }
 
 - (void)adjustToYPos:(CGFloat)yPos {
-    self.presentedView.hw_top = MAX(yPos, self.handler.anchoredYPosition);
-    
-    // change dim background starting from shortFormYPosition.
+	self.presentedView.hw_top = MAX(yPos, self.handler.anchoredYPosition);
+
+	// change dim background starting from shortFormYPosition.
 	if (self.presentedView.frame.origin.y >= self.handler.shortFormYPosition) {
-        
-        CGFloat yDistanceFromShortForm = self.presentedView.frame.origin.y - self.handler.shortFormYPosition;
-        CGFloat bottomHeight = self.containerView.hw_height - self.handler.shortFormYPosition;
-        CGFloat percent = yDistanceFromShortForm / bottomHeight;
+
+		CGFloat yDistanceFromShortForm = self.presentedView.frame.origin.y - self.handler.shortFormYPosition;
+		CGFloat bottomHeight = self.containerView.hw_height - self.handler.shortFormYPosition;
+		CGFloat percent = yDistanceFromShortForm / bottomHeight;
 		self.backgroundView.dimState = DimStatePercent;
 		self.backgroundView.percent = 1 - percent;
 
 		[self.presentable panModalGestureRecognizer:self.handler.panGestureRecognizer dismissPercent:MIN(percent, 1)];
-        if (self.presentedViewController.isBeingDismissed) {
-            [[self interactiveAnimator] updateInteractiveTransition:MIN(percent, 1)];
-        }
+		if (self.presentedViewController.isBeingDismissed) {
+			[[self interactiveAnimator] updateInteractiveTransition:MIN(percent, 1)];
+		}
 	} else {
 		self.backgroundView.dimState = DimStateMax;
 	}
-}
-
-/**
- * Calculates & stores the layout anchor points & options
- */
-- (void)configureViewLayout {
-    
-    [self.handler configureViewLayout];
-    self.containerView.userInteractionEnabled = [[self presentable] isUserInteractionEnabled];
 }
 
 #pragma mark - HWPanModalPresentableHandlerDelegate

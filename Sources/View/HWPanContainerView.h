@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
         shadowOffset:(CGSize)shadowOffset
        shadowOpacity:(float)shadowOpacity;
 
+- (void)clearShadow;
+
 @end
 
 @interface UIView (PanContainer)

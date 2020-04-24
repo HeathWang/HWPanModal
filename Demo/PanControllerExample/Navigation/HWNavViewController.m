@@ -22,7 +22,8 @@
     // use custom navigation bar
     self.navigationBarHidden = YES;
     HWFetchDataViewController *fetchDataVC = [HWFetchDataViewController new];
-    [self pushViewController:fetchDataVC animated:YES];
+//    [self pushViewController:fetchDataVC animated:YES];
+    self.viewControllers = @[fetchDataVC];
 }
 
 //- (UIStatusBarStyle)preferredStatusBarStyle {
@@ -60,10 +61,6 @@
 
 - (BOOL)showDragIndicator {
     return NO;
-}
-
-- (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
-    return PresentingViewControllerAnimationStylePageSheet;
 }
 
 // let the navigation stack top VC handle it.

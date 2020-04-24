@@ -94,11 +94,17 @@
 - (BOOL)allowsExtendedPanScrolling {
 	if ([self panScrollable]) {
         UIScrollView *scrollable = [self panScrollable];
+
+        /*
+         [TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.g. table view bounds, trait collection, layout margins, safe area insets, etc), and will also cause unnecessary performance overhead due to extra layout passes. Make a symbolic breakpoint at UITableViewAlertForLayoutOutsideViewHierarchy to catch this in the debugger and see what caused this to occur, so you can avoid this action altogether if possible, or defer it until the table view has been added to a window.
+         */
+        if (!scrollable.superview || !scrollable.window) return NO;
+
 		[scrollable layoutIfNeeded];
 		return scrollable.contentSize.height > (scrollable.frame.size.height - self.bottomLayoutOffset);
-	} else {
-		return NO;
 	}
+
+    return NO;
 }
 
 - (BOOL)allowsDragToDismiss {
@@ -161,7 +167,7 @@
     if ([self allowsTouchEventsPassingThroughTransitionView]) {
         return NO;
     }
-	return [self shouldRoundTopCorners];
+	return YES;
 }
 
 - (nullable UIView <HWPanModalIndicatorProtocol> *)customIndicatorView {

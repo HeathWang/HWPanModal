@@ -36,6 +36,13 @@
     self.layer.shadowOpacity = shadowOpacity;
 }
 
+- (void)clearShadow {
+	self.layer.shadowColor = nil;
+	self.layer.shadowRadius = 3.0;
+	self.layer.shadowOffset = CGSizeZero;
+	self.layer.shadowOpacity = 0.0;
+}
+
 @end
 
 @implementation UIView (PanContainer)
