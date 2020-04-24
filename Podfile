@@ -1,3 +1,6 @@
+ source 'https://github.com/CocoaPods/Specs.git'
+# source 'https://cdn.cocoapods.org/'
+
 use_frameworks!
 inhibit_all_warnings!
 
