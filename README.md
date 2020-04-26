@@ -325,9 +325,8 @@ HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
 Heath Wang
 yishu.jay@gmail.com
 
-## Join community group
+### WeChat 
 
-WeChat Group QR Code:
 <p style="align: left">
     <a>
        <img src="images/groupChat.jpg" width="277">

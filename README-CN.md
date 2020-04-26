@@ -308,9 +308,8 @@ HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
 Heath Wang
 yishu.jay@gmail.com
 
-## 讨论群
+## WX
 
-WX二维码:
 <p style="align: left">
     <a>
        <img src="images/groupChat.jpg" width="277">
