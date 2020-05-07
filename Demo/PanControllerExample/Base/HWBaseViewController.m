@@ -24,20 +24,15 @@
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)shortFormHeight {
-    if ([self isLandScape]) {
-        return [self longFormHeight];
-    }
     return PanModalHeightMake(PanModalHeightTypeContent, 200.00001);
 }
 
+- (PanModalHeight)longFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeMax, 0);
+}
 
-// 当转屏且为横屏时，为全屏幕模式。
 - (CGFloat)topOffset {
-    if ([self isLandScape]) {
-        return 0;
-    } else {
-        return 40;
-    }
+    return self.topLayoutOffset;
 }
 
 - (BOOL)anchorModalToLongForm {
@@ -52,11 +47,7 @@
     return UIViewAnimationOptionCurveLinear;
 }
 
-- (BOOL)isLandScape {
-    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight ||
-        [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft) {
-        return YES;
-    }
+- (BOOL)showDragIndicator {
     return NO;
 }
 
