@@ -374,6 +374,11 @@
 }
 
 - (BOOL)isPresentedViewAnchored {
+    
+    if (![[self presentable] shouldRespondToPanModalGestureRecognizer:self.handler.panGestureRecognizer]) {
+        return YES;
+    }
+    
     if (!self.isPresentedViewAnimating && self.handler.extendsPanScrolling && CGRectGetMinY(self.panContainerView.frame) <= self.handler.anchoredYPosition) {
         return YES;
     }
