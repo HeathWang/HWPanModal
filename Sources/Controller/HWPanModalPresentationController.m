@@ -137,9 +137,10 @@
 			if ([self.presentable shouldRoundTopCorners]) {
 				[self addRoundedCornersToView:self.panContainerView.contentView];
 			}
+            [self updateDragIndicatorView];
 		}
 	} completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
-		[self transitionToState:self.currentPresentationState animated:YES];
+		[self transitionToState:self.currentPresentationState animated:NO];
 	}];
 }
 
@@ -175,8 +176,6 @@
         case PresentationStateShort: {
             [self snapToYPos:self.handler.shortFormYPosition animated:animated];
         }
-            break;
-        default:
             break;
     }
     self.currentPresentationState = state;
@@ -255,17 +254,18 @@
 	// if has been add, won't update it.
     self.dragIndicatorView.hidden = NO;
     
+    CGSize indicatorSize = [self.dragIndicatorView indicatorSize];
+    
     if (self.dragIndicatorView.superview == view) {
+        self.dragIndicatorView.frame = CGRectMake((view.hw_width - indicatorSize.width) / 2, -kIndicatorYOffset - indicatorSize.height, indicatorSize.width, indicatorSize.height);
         [self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
         return;
     }
 
     self.handler.dragIndicatorView = self.dragIndicatorView;
 	[view addSubview:self.dragIndicatorView];
-	CGSize indicatorSize = [self.dragIndicatorView indicatorSize];
-    
+	
     self.dragIndicatorView.frame = CGRectMake((view.hw_width - indicatorSize.width) / 2, -kIndicatorYOffset - indicatorSize.height, indicatorSize.width, indicatorSize.height);
-
 	[self.dragIndicatorView setupSubviews];
 	[self.dragIndicatorView didChangeToState:HWIndicatorStateNormal];
 }
