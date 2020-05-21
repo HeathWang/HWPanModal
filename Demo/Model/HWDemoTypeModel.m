@@ -26,6 +26,7 @@
 #import "HWFetchDataViewController.h"
 #import "HWMapViewController.h"
 #import "HWTestViewPanModalController.h"
+#import "HWNestedScrollViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -54,6 +55,8 @@
 	HWDemoTypeModel *fullScreenDemo = [HWDemoTypeModel modelWithTitle:@"Full Screen - Nav" targetClass:HWFullScreenNavController.class];
 	HWDemoTypeModel *dynamicDemo = [HWDemoTypeModel modelWithTitle:@"Dynamic Update UI" targetClass:HWDynamicHeightViewController.class];
     HWDemoTypeModel *customAnimationDemo = [HWDemoTypeModel modelWithTitle:@"Custom Presenting Controller" targetClass:HWMyCustomAnimationViewController.class];
+    HWDemoTypeModel *nestedDemo = [HWDemoTypeModel modelWithTitle:@"Nested Scroll" targetClass:HWNestedScrollViewController.class];
+
     HWDemoTypeModel *textInputDemo = [HWDemoTypeModel modelWithTitle:@"Handle Keyboard" targetClass:HWTextInputViewController.class];
     HWDemoTypeModel *testViewDemo = [HWDemoTypeModel modelWithTitle:@"Use PanModal View" targetClass:HWTestViewPanModalController.class];
     testViewDemo.action = HWActionTypePush;
@@ -67,7 +70,7 @@
     HWDemoTypeModel *mapDemo = [HWDemoTypeModel modelWithTitle:@"Events Passing Through TransitionView" targetClass:HWMapViewController.class];
     mapDemo.action = HWActionTypePush;
 
-	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, testViewDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
+	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, testViewDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, nestedDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }

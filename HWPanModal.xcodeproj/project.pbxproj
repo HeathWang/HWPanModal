@@ -60,6 +60,7 @@
 		7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */; };
 		7EA0F61A230D63D300ED20D2 /* HWShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */; };
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
+		7EA9D35924766FAC00C5067F /* HWNestedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9D35824766FAC00C5067F /* HWNestedScrollViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
 		7EC329C123CEB17A002F878C /* HWCollectionPanModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */; };
 		7EC329C423CEB2E5002F878C /* UIColor+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C323CEB2E5002F878C /* UIColor+HW.m */; };
@@ -201,6 +202,8 @@
 		7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWShareViewController.m; sourceTree = "<group>"; };
 		7EA0F5FE230D63D300ED20D2 /* HWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
 		7EA0F5FF230D63D300ED20D2 /* HWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
+		7EA9D35724766FAC00C5067F /* HWNestedScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWNestedScrollViewController.h; sourceTree = "<group>"; };
+		7EA9D35824766FAC00C5067F /* HWNestedScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWNestedScrollViewController.m; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7EC329BF23CEB17A002F878C /* HWCollectionPanModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCollectionPanModalView.h; sourceTree = "<group>"; };
 		7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCollectionPanModalView.m; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 		7EA0F5BA230D63D300ED20D2 /* PanControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7EA9D35624766F7400C5067F /* NestedScrollView */,
 				7ED9DE7A2359877900AE8A60 /* TestViewPanModal */,
 				7E044BC6233DEE9400D01981 /* EventThrough */,
 				7E2424962325FEB000421947 /* FetchData */,
@@ -696,6 +700,15 @@
 				7EA0F5FD230D63D300ED20D2 /* HWShareViewController.m */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		7EA9D35624766F7400C5067F /* NestedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				7EA9D35724766FAC00C5067F /* HWNestedScrollViewController.h */,
+				7EA9D35824766FAC00C5067F /* HWNestedScrollViewController.m */,
+			);
+			path = NestedScrollView;
 			sourceTree = "<group>";
 		};
 		7EB5E92023169CA300CDB543 /* Alert */ = {
@@ -1066,6 +1079,7 @@
 				7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */,
 				7EA0F606230D63D300ED20D2 /* HWImmobileIndicatorView.m in Sources */,
 				B8CF44061F90CAC000389BFE /* main.m in Sources */,
+				7EA9D35924766FAC00C5067F /* HWNestedScrollViewController.m in Sources */,
 				7EA0F619230D63D300ED20D2 /* HWGroupViewController.m in Sources */,
 				7EA0F602230D63D300ED20D2 /* HWDynamicHeightViewController.m in Sources */,
 				7ED9DE8023598ADE00AE8A60 /* HWSimplePanModalView.m in Sources */,
