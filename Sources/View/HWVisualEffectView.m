@@ -15,7 +15,7 @@ NSString * const kHWBlurEffectScaleKey = @"scale";
 
 @interface HWVisualEffectView ()
 
-@property (nonatomic, strong) UIBlurEffect *blurEffect;
+@property (nonatomic, strong) UIVisualEffect *blurEffect;
 
 @end
 
@@ -63,7 +63,7 @@ NSString * const kHWBlurEffectScaleKey = @"scale";
 
 #pragma mark - Getter & Setter
 
-- (UIBlurEffect *)blurEffect {
+- (UIVisualEffect *)blurEffect {
     if (!_blurEffect) {
         if (NSClassFromString(kInternalCustomBlurEffect)) {
             _blurEffect = (UIBlurEffect *)[NSClassFromString(@"_UICustomBlurEffect") new];
