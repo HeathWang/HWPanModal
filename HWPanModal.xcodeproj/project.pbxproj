@@ -109,10 +109,8 @@
 		7E300AEA230EB51E003FBFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8F6E7E231626CF00D9C897 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		7E8F6E8023162B3A00D9C897 /* DemoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoType.swift; sourceTree = "<group>"; };
-		7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HWPanModal.m"; sourceTree = "<group>"; };
 		7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HW_Swizzle.m"; sourceTree = "<group>"; };
 		7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HW_Frame.h"; sourceTree = "<group>"; };
-		7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HWPanModal.h"; sourceTree = "<group>"; };
 		7EA0F557230D5B7300ED20D2 /* UIView+HW_Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HW_Frame.m"; sourceTree = "<group>"; };
 		7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HW_Swizzle.h"; sourceTree = "<group>"; };
 		7EA0F55A230D5B7300ED20D2 /* UIViewController+PanModalPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalPresenter.m"; sourceTree = "<group>"; };
@@ -427,8 +425,6 @@
 		7EA0F552230D5B7300ED20D2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				7EA0F556230D5B7300ED20D2 /* UINavigationController+HWPanModal.h */,
-				7EA0F553230D5B7300ED20D2 /* UINavigationController+HWPanModal.m */,
 				7EA0F558230D5B7300ED20D2 /* NSObject+HW_Swizzle.h */,
 				7EA0F554230D5B7300ED20D2 /* NSObject+HW_Swizzle.m */,
 				7EA0F555230D5B7300ED20D2 /* UIView+HW_Frame.h */,
