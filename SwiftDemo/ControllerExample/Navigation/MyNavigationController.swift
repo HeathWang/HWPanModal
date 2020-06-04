@@ -19,6 +19,29 @@ class MyNavigationViewController: UINavigationController {
         pushViewController(fetchDataVC, animated: false)
     }
     
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        self.panModalSetNeedsLayoutUpdate()
+    }
+    
+    override func popViewController(animated: Bool) -> UIViewController? {
+        let vc = super.popViewController(animated: animated)
+        self.panModalSetNeedsLayoutUpdate()
+        return vc
+    }
+    
+    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+        let vcs = super.popToRootViewController(animated: animated)
+        self.panModalSetNeedsLayoutUpdate()
+        return vcs
+    }
+    
+    override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+        let vcs = super.popToViewController(viewController, animated: animated)
+        self.panModalSetNeedsLayoutUpdate()
+        return vcs
+    }
+    
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
 //    }

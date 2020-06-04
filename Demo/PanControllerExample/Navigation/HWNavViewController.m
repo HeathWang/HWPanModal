@@ -30,6 +30,31 @@
 //    return UIStatusBarStyleLightContent;
 //}
 
+#pragma mark - overridden to update panModal
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [super pushViewController:viewController animated:animated];
+    [self hw_panModalSetNeedsLayoutUpdate];
+}
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated {
+    UIViewController *controller = [super popViewControllerAnimated:animated];
+    [self hw_panModalSetNeedsLayoutUpdate];
+    return controller;
+}
+
+- (NSArray<__kindof UIViewController *> *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    NSArray<__kindof UIViewController *> *viewControllers = [super popToViewController:viewController animated:animated];
+    [self hw_panModalSetNeedsLayoutUpdate];
+    return viewControllers;
+}
+
+- (NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated {
+    NSArray<__kindof UIViewController *> *viewControllers = [super popToRootViewControllerAnimated:animated];
+    [self hw_panModalSetNeedsLayoutUpdate];
+    return viewControllers;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (UIScrollView *)panScrollable {
