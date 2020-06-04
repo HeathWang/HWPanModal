@@ -21,7 +21,6 @@ FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];
 #import <HWPanModal/UIViewController+PanModalDefault.h>
 #import <HWPanModal/UIViewController+Presentation.h>
 #import <HWPanModal/UIViewController+PanModalPresenter.h>
-#import <HWPanModal/UINavigationController+HWPanModal.h>
 
 // custom animation
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
