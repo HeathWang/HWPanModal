@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, PresentationState) {
 	PresentationStateShort NS_SWIFT_NAME(short),
+    PresentationStateMedium NS_SWIFT_NAME(medium),
 	PresentationStateLong NS_SWIFT_NAME(long),
 };
 
@@ -92,6 +93,8 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (PanModalHeight)shortFormHeight;
 
+
+- (PanModalHeight)mediumFormHeight;
 /**
  * 当pan状态为long的高度
  */

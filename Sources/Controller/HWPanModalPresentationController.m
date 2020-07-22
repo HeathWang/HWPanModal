@@ -173,6 +173,10 @@
             [self snapToYPos:self.handler.longFormYPosition animated:animated];
         }
             break;
+        case PresentationStateMedium: {
+            [self snapToYPos:self.handler.mediumFormYPosition animated:animated];
+        }
+            break;
         case PresentationStateShort: {
             [self snapToYPos:self.handler.shortFormYPosition animated:animated];
         }

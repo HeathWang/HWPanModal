@@ -66,6 +66,10 @@
     return [self longFormHeight];
 }
 
+- (PanModalHeight)mediumFormHeight {
+    return [self longFormHeight];
+}
+
 - (PanModalHeight)longFormHeight {
     if ([self panScrollable]) {
         [[self panScrollable] layoutIfNeeded];
@@ -257,6 +261,11 @@
 - (CGFloat)shortFormYPos {
     CGFloat shortFormYPos = [self topMarginFromPanModalHeight:[self shortFormHeight]] + [self topOffset];
     return MAX(shortFormYPos, self.longFormYPos);
+}
+
+- (CGFloat)mediumFormYPos {
+    CGFloat mediumFormYPos = [self topMarginFromPanModalHeight:[self mediumFormHeight]] + [self topOffset];
+    return MAX(mediumFormYPos, self.longFormYPos);
 }
 
 - (CGFloat)longFormYPos {

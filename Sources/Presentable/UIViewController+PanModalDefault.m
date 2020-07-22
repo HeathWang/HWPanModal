@@ -22,6 +22,10 @@
 	return [self longFormHeight];
 }
 
+- (PanModalHeight)mediumFormHeight {
+    return [self longFormHeight];
+}
+
 - (PanModalHeight)longFormHeight {
 	if ([self panScrollable]) {
 		[[self panScrollable] layoutIfNeeded];

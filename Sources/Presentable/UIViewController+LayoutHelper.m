@@ -80,6 +80,15 @@
     }
 }
 
+- (CGFloat)mediumFormYPos {
+    if (UIAccessibilityIsVoiceOverRunning()) {
+        return self.longFormYPos;
+    } else {
+        CGFloat mediumFormYPos = [self topMarginFromPanModalHeight:[self mediumFormHeight]] + [self topOffset];
+        return MAX(mediumFormYPos, self.longFormYPos);
+    }
+}
+
 - (CGFloat)longFormYPos {
 	return MAX([self topMarginFromPanModalHeight:[self longFormHeight]], [self topMarginFromPanModalHeight:PanModalHeightMake(PanModalHeightTypeMax, 0)]) + [self topOffset];
 }
