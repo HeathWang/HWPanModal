@@ -376,6 +376,10 @@
 	[self transitionToState:state animated:YES];
 }
 
+- (PresentationState)getCurrentPresentationState {
+    return self.currentPresentationState;
+}
+
 #pragma mark - interactive handle
 
 - (void)finishInteractiveTransition {

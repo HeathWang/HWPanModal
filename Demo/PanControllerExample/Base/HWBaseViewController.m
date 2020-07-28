@@ -27,6 +27,10 @@
     return PanModalHeightMake(PanModalHeightTypeContent, 200.00001);
 }
 
+- (PanModalHeight)mediumFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeContent, 500.00001);
+}
+
 - (PanModalHeight)longFormHeight {
     return PanModalHeightMake(PanModalHeightTypeMax, 0);
 }

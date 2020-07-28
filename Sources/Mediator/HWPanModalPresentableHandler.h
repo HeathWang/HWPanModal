@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)presentableTransitionToState:(PresentationState)state;
 
+
+/**
+* get current CurrentPresentationState of the delegate
+*/
+- (PresentationState)getCurrentPresentationState;
+
 /**
  * dismiss Controller/UIView
  * @param isInteractive only for UIViewController, pop view will ignore it.

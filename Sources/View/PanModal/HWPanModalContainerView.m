@@ -343,6 +343,10 @@
     [self transitionToState:state animated:YES];
 }
 
+- (PresentationState)getCurrentPresentationState {
+    return self.currentPresentationState;
+}
+
 - (void)dismiss:(BOOL)isInteractive mode:(PanModalInteractiveMode)mode {
 
     [[self presentable] panModalWillDismiss];
