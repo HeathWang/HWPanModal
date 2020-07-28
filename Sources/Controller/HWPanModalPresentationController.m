@@ -69,6 +69,8 @@
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
     	self.currentPresentationState = PresentationStateLong;
+    } else if ([[self presentable] originPresentationState] == PresentationStateMedium) {
+        self.currentPresentationState = PresentationStateMedium;
     }
 
 	[self layoutPresentedView:self.containerView];

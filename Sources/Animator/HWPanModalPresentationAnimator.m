@@ -74,7 +74,9 @@
 	CGFloat yPos = presentable.shortFormYPos;
 	if ([presentable originPresentationState] == PresentationStateLong) {
 		yPos = presentable.longFormYPos;
-	}
+    } else if ([presentable originPresentationState] == PresentationStateMedium) {
+        yPos = presentable.mediumFormYPos;
+    }
 
 	UIView *panView = context.containerView.panContainerView ?: toVC.view;
 	panView.frame = [context finalFrameForViewController:toVC];

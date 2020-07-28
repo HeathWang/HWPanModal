@@ -95,7 +95,7 @@
 }
 
 - (PresentationState)originPresentationState {
-    return PresentationStateShort;
+    return PresentationStateMedium;
 }
 
 - (CGFloat)springDamping {
