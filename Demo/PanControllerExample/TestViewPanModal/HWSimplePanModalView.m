@@ -77,8 +77,14 @@
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)shortFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeContent, 200);
+    return PanModalHeightMake(PanModalHeightTypeContent, 100);
 }
+
+- (PanModalHeight)mediumFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeContent, 500);
+}
+
+
 
 - (CGFloat)topOffset {
     return [UIApplication sharedApplication].keyWindow.rootViewController.topLayoutGuide.length + 21;
@@ -89,7 +95,7 @@
 }
 
 - (PresentationState)originPresentationState {
-    return PresentationStateShort;
+    return PresentationStateMedium;
 }
 
 - (CGFloat)springDamping {

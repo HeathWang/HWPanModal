@@ -26,9 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * tell the delegate presentable is about to change the form state
- * @param state short, long
+ * @param state short,medium, long
  */
 - (void)presentableTransitionToState:(PresentationState)state;
+
+
+/**
+* get current CurrentPresentationState of the delegate
+*/
+- (PresentationState)getCurrentPresentationState;
 
 /**
  * dismiss Controller/UIView
@@ -59,6 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HWPanModalPresentableHandler : NSObject <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign, readonly) CGFloat shortFormYPosition;
+@property (nonatomic, assign, readonly) CGFloat mediumFormYPosition;
 @property (nonatomic, assign, readonly) CGFloat longFormYPosition;
 @property (nonatomic, assign, readonly) BOOL extendsPanScrolling;
 @property (nonatomic, assign, readonly) BOOL anchorModalToLongForm;

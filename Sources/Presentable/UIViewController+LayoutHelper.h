@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) CGFloat shortFormYPos;
 
+@property (nonatomic, assign, readonly) CGFloat mediumFormYPos;
+
 @property (nonatomic, assign, readonly) CGFloat longFormYPos;
 
 @property (nonatomic, assign, readonly) CGFloat bottomYPos;

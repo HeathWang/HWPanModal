@@ -92,6 +92,8 @@
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
         self.currentPresentationState = PresentationStateLong;
+    } else if ([[self presentable] originPresentationState] == PresentationStateMedium) {
+        self.currentPresentationState = PresentationStateMedium;
     }
     
     [self addSubview:self.panContainerView];
@@ -105,6 +107,8 @@
     CGFloat yPos = self.contentView.shortFormYPos;
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
         yPos = self.contentView.longFormYPos;
+    } else if ([[self presentable] originPresentationState] == PresentationStateMedium) {
+        yPos = self.contentView.mediumFormYPos;
     }
     
     // refresh layout
@@ -162,6 +166,10 @@
     switch (state) {
         case PresentationStateLong: {
             [self snapToYPos:self.handler.longFormYPosition animated:animated];
+        }
+            break;
+        case PresentationStateMedium: {
+            [self snapToYPos:self.handler.mediumFormYPosition animated:animated];
         }
             break;
         case PresentationStateShort: {
@@ -337,6 +345,10 @@
 
 - (void)presentableTransitionToState:(PresentationState)state {
     [self transitionToState:state animated:YES];
+}
+
+- (PresentationState)getCurrentPresentationState {
+    return self.currentPresentationState;
 }
 
 - (void)dismiss:(BOOL)isInteractive mode:(PanModalInteractiveMode)mode {

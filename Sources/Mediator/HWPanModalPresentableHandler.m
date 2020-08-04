@@ -20,6 +20,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, assign) CGFloat shortFormYPosition;
 
+@property (nonatomic, assign) CGFloat mediumFormYPosition;
+
 @property (nonatomic, assign) CGFloat longFormYPosition;
 
 @property (nonatomic, assign) BOOL extendsPanScrolling;
@@ -239,31 +241,65 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
      */
 
     if ([self isVelocityWithinSensitivityRange:velocity.y]) {
+        
+        CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition), @(self.mediumFormYPosition)]];
+        id <HWPanModalPresentableHandlerDelegate> delegate = self.delegate;
+        PresentationState currentState = [delegate getCurrentPresentationState];
         if (velocity.y < 0) {
-            [self transitionToState:PresentationStateLong];
-            [self cancelInteractiveTransition];
-        } else if ((HW_TWO_FLOAT_IS_EQUAL([self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@(self.longFormYPosition), @([self containerSize].height)]], self.longFormYPosition) && CGRectGetMinY(self.presentedView.frame) < self.shortFormYPosition) ||
-                ![self.presentable allowsDragToDismiss]) {
-            [self transitionToState:PresentationStateShort];
-            [self cancelInteractiveTransition];
+            switch (currentState) {
+                case PresentationStateLong:
+                    [self transitionToState:PresentationStateLong];
+                    [self cancelInteractiveTransition];
+                    break;
+                case PresentationStateMedium:
+                    [self transitionToState:PresentationStateLong];
+                    [self cancelInteractiveTransition];
+                    break;
+                case PresentationStateShort:
+                    [self transitionToState:PresentationStateMedium];
+                    [self cancelInteractiveTransition];
+                    break;
+                default:
+                    break;
+            }
         } else {
-            if ([self isBeingDismissed]) {
-                [self finishInteractiveTransition];
-            } else {
-                [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
+            switch (currentState) {
+                case PresentationStateLong:
+                    [self transitionToState:PresentationStateMedium];
+                    [self cancelInteractiveTransition];
+                    break;
+                case PresentationStateMedium:
+                    [self transitionToState:PresentationStateShort];
+                    [self cancelInteractiveTransition];
+                    break;
+                case PresentationStateShort:
+                    if (![self.presentable allowsDragToDismiss]) {
+                        [self transitionToState:PresentationStateShort];
+                        [self cancelInteractiveTransition];
+                    } else {
+                        if ([self isBeingDismissed]) {
+                            [self finishInteractiveTransition];
+                        } else {
+                            [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
+                        }
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     } else {
-        CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition)]];
-
+        CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition), @(self.mediumFormYPosition)]];
         if (HW_TWO_FLOAT_IS_EQUAL(position, self.longFormYPosition)) {
             [self transitionToState:PresentationStateLong];
+            [self cancelInteractiveTransition];
+        } else if (HW_TWO_FLOAT_IS_EQUAL(position, self.mediumFormYPosition)) {
+            [self transitionToState:PresentationStateMedium];
             [self cancelInteractiveTransition];
         } else if (HW_TWO_FLOAT_IS_EQUAL(position, self.shortFormYPosition) || ![self.presentable allowsDragToDismiss]) {
             [self transitionToState:PresentationStateShort];
             [self cancelInteractiveTransition];
         } else {
-
             if ([self isBeingDismissed]) {
                 [self finishInteractiveTransition];
             } else {
@@ -396,12 +432,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     if ([self.presentable isKindOfClass:UIViewController.class]) {
         UIViewController<HWPanModalPresentable> *layoutPresentable = (UIViewController<HWPanModalPresentable> *) self.presentable;
         self.shortFormYPosition = layoutPresentable.shortFormYPos;
+        self.mediumFormYPosition = layoutPresentable.mediumFormYPos;
         self.longFormYPosition = layoutPresentable.longFormYPos;
         self.anchorModalToLongForm = [layoutPresentable anchorModalToLongForm];
         self.extendsPanScrolling = [layoutPresentable allowsExtendedPanScrolling];
     } else if ([self.presentable isKindOfClass:HWPanModalContentView.class]) {
         HWPanModalContentView<HWPanModalPresentable> *layoutPresentable = (HWPanModalContentView<HWPanModalPresentable> *) self.presentable;
         self.shortFormYPosition = layoutPresentable.shortFormYPos;
+        self.mediumFormYPosition = layoutPresentable.mediumFormYPos;
         self.longFormYPosition = layoutPresentable.longFormYPos;
         self.anchorModalToLongForm = [layoutPresentable anchorModalToLongForm];
         self.extendsPanScrolling = [layoutPresentable allowsExtendedPanScrolling];

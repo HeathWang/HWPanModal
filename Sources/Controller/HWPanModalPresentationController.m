@@ -69,6 +69,8 @@
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
     	self.currentPresentationState = PresentationStateLong;
+    } else if ([[self presentable] originPresentationState] == PresentationStateMedium) {
+        self.currentPresentationState = PresentationStateMedium;
     }
 
 	[self layoutPresentedView:self.containerView];
@@ -171,6 +173,10 @@
     switch (state) {
         case PresentationStateLong: {
             [self snapToYPos:self.handler.longFormYPosition animated:animated];
+        }
+            break;
+        case PresentationStateMedium: {
+            [self snapToYPos:self.handler.mediumFormYPosition animated:animated];
         }
             break;
         case PresentationStateShort: {
@@ -370,6 +376,10 @@
 
 - (void)presentableTransitionToState:(PresentationState)state {
 	[self transitionToState:state animated:YES];
+}
+
+- (PresentationState)getCurrentPresentationState {
+    return self.currentPresentationState;
 }
 
 #pragma mark - interactive handle

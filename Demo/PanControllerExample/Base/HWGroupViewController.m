@@ -67,6 +67,10 @@
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 200);
 }
 
+- (PanModalHeight)mediumFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeContent, 400);
+}
+
 - (PanModalHeight)shortFormHeight {
     return PanModalHeightMake(PanModalHeightTypeContent, 200);
 }
