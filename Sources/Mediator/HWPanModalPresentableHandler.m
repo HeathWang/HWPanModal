@@ -243,50 +243,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     if ([self isVelocityWithinSensitivityRange:velocity.y]) {
         
         CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition), @(self.mediumFormYPosition)]];
+        
         id <HWPanModalPresentableHandlerDelegate> delegate = self.delegate;
         PresentationState currentState = [delegate getCurrentPresentationState];
+        
         if (velocity.y < 0) {
-            switch (currentState) {
-                case PresentationStateLong:
-                    [self transitionToState:PresentationStateLong];
-                    [self cancelInteractiveTransition];
-                    break;
-                case PresentationStateMedium:
-                    [self transitionToState:PresentationStateLong];
-                    [self cancelInteractiveTransition];
-                    break;
-                case PresentationStateShort:
-                    [self transitionToState:PresentationStateMedium];
-                    [self cancelInteractiveTransition];
-                    break;
-                default:
-                    break;
-            }
+            [self handleDragUpState:currentState];
         } else {
-            switch (currentState) {
-                case PresentationStateLong:
-                    [self transitionToState:PresentationStateMedium];
-                    [self cancelInteractiveTransition];
-                    break;
-                case PresentationStateMedium:
-                    [self transitionToState:PresentationStateShort];
-                    [self cancelInteractiveTransition];
-                    break;
-                case PresentationStateShort:
-                    if (![self.presentable allowsDragToDismiss]) {
-                        [self transitionToState:PresentationStateShort];
-                        [self cancelInteractiveTransition];
-                    } else {
-                        if ([self isBeingDismissed]) {
-                            [self finishInteractiveTransition];
-                        } else {
-                            [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }
+            [self handleDragDownState:currentState];
         }
     } else {
         CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition), @(self.mediumFormYPosition)]];
@@ -306,6 +270,52 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
                 [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
             }
         }
+    }
+}
+
+- (void)handleDragUpState:(PresentationState)state {
+    switch (state) {
+        case PresentationStateLong:
+            [self transitionToState:PresentationStateLong];
+            [self cancelInteractiveTransition];
+            break;
+        case PresentationStateMedium:
+            [self transitionToState:PresentationStateLong];
+            [self cancelInteractiveTransition];
+            break;
+        case PresentationStateShort:
+            [self transitionToState:PresentationStateMedium];
+            [self cancelInteractiveTransition];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)handleDragDownState:(PresentationState)state {
+    switch (state) {
+        case PresentationStateLong:
+            [self transitionToState:PresentationStateMedium];
+            [self cancelInteractiveTransition];
+            break;
+        case PresentationStateMedium:
+            [self transitionToState:PresentationStateShort];
+            [self cancelInteractiveTransition];
+            break;
+        case PresentationStateShort:
+            if (![self.presentable allowsDragToDismiss]) {
+                [self transitionToState:PresentationStateShort];
+                [self cancelInteractiveTransition];
+            } else {
+                if ([self isBeingDismissed]) {
+                    [self finishInteractiveTransition];
+                } else {
+                    [self dismissPresentable:NO mode:PanModalInteractiveModeNone];
+                }
+            }
+            break;
+        default:
+            break;
     }
 }
 

@@ -93,8 +93,11 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (PanModalHeight)shortFormHeight;
 
-
+/**
+ * default: mediumFormHeight = longFormHeight
+ */
 - (PanModalHeight)mediumFormHeight;
+
 /**
  * 当pan状态为long的高度
  */

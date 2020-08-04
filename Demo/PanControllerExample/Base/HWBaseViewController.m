@@ -47,9 +47,9 @@
     return PanModalShadowMake([UIColor yellowColor], 10, CGSizeMake(0, 2), 1);
 }
 
-- (UIViewAnimationOptions)transitionAnimationOptions {
-    return UIViewAnimationOptionCurveLinear;
-}
+//- (UIViewAnimationOptions)transitionAnimationOptions {
+//    return UIViewAnimationOptionCurveLinear;
+//}
 
 - (BOOL)showDragIndicator {
     return NO;
