@@ -93,11 +93,12 @@
 	} config:presentable completion:^(BOOL completion) {
 		[fromVC endAppearanceTransition];
         [self endAppearanceTransitionForController:toVC];
-		[context completeTransition:completion];
 
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
         }
+
+		[context completeTransition:completion];
 	}];
 
 	self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
