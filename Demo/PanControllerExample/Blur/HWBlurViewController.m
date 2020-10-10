@@ -28,8 +28,15 @@
 }
 
 - (HWBackgroundConfig *)backgroundConfig {
-    HWBackgroundConfig *backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorCustomBlurEffect];
-    backgroundConfig.backgroundBlurRadius = 15;
+    HWBackgroundConfig *backgroundConfig;
+    
+    if (@available(iOS 14.0, *)) {
+        backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorSystemVisualEffect];
+    } else {
+        backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorCustomBlurEffect];
+        backgroundConfig.backgroundBlurRadius = 15;
+    }
+    
     return backgroundConfig;
 }
 
