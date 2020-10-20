@@ -165,7 +165,7 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
     } else {
         config.backgroundAlpha = 0.7;
     }
-    [self.dimmedView reloadConfig:config];
+    [self.hw_dimmedView reloadConfig:config];
 }
 
 #pragma mark - HWPanModalPresentable

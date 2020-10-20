@@ -52,6 +52,10 @@
     [self.containerView setScrollableContentOffset:offset animated:animated];
 }
 
+- (HWDimmedView *)hw_dimmedView {
+    return self.containerView.backgroundView;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (UIScrollView *)panScrollable {

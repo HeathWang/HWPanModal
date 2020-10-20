@@ -9,10 +9,13 @@
 #import <HWPanModal/HWPanModalPresentable.h>
 
 @class HWPanModalContentView;
+@class HWDimmedView;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HWPanModalContainerView : UIView
+
+@property (nonatomic, readonly) HWDimmedView *backgroundView;
 
 - (instancetype)initWithPresentingView:(UIView *)presentingView contentView:(HWPanModalContentView<HWPanModalPresentable> *)contentView;
 
