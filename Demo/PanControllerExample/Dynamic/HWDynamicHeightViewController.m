@@ -31,6 +31,10 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 @property (nonatomic, strong) UIButton *changeRoundCornerButton;
 @property (nonatomic, strong) UIButton *clearRoundCornerButton;
 
+// background
+
+@property (nonatomic, strong) UIButton *changeBackgroundButton;
+
 @property (nonatomic, assign) CGFloat roundRadius;
 @property (nonatomic, assign) BOOL shouldRound;
 
@@ -39,6 +43,7 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 @property (nonatomic, assign) PanModalHeight shortHeight;
 @property (nonatomic, assign) PanModalHeight longHeight;
 @property (nonatomic, assign) ChangeHeightType currentType;
+@property (nonatomic, assign) BOOL bgFlag;
 
 @end
 
@@ -95,11 +100,20 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
         make.top.equalTo(self.changeRoundCornerButton);
         make.right.equalTo(@-20);
     }];
+    
+    [self.view addSubview:self.changeBackgroundButton];
+    
+    [self.changeBackgroundButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.changeShortButton);
+        make.top.equalTo(self.clearRoundCornerButton.mas_bottom).offset(20);
+        make.height.mas_equalTo(44);
+        make.right.equalTo(@-20);
+    }];
 
 	[self.view addSubview:self.indicatorSwitch];
 	[self.indicatorSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.centerX.equalTo(@0);
-		make.top.equalTo(self.changeRoundCornerButton.mas_bottom).offset(20);
+		make.top.equalTo(self.changeBackgroundButton.mas_bottom).offset(20);
 	}];
 }
 
@@ -142,6 +156,18 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 	[self hw_panModalSetNeedsLayoutUpdate];
 }
 
+- (void)onTapChangeBG {
+    self.bgFlag = !self.bgFlag;
+    HWBackgroundConfig *config = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
+    if (self.bgFlag) {
+        config = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
+        config.backgroundAlpha = 0.15;
+    } else {
+        config.backgroundAlpha = 0.7;
+    }
+    [self.dimmedView reloadConfig:config];
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)shortFormHeight {
@@ -177,6 +203,18 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 - (BOOL)showDragIndicator {
 	return self.indicatorSwitch.on;
 }
+
+//- (HWBackgroundConfig *)backgroundConfig {
+//    if (self.bgFlag) {
+//        HWBackgroundConfig *config = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
+//        config.backgroundAlpha = 0;
+//        return config;
+//    } else {
+//        HWBackgroundConfig *config = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
+//        config.backgroundAlpha = 0.7;
+//        return config;
+//    }
+//}
 
 #pragma mark - private method
 
@@ -248,6 +286,15 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 		[_indicatorSwitch addTarget:self action:@selector(onTapChangeIndicator) forControlEvents:UIControlEventValueChanged];
 	}
 	return _indicatorSwitch;
+}
+
+- (UIButton *)changeBackgroundButton {
+    if (!_changeBackgroundButton) {
+        _changeBackgroundButton = [self buttonWithTitle:@"Change background alpha"];
+        [_changeBackgroundButton addTarget:self action:@selector(onTapChangeBG) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _changeBackgroundButton;
 }
 
 

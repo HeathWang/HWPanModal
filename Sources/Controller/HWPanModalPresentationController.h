@@ -7,11 +7,14 @@
 
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalPresentable.h>
+@class HWDimmedView;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 @interface HWPanModalPresentationController : UIPresentationController
+
+@property (nonatomic, readonly) HWDimmedView *backgroundView;
 
 - (void)setNeedsLayoutUpdate;
 

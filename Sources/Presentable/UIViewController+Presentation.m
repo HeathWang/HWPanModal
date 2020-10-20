@@ -41,4 +41,8 @@
     [self.hw_presentedVC setNeedsLayoutUpdate];
 }
 
+- (HWDimmedView *)dimmedView {
+    return self.hw_presentedVC.backgroundView;
+}
+
 @end

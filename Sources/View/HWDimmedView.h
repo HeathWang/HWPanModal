@@ -34,6 +34,7 @@ typedef void(^didTap)(UITapGestureRecognizer *recognizer);
 
 - (instancetype)initWithBackgroundConfig:(HWBackgroundConfig *)backgroundConfig;
 
+- (void)reloadConfig:(HWBackgroundConfig *)backgroundConfig;
 
 @end
 

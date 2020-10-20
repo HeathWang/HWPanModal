@@ -28,6 +28,7 @@ FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];
 // view
 #import <HWPanModal/HWPanModalIndicatorProtocol.h>
 #import <HWPanModal/HWPanIndicatorView.h>
+#import <HWPanModal/HWDimmedView.h>
 
 // panModal view
 #import <HWPanModal/HWPanModalContentView.h>

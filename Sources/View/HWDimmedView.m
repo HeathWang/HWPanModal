@@ -75,6 +75,7 @@
 	self.isBlurMode = self.maxBlurRadius > 0 || self.backgroundConfig.visualEffect;
 	if (self.isBlurMode) {
 		[self addSubview:self.blurView];
+        [self configBlurView];
 	} else {
 		[self addSubview:self.backgroundView];
 	}
@@ -94,6 +95,25 @@
 
 - (void)didTapView {
 	self.tapBlock ? self.tapBlock(self.tapGestureRecognizer) : nil;
+}
+
+#pragma mark - public method
+
+- (void)reloadConfig:(HWBackgroundConfig *)backgroundConfig {
+    
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    self.backgroundConfig = backgroundConfig;
+    _maxDimAlpha = backgroundConfig.backgroundAlpha;
+    _maxBlurRadius = backgroundConfig.backgroundBlurRadius;
+    _blurTintColor = backgroundConfig.blurTintColor;
+
+    [self setupView];
+    
+    DimState state = self.dimState;
+    self.dimState = state;
 }
 
 #pragma mark - private method
@@ -130,6 +150,16 @@
 	}
 }
 
+- (void)configBlurView {
+    if (self.backgroundConfig.visualEffect) {
+        [_blurView updateBlurEffect:self.backgroundConfig.visualEffect];
+    } else {
+        _blurView.colorTint = [UIColor whiteColor];
+        _blurView.colorTintAlpha = self.maxBlurTintAlpha;
+        _blurView.userInteractionEnabled = NO;
+    }
+}
+
 #pragma mark - Setter
 
 - (void)setDimState:(DimState)dimState {
@@ -157,15 +187,6 @@
 - (HWVisualEffectView *)blurView {
 	if (!_blurView) {
 		_blurView = [HWVisualEffectView new];
-
-		if (self.backgroundConfig.visualEffect) {
-			[_blurView updateBlurEffect:self.backgroundConfig.visualEffect];
-		} else {
-			_blurView.colorTint = [UIColor whiteColor];
-			_blurView.colorTintAlpha = self.maxBlurTintAlpha;
-			_blurView.userInteractionEnabled = NO;
-		}
-
 	}
 	return _blurView;
 }

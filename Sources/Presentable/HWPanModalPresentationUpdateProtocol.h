@@ -6,8 +6,11 @@
 //
 
 #import <HWPanModal/HWPanModalPresentable.h>
+@class HWDimmedView;
 
 @protocol HWPanModalPresentationUpdateProtocol <NSObject>
+
+@property (nonatomic, readonly) HWDimmedView *dimmedView;
 
 /**
  * force update pan modal State, short/long
