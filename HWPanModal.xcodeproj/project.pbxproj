@@ -62,6 +62,7 @@
 		7EA0F61B230D63D300ED20D2 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0F5FE230D63D300ED20D2 /* HWViewController.m */; };
 		7EA9D35924766FAC00C5067F /* HWNestedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9D35824766FAC00C5067F /* HWNestedScrollViewController.m */; };
 		7EB5E92223169CB600CDB543 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E92123169CB600CDB543 /* AlertController.swift */; };
+		7EBEA5E025807B5A00B14048 /* HWTestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBEA5DF25807B5A00B14048 /* HWTestWebViewController.m */; };
 		7EC329C123CEB17A002F878C /* HWCollectionPanModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */; };
 		7EC329C423CEB2E5002F878C /* UIColor+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC329C323CEB2E5002F878C /* UIColor+HW.m */; };
 		7EC3DEF623A729B0005B9968 /* HWPanModalNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */; };
@@ -203,6 +204,8 @@
 		7EA9D35724766FAC00C5067F /* HWNestedScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWNestedScrollViewController.h; sourceTree = "<group>"; };
 		7EA9D35824766FAC00C5067F /* HWNestedScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWNestedScrollViewController.m; sourceTree = "<group>"; };
 		7EB5E92123169CB600CDB543 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		7EBEA5DE25807B5A00B14048 /* HWTestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTestWebViewController.h; sourceTree = "<group>"; };
+		7EBEA5DF25807B5A00B14048 /* HWTestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTestWebViewController.m; sourceTree = "<group>"; };
 		7EC329BF23CEB17A002F878C /* HWCollectionPanModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCollectionPanModalView.h; sourceTree = "<group>"; };
 		7EC329C023CEB17A002F878C /* HWCollectionPanModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCollectionPanModalView.m; sourceTree = "<group>"; };
 		7EC329C223CEB2E5002F878C /* UIColor+HW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HW.h"; sourceTree = "<group>"; };
@@ -685,6 +688,8 @@
 				7EA0F5FA230D63D300ED20D2 /* HWGroupViewController.m */,
 				7EC3DEF423A729B0005B9968 /* HWPanModalNavView.h */,
 				7EC3DEF523A729B0005B9968 /* HWPanModalNavView.m */,
+				7EBEA5DE25807B5A00B14048 /* HWTestWebViewController.h */,
+				7EBEA5DF25807B5A00B14048 /* HWTestWebViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1054,6 +1059,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EBEA5E025807B5A00B14048 /* HWTestWebViewController.m in Sources */,
 				7EA0F603230D63D300ED20D2 /* HWAppListViewController.m in Sources */,
 				7EA0F609230D63D300ED20D2 /* HWTransientAlertViewController.m in Sources */,
 				7EA0F616230D63D300ED20D2 /* HWStackedGroupViewController.m in Sources */,

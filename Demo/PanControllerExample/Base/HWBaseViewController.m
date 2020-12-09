@@ -74,6 +74,10 @@
     return NO;
 }
 
+- (BOOL)allowsDragToDismiss {
+    return NO;
+}
+
 #ifdef DEBUG
 
 - (void)dealloc {

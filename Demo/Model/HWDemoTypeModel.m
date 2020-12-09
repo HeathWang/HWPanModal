@@ -27,6 +27,7 @@
 #import "HWMapViewController.h"
 #import "HWTestViewPanModalController.h"
 #import "HWNestedScrollViewController.h"
+#import "HWTestWebViewController.h"
 
 @implementation HWDemoTypeModel
 
@@ -48,6 +49,7 @@
 	NSMutableArray *array = [NSMutableArray array];
 
 	HWDemoTypeModel *baseDemo = [HWDemoTypeModel modelWithTitle:@"Basic" targetClass:HWBaseViewController.class];
+    HWDemoTypeModel *webDemo = [HWDemoTypeModel modelWithTitle:@"Web" targetClass:HWTestWebViewController.class];
 	HWDemoTypeModel *groupDemo = [HWDemoTypeModel modelWithTitle:@"Group" targetClass:HWGroupViewController.class];
 	HWDemoTypeModel *alertDemo = [HWDemoTypeModel modelWithTitle:@"Alert" targetClass:HWAlertViewController.class];
 	HWDemoTypeModel *autoAlertDemo = [HWDemoTypeModel modelWithTitle:@"Transient Alert" targetClass:HWTransientAlertViewController.class];
@@ -70,7 +72,7 @@
     HWDemoTypeModel *mapDemo = [HWDemoTypeModel modelWithTitle:@"Events Passing Through TransitionView" targetClass:HWMapViewController.class];
     mapDemo.action = HWActionTypePush;
 
-	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, testViewDemo, textInputDemo, baseDemo, alertDemo, autoAlertDemo, dynamicDemo, nestedDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
+	[array addObjectsFromArray:@[appDemo, blurDemo, indicatorDemo, mapDemo, testViewDemo, textInputDemo, baseDemo, webDemo, alertDemo, autoAlertDemo, dynamicDemo, nestedDemo, groupDemo, stackGroupDemo, fullScreenDemo, customAnimationDemo]];
 
 	return [array copy];
 }
