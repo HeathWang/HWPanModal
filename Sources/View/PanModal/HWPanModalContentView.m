@@ -252,6 +252,10 @@
 
 }
 
+- (BOOL)shouldEnableAppearanceTransition {
+    return YES;
+}
+
 #pragma mark - HWPanModalPresentableLayoutProtocol
 
 - (CGFloat)topLayoutOffset {

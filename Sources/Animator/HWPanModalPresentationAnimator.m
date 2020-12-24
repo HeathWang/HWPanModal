@@ -63,14 +63,16 @@
 	UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
 	if (!toVC && !fromVC)
 		return;
-
-	// If you are implementing a custom container controller, use this method to tell the child that its views are about to appear or disappear.
     
-	[fromVC beginAppearanceTransition:NO animated:YES];
-    [self beginAppearanceTransitionForController:toVC isAppearing:YES animated:YES];
-    
-	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
+    UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
+    if ([presentable shouldEnableAppearanceTransition]) {
+        // If you are implementing a custom container controller, use this method to tell the child that its views are about to appear or disappear.
+        [fromVC beginAppearanceTransition:NO animated:YES];
+        [self beginAppearanceTransitionForController:toVC isAppearing:YES animated:YES];
+    }
+    
+    
 	CGFloat yPos = presentable.shortFormYPos;
 	if ([presentable originPresentationState] == PresentationStateLong) {
 		yPos = presentable.longFormYPos;
@@ -91,9 +93,12 @@
 	[HWPanModalAnimator animate:^{
 		panView.hw_top = yPos;
 	} config:presentable completion:^(BOOL completion) {
-		[fromVC endAppearanceTransition];
-        [self endAppearanceTransitionForController:toVC];
-
+        
+        if ([presentable shouldEnableAppearanceTransition]) {
+            [fromVC endAppearanceTransition];
+            [self endAppearanceTransitionForController:toVC];
+        }
+		
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;
         }
@@ -114,12 +119,15 @@
 	UIViewController *toVC = [context viewControllerForKey:UITransitionContextToViewControllerKey];
 	if (!fromVC && !toVC)
 		return;
+    
+    UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
 
-    [self beginAppearanceTransitionForController:fromVC isAppearing:NO animated:YES];
-	[toVC beginAppearanceTransition:YES animated:YES];
-
-	UIViewController<HWPanModalPresentable> *presentable = [self panModalViewController:context];
-
+    
+    if ([presentable shouldEnableAppearanceTransition]) {
+        [self beginAppearanceTransitionForController:fromVC isAppearing:NO animated:YES];
+        [toVC beginAppearanceTransition:YES animated:YES];
+    }
+	
 	UIView *panView = context.containerView.panContainerView ?: fromVC.view;
     self.presentingVCTransitionContext = [[HWPresentingVCTransitionContext alloc] initWithFromVC:fromVC toVC:toVC duration:[presentable transitionDuration] containerView:context.containerView];
 
@@ -147,8 +155,12 @@
 		panView.hw_top = (context.containerView.frame.size.height + offsetY);
 	} config:presentable completion:^(BOOL completion) {
 		[fromVC.view removeFromSuperview];
-		[self endAppearanceTransitionForController:fromVC];
-		[toVC endAppearanceTransition];
+        
+        if ([presentable shouldEnableAppearanceTransition]) {
+            [self endAppearanceTransitionForController:fromVC];
+            [toVC endAppearanceTransition];
+        }
+		
 		[context completeTransition:completion];
 	}];
 }
@@ -166,8 +178,12 @@
 
 		if (finished) {
 			[fromVC.view removeFromSuperview];
-			[self endAppearanceTransitionForController:fromVC];
-			[toVC endAppearanceTransition];
+            
+            if ([presentable shouldEnableAppearanceTransition]) {
+                [self endAppearanceTransitionForController:fromVC];
+                [toVC endAppearanceTransition];
+            }
+			
 			context.containerView.userInteractionEnabled = YES;
 		}
 		[context completeTransition:finished];

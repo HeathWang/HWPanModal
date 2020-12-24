@@ -137,6 +137,14 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (UIViewAnimationOptions)transitionAnimationOptions;
 
+#pragma mark - AppearanceTransition
+
+/**
+ * If enabled, the presenting VC will invoke viewWillAppear:, viewWillDisappear:
+ * Default is YES
+ */
+- (BOOL)shouldEnableAppearanceTransition;
+
 #pragma mark - Background config
 
 /**

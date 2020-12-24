@@ -131,6 +131,10 @@
 	return PresentingViewControllerAnimationStyleNone;
 }
 
+- (BOOL)shouldEnableAppearanceTransition {
+    return YES;
+}
+
 - (BOOL)shouldAnimatePresentingVC {
     return NO;
 }
