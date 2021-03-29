@@ -45,4 +45,8 @@
     return self.hw_presentedVC.backgroundView;
 }
 
+- (UIView *)rootContainerView {
+    return self.hw_presentedVC.containerView;
+}
+
 @end

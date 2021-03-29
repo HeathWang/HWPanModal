@@ -87,7 +87,7 @@
 }
 
 - (void)presentAnimationWillBegin {
-
+    [[self presentable] panModalTransitionWillBegin];
     [self layoutBackgroundView];
 
     if ([[self presentable] originPresentationState] == PresentationStateLong) {
@@ -100,6 +100,7 @@
     [self layoutPresentedView];
     
     [self.handler configureScrollViewInsets];
+    [[self presentable] presentedViewDidMoveToSuperView];
 }
 
 - (void)beginPresentAnimation {
@@ -128,6 +129,7 @@
         self.backgroundView.dimState = DimStateMax;
     } config:[self presentable] completion:^(BOOL completion) {
         self.isPresenting = NO;
+        [[self presentable] panModalTransitionDidFinish];
         
         if (@available(iOS 10.0, *)) {
             self.feedbackGenerator = nil;

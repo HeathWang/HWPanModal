@@ -61,6 +61,7 @@
 #pragma mark - Tracking the Transition Start and End
 
 - (void)presentationTransitionWillBegin {
+    [[self presentable] panModalTransitionWillBegin];
 
 	if (!self.containerView)
 		return;
@@ -96,6 +97,7 @@
 }
 
 - (void)presentationTransitionDidEnd:(BOOL)completed {
+    [[self presentable] panModalTransitionDidFinish];
 	if (completed)
 		return;
 
@@ -242,6 +244,8 @@
 
 	[self setNeedsLayoutUpdate];
 	[self adjustPanContainerBackgroundColor];
+    
+    [[self presentable] presentedViewDidMoveToSuperView];
 }
 
 - (void)adjustPanContainerBackgroundColor {

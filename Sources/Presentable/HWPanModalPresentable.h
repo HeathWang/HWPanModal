@@ -351,6 +351,23 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (void)willTransitionToState:(PresentationState)state;
 
+#pragma mark - present delegate
+
+/**
+ * call when present transition will begin.
+ */
+- (void)panModalTransitionWillBegin;
+
+/**
+ * call when present transition did finish.
+ */
+- (void)panModalTransitionDidFinish;
+
+/**
+ * call when your custom presented vc has benn added to the presentation container.
+ */
+- (void)presentedViewDidMoveToSuperView;
+
 #pragma mark - Dismiss delegate
 /**
  * will dismiss

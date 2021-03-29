@@ -252,6 +252,18 @@
 
 }
 
+- (void)panModalTransitionWillBegin {
+    
+}
+
+- (void)panModalTransitionDidFinish {
+    
+}
+
+- (void)presentedViewDidMoveToSuperView {
+    
+}
+
 - (BOOL)shouldEnableAppearanceTransition {
     return YES;
 }

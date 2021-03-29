@@ -222,5 +222,17 @@
     
 }
 
+- (void)panModalTransitionWillBegin {
+    
+}
+
+- (void)panModalTransitionDidFinish {
+    
+}
+
+- (void)presentedViewDidMoveToSuperView {
+    
+}
+
 @end
 

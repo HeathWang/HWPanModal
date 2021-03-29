@@ -11,6 +11,7 @@
 @protocol HWPanModalPresentationUpdateProtocol <NSObject>
 
 @property (nonatomic, readonly) HWDimmedView *hw_dimmedView;
+@property (nonatomic, readonly) UIView *rootContainerView;
 
 /**
  * force update pan modal State, short/long
