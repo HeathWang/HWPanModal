@@ -9,8 +9,11 @@
 #import "HWGroupViewController.h"
 #import "HWColorCell.h"
 #import <HWPanModal/HWPanModal.h>
+#import <Masonry/Masonry.h>
 
 @interface HWGroupViewController () <HWPanModalPresentable>
+
+@property (nonatomic, strong) UIView *footerView;
 
 @end
 
@@ -25,6 +28,15 @@
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.showsVerticalScrollIndicator = NO;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -81,6 +93,24 @@
 
 - (BOOL)showsScrollableVerticalScrollIndicator {
     return NO;
+}
+
+- (void)presentedViewDidMoveToSuperView {
+    NSLog(@"%@", self.rootContainerView);
+
+    UIView *testView = [UIView new];
+    testView.backgroundColor = [UIColor redColor];
+    [self.rootContainerView addSubview:testView];
+    [testView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(@0);
+        make.height.mas_equalTo(44);
+    }];
+    
+    self.footerView = testView;
+}
+
+- (void)panModalWillDismiss {
+    [self.footerView removeFromSuperview];
 }
 
 #pragma mark - Getter
