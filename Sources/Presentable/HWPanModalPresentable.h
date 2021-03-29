@@ -364,7 +364,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (void)panModalTransitionDidFinish;
 
 /**
- * call when your custom presented vc has benn added to the presentation container.
+ * call when your custom presented vc has been added to the presentation container.
  */
 - (void)presentedViewDidMoveToSuperView;
 
