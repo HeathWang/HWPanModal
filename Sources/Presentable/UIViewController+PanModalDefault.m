@@ -207,7 +207,9 @@
 }
 
 - (void)willTransitionToState:(PresentationState)state {
+}
 
+- (void)didChangeTransitionToState:(PresentationState)state {
 }
 
 - (void)panModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer dismissPercent:(CGFloat)percent {

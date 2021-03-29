@@ -96,7 +96,6 @@
 }
 
 - (void)presentedViewDidMoveToSuperView {
-    NSLog(@"%@", self.rootContainerView);
 
     UIView *testView = [UIView new];
     testView.backgroundColor = [UIColor redColor];
@@ -111,6 +110,10 @@
 
 - (void)panModalWillDismiss {
     [self.footerView removeFromSuperview];
+}
+
+- (void)didChangeTransitionToState:(PresentationState)state {
+//    NSLog(@"%ld", (long)state);
 }
 
 #pragma mark - Getter

@@ -351,6 +351,11 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (void)willTransitionToState:(PresentationState)state;
 
+/**
+ * PresentationState did change callback
+ */
+- (void)didChangeTransitionToState:(PresentationState)state;
+
 #pragma mark - present delegate
 
 /**

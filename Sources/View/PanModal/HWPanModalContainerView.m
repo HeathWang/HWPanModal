@@ -182,6 +182,7 @@
             break;
     }
     self.currentPresentationState = state;
+    [[self presentable] didChangeTransitionToState:state];
 }
 
 - (void)setScrollableContentOffset:(CGPoint)offset animated:(BOOL)animated {
