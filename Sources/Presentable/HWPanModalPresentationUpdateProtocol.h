@@ -9,9 +9,10 @@
 @class HWDimmedView;
 
 @protocol HWPanModalPresentationUpdateProtocol <NSObject>
-
+/// background view, you can call `reloadConfig:`  to update the UI.
 @property (nonatomic, readonly) HWDimmedView *hw_dimmedView;
-@property (nonatomic, readonly) UIView *rootContainerView;
+/// the root container which your custom VC's view to be added.
+@property (nonatomic, readonly) UIView *hw_rootContainerView;
 
 /**
  * force update pan modal State, short/long

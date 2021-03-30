@@ -56,6 +56,10 @@
     return self.containerView.backgroundView;
 }
 
+- (UIView *)hw_rootContainerView {
+    return self.containerView;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (UIScrollView *)panScrollable {

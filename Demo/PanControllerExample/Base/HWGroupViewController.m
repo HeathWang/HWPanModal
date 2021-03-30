@@ -99,7 +99,7 @@
 
     UIView *testView = [UIView new];
     testView.backgroundColor = [UIColor redColor];
-    [self.rootContainerView addSubview:testView];
+    [self.hw_rootContainerView addSubview:testView];
     [testView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(@0);
         make.height.mas_equalTo(44);
