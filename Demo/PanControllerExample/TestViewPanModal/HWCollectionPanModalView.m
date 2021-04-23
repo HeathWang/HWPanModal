@@ -21,6 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.collectionView];
 
     }
@@ -30,18 +31,32 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.collectionView.frame = self.bounds;
+    self.collectionView.frame = CGRectMake(0, 40, CGRectGetWidth(self.bounds), 110);
 }
 
 
 #pragma mark - HWPanModalPresentable
 
+- (PanModalHeight)shortFormHeight {
+    return PanModalHeightMake(PanModalHeightTypeContent, 160);
+}
+
 - (PanModalHeight)longFormHeight {
-    return PanModalHeightMake(PanModalHeightTypeContent, 120);
+    return PanModalHeightMake(PanModalHeightTypeContent, 240);
 }
 
 - (BOOL)showDragIndicator {
     return NO;
+}
+
+- (BOOL)shouldRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint point = [panGestureRecognizer locationInView:self];
+    if (CGRectContainsPoint(self.collectionView.frame, point)) {
+        return NO;
+    }
+    
+    return YES;
+    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -75,7 +90,8 @@
         flowLayout.minimumLineSpacing = 20;
 
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        
+        _collectionView.backgroundColor = [UIColor colorWithRed:0.690 green:0.961 blue:0.400 alpha:1.00];
         [_collectionView registerClass:HWColorCollectionViewCell.class  forCellWithReuseIdentifier:NSStringFromClass(HWColorCollectionViewCell.class)];
         _collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
 
