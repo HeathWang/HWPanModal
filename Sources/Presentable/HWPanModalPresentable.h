@@ -175,6 +175,12 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (BOOL)allowsDragToDismiss;
 
 /**
+ min Velocity from Vertical direction that trigger dismiss action.
+ Default is 300.0
+ */
+- (CGFloat)minVerticalVelocityToTriggerDismiss;
+
+/**
  * 是否允许用户操作
  * Default is YES
  */

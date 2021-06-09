@@ -115,6 +115,10 @@
 	return YES;
 }
 
+- (CGFloat)minVerticalVelocityToTriggerDismiss {
+    return 300;
+}
+
 - (BOOL)allowsTapBackgroundToDismiss {
 	return YES;
 }

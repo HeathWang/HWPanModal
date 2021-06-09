@@ -13,7 +13,6 @@
 #import "KeyValueObserver.h"
 #import "HWPanModalContentView.h"
 
-static CGFloat const kSnapMovementSensitivity = 0.7;
 static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @interface HWPanModalPresentableHandler ()
@@ -155,7 +154,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 }
 
 - (BOOL)isVelocityWithinSensitivityRange:(CGFloat)velocity {
-    return (fabs(velocity) - (1000.00f * (1 - kSnapMovementSensitivity))) > 0;
+    return (fabs(velocity) - [self.presentable minVerticalVelocityToTriggerDismiss]) > 0;
 }
 
 - (CGFloat)nearestDistance:(CGFloat)position inDistances:(NSArray *)distances {
