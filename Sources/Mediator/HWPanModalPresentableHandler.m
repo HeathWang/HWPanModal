@@ -242,8 +242,6 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
     if ([self isVelocityWithinSensitivityRange:velocity.y]) {
         
-        CGFloat position = [self nearestDistance:CGRectGetMinY(self.presentedView.frame) inDistances:@[@([self containerSize].height), @(self.shortFormYPosition), @(self.longFormYPosition), @(self.mediumFormYPosition)]];
-        
         id <HWPanModalPresentableHandlerDelegate> delegate = self.delegate;
         PresentationState currentState = [delegate getCurrentPresentationState];
         

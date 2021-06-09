@@ -19,7 +19,7 @@
 
 + (void)animate:(AnimationBlockType)animations config:(nullable id <HWPanModalPresentable>)config startingFromPercent:(CGFloat)animationPercent isPresentation:(BOOL)flag completion:(AnimationCompletionType)completion {
 
-    NSTimeInterval duration = kTransitionDuration;
+    NSTimeInterval duration;
     if  (flag) {
         duration = config ? [config transitionDuration] : kTransitionDuration;
     } else {
