@@ -85,6 +85,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     } else {
         [self handlePanGestureDidNotResponse:panGestureRecognizer];
     }
+    [self.presentable didRespondToPanModalGestureRecognizer:panGestureRecognizer];
 }
 
 - (BOOL)shouldResponseToPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {

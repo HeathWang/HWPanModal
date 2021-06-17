@@ -49,4 +49,8 @@
     return self.hw_presentedVC.containerView;
 }
 
+- (UIView *)hw_contentView {
+    return self.hw_presentedVC.presentedView;
+}
+
 @end

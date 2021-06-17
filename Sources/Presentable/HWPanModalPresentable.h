@@ -311,6 +311,12 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (void)willRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
+ * 内部处理完成拖动操作后触发此回调，此时view frame可能已经变化。
+ * Framework has did finish logic for GestureRecognizer delegate. It will call many times when you darg.
+ */
+- (void)didRespondToPanModalGestureRecognizer:(nonnull UIPanGestureRecognizer *)panGestureRecognizer;
+
+/**
  * 是否优先执行dismiss拖拽手势，当存在panScrollable的情况下，如果此方法返回YES，则
  * dismiss手势生效，scrollView本身的滑动则不再生效。也就是说可以拖动Controller view，而scrollView没法拖动了。
  *

@@ -202,6 +202,10 @@
 
 }
 
+- (void)didRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    
+}
+
 - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 	return NO;
 }

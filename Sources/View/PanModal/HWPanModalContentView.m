@@ -60,6 +60,10 @@
     return self.containerView;
 }
 
+- (UIView *)hw_contentView {
+    return (UIView *)self.containerView.panContainerView;
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (UIScrollView *)panScrollable {
@@ -234,6 +238,10 @@
 
 - (void)willRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
 
+}
+
+- (void)didRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+    
 }
 
 - (BOOL)shouldPrioritizePanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {

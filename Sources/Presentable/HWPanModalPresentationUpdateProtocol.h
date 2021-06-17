@@ -13,7 +13,8 @@
 @property (nonatomic, readonly) HWDimmedView *hw_dimmedView;
 /// the root container which your custom VC's view to be added.
 @property (nonatomic, readonly) UIView *hw_rootContainerView;
-
+/// which view that your presented viewController's view has been added.
+@property (nonatomic, readonly) UIView *hw_contentView;
 /**
  * force update pan modal State, short/long
  */
