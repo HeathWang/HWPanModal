@@ -139,6 +139,10 @@
     return YES;
 }
 
+- (BOOL)shouldAutoSetPanScrollContentInset {
+    return YES;
+}
+
 - (BOOL)anchorModalToLongForm {
     return YES;
 }

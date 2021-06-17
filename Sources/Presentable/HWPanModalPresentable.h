@@ -71,6 +71,11 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (BOOL)showsScrollableVerticalScrollIndicator;
 
 /**
+ * default is YES.
+ */
+- (BOOL)shouldAutoSetPanScrollContentInset;
+
+/**
  * 是否允许拖动额外拖动，如果panScrollable存在，且scrollView contentSize > (size + bottomLayoutOffset),返回YES
  * 其余情况返回NO
  *
