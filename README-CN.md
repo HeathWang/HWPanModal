@@ -86,7 +86,14 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
 
 更多配置信息请参阅 [_HWPanModalPresentable.h_](https://github.com/HeathWang/HWPanModal/blob/master/Sources/Presentable/HWPanModalPresentable.h) 声明。
 
-### 弹出UIViewController和HWPanModalContentView的不同点？
+## 特别注意
+
+1. 任何情况下，内部嵌套scrollable（UIScrollView，UITableView，UIWebView，UICollectionView），如果scrollable的contentSize变化了，务必调用`- (void)hw_panModalSetNeedsLayoutUpdate`刷新UI！！！
+2. 如果需要弹出浮层后push到下一层，使用`HWPanModalContentView`或者present vc用navigation 包一层。
+3. 请仔细阅读md，编译run示例代码，95%的功能在示例中都有展示，不要什么都不看就来问问题！！！
+
+
+### 支持UIViewController和继承自HWPanModalContentView弹出视图
 
 从0.6.0版本后, 该框架支持使用 `HWPanModalContentView` 从底部弹出视图, 即实现了present ViewController同样的交互和动画。
 
