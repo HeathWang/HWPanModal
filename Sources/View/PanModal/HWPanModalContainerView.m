@@ -158,6 +158,11 @@
     [self updateRoundedCorners];
 }
 
+- (void)updateUserHitBehavior {
+    [self checkBackgroundViewEventPass];
+    [self checkPanGestureRecognizer];
+}
+
 - (void)transitionToState:(PresentationState)state animated:(BOOL)animated {
 
     if (![self.presentable shouldTransitionToState:state]) return;
@@ -425,6 +430,31 @@
         }
     } else {
         return [super hitTest:point withEvent:event];
+    }
+}
+
+- (void)checkBackgroundViewEventPass {
+    if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+        self.backgroundView.userInteractionEnabled = NO;
+        self.backgroundView.tapBlock = nil;
+    } else {
+        self.backgroundView.userInteractionEnabled = YES;
+        __weak typeof(self) wkSelf = self;
+        self.backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
+            if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
+                [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
+            }
+        };
+    }
+}
+
+- (void)checkPanGestureRecognizer {
+    if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+        [self removeGestureRecognizer:self.handler.panGestureRecognizer];
+        [self.panContainerView addGestureRecognizer:self.handler.panGestureRecognizer];
+    } else {
+        [self.panContainerView removeGestureRecognizer:self.handler.panGestureRecognizer];
+        [self addGestureRecognizer:self.handler.panGestureRecognizer];
     }
 }
 

@@ -41,6 +41,11 @@
     [self.hw_presentedVC setNeedsLayoutUpdate];
 }
 
+- (void)hw_panModalUpdateUserHitBehavior {
+    if (!self.hw_presentedVC) return;
+    [self.hw_presentedVC updateUserHitBehavior];
+}
+
 - (HWDimmedView *)hw_dimmedView {
     return self.hw_presentedVC.backgroundView;
 }
@@ -51,6 +56,10 @@
 
 - (UIView *)hw_contentView {
     return self.hw_presentedVC.presentedView;
+}
+
+- (PresentationState)hw_presentationState {
+    return self.hw_presentedVC.currentPresentationState;
 }
 
 @end

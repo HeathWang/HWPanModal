@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) HWDimmedView *backgroundView;
 @property (readonly) HWPanContainerView *panContainerView;
+@property (nonatomic, readonly) PresentationState currentPresentationState;
 
 - (instancetype)initWithPresentingView:(UIView *)presentingView contentView:(HWPanModalContentView<HWPanModalPresentable> *)contentView;
 
@@ -26,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)dismissAnimated:(BOOL)flag completion:(void (^)(void))completion;
 
 - (void)setNeedsLayoutUpdate;
+
+- (void)updateUserHitBehavior;
 
 - (void)transitionToState:(PresentationState)state animated:(BOOL)animated;
 

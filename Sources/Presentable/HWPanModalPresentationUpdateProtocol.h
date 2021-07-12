@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) UIView *hw_rootContainerView;
 /// which view that your presented viewController's view has been added.
 @property (nonatomic, readonly) UIView *hw_contentView;
+/// current presentation State
+@property (nonatomic, readonly) PresentationState hw_presentationState;
 /**
  * force update pan modal State, short/long
  */
@@ -46,5 +48,10 @@
  *
  */
 - (void)hw_panModalSetNeedsLayoutUpdate NS_SWIFT_NAME(panModalSetNeedsLayoutUpdate());
+
+/**
+ * 更新用户行为，比如事件穿透
+ */
+- (void)hw_panModalUpdateUserHitBehavior NS_SWIFT_NAME(panModalUpdateUserHitBehavior());
 
 @end

@@ -15,8 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HWPanModalPresentationController : UIPresentationController
 
 @property (nonatomic, readonly) HWDimmedView *backgroundView;
+@property (nonatomic, readonly) PresentationState currentPresentationState;
 
 - (void)setNeedsLayoutUpdate;
+
+- (void)updateUserHitBehavior;
 
 - (void)transitionToState:(PresentationState)state animated:(BOOL)animated;
 

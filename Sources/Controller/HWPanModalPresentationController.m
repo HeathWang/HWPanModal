@@ -194,6 +194,11 @@
 	[self.handler setScrollableContentOffset:offset animated:animated];
 }
 
+- (void)updateUserHitBehavior {
+    [self checkVCContainerEventPass];
+    [self checkBackgroundViewEventPass];
+}
+
 #pragma mark - layout
 
 - (void)adjustPresentedViewFrame {
@@ -325,6 +330,29 @@
     
     [self.handler configureViewLayout];
     self.containerView.userInteractionEnabled = [[self presentable] isUserInteractionEnabled];
+}
+
+#pragma mark - event passing through
+
+- (void)checkVCContainerEventPass {
+    BOOL eventPassValue = [[self presentable] allowsTouchEventsPassingThroughTransitionView];
+    // hack TransitionView
+    [self.containerView setValue:@(eventPassValue) forKey:@"ignoreDirectTouchEvents"];
+}
+
+- (void)checkBackgroundViewEventPass {
+    if ([[self presentable] allowsTouchEventsPassingThroughTransitionView]) {
+        self.backgroundView.userInteractionEnabled = NO;
+        self.backgroundView.tapBlock = nil;
+    } else {
+        self.backgroundView.userInteractionEnabled = YES;
+        __weak typeof(self) wkSelf = self;
+        self.backgroundView.tapBlock = ^(UITapGestureRecognizer *recognizer) {
+            if ([[wkSelf presentable] allowsTapBackgroundToDismiss]) {
+                [wkSelf dismiss:NO mode:PanModalInteractiveModeNone];
+            }
+        };
+    }
 }
 
 #pragma mark - y position update

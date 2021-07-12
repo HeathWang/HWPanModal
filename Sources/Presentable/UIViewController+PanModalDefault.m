@@ -56,10 +56,6 @@
 }
 
 - (CGFloat)backgroundAlpha {
-    // set the background alpha = 0 when allows touch events passing through
-    if ([self allowsTouchEventsPassingThroughTransitionView]) {
-        return 0;
-    }
 	return 0.7;
 }
 
@@ -72,13 +68,6 @@
 }
 
 - (HWBackgroundConfig *)backgroundConfig {
-    // set the background alpha = 0 when allows touch events passing through
-    if ([self allowsTouchEventsPassingThroughTransitionView]) {
-        HWBackgroundConfig *config = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
-        config.backgroundAlpha = 0;
-        return config;
-    }
-    
     return [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorDefault];
 }
 

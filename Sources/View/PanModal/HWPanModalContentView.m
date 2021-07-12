@@ -44,6 +44,10 @@
     [self.containerView setNeedsLayoutUpdate];
 }
 
+- (void)hw_panModalUpdateUserHitBehavior {
+    [self.containerView updateUserHitBehavior];
+}
+
 - (void)hw_panModalTransitionTo:(PresentationState)state animated:(BOOL)animated {
     [self.containerView transitionToState:state animated:animated];
 }
@@ -62,6 +66,10 @@
 
 - (UIView *)hw_contentView {
     return (UIView *)self.containerView.panContainerView;
+}
+
+- (PresentationState)hw_presentationState {
+    return self.containerView.currentPresentationState;
 }
 
 #pragma mark - HWPanModalPresentable
@@ -112,9 +120,6 @@
 }
 
 - (CGFloat)backgroundAlpha {
-    if ([self allowsTouchEventsPassingThroughTransitionView]) {
-        return 0;
-    }
     return 0.7;
 }
 
