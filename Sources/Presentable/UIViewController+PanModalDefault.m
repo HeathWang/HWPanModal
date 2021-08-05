@@ -148,6 +148,10 @@
 	return YES;
 }
 
+- (BOOL)allowsPullDownWhenShortState {
+    return YES;
+}
+
 - (BOOL)isHapticFeedbackEnabled {
 	return YES;
 }

@@ -109,6 +109,12 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         [self.presentable panScrollable].panGestureRecognizer.enabled = YES;
         return NO;
     }
+    
+    if ([self shouldHandleShortStatePullDownWithRecognizer:panGestureRecognizer]) {
+//        panGestureRecognizer.enabled = NO;
+//        panGestureRecognizer.enabled = YES;
+        return YES;
+    }
 
     BOOL shouldFail = NO;
     UIScrollView *scrollView = [self.presentable panScrollable];
@@ -131,6 +137,21 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         return NO;
     }
 
+}
+
+- (BOOL)shouldHandleShortStatePullDownWithRecognizer:(UIPanGestureRecognizer *)recognizer {
+    if ([self.presentable allowsPullDownWhenShortState]) return NO;
+    
+    CGPoint location = [recognizer translationInView:self.presentedView];
+    if ([self.delegate getCurrentPresentationState] == PresentationStateShort && recognizer.state == UIGestureRecognizerStateBegan) {
+        return YES;
+    }
+    
+    if ((self.presentedView.frame.origin.y >= self.shortFormYPosition || HW_TWO_FLOAT_IS_EQUAL(self.presentedView.frame.origin.y, self.shortFormYPosition)) && location.y > 0) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (BOOL)shouldPrioritizePanGestureRecognizer:(UIPanGestureRecognizer *)recognizer {

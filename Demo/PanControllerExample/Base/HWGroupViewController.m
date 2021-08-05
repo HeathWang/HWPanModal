@@ -87,6 +87,10 @@
     return PanModalHeightMake(PanModalHeightTypeContent, 200);
 }
 
+- (PresentationState)originPresentationState {
+    return PresentationStateLong;
+}
+
 - (UIScrollView *)panScrollable {
     return self.tableView;
 }
@@ -112,8 +116,8 @@
     [self.footerView removeFromSuperview];
 }
 
-- (void)didChangeTransitionToState:(PresentationState)state {
-//    NSLog(@"%ld", (long)state);
+- (BOOL)allowsPullDownWhenShortState {
+    return NO;
 }
 
 #pragma mark - Getter

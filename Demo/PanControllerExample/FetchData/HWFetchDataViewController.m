@@ -91,9 +91,6 @@
     });
 }
 
-- (void)didTapDoneButton {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
 #pragma mark - HWPanModalPresentable
 
@@ -189,6 +186,10 @@
         _navView.delegate = self;
     }
     return _navView;
+}
+
+- (void)dealloc {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 

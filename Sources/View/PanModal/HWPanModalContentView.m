@@ -174,6 +174,10 @@
     return YES;
 }
 
+- (BOOL)allowsPullDownWhenShortState {
+    return YES;
+}
+
 - (BOOL)allowScreenEdgeInteractive {
     return NO;
 }

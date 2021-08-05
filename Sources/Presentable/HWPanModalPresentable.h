@@ -179,6 +179,9 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (BOOL)allowsDragToDismiss;
 
+/// Default is YES, When return NO, and you did set shortForm, user CAN NOT pull down the view.
+- (BOOL)allowsPullDownWhenShortState;
+
 /**
  min Velocity from Vertical direction that trigger dismiss action.
  Default is 300.0
