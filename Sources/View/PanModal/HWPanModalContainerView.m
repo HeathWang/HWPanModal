@@ -399,7 +399,7 @@
         return YES;
     }
     
-    if (!self.isPresentedViewAnimating && self.handler.extendsPanScrolling && CGRectGetMinY(self.panContainerView.frame) <= self.handler.anchoredYPosition) {
+    if (!self.isPresentedViewAnimating && self.handler.extendsPanScrolling && (CGRectGetMinY(self.panContainerView.frame) <= self.handler.anchoredYPosition || HW_TWO_FLOAT_IS_EQUAL(CGRectGetMinY(self.panContainerView.frame), self.handler.anchoredYPosition))) {
         return YES;
     }
     return NO;
