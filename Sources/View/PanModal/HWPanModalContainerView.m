@@ -360,6 +360,7 @@
 }
 
 - (void)dismiss:(BOOL)isInteractive mode:(PanModalInteractiveMode)mode {
+    self.handler.panGestureRecognizer.enabled = NO;
 
     [[self presentable] panModalWillDismiss];
 
