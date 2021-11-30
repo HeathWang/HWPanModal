@@ -22,7 +22,17 @@ class BlurViewController: UIViewController {
     }
     
     override func backgroundConfig() -> HWBackgroundConfig {
-        return HWBackgroundConfig(behavior: .customBlurEffect)
+        
+        if #available(iOS 14.0, *) {
+            return HWBackgroundConfig(behavior: .systemVisualEffect)
+        } else {
+            return HWBackgroundConfig(behavior: .customBlurEffect)
+        }
+        
+    }
+    
+    override func showDragIndicator() -> Bool {
+        return false
     }
     
 }

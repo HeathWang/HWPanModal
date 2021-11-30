@@ -12,6 +12,7 @@
 		7E044BC9233DEF1000D01981 /* HWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E044BC8233DEF1000D01981 /* HWMapViewController.m */; };
 		7E044BCB233DEF2400D01981 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E044BCA233DEF2400D01981 /* MapKit.framework */; };
 		7E044BCE233E070400D01981 /* HWEventPassThroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E044BCD233E070400D01981 /* HWEventPassThroughViewController.m */; };
+		7E0CB0DA2756094C0052103D /* PanModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CB0D92756094C0052103D /* PanModalViewController.swift */; };
 		7E1822B1231FA7840049A076 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B0231FA7840049A076 /* ShareController.swift */; };
 		7E1822B3231FA79D0049A076 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */; };
 		7E1822B4231FA7AE0049A076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CF43F81F90CAC000389BFE /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		7E044BCA233DEF2400D01981 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7E044BCC233E070400D01981 /* HWEventPassThroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEventPassThroughViewController.h; sourceTree = "<group>"; };
 		7E044BCD233E070400D01981 /* HWEventPassThroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEventPassThroughViewController.m; sourceTree = "<group>"; };
+		7E0CB0D92756094C0052103D /* PanModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalViewController.swift; sourceTree = "<group>"; };
 		7E1822B0231FA7840049A076 /* ShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareController.swift; sourceTree = "<group>"; };
 		7E1822B2231FA79D0049A076 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		7E20ABA0231E677E005941C5 /* DynamicHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeight.swift; sourceTree = "<group>"; };
@@ -282,6 +284,14 @@
 			path = EventThrough;
 			sourceTree = "<group>";
 		};
+		7E0CB0D82756091C0052103D /* PanModalView */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CB0D92756094C0052103D /* PanModalViewController.swift */,
+			);
+			path = PanModalView;
+			sourceTree = "<group>";
+		};
 		7E20AB9F231E6760005941C5 /* Dynamic */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		7E300AF0230EB939003FBFE7 /* ControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				7E0CB0D82756091C0052103D /* PanModalView */,
 				7E24249A23262C9B00421947 /* Fetch data */,
 				7E2CD398231FA75700BA8B09 /* App */,
 				7E20ABBA231F8EA7005941C5 /* Indicator */,
@@ -1035,6 +1046,7 @@
 				7E20ABAC231F57E3005941C5 /* FullScreenController.swift in Sources */,
 				7E20ABAF231F5BAB005941C5 /* CustomPresentingController.swift in Sources */,
 				7E20ABA1231E677E005941C5 /* DynamicHeight.swift in Sources */,
+				7E0CB0DA2756094C0052103D /* PanModalViewController.swift in Sources */,
 				7E20ABB7231F6B37005941C5 /* ColorBlockController.swift in Sources */,
 				7E20ABB9231F8B21005941C5 /* BlurController.swift in Sources */,
 				7E8F6E8123162B3A00D9C897 /* DemoType.swift in Sources */,

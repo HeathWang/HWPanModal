@@ -38,6 +38,9 @@ class FetchDataViewController: UIViewController {
         
         navigationItem.title = "Comments"
         
+        let item = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
+        navigationItem.rightBarButtonItem = item
+        
         view.addSubview(tableView)
         view.addSubview(indicatorView)
         
@@ -70,6 +73,13 @@ class FetchDataViewController: UIViewController {
     
     override func panScrollable() -> UIScrollView? {
         return tableView
+    }
+    
+    @objc
+    func didTapDoneButton() {
+        self.dismiss(animated: true) {
+            // do some logics
+        }
     }
     
 }

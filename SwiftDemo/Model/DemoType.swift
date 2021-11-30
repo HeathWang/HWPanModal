@@ -53,6 +53,8 @@ struct DemoCell: DemoRowInfo {
         let indicator = DemoCell(string: "Custom Indicator", rowVC: indicatorVC, action: .push)
         
         let blur = DemoCell(string: "Blur Background", rowVC: ColorBlocksViewController(), action: .push)
+        
+        let panModalView = DemoCell(string: "Use PanModal View", rowVC: PanModalViewController(), action: .push);
         let keyboard = DemoCell(string: "Auto Handle Keyboard", rowVC: InputTableViewController())
         let basic = DemoCell(string: "Basic", rowVC: BasicViewController())
         let alert = DemoCell(string: "Alert", rowVC: AlertController())
@@ -62,7 +64,7 @@ struct DemoCell: DemoRowInfo {
         let stackedGroup = DemoCell(string: "Group - Stacked", rowVC: GroupStackedViewController())
         let fullNav = DemoCell(string: "Full Screen - Nav", rowVC: FullScreenNavController())
         let customPresenting = DemoCell(string: "Custom Presenting Animation", rowVC: MyCustomAnimationViewController())
-        return [app, blur, indicator, keyboard, basic, alert, transientAlert, dynamicHeight, group, stackedGroup, fullNav, customPresenting]
+        return [app, blur, indicator, panModalView, keyboard, basic, alert, transientAlert, dynamicHeight, group, stackedGroup, fullNav, customPresenting]
     }
 
     static func appDemoCells() -> [DemoCell] {
