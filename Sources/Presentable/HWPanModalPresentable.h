@@ -363,6 +363,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 - (BOOL)shouldTransitionToState:(PresentationState)state;
 
 /**
+ *  called when the Transition State will change.
  * 通知回调即将变更状态
  */
 - (void)willTransitionToState:(PresentationState)state;

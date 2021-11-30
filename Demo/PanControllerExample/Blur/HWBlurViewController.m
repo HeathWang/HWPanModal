@@ -27,10 +27,15 @@
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 150);
 }
 
+- (BOOL)showDragIndicator {
+    return NO;
+}
+
 - (HWBackgroundConfig *)backgroundConfig {
     HWBackgroundConfig *backgroundConfig;
     
     if (@available(iOS 14.0, *)) {
+        // iOS14+, the blur api has changed, use system VisualEffect.
         backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorSystemVisualEffect];
     } else {
         backgroundConfig = [HWBackgroundConfig configWithBehavior:HWBackgroundBehaviorCustomBlurEffect];

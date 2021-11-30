@@ -4,6 +4,8 @@
 <dict>
 	<key>BuildSystemType</key>
 	<string>Original</string>
+	<key>DisableBuildSystemDeprecationDiagnostic</key>
+	<true/>
 	<key>PreviewsEnabled</key>
 	<false/>
 </dict>

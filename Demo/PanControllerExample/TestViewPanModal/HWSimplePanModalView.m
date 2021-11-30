@@ -94,6 +94,10 @@
     return YES;
 }
 
+//- (UIViewAnimationOptions)transitionAnimationOptions {
+//    return UIViewAnimationOptionCurveLinear;
+//}
+
 - (PresentationState)originPresentationState {
     return PresentationStateMedium;
 }

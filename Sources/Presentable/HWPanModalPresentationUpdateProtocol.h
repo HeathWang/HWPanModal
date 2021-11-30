@@ -50,6 +50,7 @@
 - (void)hw_panModalSetNeedsLayoutUpdate NS_SWIFT_NAME(panModalSetNeedsLayoutUpdate());
 
 /**
+ * When you change the user touch event, like `allowsTouchEventsPassingThroughTransitionView`, you should call this method to make it work.
  * 更新用户行为，比如事件穿透
  */
 - (void)hw_panModalUpdateUserHitBehavior NS_SWIFT_NAME(panModalUpdateUserHitBehavior());
