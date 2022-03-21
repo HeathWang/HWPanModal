@@ -4,6 +4,7 @@
 //
 //  Created by heath wang on 2019/4/30.
 //
+#import <Foundation/Foundation.h>
 
 //! Project version number for HWPanModal.
 FOUNDATION_EXPORT double HWPanModalVersionNumber;
