@@ -290,6 +290,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
             }
         }
     }
+	[self.presentable didEndRespondToPanModalGestureRecognizer:panGestureRecognizer];
 }
 
 - (void)handleDragUpState:(PresentationState)state {
