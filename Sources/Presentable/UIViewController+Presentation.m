@@ -46,6 +46,11 @@
     [self.hw_presentedVC updateUserHitBehavior];
 }
 
+- (void)hw_dismissAnimated:(BOOL)animated completion:(void (^)(void))completion{
+    if (!self.hw_presentedVC) return;
+    [self.hw_presentedVC dismissAnimated:animated completion:completion];
+}
+
 - (HWDimmedView *)hw_dimmedView {
     return self.hw_presentedVC.backgroundView;
 }

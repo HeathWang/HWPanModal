@@ -28,6 +28,14 @@
     self.textfield.placeholder = @"Please type something.";
     self.textfield.delegate = self;
     [self.view addSubview:self.textfield];
+    
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [closeButton setTitle:@"Tap Me To Dismiss Directly" forState:UIControlStateNormal];
+    [closeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    closeButton.frame = CGRectMake(20, 122, 300, 30);
+    [closeButton addTarget:self action:@selector(didTapCloseButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeButton];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -38,6 +46,12 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
+}
+
+- (void)didTapCloseButton {
+    [self hw_dismissAnimated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark - HWPanModalPresentable
@@ -80,6 +94,10 @@
 
 - (BOOL)shouldEnableAppearanceTransition {
     return NO;
+}
+
+- (NSTimeInterval)dismissalDuration {
+    return 1.0;
 }
 
 @end

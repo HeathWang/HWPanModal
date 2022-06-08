@@ -56,6 +56,10 @@
     [self.containerView setScrollableContentOffset:offset animated:animated];
 }
 
+- (void)hw_dismissAnimated:(BOOL)animated completion:(void (^)(void))completion {
+    [self dismissAnimated:animated completion:completion];
+}
+
 - (HWDimmedView *)hw_dimmedView {
     return self.containerView.backgroundView;
 }
