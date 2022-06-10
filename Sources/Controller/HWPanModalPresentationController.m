@@ -494,6 +494,8 @@
 - (void)screenEdgeInteractiveAction:(UIPanGestureRecognizer *)recognizer {
     CGPoint translation = [recognizer translationInView:recognizer.view];
     CGFloat percent = translation.x / CGRectGetWidth(recognizer.view.bounds);
+    CGPoint velocity = [recognizer velocityInView:recognizer.view];
+    
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
 			[self dismiss:YES mode:PanModalInteractiveModeSideslip];
@@ -501,7 +503,7 @@
             break;
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded: {
-            if (percent > 0.5) {
+            if (percent > 0.5 || velocity.x >= [[self presentable] minHorizontalVelocityToTriggerScreenEdgeDismiss]) {
                 [self finishInteractiveTransition];
             } else {
                 [self cancelInteractiveTransition];

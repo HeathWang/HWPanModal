@@ -227,6 +227,13 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
  */
 - (CGFloat)maxAllowedDistanceToLeftScreenEdgeForPanInteraction;
 
+/**
+ * When you enabled `- (BOOL)allowScreenEdgeInteractive`, this can work.
+ * min horizontal velocity to trigger screen edge dismiss if the drag didn't reach 0.5 screen width.
+ * Default is 500
+ */
+- (CGFloat)minHorizontalVelocityToTriggerScreenEdgeDismiss;
+
 #pragma mark - Customize presentingViewController animation
 
 /**

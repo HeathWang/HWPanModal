@@ -61,12 +61,13 @@
         self.animationBlock = completion;
         [self dismiss:NO mode:PanModalInteractiveModeNone];
     } else {
-
+        self.isDismissing = YES;
         [[self presentable] panModalWillDismiss];
         [self removeFromSuperview];
         [[self presentable] panModalDidDismissed];
 
         completion ? completion() : nil;
+        self.isDismissing = NO;
     }
 }
 
@@ -361,6 +362,7 @@
 
 - (void)dismiss:(BOOL)isInteractive mode:(PanModalInteractiveMode)mode {
     self.handler.panGestureRecognizer.enabled = NO;
+    self.isDismissing = YES;
 
     [[self presentable] panModalWillDismiss];
 
@@ -372,6 +374,7 @@
         [self removeFromSuperview];
         [[self presentable] panModalDidDismissed];
         self.animationBlock ? self.animationBlock() : nil;
+        self.isDismissing = NO;
     }];
 
 }

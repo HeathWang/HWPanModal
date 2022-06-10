@@ -124,6 +124,10 @@
 	return 0;
 }
 
+- (CGFloat)minHorizontalVelocityToTriggerScreenEdgeDismiss {
+    return 500;
+}
+
 - (PresentingViewControllerAnimationStyle)presentingVCAnimationStyle {
 	return PresentingViewControllerAnimationStyleNone;
 }

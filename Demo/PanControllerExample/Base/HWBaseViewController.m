@@ -100,4 +100,13 @@
     return 1.0;
 }
 
+//- (void)didEndRespondToPanModalGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer {
+//    CGPoint velocity = [panGestureRecognizer velocityInView:self.hw_contentView];
+//    if (velocity.y > 100 && !self.isBeingDismissed) {
+//        [self hw_dismissAnimated:YES completion:^{
+//            // do something.
+//        }];
+//    }
+//}
+
 @end
