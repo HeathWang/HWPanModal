@@ -366,8 +366,20 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  * Halts the scroll of a given scroll view & anchors it at the `scrollViewYOffset`
  */
 - (void)haltScrolling:(UIScrollView *)scrollView {
-    [scrollView setContentOffset:CGPointMake(0, self.scrollViewYOffset) animated:NO];
-    scrollView.showsVerticalScrollIndicator = NO;
+    
+    //
+    // Fix bug: the app will crash after the table view reloads data via calling [tableView reloadData] if the user scrolls to the bottom.
+    //
+    // We remove some element and reload data, for example, [self.dataSource removeLastObject], the previous saved scrollViewYOffset value
+    // will be great than or equal to the current actual offset(i.e. scrollView.contentOffset.y). At this time, if the method
+    // [scrollView setContentOffset:CGPointMake(0, self.scrollViewYOffset) animated:NO] is called, which will trigger KVO recursively.
+    // So scrollViewYOffset must be less than or equal to the actual offset here.
+    // See issues: https://github.com/HeathWang/HWPanModal/issues/107 and https://github.com/HeathWang/HWPanModal/issues/103
+ 
+    if (scrollView.contentOffset.y <= 0 || self.scrollViewYOffset <= scrollView.contentOffset.y) {
+        [scrollView setContentOffset:CGPointMake(0, self.scrollViewYOffset) animated:NO];
+        scrollView.showsVerticalScrollIndicator = NO;
+    }
 }
 
 - (void)didPanOnScrollViewChanged:(NSDictionary<NSKeyValueChangeKey, id> *)change {
