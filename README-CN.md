@@ -113,7 +113,7 @@ Special Thanks to JetBrains! I use AppCode IDE to develop my open source project
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.9.2'
+pod 'HWPanModal', '~> 0.9.4'
 ```
 
 ## 如何使用

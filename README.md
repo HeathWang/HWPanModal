@@ -124,7 +124,7 @@ The different is `HWPanModalContentView` is just a view, and support some animat
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.9.2'
+pod 'HWPanModal', '~> 0.9.4'
 ```
 
 ## How to use
