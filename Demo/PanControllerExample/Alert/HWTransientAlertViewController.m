@@ -28,10 +28,6 @@
 
 #pragma mark - HWPanModalPresentable
 
-- (CGFloat)backgroundAlpha {
-    return 0;
-}
-
 - (BOOL)showDragIndicator {
     return NO;
 }

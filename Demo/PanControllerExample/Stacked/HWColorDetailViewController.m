@@ -35,10 +35,6 @@
     return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 250);
 }
 
-- (CGFloat)backgroundAlpha {
-    return 0.5;
-}
-
 - (BOOL)anchorModalToLongForm {
     return NO;
 }

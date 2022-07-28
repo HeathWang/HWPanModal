@@ -41,10 +41,6 @@
     return [self shortFormHeight];
 }
 
-- (CGFloat)backgroundAlpha {
-    return 0.1;
-}
-
 - (BOOL)shouldRoundTopCorners {
     return NO;
 }
