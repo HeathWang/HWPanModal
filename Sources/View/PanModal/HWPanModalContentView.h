@@ -9,13 +9,14 @@
 #import <HWPanModal/HWPanModalPresentable.h>
 #import <HWPanModal/HWPanModalPresentationUpdateProtocol.h>
 #import <HWPanModal/UIViewController+LayoutHelper.h>
+#import <HWPanModal/HWPanModalPanGestureDelegate.h>
 
 @class HWPanModalContainerView;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// when use `HWPanModalContentView`, you should take care of the safe area by yourself.
-@interface HWPanModalContentView : UIView <HWPanModalPresentable, HWPanModalPresentationUpdateProtocol, HWPanModalPresentableLayoutProtocol>
+@interface HWPanModalContentView : UIView <HWPanModalPresentable, HWPanModalPanGestureDelegate, HWPanModalPresentationUpdateProtocol, HWPanModalPresentableLayoutProtocol>
 
 /**
  * present in the target view

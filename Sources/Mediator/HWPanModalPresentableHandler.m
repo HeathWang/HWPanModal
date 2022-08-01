@@ -29,7 +29,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, assign) CGFloat anchoredYPosition;
 
-@property (nonatomic, strong) id<HWPanModalPresentable> presentable;
+@property (nonatomic, strong) id<HWPanModalPresentable, HWPanModalPanGestureDelegate> presentable;
 
 // keyboard handle
 @property (nonatomic, copy) NSDictionary *keyboardInfo;
@@ -497,6 +497,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  * ONLY When otherGestureRecognizer is panGestureRecognizer, and target gestureRecognizer is panGestureRecognizer, return YES.
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if ([self.presentable respondsToSelector:@selector(hw_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)]) {
+        return [self.presentable hw_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+    }
+    
     if ([gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
         return [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class];
     }
@@ -507,13 +512,32 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
  * 当前手势为screenGestureRecognizer时，其他pan recognizer都应该fail
  */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if ([self.presentable respondsToSelector:@selector(hw_gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:)]) {
+        return [self.presentable hw_gestureRecognizer:gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:otherGestureRecognizer];
+    }
+    
+    
     if (gestureRecognizer == self.screenEdgeGestureRecognizer && [otherGestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
         return YES;
     }
     return NO;
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([self.presentable respondsToSelector:@selector(hw_gestureRecognizer:shouldRequireFailureOfGestureRecognizer:)]) {
+        return [self.presentable hw_gestureRecognizer:gestureRecognizer shouldRequireFailureOfGestureRecognizer:otherGestureRecognizer];
+    }
+
+    return NO;
+}
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    
+    if ([self.presentable respondsToSelector:@selector(hw_gestureRecognizerShouldBegin:)]) {
+        return [self.presentable hw_gestureRecognizerShouldBegin:gestureRecognizer];
+    }
+    
     if (gestureRecognizer == self.screenEdgeGestureRecognizer) {
         CGPoint velocity = [self.screenEdgeGestureRecognizer velocityInView:self.screenEdgeGestureRecognizer.view];
 

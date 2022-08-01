@@ -14,6 +14,7 @@ FOUNDATION_EXPORT const unsigned char HWPanModalVersionString[];
 
 // protocol
 #import <HWPanModal/HWPanModalPresentable.h>
+#import <HWPanModal/HWPanModalPanGestureDelegate.h>
 #import <HWPanModal/HWPanModalHeight.h>
 
 #import <HWPanModal/HWPanModalPresenterProtocol.h>

@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <HWPanModal/HWPanModalPresentable.h>
+#import <HWPanModal/HWPanModalPanGestureDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (PanModalDefault) <HWPanModalPresentable>
+@interface UIViewController (PanModalDefault) <HWPanModalPresentable, HWPanModalPanGestureDelegate>
 
 @end
 
