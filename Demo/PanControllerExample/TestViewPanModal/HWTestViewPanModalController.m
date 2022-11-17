@@ -35,16 +35,16 @@
         make.size.mas_equalTo(CGSizeMake(120, 66));
     }];
 
-    [self.autoSizeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(self.presentButton);
-        make.top.equalTo(self.presentButton.mas_bottom).offset(0);
-        make.centerX.equalTo(@0);
-    }];
+//    [self.autoSizeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.equalTo(self.presentButton);
+//        make.top.equalTo(self.presentButton.mas_bottom).offset(0);
+//        make.centerX.equalTo(@0);
+//    }];
     
     [self.collectionViewButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.equalTo(self.presentButton);
         make.centerX.equalTo(@0);
-        make.top.equalTo(self.autoSizeButton.mas_bottom).offset(0);
+        make.top.equalTo(self.presentButton.mas_bottom).offset(0);
     }];
 }
 
