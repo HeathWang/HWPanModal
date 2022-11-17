@@ -44,6 +44,10 @@
     [self hw_panModalTransitionTo:PresentationStateShort];
 }
 
+- (void)didRelease:(HWMapViewController *)mapController {
+    [self hw_dismissAnimated:YES completion:NULL];
+}
+
 #pragma mark - HWPanModalPresentable
 
 - (PanModalHeight)longFormHeight {

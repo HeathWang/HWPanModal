@@ -47,6 +47,10 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
 #pragma mark - show panModal
 
 - (void)showPanModal {
@@ -87,6 +91,12 @@
     }
     
     return _locationManager;
+}
+
+- (void)dealloc {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didRelease:)]) {
+        [self.delegate didRelease:self];
+    }
 }
 
 @end

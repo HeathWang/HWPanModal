@@ -14,6 +14,8 @@
 
 - (void)userMoveMapView:(HWMapViewController *_Nonnull)mapViewController;
 
+- (void)didRelease:(HWMapViewController *_Nonnull)mapController;
+
 @end
 
 NS_ASSUME_NONNULL_BEGIN
