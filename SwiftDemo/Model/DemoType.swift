@@ -26,6 +26,8 @@ enum DemoList {
     case home
     case app
     case indicator
+    case panView
+    case keyboard
 }
 
 enum Action {

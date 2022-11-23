@@ -23,13 +23,29 @@ class PanModalViewController : UIViewController {
         return button
     }()
     
+    lazy var collectionBtn: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("CollectionView", for: .normal)
+        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(didTapCollectionBtn), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         view.addSubview(presentBtn)
+        view.addSubview(collectionBtn)
         presentBtn.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
             make.top.equalTo(200)
+            make.size.equalTo(CGSize(width: 150, height: 44))
+        }
+        
+        collectionBtn.snp.makeConstraints { make in
+            make.centerX.equalTo(view).offset(0)
+            make.top.equalTo(presentBtn.snp.bottom).offset(30)
             make.size.equalTo(CGSize(width: 150, height: 44))
         }
     }
@@ -40,6 +56,110 @@ class PanModalViewController : UIViewController {
         colorView.present(in: self.navigationController?.view)
     }
     
+    @objc
+    func didTapCollectionBtn() {
+        let collectionView = PanModalCollectionBottomView()
+        collectionView.present(in: self.navigationController?.view)
+    }
+    
+}
+
+
+class PanModalCollectionBottomView : HWPanModalContentView, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return colors.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(PanModalCollectionColorCell.self), for: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if cell.isKind(of: PanModalCollectionColorCell.self) {
+            let boxCell = cell as! PanModalCollectionColorCell
+            boxCell.box.backgroundColor = colors[indexPath.row]
+        }
+    }
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 60) / 2, height: 66.0)
+        layout.minimumLineSpacing = 20;
+        layout.minimumInteritemSpacing = 20;
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(PanModalCollectionColorCell.self, forCellWithReuseIdentifier: NSStringFromClass(PanModalCollectionColorCell.self))
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
+    }()
+    
+    lazy var colors: [UIColor] = {
+        var _colors: [UIColor] = []
+        for _ in 1...10 {
+            _colors.append(.random())
+        }
+        return _colors
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension PanModalCollectionBottomView {
+    override func panScrollable() -> UIScrollView? {
+        return collectionView
+    }
+    
+    override func longFormHeight() -> PanModalHeight {
+        return PanModalHeight(type: .content, height: 140)
+    }
+    
+    override func springDamping() -> CGFloat {
+        return 0.7
+    }
+    
+    override func shouldRespond(toPanModalGestureRecognizer panGestureRecognizer: UIPanGestureRecognizer) -> Bool {
+        return false
+    }
+    
+    override func showDragIndicator() -> Bool {
+        return false
+    }
+    
+}
+
+class PanModalCollectionColorCell : UICollectionViewCell {
+    lazy var box: UIView = {
+        let view = UIView(frame: .zero)
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(box)
+        box.snp.makeConstraints { make in
+            make.edges.equalTo(UIEdgeInsets.zero)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 class PanModalListColorView : HWPanModalContentView {
