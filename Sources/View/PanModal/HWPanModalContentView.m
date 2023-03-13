@@ -20,7 +20,7 @@
 
 - (void)presentInView:(UIView *)view {
     if (!view) {
-        view = [UIApplication sharedApplication].keyWindow;
+        view = [self findKeyWindow];
     }
     HWPanModalContainerView *containerView = [[HWPanModalContainerView alloc] initWithPresentingView:view contentView:self];
     [containerView show];
@@ -383,6 +383,31 @@
     }
 
     return _containerView;
+}
+
+- (UIView *)findKeyWindow {
+    
+    if (@available(iOS 13.0, *)) {
+        NSSet<UIScene *> *connectedScenes = [UIApplication sharedApplication].connectedScenes;
+        for (UIScene *scene in connectedScenes) {
+            if ([scene isKindOfClass:UIWindowScene.class]) {
+                UIWindowScene *windowScene = (UIWindowScene *)scene;
+                for (UIWindow *tmpWindow in windowScene.windows) {
+                    if ([tmpWindow isKeyWindow]) {
+                        return tmpWindow;
+                    }
+                }
+            }
+        }
+        
+    } else {
+        NSArray *windows = [UIApplication sharedApplication].windows;
+        for (UIWindow *window in windows) {
+            if ([window isKeyWindow]) {
+                return window;
+            }
+        }
+    }
 }
 
 @end
