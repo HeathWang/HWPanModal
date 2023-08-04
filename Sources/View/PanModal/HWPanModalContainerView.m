@@ -277,7 +277,7 @@
 }
 
 - (void)updateContainerViewShadow {
-    HWPanModalShadow shadow = [[self presentable] contentShadow];
+    HWPanModalShadow *shadow = [[self presentable] contentShadow];
     if (shadow.shadowColor) {
         [self.panContainerView updateShadow:shadow.shadowColor shadowRadius:shadow.shadowRadius shadowOffset:shadow.shadowOffset shadowOpacity:shadow.shadowOpacity];
     } else {

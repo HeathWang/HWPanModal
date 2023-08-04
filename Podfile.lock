@@ -1,5 +1,5 @@
 PODS:
-  - HWPanModal (0.9.5)
+  - HWPanModal (0.9.7)
   - Masonry (1.1.0)
   - MJRefresh (3.5.0)
   - SnapKit (5.0.1)
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  HWPanModal: b6c51a2fd3ab5cfde868eec840c9e2d7465d745e
+  HWPanModal: 2340d953661dbeadd1f041cde9e059c0704c873a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb

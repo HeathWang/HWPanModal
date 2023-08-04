@@ -141,7 +141,7 @@
 
 - (void)springDismiss:(id <UIViewControllerContextTransitioning>)context fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC presentable:(UIViewController <HWPanModalPresentable> *)presentable panView:(UIView *)panView {
 	CGFloat offsetY = 0;
-	HWPanModalShadow shadowConfig = [presentable contentShadow];
+	HWPanModalShadow *shadowConfig = [presentable contentShadow];
 	if (shadowConfig.shadowColor) {
 		// we should make the panView move further to hide the shadow effect.
 		offsetY = offsetY + shadowConfig.shadowRadius + shadowConfig.shadowOffset.height;

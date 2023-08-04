@@ -133,7 +133,6 @@
 		7EA0F56B230D5B7300ED20D2 /* HWPanModalPresentationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPanModalPresentationDelegate.m; sourceTree = "<group>"; };
 		7EA0F56C230D5B7300ED20D2 /* HWPanModalPresentationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentationDelegate.h; sourceTree = "<group>"; };
 		7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Presentation.h"; sourceTree = "<group>"; };
-		7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LayoutHelper.m"; sourceTree = "<group>"; };
 		7EA0F570230D5B7400ED20D2 /* UIViewController+PanModalDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PanModalDefault.m"; sourceTree = "<group>"; };
 		7EA0F571230D5B7400ED20D2 /* HWPanModalPresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPanModalPresentable.h; sourceTree = "<group>"; };
 		7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Presentation.m"; sourceTree = "<group>"; };
@@ -501,7 +500,6 @@
 				7EA0F56E230D5B7400ED20D2 /* UIViewController+Presentation.h */,
 				7EA0F572230D5B7400ED20D2 /* UIViewController+Presentation.m */,
 				7EA0F574230D5B7400ED20D2 /* UIViewController+LayoutHelper.h */,
-				7EA0F56F230D5B7400ED20D2 /* UIViewController+LayoutHelper.m */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";

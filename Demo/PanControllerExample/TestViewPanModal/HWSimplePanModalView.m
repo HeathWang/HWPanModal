@@ -110,8 +110,8 @@
     return self.tableView;
 }
 
-- (HWPanModalShadow)contentShadow {
-    return PanModalShadowMake([UIColor systemPinkColor], 10, CGSizeMake(1, 1), 1);
+- (HWPanModalShadow *)contentShadow {
+    return [[HWPanModalShadow alloc] initWithColor:[UIColor systemPinkColor] shadowRadius:10 shadowOffset:CGSizeMake(1, 1) shadowOpacity:1];
 }
 
 //- (BOOL)allowsTouchEventsPassingThroughTransitionView {

@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 @property (nonatomic, strong) UIButton *changeShadowButton;
 @property (nonatomic, strong) UIButton *clearShadowButton;
 
-@property (nonatomic, assign) HWPanModalShadow shadowConfig;
+@property (nonatomic, strong) HWPanModalShadow *shadowConfig;
 
 // corner
 @property (nonatomic, strong) UIButton *changeRoundCornerButton;
@@ -132,12 +132,12 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 }
 
 - (void)onTapDefaultShadow {
-	self.shadowConfig = PanModalShadowMake([UIColor blueColor], 8, CGSizeMake(0, 2), 1);
+    self.shadowConfig = [[HWPanModalShadow alloc] initWithColor:[UIColor blueColor] shadowRadius:8 shadowOffset:CGSizeMake(0, 2) shadowOpacity:1];
 	[self hw_panModalSetNeedsLayoutUpdate];
 }
 
 - (void)onTapClearShadow {
-	self.shadowConfig = PanModalShadowNil();
+    self.shadowConfig = [HWPanModalShadow panModalShadowNil];
 	[self hw_panModalSetNeedsLayoutUpdate];
 }
 
@@ -188,7 +188,7 @@ typedef NS_ENUM(NSInteger, ChangeHeightType) {
 	return self.longHeight;
 }
 
-- (HWPanModalShadow)contentShadow {
+- (HWPanModalShadow *)contentShadow {
 	return self.shadowConfig;
 }
 

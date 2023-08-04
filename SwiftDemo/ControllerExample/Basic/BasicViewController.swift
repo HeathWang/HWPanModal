@@ -30,6 +30,9 @@ extension BasicViewController {
     override func transitionAnimationOptions() -> UIView.AnimationOptions {
         return [.curveLinear]
     }
-    
+   
+    override func contentShadow() -> HWPanModalShadow {
+        return HWPanModalShadow(color: UIColor.red, shadowRadius: 10, shadowOffset: CGSizeMake(0, 2), shadowOpacity: 1)
+    }
 }
 

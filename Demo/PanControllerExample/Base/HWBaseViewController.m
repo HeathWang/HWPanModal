@@ -76,8 +76,8 @@
     return NO;
 }
 
-- (HWPanModalShadow)contentShadow {
-    return PanModalShadowMake([UIColor yellowColor], 10, CGSizeMake(0, 2), 1);
+- (HWPanModalShadow *)contentShadow {
+    return [[HWPanModalShadow alloc] initWithColor:[UIColor yellowColor] shadowRadius:10 shadowOffset:CGSizeMake(0, 2) shadowOpacity:1];
 }
 
 //- (UIViewAnimationOptions)transitionAnimationOptions {

@@ -172,8 +172,8 @@
 	return 8;
 }
 
-- (HWPanModalShadow)contentShadow {
-    return PanModalShadowMake(nil, 0, CGSizeZero, 0);
+- (HWPanModalShadow *)contentShadow {
+    return [HWPanModalShadow panModalShadowNil];
 }
 
 - (BOOL)showDragIndicator {

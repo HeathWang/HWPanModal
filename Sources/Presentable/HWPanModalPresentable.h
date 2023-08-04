@@ -11,6 +11,7 @@
 #import <HWPanModal/HWPresentingVCAnimatedTransitioning.h>
 #import <HWPanModal/HWPanModalIndicatorProtocol.h>
 #import <HWPanModal/HWBackgroundConfig.h>
+#import <HWPanModal/HWPanModalShadow.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -271,7 +272,7 @@ typedef NS_ENUM(NSInteger, PresentingViewControllerAnimationStyle) {
 * presented content shadow
 * Default is None config
 */
-- (HWPanModalShadow)contentShadow;
+- (HWPanModalShadow *)contentShadow;
 
 #pragma mark - Indicator config
 
