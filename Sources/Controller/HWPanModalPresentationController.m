@@ -83,11 +83,18 @@
 	}
 
 	__weak  typeof(self) wkSelf = self;
+	__block BOOL isAnimated = NO;
 	[self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context) {
 		wkSelf.backgroundView.dimState = DimStateMax;
 		[wkSelf.presentedViewController setNeedsStatusBarAppearanceUpdate];
+		isAnimated = YES;
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        
+		if (!isAnimated) {
+			/// In some cases, for example, present a `hw` when a navigation controller is pushing a new vc, `animateAlongsideTransition` will not call.
+			/// If not called, call it here.
+			wkSelf.backgroundView.dimState = DimStateMax;
+			[wkSelf.presentedViewController setNeedsStatusBarAppearanceUpdate];
+		}
         if ([[wkSelf presentable] allowsTouchEventsPassingThroughTransitionView]) {
             // hack TransitionView
             [wkSelf.containerView setValue:@(YES) forKey:@"ignoreDirectTouchEvents"];
