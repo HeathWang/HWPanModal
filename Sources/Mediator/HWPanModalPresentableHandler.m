@@ -40,6 +40,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 // kvo
 @property (nonatomic, strong) id observerToken;
 @property (nonatomic, assign) CGFloat scrollViewYOffset;
+@property (nonatomic, assign) BOOL isHandlingScrollViewUpdate;
 
 @end
 
@@ -359,7 +360,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 */
 - (void)trackScrolling:(UIScrollView *)scrollView {
     self.scrollViewYOffset = MAX(scrollView.contentOffset.y, -(MAX(scrollView.contentInset.top, 0)));
+    
+    // Guard against re-entry to prevent infinite recursion
+    if (self.isHandlingScrollViewUpdate) {
+        return;
+    }
+    self.isHandlingScrollViewUpdate = YES;
     scrollView.showsVerticalScrollIndicator = [[self presentable] showsScrollableVerticalScrollIndicator];
+    self.isHandlingScrollViewUpdate = NO;
 }
 
 /**
@@ -377,8 +385,14 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
     // See issues: https://github.com/HeathWang/HWPanModal/issues/107 and https://github.com/HeathWang/HWPanModal/issues/103
  
     if (scrollView.contentOffset.y <= 0 || self.scrollViewYOffset <= scrollView.contentOffset.y) {
+        // Guard against re-entry to prevent infinite recursion
+        if (self.isHandlingScrollViewUpdate) {
+            return;
+        }
+        self.isHandlingScrollViewUpdate = YES;
         [scrollView setContentOffset:CGPointMake(0, self.scrollViewYOffset) animated:NO];
         scrollView.showsVerticalScrollIndicator = NO;
+        self.isHandlingScrollViewUpdate = NO;
     }
 }
 
@@ -386,6 +400,11 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
 
     UIScrollView *scrollView = [[self presentable] panScrollable];
     if (!scrollView) return;
+    
+    // Guard against re-entry to prevent infinite recursion
+    if (self.isHandlingScrollViewUpdate) {
+        return;
+    }
     
     if ((![self isBeingDismissed] && ![self isBeingPresented]) ||
         ([self isBeingDismissed] && [self isPresentedViewControllerInteractive])) {
