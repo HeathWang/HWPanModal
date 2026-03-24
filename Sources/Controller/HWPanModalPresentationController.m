@@ -304,15 +304,9 @@
 - (void)addRoundedCornersToView:(UIView *)view {
 	CGFloat radius = [self.presentable cornerRadius];
 
-	UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerTopLeft cornerRadii:CGSizeMake(radius, radius)];
-	
-	CAShapeLayer *mask = [CAShapeLayer new];
-	mask.path = bezierPath.CGPath;
-	view.layer.mask = mask;
-
-	// 提高性能
-	view.layer.shouldRasterize = YES;
-	view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+	view.layer.cornerRadius = radius;
+	view.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
+	view.clipsToBounds = YES;
 }
 
 - (void)resetRoundedCornersToView:(UIView *)view {
