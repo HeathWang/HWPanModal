@@ -26,7 +26,7 @@ HWPanModal presents controller from bottom and drag to dismiss, high customize.
   s.author           = { 'heathwang' => 'yishu.jay@gmail.com' }
   s.source           = { :git => 'https://github.com/HeathWang/HWPanModal.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = ['Sources/**/*']
   s.public_header_files = ['Sources/**/*.h']
