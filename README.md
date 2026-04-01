@@ -30,16 +30,6 @@ Inspired by [**PanModal**](https://github.com/slackhq/PanModal), thanks.
 
 **My another project for pop controller:**[**HWPopController**](https://github.com/HeathWang/HWPopController)
 
-## Special Thanks
-
-Special Thanks to JetBrains! I use AppCode IDE to develop my open source project.
-<p style="align: left">
-    <a href="https://www.jetbrains.com/?from=HWPanModal">
-       <img src="images/icon_AppCode.png">
-    </a>
-</p>
-
-
 ## Snapshoot
 
 <div style="text-align: center">
@@ -124,7 +114,7 @@ The different is `HWPanModalContentView` is just a view, and support some animat
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 ```ruby
-pod 'HWPanModal', '~> 0.9.4'
+pod 'HWPanModal', '~> 0.9.9'
 ```
 
 ## How to use
@@ -319,6 +309,10 @@ HWSimplePanModalView *simplePanModalView = [HWSimplePanModalView new];
 3. Double click HWPanModal.xcworkspace, and select a target to run.
 
 ###### I have wrote both **pure** `Objective-C` & `Swift`Examples , for most of the framework functions.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=HeathWang/HWPanModal&type=Date)](https://star-history.com/#HeathWang/HWPanModal&Date)
 
 ## Contact Me
 
