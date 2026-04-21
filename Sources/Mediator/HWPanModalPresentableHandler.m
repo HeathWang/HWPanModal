@@ -433,7 +433,15 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         if (![self.presentable shouldAutoSetPanScrollContentInset]) return;
         
         UIEdgeInsets insets1 = scrollView.contentInset;
-        CGFloat bottomLayoutOffset = [UIApplication sharedApplication].keyWindow.rootViewController.bottomLayoutGuide.length;
+        UIWindow *keyWindow = nil;
+        for (UIScene *scene in UIApplication.sharedApplication.connectedScenes) {
+            if (![scene isKindOfClass:[UIWindowScene class]]) continue;
+            for (UIWindow *w in ((UIWindowScene *)scene).windows) {
+                if (w.isKeyWindow) { keyWindow = w; break; }
+            }
+            if (keyWindow) break;
+        }
+        CGFloat bottomLayoutOffset = keyWindow.safeAreaInsets.bottom;
         /*
          * If scrollView has been set contentInset, and bottom is NOT zero, we won't change it.
          * If contentInset.bottom is zero, set bottom = bottomLayoutOffset

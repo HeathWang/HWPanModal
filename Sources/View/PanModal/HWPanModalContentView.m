@@ -358,7 +358,8 @@
         case PanModalHeightTypeIntrinsic: {
             [self layoutIfNeeded];
 
-            CGSize targetSize = CGSizeMake(self.containerView ? self.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
+            CGFloat screenWidth = self.window.bounds.size.width ?: UIScreen.mainScreen.bounds.size.width;
+            CGSize targetSize = CGSizeMake(self.containerView ? self.containerView.bounds.size.width : screenWidth, UILayoutFittingCompressedSize.height);
             CGFloat intrinsicHeight = [self systemLayoutSizeFittingSize:targetSize].height;
             return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);
         }

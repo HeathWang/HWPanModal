@@ -13,7 +13,7 @@
 
     NSTimeInterval duration = [context transitionDuration];
     UIViewController *fromVC = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat statusBarHeight = fromVC.view.window.windowScene.statusBarManager.statusBarFrame.size.height;
     CGFloat scale = 1 - statusBarHeight * 2 / CGRectGetHeight(fromVC.view.bounds);
     [UIView animateWithDuration:duration * 0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         CATransform3D tran = CATransform3DIdentity;

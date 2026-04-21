@@ -327,7 +327,7 @@
 
     // 提高性能
     view.layer.shouldRasterize = YES;
-    view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    view.layer.rasterizationScale = UITraitCollection.currentTraitCollection.displayScale;
 }
 
 - (void)resetRoundedCornersToView:(UIView *)view {
