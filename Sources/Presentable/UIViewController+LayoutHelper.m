@@ -11,21 +11,22 @@
 
 @implementation UIViewController (LayoutHelper)
 
-- (CGFloat)topLayoutOffset {
-    if (@available(iOS 11, *)) {
-        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.top;
-    } else {
-        return [UIApplication sharedApplication].keyWindow.rootViewController.topLayoutGuide.length;
+- (UIWindow *)hw_keyWindow {
+    for (UIScene *scene in UIApplication.sharedApplication.connectedScenes) {
+        if (![scene isKindOfClass:[UIWindowScene class]]) continue;
+        for (UIWindow *window in ((UIWindowScene *)scene).windows) {
+            if (window.isKeyWindow) return window;
+        }
     }
-	
+    return nil;
+}
+
+- (CGFloat)topLayoutOffset {
+    return [self hw_keyWindow].safeAreaInsets.top;
 }
 
 - (CGFloat)bottomLayoutOffset {
-    if (@available(iOS 11, *)) {
-        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
-    } else {
-        return [UIApplication sharedApplication].keyWindow.rootViewController.bottomLayoutGuide.length;
-    }
+    return [self hw_keyWindow].safeAreaInsets.bottom;
 }
 
 - (HWPanModalPresentationController *)hw_presentedVC {
@@ -118,7 +119,8 @@
 		{
 			[self.view layoutIfNeeded];
 
-            CGSize targetSize = CGSizeMake(self.hw_presentedVC.containerView ? self.hw_presentedVC.containerView.bounds.size.width : [UIScreen mainScreen].bounds.size.width, UILayoutFittingCompressedSize.height);
+            CGFloat screenWidth = [self hw_keyWindow].bounds.size.width ?: UIScreen.mainScreen.bounds.size.width;
+            CGSize targetSize = CGSizeMake(self.hw_presentedVC.containerView ? self.hw_presentedVC.containerView.bounds.size.width : screenWidth, UILayoutFittingCompressedSize.height);
             CGFloat intrinsicHeight = [self.view systemLayoutSizeFittingSize:targetSize].height;
 			return self.bottomYPos - (intrinsicHeight + self.bottomLayoutOffset);
 		}
